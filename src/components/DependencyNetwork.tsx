@@ -37,39 +37,90 @@ const DependencyNetwork: React.FC<DependencyNetworkProps> = ({
     earliestDate.setFullYear(earliestDate.getFullYear() - 1);
     latestDate.setFullYear(latestDate.getFullYear() + 1);
 
-    // Получаем временной диапазон в миллисекундах
-    const timeRangeMs = latestDate.getTime() - earliestDate.getTime();
-
     // Создаем серии данных для разных категорий
-    // Это позволит нам разместить фреймворки по категориям вертикально,
-    // сохраняя правильное горизонтальное расположение по времени
     const categoryOrder = ['driver', 'orm', 'admin', 'etl', 'analytics'];
-    const seriesData = categoryOrder.map(category => {
+    const seriesData = categoryOrder.map((category, categoryIndex) => {
+        // Находим все фреймворки в этой категории
+        const categoryFrameworks = frameworks.filter(f => f.category === category);
+
+        // Сортируем по дате для последовательного размещения
+        const sortedFrameworks = [...categoryFrameworks].sort(
+            (a, b) => a.releaseDate.getTime() - b.releaseDate.getTime()
+        );
+
+        // Создаем карту дат, чтобы определить, где есть кластеры фреймворков
+        const dateMap = new Map<number, Framework[]>();
+        sortedFrameworks.forEach(f => {
+            // Группируем по году и месяцу для выявления близких дат
+            const yearMonth = new Date(
+                f.releaseDate.getFullYear(),
+                f.releaseDate.getMonth(),
+                1
+            ).getTime();
+
+            if (!dateMap.has(yearMonth)) {
+                dateMap.set(yearMonth, []);
+            }
+            dateMap.get(yearMonth)!.push(f);
+        });
+
+        // Распределяем Y-координаты для избежания наложений
+        const data = sortedFrameworks.map(framework => {
+            // Определяем группу (кластер) для этого фреймворка
+            const yearMonth = new Date(
+                framework.releaseDate.getFullYear(),
+                framework.releaseDate.getMonth(),
+                1
+            ).getTime();
+
+            const sameMonthFrameworks = dateMap.get(yearMonth)!;
+            const frameworkIndex = sameMonthFrameworks.findIndex(f => f.id === framework.id);
+            const totalInSameMonth = sameMonthFrameworks.length;
+
+            // Определяем смещение по Y внутри категории
+            // Если много фреймворков в одном месяце, распределяем их равномерно
+            let yOffset = 0;
+            if (totalInSameMonth > 1) {
+                // Распределяем от -0.35 до 0.35 внутри категории
+                const spreadFactor = 0.7;
+                yOffset = -spreadFactor/2 + frameworkIndex * (spreadFactor / (totalInSameMonth - 1));
+            }
+
+            return {
+                x: framework.releaseDate.getTime(),
+                y: categoryIndex + yOffset, // Добавляем смещение к базовому индексу категории
+                id: framework.id,
+                name: framework.name,
+                releaseDate: framework.releaseDate.toLocaleDateString(),
+                releaseYear: framework.releaseDate.getFullYear(),
+                description: framework.description,
+                category: framework.category,
+                marker: {
+                    radius: selectedFramework === framework.id ? 8 : 6,
+                    symbol: 'circle'
+                }
+            };
+        });
+
         return {
             name: getCategoryName(category),
             color: getColorByCategory(category),
-            data: frameworks
-                .filter(f => f.category === category)
-                .map(framework => {
-                    // Вычисляем точки для scatterplot
-                    return {
-                        x: framework.releaseDate.getTime(),
-                        y: 0, // Все точки на базовой линии
-                        id: framework.id,
-                        name: framework.name,
-                        releaseDate: framework.releaseDate.toLocaleDateString(),
-                        releaseYear: framework.releaseDate.getFullYear(),
-                        description: framework.description,
-                        marker: {
-                            radius: selectedFramework === framework.id ? 8 : 6,
-                            symbol: 'circle'
-                        }
-                    };
-                })
+            data: data
         };
     });
 
-    // Создаем данные для отображения зависимостей
+    // Вспомогательная функция для поиска точки по ID
+    function findPointInSeries(id: string) {
+        for (const series of seriesData) {
+            const point = series.data.find((p: any) => p.id === id);
+            if (point) {
+                return point;
+            }
+        }
+        return null;
+    }
+
+    // Подготовка данных для линий зависимостей
     const dependencySeriesData = frameworks.flatMap(framework => {
         return framework.dependencies.map(depId => {
             const source = framework;
@@ -77,27 +128,33 @@ const DependencyNetwork: React.FC<DependencyNetworkProps> = ({
 
             if (!target) return null;
 
+            // Находим точную позицию источника и цели на графике
+            const sourcePoint = findPointInSeries(source.id);
+            const targetPoint = findPointInSeries(depId);
+
+            if (!sourcePoint || !targetPoint) return null;
+
             return {
-                from: source.releaseDate.getTime(), // X координата исходного фреймворка
-                to: target.releaseDate.getTime(),  // X координата целевого фреймворка
+                from: sourcePoint.x,
+                to: targetPoint.x,
+                fromY: sourcePoint.y,
+                toY: targetPoint.y,
                 sourceId: source.id,
                 targetId: depId,
                 sourceName: source.name,
-                targetName: target.name,
-                sourceCategory: categoryOrder.indexOf(source.category),
-                targetCategory: categoryOrder.indexOf(target.category)
+                targetName: target.name
             };
         }).filter(Boolean);
     }) as any[];
 
-    // Подготовка данных для линий зависимостей
+    // Создание линий зависимостей
     const dependencies = dependencySeriesData.map(dep => {
         return {
             type: 'spline' as const,
             name: `${dep.sourceName} → ${dep.targetName}`,
             data: [
-                [dep.from, dep.sourceCategory],
-                [dep.to, dep.targetCategory]
+                [dep.from, dep.fromY],
+                [dep.to, dep.toY]
             ],
             lineWidth: 1,
             dashStyle: 'shortdot' as const,
@@ -129,11 +186,10 @@ const DependencyNetwork: React.FC<DependencyNetworkProps> = ({
         chart: {
             type: 'scatter',
             zoomType: 'xy',
-            height: 550,
             backgroundColor: isDarkMode ? '#1e1e1e' : '#ffffff'
         },
         title: {
-            text: 'PostgreSQL Frameworks Timeline',
+            text: 'YDB Frameworks Timeline',
             style: {
                 color: isDarkMode ? '#ffffff' : '#333333'
             }
@@ -177,8 +233,15 @@ const DependencyNetwork: React.FC<DependencyNetworkProps> = ({
                     color: isDarkMode ? '#ffffff' : '#333333'
                 }
             },
+            // Используем индексы категорий для меток на оси
             categories: categoryOrder.map(c => getCategoryName(c)),
+            // Устанавливаем диапазон для правильного размещения точек
+            min: -0.5,
+            max: categoryOrder.length - 0.5,
+            // Расположение меток категорий точно по центру
+            tickPositions: categoryOrder.map((_, i) => i),
             gridLineColor: isDarkMode ? '#333333' : '#eeeeee',
+            gridLineWidth: 1,
             labels: {
                 style: {
                     color: isDarkMode ? '#e0e0e0' : '#666666'
@@ -217,8 +280,15 @@ const DependencyNetwork: React.FC<DependencyNetworkProps> = ({
                     style: {
                         color: isDarkMode ? '#e0e0e0' : '#333333',
                         textOutline: isDarkMode ? '1px #1e1e1e' : '1px #ffffff',
-                        fontWeight: 'normal'
-                    }
+                        fontWeight: 'normal',
+                        fontSize: '10px'
+                    },
+                    // Добавляем отступ чтобы метки не накладывались на точки
+                    y: -18,
+                    // Добавляем возможность смещения меток для избежания наложений
+                    allowOverlap: false,
+                    crop: false,
+                    overflow: 'allow'
                 },
                 marker: {
                     symbol: 'circle',
@@ -276,23 +346,7 @@ const DependencyNetwork: React.FC<DependencyNetworkProps> = ({
         }
     }, [selectedFramework, isDarkMode]);
 
-    return (
-        <div className="dependency-timeline">
-            <HighchartsReact
-                highcharts={Highcharts}
-                options={options}
-                ref={chartRef}
-            />
-
-            <div className="timeline-legend">
-                <div className="dependency-hint">
-                    <span className="dash-line">- - - -</span>
-                    <span>Dependency (framework depends on the one it points to)</span>
-                </div>
-            </div>
-        </div>
-    );
-
+    // Функция для получения цвета на основе категории
     function getColorByCategory(category: string): string {
         switch(category) {
             case 'driver': return '#7cb5ec';
@@ -304,6 +358,7 @@ const DependencyNetwork: React.FC<DependencyNetworkProps> = ({
         }
     }
 
+    // Функция для получения названия категории
     function getCategoryName(category: string): string {
         switch(category) {
             case 'driver': return 'Database Drivers';
@@ -314,6 +369,14 @@ const DependencyNetwork: React.FC<DependencyNetworkProps> = ({
             default: return category;
         }
     }
+
+    return (
+        <HighchartsReact
+            highcharts={Highcharts}
+            options={options}
+            ref={chartRef}
+        />
+    );
 };
 
 export default DependencyNetwork;

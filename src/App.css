@@ -1,7 +1,7 @@
 .app-container {
-    max-width: 1200px;
+    max-width: 100vw;
+    max-height: 100vh;
     margin: 0 auto;
-    padding: 20px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -484,18 +484,6 @@ header p {
     z-index: 1000;
 }
 
-.comparison-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.comparison-header h2 {
-    margin: 0;
-    color: #333;
-}
-
 .close-button {
     background: none;
     border: none;
@@ -531,34 +519,6 @@ header p {
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
-}
-
-.comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 25px;
-}
-
-.comparison-table th,
-.comparison-table td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-}
-
-.comparison-table th {
-    background-color: #f5f5f5;
-    font-weight: 600;
-    color: #333;
-}
-
-.comparison-table .centered {
-    text-align: center;
-}
-
-.comparison-descriptions {
-    display: flex;
-    gap: 20px;
 }
 
 .description-column {
@@ -735,17 +695,9 @@ header p {
     font-size: 1.2rem;
     cursor: pointer;
     border: none;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    background-color: transparent;
     z-index: 100;
     transition: background-color 0.3s, transform 0.2s;
-}
-
-.theme-toggle.light {
-    background-color: #f5f5f5;
-}
-
-.theme-toggle.dark {
-    background-color: #333;
 }
 
 .theme-toggle:hover {
@@ -992,4 +944,47 @@ code {
 
 .dark-theme .year-label {
     color: #e0e0e0;
+}
+
+.dependency-timeline {
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.dark-theme .dependency-timeline {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-legend {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+}
+
+.dark-theme .timeline-legend {
+    border-top-color: #444;
+}
+
+.dependency-hint {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+}
+
+.dark-theme .dependency-hint {
+    color: #ccc;
+}
+
+.dash-line {
+    letter-spacing: -1px;
+    font-weight: bold;
 }
