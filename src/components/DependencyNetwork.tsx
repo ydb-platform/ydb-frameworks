@@ -186,6 +186,7 @@ const DependencyNetwork: React.FC<DependencyNetworkProps> = ({
         chart: {
             type: 'scatter',
             zoomType: 'xy',
+            height: (window.innerHeight/window.innerWidth*100)+'%',
             backgroundColor: isDarkMode ? '#1e1e1e' : '#ffffff'
         },
         title: {
