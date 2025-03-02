@@ -1,8 +1,8 @@
 // src/components/DependencyNetwork.tsx
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef} from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import { Framework } from '../types';
+import {Framework} from '../types';
 
 interface DependencyNetworkProps {
     frameworks: Framework[];
@@ -83,21 +83,26 @@ const DependencyNetwork: React.FC<DependencyNetworkProps> = ({
             if (totalInSameMonth > 1) {
                 // Распределяем от -0.35 до 0.35 внутри категории
                 const spreadFactor = 0.7;
-                yOffset = -spreadFactor/2 + frameworkIndex * (spreadFactor / (totalInSameMonth - 1));
+                yOffset = -spreadFactor / 2 + frameworkIndex * (spreadFactor / (totalInSameMonth - 1));
             }
 
             return {
-                x: framework.releaseDate.getTime(),
-                y: categoryIndex + yOffset, // Добавляем смещение к базовому индексу категории
+                x: framework.releaseDate.getTime(), // Используем дату поддержки PostgreSQL для оси времени
+                y: categoryIndex + yOffset,
                 id: framework.id,
                 name: framework.name,
                 releaseDate: framework.releaseDate.toLocaleDateString(),
+                frameworkReleaseDate: framework.frameworkReleaseDate.toLocaleDateString(),
                 releaseYear: framework.releaseDate.getFullYear(),
+                frameworkReleaseYear: framework.frameworkReleaseDate.getFullYear(),
                 description: framework.description,
                 category: framework.category,
+                language: framework.language,
+                // Добавляем разные маркеры для фреймворков, которые поддержали PostgreSQL позже релиза
                 marker: {
                     radius: selectedFramework === framework.id ? 8 : 6,
-                    symbol: 'circle'
+                    symbol: getMarkerSymbol(framework),
+                    fillColor: getMarkerColor(framework, isDarkMode)
                 }
             };
         });
@@ -108,6 +113,36 @@ const DependencyNetwork: React.FC<DependencyNetworkProps> = ({
             data: data
         };
     });
+
+    function getMarkerSymbol(framework: Framework): string {
+        return 'circle';
+    }
+
+    function getMarkerColor(framework: Framework, isDarkMode: boolean): string {
+        const categoryColor = getColorByCategory(framework.category);
+
+        // Если даты совпадают, используем стандартный цвет категории
+        if (framework.releaseDate.getTime() === framework.frameworkReleaseDate.getTime()) {
+            return categoryColor;
+        }
+
+        // Для фреймворков с поздней поддержкой используем более светлый оттенок
+        // (можно реализовать с помощью изменения прозрачности или другим способом)
+        return isDarkMode ?
+            lightenColor(categoryColor, 0.7) :
+            darkenColor(categoryColor, 0.7);
+    }
+
+    function lightenColor(color: string, factor: number): string {
+        // Простая реализация для примера
+        // В реальном коде нужна более сложная функция для преобразования цветов
+        return color; // Заглушка
+    }
+
+    function darkenColor(color: string, factor: number): string {
+        // Заглушка
+        return color;
+    }
 
     // Вспомогательная функция для поиска точки по ID
     function findPointInSeries(id: string) {
@@ -186,7 +221,7 @@ const DependencyNetwork: React.FC<DependencyNetworkProps> = ({
         chart: {
             type: 'scatter',
             zoomType: 'xy',
-            height: (window.innerHeight/window.innerWidth*100)+'%',
+            height: (window.innerHeight / window.innerWidth * 100) + '%',
             backgroundColor: isDarkMode ? '#1e1e1e' : '#ffffff'
         },
         title: {
@@ -253,11 +288,12 @@ const DependencyNetwork: React.FC<DependencyNetworkProps> = ({
             useHTML: true,
             headerFormat: '<table>',
             pointFormat: `
-        <tr><td colspan="2"><b>{point.name}</b></td></tr>
-        <tr><td>Released:</td><td>{point.releaseDate}</td></tr>
-        <tr><td colspan="2">{point.description}</td></tr>
-        <tr><td colspan="2"><small>Click for more details</small></td></tr>
-      `,
+                <tr><td colspan="2"><b>{point.name}</b></td></tr>
+                <tr><td>Framework Release:</td><td>{point.frameworkReleaseDate}</td></tr>
+                <tr><td>PostgreSQL Support:</td><td>{point.releaseDate}</td></tr>
+                <tr><td colspan="2">{point.description}</td></tr>
+                <tr><td colspan="2"><small>Click for more details</small></td></tr>
+            `,
             footerFormat: '</table>',
             backgroundColor: isDarkMode ? 'rgba(50, 50, 50, 0.9)' : 'rgba(255, 255, 255, 0.9)',
             style: {
@@ -302,7 +338,7 @@ const DependencyNetwork: React.FC<DependencyNetworkProps> = ({
                     }
                 },
                 events: {
-                    click: function(event: any) {
+                    click: function (event: any) {
                         if (event.point && event.point.id) {
                             onFrameworkSelect(event.point.id);
                         }
@@ -349,25 +385,37 @@ const DependencyNetwork: React.FC<DependencyNetworkProps> = ({
 
     // Функция для получения цвета на основе категории
     function getColorByCategory(category: string): string {
-        switch(category) {
-            case 'driver': return '#7cb5ec';
-            case 'orm': return '#90ed7d';
-            case 'admin': return '#f7a35c';
-            case 'etl': return '#8085e9';
-            case 'analytics': return '#f15c80';
-            default: return '#e4d354';
+        switch (category) {
+            case 'driver':
+                return '#7cb5ec';
+            case 'orm':
+                return '#90ed7d';
+            case 'admin':
+                return '#f7a35c';
+            case 'etl':
+                return '#8085e9';
+            case 'analytics':
+                return '#f15c80';
+            default:
+                return '#e4d354';
         }
     }
 
     // Функция для получения названия категории
     function getCategoryName(category: string): string {
-        switch(category) {
-            case 'driver': return 'Database Drivers';
-            case 'orm': return 'ORM Tools';
-            case 'admin': return 'Administration Tools';
-            case 'etl': return 'ETL Tools';
-            case 'analytics': return 'Analytics Engines';
-            default: return category;
+        switch (category) {
+            case 'driver':
+                return 'Database Drivers';
+            case 'orm':
+                return 'ORM Tools';
+            case 'admin':
+                return 'Administration Tools';
+            case 'etl':
+                return 'ETL Tools';
+            case 'analytics':
+                return 'Analytics Engines';
+            default:
+                return category;
         }
     }
 
