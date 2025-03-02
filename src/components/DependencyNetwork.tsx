@@ -190,7 +190,7 @@ const DependencyNetwork: React.FC<DependencyNetworkProps> = ({
             backgroundColor: isDarkMode ? '#1e1e1e' : '#ffffff'
         },
         title: {
-            text: 'YDB Frameworks Timeline',
+            text: 'PostgreSQL Frameworks Timeline',
             style: {
                 color: isDarkMode ? '#ffffff' : '#333333'
             }
