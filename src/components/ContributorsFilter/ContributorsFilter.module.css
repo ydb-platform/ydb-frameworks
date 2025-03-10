@@ -1,10 +1,10 @@
-/* src/components/LanguageFilter/LanguageFilter.module.css */
+/* src/components/ContributorsFilter/ContributorsFilter.module.css */
 .filterContainer {
     border: 1px solid var(--timeline-line);
     border-radius: 4px;
     padding: 15px;
     background-color: var(--timeline-bg);
-    overflow-y: auto;
+    margin-top: 20px;
 }
 
 .filterHeader {
@@ -48,7 +48,7 @@
     gap: 10px;
 }
 
-.languageItem {
+.contributorItem {
     width: 100%;
 }
 

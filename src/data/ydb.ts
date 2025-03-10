@@ -12,7 +12,8 @@ const ydbData: TimelineData = {
             language: 'C++',
             releaseDate: '2020-03-15',
             description: 'Automatic expiration of table rows based on TTL settings',
-            authors: ['Yandex']
+            authors: ['Yandex'],
+            contributorsType: ['staff']
         },
         {
             id: 'ydb-cdc',
@@ -21,7 +22,8 @@ const ydbData: TimelineData = {
             language: 'C++',
             releaseDate: '2021-05-01',
             description: 'Stream of changes made to tables for real-time data processing',
-            authors: ['Yandex']
+            authors: ['Yandex'],
+            contributorsType: ['staff']
         },
         {
             id: 'ydb-serverless-triggers',
@@ -30,7 +32,8 @@ const ydbData: TimelineData = {
             language: 'C++',
             releaseDate: '2021-08-20',
             description: 'Automatically execute code in response to data changes',
-            authors: ['Yandex']
+            authors: ['Yandex'],
+            contributorsType: ['staff']
         },
         {
             id: 'ydb-secondary-indexes',
@@ -39,7 +42,8 @@ const ydbData: TimelineData = {
             language: 'C++',
             releaseDate: '2022-02-10',
             description: 'Automatically maintained indexes for faster queries on non-primary key columns',
-            authors: ['Yandex']
+            authors: ['Yandex'],
+            contributorsType: ['staff']
         },
 
         // Стандарты API
@@ -51,7 +55,8 @@ const ydbData: TimelineData = {
             releaseDate: '1997-02-19',
             dbSupportDate: '2020-04-01',
             description: 'Java Database Connectivity API',
-            authors: ['Sun Microsystems', 'Yandex']
+            authors: ['Sun Microsystems', 'Yandex'],
+            contributorsType: ['staff']
         },
         {
             id: 'database-sql',
@@ -61,7 +66,8 @@ const ydbData: TimelineData = {
             releaseDate: '2011-03-01',
             dbSupportDate: '2019-09-01',
             description: 'Go standard database interface',
-            authors: ['Go Team', 'Yandex']
+            authors: ['Go Team', 'Yandex'],
+            contributorsType: ['staff']
         },
         {
             id: 'dbapi',
@@ -71,7 +77,8 @@ const ydbData: TimelineData = {
             releaseDate: '1996-10-01',
             dbSupportDate: '2019-10-01',
             description: 'Python Database API Specification (PEP 249)',
-            authors: ['Python DB-SIG', 'Yandex']
+            authors: ['Python DB-SIG', 'Yandex'],
+            contributorsType: ['staff']
         },
 
         // Драйверы
@@ -82,7 +89,8 @@ const ydbData: TimelineData = {
             language: 'C++',
             releaseDate: '2018-11-15',
             description: 'Official C++ SDK for YDB',
-            authors: ['Yandex']
+            authors: ['Yandex'],
+            contributorsType: ['staff']
         },
         {
             id: 'ydb-go-sdk',
@@ -91,7 +99,8 @@ const ydbData: TimelineData = {
             language: 'Go',
             releaseDate: '2018-12-01',
             description: 'Official Go SDK for YDB',
-            authors: ['Yandex']
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
         },
         {
             id: 'ydb-python-sdk',
@@ -100,7 +109,8 @@ const ydbData: TimelineData = {
             language: 'Python',
             releaseDate: '2019-02-01',
             description: 'Official Python SDK for YDB',
-            authors: ['Yandex']
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'student']
         },
         {
             id: 'ydb-java-sdk',
@@ -109,7 +119,8 @@ const ydbData: TimelineData = {
             language: 'Java',
             releaseDate: '2019-03-15',
             description: 'Official Java SDK for YDB',
-            authors: ['Yandex']
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
         },
         {
             id: 'ydb-golang-database-sql',
@@ -118,7 +129,8 @@ const ydbData: TimelineData = {
             language: 'Go',
             releaseDate: '2019-09-01',
             description: 'database/sql driver implementation for YDB',
-            authors: ['Yandex']
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
         },
         {
             id: 'ydb-jdbc',
@@ -127,7 +139,8 @@ const ydbData: TimelineData = {
             language: 'Java',
             releaseDate: '2020-04-01',
             description: 'JDBC driver implementation for YDB',
-            authors: ['Yandex']
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'student']
         },
         {
             id: 'ydb-dbapi',
@@ -136,7 +149,8 @@ const ydbData: TimelineData = {
             language: 'Python',
             releaseDate: '2019-10-01',
             description: 'Python DB-API 2.0 interface for YDB',
-            authors: ['Yandex']
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'student']
         },
 
         // Migration tools
@@ -149,7 +163,8 @@ const ydbData: TimelineData = {
             dbSupportDate: '2023-01-10',
             description: 'Database migration tool for Go',
             authors: ['liamstask', 'pressly'],
-            version: '3.18.0'
+            version: '3.18.0',
+            contributorsType: ['open-source']
         },
 
         // ORM
@@ -160,7 +175,8 @@ const ydbData: TimelineData = {
             language: 'Python',
             releaseDate: '2021-03-01',
             description: 'SQLAlchemy dialect for YDB',
-            authors: ['Yandex']
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'student']
         },
 
         // Admin tools
@@ -172,7 +188,8 @@ const ydbData: TimelineData = {
             releaseDate: '2010-06-01',
             dbSupportDate: '2020-06-15',
             description: 'Universal database tool with YDB support',
-            authors: ['Serge Rider']
+            authors: ['Serge Rider'],
+            contributorsType: ['open-source']
         },
         {
             id: 'ydb-cli',
@@ -181,7 +198,8 @@ const ydbData: TimelineData = {
             language: 'Go',
             releaseDate: '2019-08-01',
             description: 'Command-line interface for YDB database',
-            authors: ['Yandex']
+            authors: ['Yandex'],
+            contributorsType: ['staff']
         },
         {
             id: 'ydb-ui',
@@ -190,7 +208,8 @@ const ydbData: TimelineData = {
             language: 'TypeScript',
             releaseDate: '2019-10-01',
             description: 'Web-based administration interface for YDB',
-            authors: ['Yandex']
+            authors: ['Yandex'],
+            contributorsType: ['staff']
         },
 
         // ETL Tools
@@ -202,7 +221,8 @@ const ydbData: TimelineData = {
             releaseDate: '2008-12-17',
             dbSupportDate: '2020-01-15',
             description: 'Data analysis and manipulation library with YDB support',
-            authors: ['Wes McKinney', 'PyData Development Team']
+            authors: ['Wes McKinney', 'PyData Development Team'],
+            contributorsType: ['open-source', 'student']
         },
 
         // BI tools
@@ -215,7 +235,8 @@ const ydbData: TimelineData = {
             dbSupportDate: '2021-11-15',
             description: 'Open source business intelligence tool with YDB support',
             authors: ['Metabase Team', 'Yandex'],
-            version: '0.41.0'
+            version: '0.41.0',
+            contributorsType: ['open-source', 'staff']
         },
         {
             id: 'superset',
@@ -225,7 +246,8 @@ const ydbData: TimelineData = {
             releaseDate: '2015-12-17',
             dbSupportDate: '2022-05-01',
             description: 'Modern data exploration and visualization platform with YDB support',
-            authors: ['Apache Software Foundation', 'Yandex']
+            authors: ['Apache Software Foundation', 'Yandex'],
+            contributorsType: ['open-source', 'staff']
         },
 
         // Apps with abstract storage
@@ -236,7 +258,8 @@ const ydbData: TimelineData = {
             language: 'C++',
             releaseDate: '2022-01-01',
             description: 'ClickHouse dictionary source for YDB',
-            authors: ['Yandex']
+            authors: ['Yandex'],
+            contributorsType: ['staff']
         },
         {
             id: 'yandex-cloud-functions',
@@ -245,7 +268,8 @@ const ydbData: TimelineData = {
             language: 'TypeScript',
             releaseDate: '2019-11-01',
             description: 'Serverless compute platform with YDB integration',
-            authors: ['Yandex']
+            authors: ['Yandex'],
+            contributorsType: ['staff']
         },
 
         // Logging
@@ -257,7 +281,8 @@ const ydbData: TimelineData = {
             releaseDate: '2011-10-01',
             dbSupportDate: '2022-03-01',
             description: 'Open source data collector with YDB output plugin',
-            authors: ['Treasure Data', 'Yandex']
+            authors: ['Treasure Data', 'Yandex'],
+            contributorsType: ['open-source', 'staff']
         },
         {
             id: 'logstash',
@@ -267,7 +292,8 @@ const ydbData: TimelineData = {
             releaseDate: '2010-08-02',
             dbSupportDate: '2022-04-15',
             description: 'Data processing pipeline with YDB output support',
-            authors: ['Elastic', 'Yandex']
+            authors: ['Elastic', 'Yandex'],
+            contributorsType: ['open-source', 'staff']
         },
 
         // Message Broker
@@ -278,7 +304,8 @@ const ydbData: TimelineData = {
             language: 'C++',
             releaseDate: '2022-10-01',
             description: 'Native pub/sub messaging service in YDB',
-            authors: ['Yandex']
+            authors: ['Yandex'],
+            contributorsType: ['staff']
         },
         {
             id: 'ydb-queue',
@@ -287,7 +314,8 @@ const ydbData: TimelineData = {
             language: 'C++',
             releaseDate: '2021-07-01',
             description: 'Distributed queue implementation on top of YDB',
-            authors: ['Yandex']
+            authors: ['Yandex'],
+            contributorsType: ['staff']
         }
     ],
     dependencies: [

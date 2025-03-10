@@ -1,7 +1,7 @@
 // src/components/Timeline/TimelineTooltip.tsx
 import React from 'react';
-import { Framework, Database } from '../../data/types';
-import { formatDate, parseDate } from '../../utils/dateUtils';
+import {Framework, Database} from '../../data/types';
+import {formatDate, parseDate} from '../../utils/dateUtils';
 import styles from './TimelineTooltip.module.css';
 
 interface TimelineTooltipProps {
@@ -10,7 +10,7 @@ interface TimelineTooltipProps {
     db: Database;
 }
 
-const TimelineTooltip: React.FC<TimelineTooltipProps> = ({ framework, position, db }) => {
+const TimelineTooltip: React.FC<TimelineTooltipProps> = ({framework, position, db}) => {
     const frameworkReleaseDate = parseDate(framework.releaseDate);
     const dbSupportDate = framework.dbSupportDate ? parseDate(framework.dbSupportDate) : frameworkReleaseDate;
     const endSupportDate = framework.endSupportDate ? parseDate(framework.endSupportDate) : null;
@@ -76,6 +76,31 @@ const TimelineTooltip: React.FC<TimelineTooltipProps> = ({ framework, position, 
                     <div className={styles.tooltipRow}>
                         <span className={styles.tooltipLabel}>Authors:</span>
                         <span>{framework.authors.join(', ')}</span>
+                    </div>
+                )}
+
+                {framework.contributorsType && framework.contributorsType.length > 0 && (
+                    <div className={styles.tooltipRow}>
+                        <span className={styles.tooltipLabel}>Contributors:</span>
+                        <span>
+                          {framework.contributorsType.map(type => {
+                              let label = '';
+                              switch (type) {
+                                  case 'open-source':
+                                      label = 'Open Source';
+                                      break;
+                                  case 'student':
+                                      label = 'Students';
+                                      break;
+                                  case 'staff':
+                                      label = 'Staff';
+                                      break;
+                                  default:
+                                      label = type;
+                              }
+                              return label;
+                          }).join(', ')}
+                        </span>
                     </div>
                 )}
 

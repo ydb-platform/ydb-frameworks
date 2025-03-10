@@ -8,16 +8,30 @@ interface LanguageFilterProps {
     languages: ProgrammingLanguage[];
     selectedLanguages: ProgrammingLanguage[];
     onToggle: (language: ProgrammingLanguage) => void;
+    onSelectAll: () => void;
 }
 
 const LanguageFilter: React.FC<LanguageFilterProps> = ({
                                                            languages,
                                                            selectedLanguages,
-                                                           onToggle
+                                                           onToggle,
+                                                           onSelectAll
                                                        }) => {
+    // Проверяем, выбраны ли все языки
+    const allSelected = languages.length === selectedLanguages.length;
+
     return (
         <div className={styles.filterContainer}>
-            <h3 className={styles.filterTitle}>Languages</h3>
+            <div className={styles.filterHeader}>
+                <h3 className={styles.filterTitle}>Languages</h3>
+                <button
+                    className={styles.selectAllButton}
+                    onClick={onSelectAll}
+                    disabled={allSelected}
+                >
+                    {allSelected ? 'All Selected' : 'Select All'}
+                </button>
+            </div>
             <div className={styles.filterOptions}>
                 {languages.map(language => (
                     <div key={language} className={styles.languageItem}>

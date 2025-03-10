@@ -5,7 +5,7 @@ export type FrameworkCategory =
     | 'ORM'
     | 'Migration'
     | 'Driver'
-    | 'Standard'
+    | 'Standard'  // Категория для стандартов API
     | 'ETL'
     | 'BI'
     | 'Visualization'
@@ -33,6 +33,11 @@ export type ProgrammingLanguage =
     | 'Swift'
     | 'Scala';
 
+export type ContributorsType =
+    | 'open-source'
+    | 'student'
+    | 'staff';
+
 export interface Framework {
     id: string;
     name: string;
@@ -47,6 +52,7 @@ export interface Framework {
     repository?: string;
     website?: string;
     dbImplementationName?: string; // Название конкретной реализации для выбранной БД
+    contributorsType?: ContributorsType[]; // Новое поле - тип контрибьюторов
 }
 
 export interface Dependency {
