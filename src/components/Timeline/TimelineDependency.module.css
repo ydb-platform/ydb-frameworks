@@ -1,0 +1,25 @@
+/* src/components/Timeline/TimelineDependency.module.css */
+.dependencyPath {
+    pointer-events: none;
+}
+
+.dependencyLine {
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.arrowhead {
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.connectionPoint {
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.dependencyPath:hover .dependencyLine,
+.dependencyPath:hover .arrowhead,
+.dependencyPath:hover .connectionPoint {
+    opacity: 1;
+}

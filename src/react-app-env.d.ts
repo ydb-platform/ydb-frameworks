@@ -1,0 +1,12 @@
+// src/react-app-env.d.ts
+/// <reference types="react-scripts" />
+
+declare module '*.module.css' {
+    const classes: { [key: string]: string };
+    export default classes;
+}
+
+declare module '*.module.scss' {
+    const classes: { [key: string]: string };
+    export default classes;
+}

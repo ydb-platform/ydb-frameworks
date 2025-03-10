@@ -1,0 +1,45 @@
+/* src/components/LanguageFilter/LanguageFilter.module.css */
+.filterContainer {
+    border: 1px solid var(--timeline-line);
+    border-radius: 4px;
+    padding: 10px;
+    background-color: var(--timeline-bg);
+}
+
+.filterTitle {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+.filterOptions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.languageItem {
+    width: 120px; /* Фиксированная ширина */
+}
+
+.filterOption {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox {
+    margin-right: 5px;
+}
+
+.colorBox {
+    height: 15px;
+    width: 15px;
+    border-radius: 3px;
+    margin-right: 5px;
+    border: 1px solid var(--timeline-line);
+}
+
+.label {
+    font-size: 14px;
+}

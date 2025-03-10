@@ -1,63 +1,108 @@
-// Updated src/App.tsx with theme toggle
-import React, { useState, useMemo, useEffect } from 'react';
-import DependencyNetwork from './components/DependencyNetwork';
-import ThemeToggle from './components/ThemeToggle';
-import { frameworks } from './data/frameworks';
-import './App.css';
+// src/App.tsx
+import React, { useState, useEffect } from 'react';
+import Timeline from './components/Timeline/Timeline';
+import LanguageFilter from './components/LanguageFilter/LanguageFilter';
+import DatabaseSelector from './components/DatabaseSelector/DatabaseSelector';
+import ThemeToggle from './components/ThemeToggle/ThemeToggle';
+import { useQueryParams } from './hooks/useQueryParams';
+import { useTimelineData } from './hooks/useTimelineData';
+import { Database, FrameworkCategory, ProgrammingLanguage } from './data/types';
 
 const App: React.FC = () => {
-    const [selectedFramework, setSelectedFramework] = useState<string | null>(null);
-    const [selectedCategories] = useState<string[]>(
-        Array.from(new Set(frameworks.map(f => f.category)))
-    );
-    const [isDarkMode, setIsDarkMode] = useState(() => {
-        // Initialize from localStorage or based on user's system preference
-        const savedMode = localStorage.getItem('theme');
-        if (savedMode) {
-            return savedMode === 'dark';
-        }
-        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    });
+    const { getQueryParam, setQueryParam } = useQueryParams();
+    const [selectedDb, setSelectedDb] = useState<Database>((getQueryParam('db') as Database) || 'postgresql');
+    const [selectedCategories, setSelectedCategories] = useState<FrameworkCategory[]>([]);
+    const [selectedLanguages, setSelectedLanguages] = useState<ProgrammingLanguage[]>([]);
+    const [isDarkTheme, setIsDarkTheme] = useState<boolean>(localStorage.getItem('theme') === 'dark');
 
-    // Save theme preference to localStorage when it changes
+    const { frameworks, frameworkCategories, languages, dependencies, databases } = useTimelineData(selectedDb);
+
+    // Initialize all categories as selected
     useEffect(() => {
-        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-        // Also update Highcharts theme dynamically if needed
-    }, [isDarkMode]);
-
-    // Filter frameworks based on selected categories and search term
-    const filteredFrameworks = useMemo(() => {
-        if (selectedCategories.length === 0) {
-            return [];
+        if (frameworkCategories.length > 0 && selectedCategories.length === 0) {
+            setSelectedCategories(frameworkCategories);
         }
+    }, [frameworkCategories, selectedCategories]);
 
-        return frameworks.filter(f => {
-            const matchesCategory = selectedCategories.includes(f.category);
-
-            return matchesCategory;
-        });
-    }, [selectedCategories]);
-
-    // When filtering changes, update selectedFramework if it's no longer in filtered list
-    React.useEffect(() => {
-        if (selectedFramework && !filteredFrameworks.some(f => f.id === selectedFramework)) {
-            setSelectedFramework(null);
+    // Initialize all languages as selected
+    useEffect(() => {
+        if (languages.length > 0 && selectedLanguages.length === 0) {
+            setSelectedLanguages(languages);
         }
-    }, [filteredFrameworks, selectedFramework]);
+    }, [languages, selectedLanguages]);
 
-    // Handle theme toggle
-    const toggleTheme = () => {
-        setIsDarkMode(!isDarkMode);
+    // Handle database change
+    const handleDbChange = (db: Database) => {
+        setSelectedDb(db);
+        setQueryParam('db', db);
     };
 
+    // Handle category toggle
+    const handleCategoryToggle = (category: FrameworkCategory) => {
+        if (selectedCategories.includes(category)) {
+            setSelectedCategories(selectedCategories.filter(c => c !== category));
+        } else {
+            setSelectedCategories([...selectedCategories, category]);
+        }
+    };
+
+    // Handle language toggle
+    const handleLanguageToggle = (language: ProgrammingLanguage) => {
+        if (selectedLanguages.includes(language)) {
+            setSelectedLanguages(selectedLanguages.filter(l => l !== language));
+        } else {
+            setSelectedLanguages([...selectedLanguages, language]);
+        }
+    };
+
+    // Handle theme toggle
+    const handleThemeToggle = () => {
+        const newTheme = !isDarkTheme;
+        setIsDarkTheme(newTheme);
+        localStorage.setItem('theme', newTheme ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', newTheme ? 'dark' : 'light');
+    };
+
+    // Set initial theme
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', isDarkTheme ? 'dark' : 'light');
+    }, [isDarkTheme]);
+
+    const filteredFrameworks = frameworks.filter(framework =>
+        selectedCategories.includes(framework.category) &&
+        selectedLanguages.includes(framework.language)
+    );
+
+    const filteredDependencies = dependencies.filter(dep =>
+        filteredFrameworks.some(f => f.id === dep.source || f.id === dep.target)
+    );
+
     return (
-        <div className={`app-container ${isDarkMode ? 'dark-theme' : 'light-theme'}`}>
-            <ThemeToggle isDarkMode={isDarkMode} onToggle={toggleTheme} />
-            <DependencyNetwork
+        <div className="app">
+            <header>
+                <h1>Database Frameworks Timeline</h1>
+                <div className="controls">
+                    <DatabaseSelector
+                        databases={databases}
+                        selectedDb={selectedDb}
+                        onDbChange={handleDbChange}
+                    />
+                    <ThemeToggle isDarkTheme={isDarkTheme} onToggle={handleThemeToggle} />
+                </div>
+            </header>
+
+            <div className="filters">
+                <LanguageFilter
+                    languages={languages}
+                    selectedLanguages={selectedLanguages}
+                    onToggle={handleLanguageToggle}
+                />
+            </div>
+
+            <Timeline
                 frameworks={filteredFrameworks}
-                selectedFramework={selectedFramework}
-                onFrameworkSelect={setSelectedFramework}
-                isDarkMode={isDarkMode}
+                dependencies={filteredDependencies}
+                selectedDb={selectedDb}
             />
         </div>
     );

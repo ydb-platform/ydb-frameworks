@@ -1,0 +1,34 @@
+/* src/components/DatabaseSelector/DatabaseSelector.module.css */
+.selectorContainer {
+    display: flex;
+    align-items: center;
+}
+
+.label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.options {
+    display: flex;
+    gap: 5px;
+}
+
+.option {
+    padding: 6px 12px;
+    background-color: var(--filter-bg);
+    border: 1px solid var(--timeline-line);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.option:hover {
+    background-color: var(--highlight-bg);
+}
+
+.selected {
+    background-color: var(--highlight-bg);
+    font-weight: bold;
+}
