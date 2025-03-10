@@ -5,9 +5,9 @@
     border: 1px solid var(--tooltip-border);
     border-radius: 4px;
     padding: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Усиленная тень */
     max-width: 300px;
-    z-index: 100;
+    pointer-events: none;
 }
 
 .tooltip h3 {

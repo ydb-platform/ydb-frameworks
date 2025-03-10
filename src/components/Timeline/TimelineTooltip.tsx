@@ -15,8 +15,17 @@ const TimelineTooltip: React.FC<TimelineTooltipProps> = ({ framework, position, 
     const dbSupportDate = framework.dbSupportDate ? parseDate(framework.dbSupportDate) : frameworkReleaseDate;
     const endSupportDate = framework.endSupportDate ? parseDate(framework.endSupportDate) : null;
 
+    // Смещаем подсказку вниз и вправо от курсора, чтобы она не перекрывала элемент
+    const tooltipStyle = {
+        top: `${position.y + 20}px`, // Смещаем ниже курсора
+        left: `${position.x + 15}px`, // Смещаем правее курсора
+        boxShadow: '0 3px 14px rgba(0, 0, 0, 0.25)', // Усиливаем тень для лучшего выделения
+        backgroundColor: 'var(--tooltip-bg)',
+        backdropFilter: 'blur(2px)', // Добавляем эффект размытия фона (работает не во всех браузерах)
+    };
+
     return (
-        <div className={styles.tooltip} style={{ top: `${position.y + 10}px`, left: `${position.x + 10}px` }}>
+        <div className={styles.tooltip} style={tooltipStyle}>
             <h3>{framework.name}</h3>
 
             <div className={styles.tooltipDetails}>

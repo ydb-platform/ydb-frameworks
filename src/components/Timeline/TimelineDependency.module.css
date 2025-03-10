@@ -10,18 +10,19 @@
 }
 
 .arrowhead {
-    opacity: 0.9; /* Увеличена базовая непрозрачность стрелки */
+    opacity: 0.9;
     transition: opacity 0.2s, transform 0.2s;
-    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.3)); /* Добавлена тень для лучшей видимости */
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.3));
+    transform-origin: 0 0; /* Устанавливаем точку трансформации в острие стрелки */
+}
+
+.dependencyPath:hover .arrowhead {
+    opacity: 1;
+    transform: scale(1.3); /* Стрелка увеличивается от острия */
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.5));
 }
 
 .dependencyPath:hover .dependencyLine {
     opacity: 1;
     stroke-width: 3.5px; /* Увеличена толщина при наведении */
-}
-
-.dependencyPath:hover .arrowhead {
-    opacity: 1;
-    transform: scale(1.3); /* Увеличен масштаб при наведении */
-    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.5)); /* Усилена тень при наведении */
 }

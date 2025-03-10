@@ -1,9 +1,8 @@
 // src/components/Timeline/TimelineFramework.tsx
-import React, { useState } from 'react';
+import React from 'react';
 import { Framework, Database } from '../../data/types';
-import { getPositionForDate, parseDate, formatDate } from '../../utils/dateUtils';
+import { getPositionForDate, parseDate } from '../../utils/dateUtils';
 import { languageColors, getColorWithOpacity } from '../../utils/colors';
-import TimelineTooltip from './TimelineTooltip';
 import styles from './TimelineFramework.module.css';
 
 interface TimelineFrameworkProps {
@@ -12,6 +11,8 @@ interface TimelineFrameworkProps {
     endDate: Date;
     width: number;
     selectedDb: Database;
+    onTooltipShow: (framework: Framework, position: { x: number; y: number }) => void;
+    onTooltipHide: () => void;
 }
 
 const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
@@ -19,11 +20,10 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
                                                                  startDate,
                                                                  endDate,
                                                                  width,
-                                                                 selectedDb
+                                                                 selectedDb,
+                                                                 onTooltipShow,
+                                                                 onTooltipHide
                                                              }) => {
-    const [showTooltip, setShowTooltip] = useState(false);
-    const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
-
     const now = new Date();
     const frameworkReleaseDate = parseDate(framework.releaseDate);
     const dbSupportDate = framework.dbSupportDate ? parseDate(framework.dbSupportDate) : frameworkReleaseDate;
@@ -44,19 +44,14 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
     const isDbSpecific = !framework.dbSupportDate; // Если нет dbSupportDate, то фреймворк специфичен для выбранной БД
 
     const handleMouseEnter = (event: React.MouseEvent) => {
-        setTooltipPosition({
+        onTooltipShow(framework, {
             x: event.clientX,
             y: event.clientY
         });
-        setShowTooltip(true);
-    };
-
-    const handleMouseLeave = () => {
-        setShowTooltip(false);
     };
 
     const handleMouseMove = (event: React.MouseEvent) => {
-        setTooltipPosition({
+        onTooltipShow(framework, {
             x: event.clientX,
             y: event.clientY
         });
@@ -87,7 +82,7 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
                             className={`${styles.releasePoint} releasePoint`}
                             style={{ backgroundColor: getColorWithOpacity(color, 0.5) }}
                             onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
+                            onMouseLeave={onTooltipHide}
                             onMouseMove={handleMouseMove}
                             data-tooltip-type="release"
                         ></div>
@@ -113,7 +108,7 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
                             left: '0px'
                         }}
                         onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
+                        onMouseLeave={onTooltipHide}
                         onMouseMove={handleMouseMove}
                         data-tooltip-type="dbSupport"
                     ></div>
@@ -127,12 +122,11 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
                                 backgroundColor: color
                             }}
                             onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
+                            onMouseLeave={onTooltipHide}
                             onMouseMove={handleMouseMove}
                             data-tooltip-type="endSupport"
                         ></div>
                     ) : (
-                        // Стрелочка "продолжается в будущее" будет расположена в конце цветной линии
                         <div
                             className={styles.arrowEnd}
                             style={{
@@ -142,14 +136,6 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
                         >↠</div>
                     )}
                 </div>
-
-                {showTooltip && (
-                    <TimelineTooltip
-                        framework={framework}
-                        position={tooltipPosition}
-                        db={selectedDb}
-                    />
-                )}
             </div>
         </div>
     );

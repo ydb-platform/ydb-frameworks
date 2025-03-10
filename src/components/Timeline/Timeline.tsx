@@ -1,19 +1,18 @@
 // src/components/Timeline/Timeline.tsx
-// Добавим массив с определенным порядком категорий и функцию сортировки
-
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Framework, Dependency, Database, FrameworkCategory } from '../../data/types';
 import TimelineAxis from './TimelineAxis';
 import TimelineFramework from './TimelineFramework';
 import TimelineDependency from './TimelineDependency';
+import TimelineTooltip from './TimelineTooltip';
 import { getTimelineBounds, parseDate } from '../../utils/dateUtils';
 import styles from './Timeline.module.css';
 
 // Определяем порядок категорий сверху вниз
 const categoryOrder: FrameworkCategory[] = [
     'Server-side feature',
-    'Standard',
     'Driver',
+    'Standard',
     'ORM',
     'Migration',
     'Connection Pool',
@@ -43,6 +42,12 @@ const Timeline: React.FC<TimelineProps> = ({ frameworks, dependencies, selectedD
     const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({});
     const [timelineWidth, setTimelineWidth] = useState<number>(0);
     const timelineRef = useRef<HTMLDivElement>(null);
+
+    // Добавим состояние для тултипов
+    const [tooltips, setTooltips] = useState<{
+        framework: Framework;
+        position: { x: number; y: number };
+    } | null>(null);
 
     // Group frameworks by category
     const frameworksByCategory = useMemo(() => {
@@ -108,6 +113,16 @@ const Timeline: React.FC<TimelineProps> = ({ frameworks, dependencies, selectedD
         });
     }, [frameworksByCategory]);
 
+    // Функция для отображения тултипа
+    const showTooltip = (framework: Framework, position: { x: number; y: number }) => {
+        setTooltips({ framework, position });
+    };
+
+    // Функция для скрытия тултипа
+    const hideTooltip = () => {
+        setTooltips(null);
+    };
+
     return (
         <div className={`${styles.timelineContainer} timelineContainer`} ref={timelineRef}>
             <TimelineAxis
@@ -139,6 +154,8 @@ const Timeline: React.FC<TimelineProps> = ({ frameworks, dependencies, selectedD
                                         endDate={endDate}
                                         width={timelineWidth}
                                         selectedDb={selectedDb}
+                                        onTooltipShow={showTooltip}
+                                        onTooltipHide={hideTooltip}
                                     />
                                 ))}
                             </div>
@@ -169,6 +186,17 @@ const Timeline: React.FC<TimelineProps> = ({ frameworks, dependencies, selectedD
                     />
                 ))}
             </svg>
+
+            {/* Контейнер для тултипов поверх всего остального */}
+            {tooltips && (
+                <div className={styles.tooltipContainer}>
+                    <TimelineTooltip
+                        framework={tooltips.framework}
+                        position={tooltips.position}
+                        db={selectedDb}
+                    />
+                </div>
+            )}
         </div>
     );
 };
