@@ -2,23 +2,28 @@
 .filterContainer {
     border: 1px solid var(--timeline-line);
     border-radius: 4px;
-    padding: 10px;
+    padding: 15px;
     background-color: var(--timeline-bg);
+    height: 100%;
+    overflow-y: auto;
 }
 
 .filterTitle {
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
     font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--timeline-line);
+    padding-bottom: 8px;
 }
 
 .filterOptions {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px;
 }
 
 .languageItem {
-    width: 120px; /* Фиксированная ширина */
+    width: 100%;
 }
 
 .filterOption {
@@ -26,6 +31,7 @@
     align-items: center;
     cursor: pointer;
     user-select: none;
+    padding: 5px 0;
 }
 
 .checkbox {
@@ -33,10 +39,10 @@
 }
 
 .colorBox {
-    height: 15px;
-    width: 15px;
+    height: 16px;
+    width: 16px;
     border-radius: 3px;
-    margin-right: 5px;
+    margin-right: 8px;
     border: 1px solid var(--timeline-line);
 }
 

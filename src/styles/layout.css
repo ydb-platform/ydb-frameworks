@@ -1,0 +1,56 @@
+/* src/styles/layout.css */
+.app {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.timeline-container {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+}
+
+/* Адаптивная верстка для мобильных устройств */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: auto;
+        padding-right: 0;
+        margin-bottom: 15px;
+    }
+}

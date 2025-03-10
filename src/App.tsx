@@ -7,6 +7,7 @@ import ThemeToggle from './components/ThemeToggle/ThemeToggle';
 import { useQueryParams } from './hooks/useQueryParams';
 import { useTimelineData } from './hooks/useTimelineData';
 import { Database, FrameworkCategory, ProgrammingLanguage } from './data/types';
+import './styles/layout.css'; // Добавим новый CSS файл для layout
 
 const App: React.FC = () => {
     const { getQueryParam, setQueryParam } = useQueryParams();
@@ -35,15 +36,6 @@ const App: React.FC = () => {
     const handleDbChange = (db: Database) => {
         setSelectedDb(db);
         setQueryParam('db', db);
-    };
-
-    // Handle category toggle
-    const handleCategoryToggle = (category: FrameworkCategory) => {
-        if (selectedCategories.includes(category)) {
-            setSelectedCategories(selectedCategories.filter(c => c !== category));
-        } else {
-            setSelectedCategories([...selectedCategories, category]);
-        }
     };
 
     // Handle language toggle
@@ -91,19 +83,25 @@ const App: React.FC = () => {
                 </div>
             </header>
 
-            <div className="filters">
-                <LanguageFilter
-                    languages={languages}
-                    selectedLanguages={selectedLanguages}
-                    onToggle={handleLanguageToggle}
-                />
-            </div>
+            <div className="main-content">
+                {/* Фильтры по левой стороне */}
+                <div className="sidebar">
+                    <LanguageFilter
+                        languages={languages}
+                        selectedLanguages={selectedLanguages}
+                        onToggle={handleLanguageToggle}
+                    />
+                </div>
 
-            <Timeline
-                frameworks={filteredFrameworks}
-                dependencies={filteredDependencies}
-                selectedDb={selectedDb}
-            />
+                {/* Таймлайн в основной области */}
+                <div className="timeline-container">
+                    <Timeline
+                        frameworks={filteredFrameworks}
+                        dependencies={filteredDependencies}
+                        selectedDb={selectedDb}
+                    />
+                </div>
+            </div>
         </div>
     );
 };
