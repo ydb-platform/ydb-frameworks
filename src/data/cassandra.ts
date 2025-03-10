@@ -4,6 +4,30 @@ import { TimelineData } from './types';
 const cassandraData: TimelineData = {
     database: 'cassandra',
     frameworks: [
+        // Стандарты API (Cassandra в основном использует свои собственные API,
+        // но некоторые стандартные интерфейсы тоже поддерживаются)
+        {
+            id: 'jdbc',
+            name: 'JDBC',
+            category: 'Standard',
+            language: 'Java',
+            releaseDate: '1997-02-19',
+            dbSupportDate: '2011-05-01',
+            description: 'Java Database Connectivity API',
+            authors: ['Sun Microsystems']
+        },
+        {
+            id: 'jpa',
+            name: 'JPA',
+            category: 'Standard',
+            language: 'Java',
+            releaseDate: '2006-05-11',
+            dbSupportDate: '2012-01-23',
+            description: 'Java Persistence API',
+            authors: ['Sun Microsystems', 'Oracle']
+        },
+
+        // Драйверы
         {
             id: 'cassandra-driver-java',
             name: 'DataStax Java Driver',
@@ -50,6 +74,17 @@ const cassandraData: TimelineData = {
             authors: ['DataStax']
         },
         {
+            id: 'cassandra-jdbc',
+            name: 'Cassandra JDBC Driver',
+            category: 'Driver',
+            language: 'Java',
+            releaseDate: '2011-05-01',
+            description: 'JDBC driver for Apache Cassandra',
+            authors: ['DataStax', 'Community']
+        },
+
+        // ORM frameworks
+        {
             id: 'phantom',
             name: 'Phantom',
             category: 'ORM',
@@ -59,38 +94,45 @@ const cassandraData: TimelineData = {
             authors: ['outworkers']
         },
         {
-            id: 'gorm',
-            name: 'GORM',
+            id: 'cassandra-gorm',
+            name: 'Cassandra GORM',
             category: 'ORM',
             language: 'Go',
-            releaseDate: '2013-10-25',
-            dbSupportDate: '2017-04-11',
-            description: 'The fantastic ORM library for Golang. Cassandra support was added through GORM Cassandra adapter.',
-            authors: ['Jinzhu', 'GORM community'],
-            dbImplementationName: 'GORM Cassandra Adapter'
+            releaseDate: '2017-04-11',
+            description: 'GORM adapter for Cassandra',
+            authors: ['GORM community']
         },
         {
-            id: 'jpa',
-            name: 'JPA',
+            id: 'cassandra-kundera',
+            name: 'Kundera',
             category: 'ORM',
             language: 'Java',
-            releaseDate: '2006-05-11',
-            dbSupportDate: '2012-01-23',
-            description: 'Java Persistence API. Cassandra support was added through Kundera, a JPA-compliant ORM for NoSQL databases.',
-            authors: ['Sun Microsystems', 'Impetus Technologies'],
-            dbImplementationName: 'Kundera'
+            releaseDate: '2012-01-23',
+            description: 'JPA-compliant ORM for NoSQL databases including Cassandra',
+            authors: ['Impetus Technologies']
         },
         {
-            id: 'spring-data',
-            name: 'Spring Data',
+            id: 'spring-data-cassandra',
+            name: 'Spring Data Cassandra',
             category: 'ORM',
             language: 'Java',
-            releaseDate: '2010-03-01',
-            dbSupportDate: '2014-03-31',
-            description: 'Spring Data provides a consistent approach to data access. Cassandra support was added through Spring Data Cassandra module.',
-            authors: ['Spring Team', 'Pivotal'],
-            dbImplementationName: 'Spring Data Cassandra'
+            releaseDate: '2014-03-31',
+            description: 'Spring Data module for Apache Cassandra',
+            authors: ['Spring Team', 'Pivotal']
         },
+
+        // Query Languages / Builders
+        {
+            id: 'cassandra-cql',
+            name: 'CQL',
+            category: 'Query Builder',
+            language: 'Java',
+            releaseDate: '2011-08-08',
+            description: 'Cassandra Query Language',
+            authors: ['Apache Cassandra team']
+        },
+
+        // Admin tools
         {
             id: 'cassandra-reaper',
             name: 'Cassandra Reaper',
@@ -101,15 +143,6 @@ const cassandraData: TimelineData = {
             authors: ['Spotify', 'The Last Pickle']
         },
         {
-            id: 'cassandra-cql',
-            name: 'CQL',
-            category: 'Query Builder',
-            language: 'Java',
-            releaseDate: '2011-08-08',
-            description: 'Cassandra Query Language',
-            authors: ['Apache Cassandra team']
-        },
-        {
             id: 'datastax-studio',
             name: 'DataStax Studio',
             category: 'Admin',
@@ -118,6 +151,8 @@ const cassandraData: TimelineData = {
             description: 'Interactive developer tool for Apache Cassandra and DSE',
             authors: ['DataStax']
         },
+
+        // Migration tools
         {
             id: 'cassandra-migration',
             name: 'Cassandra Migration',
@@ -127,32 +162,122 @@ const cassandraData: TimelineData = {
             description: 'Database migration tool for Apache Cassandra inspired by Flyway',
             authors: ['Contrast Security']
         },
+
+        // BI инструменты
         {
-            id: 'express-cassandra',
-            name: 'Express Cassandra',
-            category: 'ORM',
+            id: 'metabase',
+            name: 'Metabase',
+            category: 'BI',
+            language: 'Java',
+            releaseDate: '2015-10-01',
+            dbSupportDate: '2018-06-01',
+            description: 'Open source business intelligence tool with Cassandra support',
+            authors: ['Metabase Team']
+        },
+        {
+            id: 'superset',
+            name: 'Apache Superset',
+            category: 'BI',
+            language: 'Python',
+            releaseDate: '2015-12-17',
+            dbSupportDate: '2019-01-15',
+            description: 'Modern data exploration and visualization platform with Cassandra support',
+            authors: ['Airbnb', 'Apache Software Foundation']
+        },
+
+        // Приложения с абстрактным хранилищем
+        {
+            id: 'stargate',
+            name: 'Stargate',
+            category: 'Apps with abstract storage',
+            language: 'Java',
+            releaseDate: '2020-09-16',
+            description: 'Data API gateway that provides REST, GraphQL, and Document API access to Cassandra',
+            authors: ['DataStax']
+        },
+        {
+            id: 'killrvideo',
+            name: 'KillrVideo',
+            category: 'Apps with abstract storage',
             language: 'JavaScript',
-            releaseDate: '2015-03-01',
-            description: 'Mongoose-like ODM for Apache Cassandra for Node.js',
-            authors: ['Masumba']
+            releaseDate: '2015-07-14',
+            description: 'Reference application showing how to use Cassandra in a video sharing platform',
+            authors: ['DataStax']
+        },
+
+        // Логирование
+        {
+            id: 'fluentd',
+            name: 'Fluentd',
+            category: 'Logging',
+            language: 'Ruby',
+            releaseDate: '2011-10-01',
+            dbSupportDate: '2013-08-01',
+            description: 'Open source data collector with Cassandra output plugin',
+            authors: ['Treasure Data']
+        },
+        {
+            id: 'logstash',
+            name: 'Logstash',
+            category: 'Logging',
+            language: 'Ruby',
+            releaseDate: '2010-08-02',
+            dbSupportDate: '2013-09-01',
+            description: 'Data processing pipeline with Cassandra input/output support',
+            authors: ['Jordan Sissel', 'Elastic']
+        },
+
+        // Message Broker
+        {
+            id: 'kafka-connect-cassandra',
+            name: 'Kafka Connect Cassandra',
+            category: 'Message broker',
+            language: 'Java',
+            releaseDate: '2016-04-01',
+            description: 'Kafka Connect sink connector for Apache Cassandra',
+            authors: ['DataStax', 'Community']
+        },
+        {
+            id: 'pulsar-cassandra',
+            name: 'Apache Pulsar Cassandra Connector',
+            category: 'Message broker',
+            language: 'Java',
+            releaseDate: '2018-09-01',
+            description: 'Apache Pulsar connector for Cassandra',
+            authors: ['StreamNative', 'Apache Software Foundation']
         }
     ],
     dependencies: [
+        // Зависимости от стандартов к драйверам
+        {
+            source: 'cassandra-jdbc',
+            target: 'jdbc',
+            description: 'Cassandra JDBC Driver implements JDBC standard'
+        },
+        {
+            source: 'cassandra-kundera',
+            target: 'jpa',
+            description: 'Kundera implements JPA standard for Cassandra'
+        },
+
+        // ORM зависимости
         {
             source: 'cassandra-driver-java',
-            target: 'spring-data',
+            target: 'spring-data-cassandra',
             description: 'Spring Data Cassandra uses DataStax Java driver'
         },
         {
             source: 'cassandra-driver-java',
-            target: 'jpa',
+            target: 'cassandra-kundera',
             description: 'Kundera uses DataStax Java driver for Cassandra support'
         },
         {
             source: 'gocql',
-            target: 'gorm',
+            target: 'cassandra-gorm',
             description: 'GORM Cassandra adapter uses gocql'
         },
+
+        // Driver зависимости
         {
             source: 'cassandra-cql',
             target: 'cassandra-driver-java',
@@ -167,6 +292,61 @@ const cassandraData: TimelineData = {
             source: 'cassandra-cql',
             target: 'cassandra-driver-nodejs',
             description: 'Node.js driver implements CQL protocol'
+        },
+        {
+            source: 'cassandra-cql',
+            target: 'gocql',
+            description: 'gocql implements CQL protocol'
+        },
+
+        // Admin tools
+        {
+            source: 'cassandra-driver-java',
+            target: 'cassandra-reaper',
+            description: 'Cassandra Reaper uses DataStax Java driver'
+        },
+        {
+            source: 'cassandra-driver-java',
+            target: 'datastax-studio',
+            description: 'DataStax Studio uses Java driver'
+        },
+
+        // BI tools
+        {
+            source: 'cassandra-jdbc',
+            target: 'metabase',
+            description: 'Metabase uses JDBC for Cassandra integration'
+        },
+        {
+            source: 'cassandra-driver-python',
+            target: 'superset',
+            description: 'Apache Superset uses Python driver for Cassandra'
+        },
+
+        // Abstract storage apps
+        {
+            source: 'cassandra-driver-java',
+            target: 'stargate',
+            description: 'Stargate uses Java driver internally'
+        },
+
+        // Logging
+        {
+            source: 'cassandra-driver-java',
+            target: 'logstash',
+            description: 'Logstash Cassandra plugin uses Java driver'
+        },
+
+        // Message brokers
+        {
+            source: 'cassandra-driver-java',
+            target: 'kafka-connect-cassandra',
+            description: 'Kafka Connect Cassandra uses Java driver'
+        },
+        {
+            source: 'cassandra-driver-java',
+            target: 'pulsar-cassandra',
+            description: 'Pulsar Cassandra connector uses Java driver'
         }
     ]
 };

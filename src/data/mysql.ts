@@ -4,40 +4,155 @@ import { TimelineData } from './types';
 const mysqlData: TimelineData = {
     database: 'mysql',
     frameworks: [
+        // Стандарты API
         {
             id: 'odbc',
             name: 'ODBC',
-            category: 'Driver',
+            category: 'Standard',
             language: 'C',
             releaseDate: '1992-01-01',
             dbSupportDate: '1996-01-01',
-            description: 'Open Database Connectivity standard. MySQL support was added through MySQL ODBC Driver (Connector/ODBC).',
-            authors: ['Microsoft', 'MySQL AB', 'Oracle'],
-            dbImplementationName: 'MySQL ODBC Driver (Connector/ODBC)'
+            description: 'Open Database Connectivity standard',
+            authors: ['Microsoft']
         },
         {
             id: 'jdbc',
             name: 'JDBC',
-            category: 'Driver',
+            category: 'Standard',
             language: 'Java',
             releaseDate: '1997-02-19',
             dbSupportDate: '1999-01-01',
-            description: 'Java Database Connectivity API. MySQL support was added through MySQL Connector/J.',
-            authors: ['Sun Microsystems', 'MySQL AB', 'Oracle'],
-            dbImplementationName: 'MySQL Connector/J'
+            description: 'Java Database Connectivity API',
+            authors: ['Sun Microsystems']
         },
         {
             id: 'adonet',
             name: 'ADO.NET',
-            category: 'Driver',
+            category: 'Standard',
             language: 'C#',
             releaseDate: '2000-01-01',
             dbSupportDate: '2004-10-20',
-            description: 'Microsoft ADO.NET data provider. MySQL support was added through MySQL Connector/NET.',
-            authors: ['Microsoft', 'MySQL AB', 'Oracle'],
-            dbImplementationName: 'MySQL Connector/NET',
+            description: 'Microsoft ADO.NET data provider',
+            authors: ['Microsoft']
+        },
+        {
+            id: 'dbapi',
+            name: 'DB-API',
+            category: 'Standard',
+            language: 'Python',
+            releaseDate: '1996-10-01',
+            dbSupportDate: '1999-01-01',
+            description: 'Python Database API Specification (PEP 249)',
+            authors: ['Python DB-SIG']
+        },
+        {
+            id: 'pdo',
+            name: 'PDO',
+            category: 'Standard',
+            language: 'PHP',
+            releaseDate: '2005-06-01',
+            dbSupportDate: '2005-06-01',
+            description: 'PHP Data Objects interface',
+            authors: ['PHP Group']
+        },
+        {
+            id: 'database-sql',
+            name: 'database/sql',
+            category: 'Standard',
+            language: 'Go',
+            releaseDate: '2011-03-01',
+            dbSupportDate: '2012-07-18',
+            description: 'Go standard database interface',
+            authors: ['Go Team']
+        },
+
+        // Драйверы
+        {
+            id: 'mysql-odbc',
+            name: 'MySQL ODBC Driver',
+            category: 'Driver',
+            language: 'C',
+            releaseDate: '1996-01-01',
+            description: 'MySQL ODBC driver (Connector/ODBC)',
+            authors: ['MySQL AB', 'Oracle']
+        },
+        {
+            id: 'mysql-connector-j',
+            name: 'MySQL Connector/J',
+            category: 'Driver',
+            language: 'Java',
+            releaseDate: '1999-01-01',
+            description: 'JDBC driver for MySQL',
+            authors: ['MySQL AB', 'Oracle']
+        },
+        {
+            id: 'mysql-connector-net',
+            name: 'MySQL Connector/NET',
+            category: 'Driver',
+            language: 'C#',
+            releaseDate: '2004-10-20',
+            description: 'MySQL ADO.NET driver',
+            authors: ['MySQL AB', 'Oracle'],
             version: '1.0'
         },
+        {
+            id: 'mysqlclient',
+            name: 'MySQLclient',
+            category: 'Driver',
+            language: 'Python',
+            releaseDate: '1999-01-01',
+            description: 'MySQL database connector for Python (originally MySQLdb)',
+            authors: ['Andy Dustman', 'Community']
+        },
+        {
+            id: 'pymysql',
+            name: 'PyMySQL',
+            category: 'Driver',
+            language: 'Python',
+            releaseDate: '2010-09-02',
+            description: 'Pure-Python MySQL client library',
+            authors: ['yutaka.matsubara', 'Community']
+        },
+        {
+            id: 'pdo-mysql',
+            name: 'PDO_MYSQL',
+            category: 'Driver',
+            language: 'PHP',
+            releaseDate: '2005-06-01',
+            description: 'PDO driver for MySQL',
+            authors: ['PHP Group']
+        },
+        {
+            id: 'go-mysql-driver',
+            name: 'go-mysql-driver',
+            category: 'Driver',
+            language: 'Go',
+            releaseDate: '2012-07-18',
+            description: 'MySQL driver for Go\'s database/sql',
+            authors: ['Julien Schmidt']
+        },
+
+        // Admin tools
+        {
+            id: 'phpmyadmin',
+            name: 'phpMyAdmin',
+            category: 'Admin',
+            language: 'PHP',
+            releaseDate: '1998-09-09',
+            description: 'Web-based MySQL administration tool',
+            authors: ['Tobias Ratschiller', 'phpMyAdmin contributors']
+        },
+        {
+            id: 'mysql-workbench',
+            name: 'MySQL Workbench',
+            category: 'Admin',
+            language: 'C++',
+            releaseDate: '2005-09-01',
+            description: 'Visual database design tool for MySQL',
+            authors: ['MySQL AB', 'Oracle']
+        },
+
+        // ORM frameworks
         {
             id: 'typeorm',
             name: 'TypeORM',
@@ -101,24 +216,8 @@ const mysqlData: TimelineData = {
             description: 'The fantastic ORM library for Golang with MySQL support',
             authors: ['Jinzhu']
         },
-        {
-            id: 'phpmyadmin',
-            name: 'phpMyAdmin',
-            category: 'Admin',
-            language: 'PHP',
-            releaseDate: '1998-09-09',
-            description: 'Web-based MySQL administration tool',
-            authors: ['Tobias Ratschiller', 'phpMyAdmin contributors']
-        },
-        {
-            id: 'mysql-workbench',
-            name: 'MySQL Workbench',
-            category: 'Admin',
-            language: 'C++',
-            releaseDate: '2005-09-01',
-            description: 'Visual database design tool for MySQL',
-            authors: ['MySQL AB', 'Oracle']
-        },
+
+        // Migration tools
         {
             id: 'flyway',
             name: 'Flyway',
@@ -154,9 +253,180 @@ const mysqlData: TimelineData = {
             releaseDate: '2010-06-01',
             description: 'Universal database tool with MySQL support',
             authors: ['Serge Rider']
+        },
+
+        // BI инструменты
+        {
+            id: 'metabase',
+            name: 'Metabase',
+            category: 'BI',
+            language: 'Java',
+            releaseDate: '2015-10-01',
+            description: 'Open source business intelligence tool with MySQL support',
+            authors: ['Metabase Team']
+        },
+        {
+            id: 'superset',
+            name: 'Apache Superset',
+            category: 'BI',
+            language: 'Python',
+            releaseDate: '2015-12-17',
+            description: 'Modern data exploration and visualization platform with MySQL support',
+            authors: ['Airbnb', 'Apache Software Foundation']
+        },
+        {
+            id: 'redash',
+            name: 'Redash',
+            category: 'BI',
+            language: 'Python',
+            releaseDate: '2013-11-04',
+            description: 'Open source data visualization and dashboard tool with MySQL support',
+            authors: ['Arik Fraimovich']
+        },
+
+        // Приложения с абстрактным хранилищем
+        {
+            id: 'nextcloud',
+            name: 'Nextcloud',
+            category: 'Apps with abstract storage',
+            language: 'PHP',
+            releaseDate: '2016-06-02',
+            description: 'Self-hosted productivity platform with MySQL support',
+            authors: ['Nextcloud GmbH']
+        },
+        {
+            id: 'gitea',
+            name: 'Gitea',
+            category: 'Apps with abstract storage',
+            language: 'Go',
+            releaseDate: '2016-12-24',
+            description: 'Lightweight code hosting solution that supports MySQL',
+            authors: ['Gitea Team']
+        },
+        {
+            id: 'wordpress',
+            name: 'WordPress',
+            category: 'Apps with abstract storage',
+            language: 'PHP',
+            releaseDate: '2003-05-27',
+            description: 'Popular CMS with native MySQL support',
+            authors: ['WordPress Team']
+        },
+
+        // Логирование
+        {
+            id: 'fluentd',
+            name: 'Fluentd',
+            category: 'Logging',
+            language: 'Ruby',
+            releaseDate: '2011-10-01',
+            description: 'Open source data collector with MySQL output plugin',
+            authors: ['Treasure Data']
+        },
+        {
+            id: 'logstash',
+            name: 'Logstash',
+            category: 'Logging',
+            language: 'Ruby',
+            releaseDate: '2010-08-02',
+            description: 'Data processing pipeline with MySQL input/output support',
+            authors: ['Jordan Sissel', 'Elastic']
+        },
+
+        // Message Broker
+        {
+            id: 'kafka-connect',
+            name: 'Kafka Connect',
+            category: 'Message broker',
+            language: 'Java',
+            releaseDate: '2015-11-01',
+            description: 'Connector framework for Apache Kafka with MySQL source/sink connectors',
+            authors: ['Apache Software Foundation', 'Confluent']
+        },
+        {
+            id: 'debezium',
+            name: 'Debezium',
+            category: 'Message broker',
+            language: 'Java',
+            releaseDate: '2016-06-10',
+            description: 'Platform for change data capture with MySQL connector',
+            authors: ['Red Hat']
+        },
+        {
+            id: 'maxwell',
+            name: 'Maxwell',
+            category: 'Message broker',
+            language: 'Java',
+            releaseDate: '2015-08-01',
+            description: 'MySQL binlog processor that streams changes to Kafka, RabbitMQ, or other destinations',
+            authors: ['Zendesk']
         }
     ],
-    dependencies: []
+    dependencies: [
+        // Зависимости драйверов от стандартов
+        {
+            source: 'mysql-odbc',
+            target: 'odbc',
+            description: 'MySQL ODBC driver implements ODBC standard'
+        },
+        {
+            source: 'mysql-connector-j',
+            target: 'jdbc',
+            description: 'MySQL Connector/J implements JDBC API'
+        },
+        {
+            source: 'mysql-connector-net',
+            target: 'adonet',
+            description: 'MySQL Connector/NET implements ADO.NET interfaces'
+        },
+        {
+            source: 'mysqlclient',
+            target: 'dbapi',
+            description: 'MySQLclient implements Python DB-API 2.0 specification'
+        },
+        {
+            source: 'pymysql',
+            target: 'dbapi',
+            description: 'PyMySQL implements Python DB-API 2.0 specification'
+        },
+        {
+            source: 'pdo-mysql',
+            target: 'pdo',
+            description: 'PDO_MYSQL implements PDO interface for MySQL'
+        },
+        {
+            source: 'go-mysql-driver',
+            target: 'database-sql',
+            description: 'go-mysql-driver implements database/sql interface for MySQL'
+        },
+
+        // Другие зависимости
+        {
+            source: 'mysql-connector-j',
+            target: 'hibernate',
+            description: 'Hibernate uses JDBC to connect to MySQL'
+        },
+        {
+            source: 'mysqlclient',
+            target: 'sqlalchemy',
+            description: 'SQLAlchemy can use MySQLclient for MySQL connections'
+        },
+        {
+            source: 'pymysql',
+            target: 'sqlalchemy',
+            description: 'SQLAlchemy can use PyMySQL for MySQL connections'
+        },
+        {
+            source: 'mysqlclient',
+            target: 'django-orm',
+            description: 'Django ORM can use MySQLclient for MySQL connections'
+        },
+        {
+            source: 'go-mysql-driver',
+            target: 'gorm',
+            description: 'GORM uses go-mysql-driver for MySQL support'
+        }
+    ]
 };
 
 export default mysqlData;

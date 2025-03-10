@@ -4,40 +4,135 @@ import { TimelineData } from './types';
 const postgresqlData: TimelineData = {
     database: 'postgresql',
     frameworks: [
+        // Стандарты API
         {
             id: 'odbc',
             name: 'ODBC',
-            category: 'Driver',
+            category: 'Standard',
             language: 'C',
             releaseDate: '1992-01-01',
             dbSupportDate: '1998-01-01',
-            description: 'Open Database Connectivity standard. PostgreSQL support was added through psqlODBC driver developed by PostgreSQL Global Development Group.',
-            authors: ['Microsoft', 'PostgreSQL Global Development Group'],
-            dbImplementationName: 'psqlODBC'
+            description: 'Open Database Connectivity standard',
+            authors: ['Microsoft']
         },
         {
             id: 'jdbc',
             name: 'JDBC',
-            category: 'Driver',
+            category: 'Standard',
             language: 'Java',
             releaseDate: '1997-02-19',
             dbSupportDate: '1998-01-01',
-            description: 'Java Database Connectivity API. PostgreSQL support was added through the PostgreSQL JDBC Driver.',
-            authors: ['Sun Microsystems', 'PostgreSQL Global Development Group'],
-            dbImplementationName: 'PostgreSQL JDBC Driver'
+            description: 'Java Database Connectivity API',
+            authors: ['Sun Microsystems']
         },
         {
             id: 'adonet',
             name: 'ADO.NET',
-            category: 'Driver',
+            category: 'Standard',
             language: 'C#',
             releaseDate: '2000-01-01',
             dbSupportDate: '2006-06-24',
-            description: 'Microsoft ADO.NET data provider. PostgreSQL support was added through Npgsql driver.',
-            authors: ['Microsoft', 'Francisco Figueiredo Jr.', '.NET Foundation'],
-            dbImplementationName: 'Npgsql',
+            description: 'Microsoft ADO.NET data provider',
+            authors: ['Microsoft']
+        },
+        {
+            id: 'dbapi',
+            name: 'DB-API',
+            category: 'Standard',
+            language: 'Python',
+            releaseDate: '1996-10-01',
+            dbSupportDate: '1998-05-12',
+            description: 'Python Database API Specification (PEP 249)',
+            authors: ['Python DB-SIG']
+        },
+        {
+            id: 'pdo',
+            name: 'PDO',
+            category: 'Standard',
+            language: 'PHP',
+            releaseDate: '2005-06-01',
+            dbSupportDate: '2005-06-01',
+            description: 'PHP Data Objects interface',
+            authors: ['PHP Group']
+        },
+        {
+            id: 'database-sql',
+            name: 'database/sql',
+            category: 'Standard',
+            language: 'Go',
+            releaseDate: '2011-03-01',
+            dbSupportDate: '2011-12-01',
+            description: 'Go standard database interface',
+            authors: ['Go Team']
+        },
+
+        // Драйверы
+        {
+            id: 'psqlodbc',
+            name: 'psqlODBC',
+            category: 'Driver',
+            language: 'C',
+            releaseDate: '1998-01-01',
+            description: 'PostgreSQL ODBC driver',
+            authors: ['PostgreSQL Global Development Group']
+        },
+        {
+            id: 'pgjdbc',
+            name: 'PostgreSQL JDBC Driver',
+            category: 'Driver',
+            language: 'Java',
+            releaseDate: '1998-01-01',
+            description: 'JDBC driver for PostgreSQL',
+            authors: ['PostgreSQL Global Development Group']
+        },
+        {
+            id: 'npgsql',
+            name: 'Npgsql',
+            category: 'Driver',
+            language: 'C#',
+            releaseDate: '2006-06-24',
+            description: 'PostgreSQL data provider for .NET',
+            authors: ['Francisco Figueiredo Jr.', '.NET Foundation'],
             version: '1.0'
         },
+        {
+            id: 'psycopg2',
+            name: 'Psycopg2',
+            category: 'Driver',
+            language: 'Python',
+            releaseDate: '2001-12-18',
+            description: 'PostgreSQL database adapter for Python',
+            authors: ['Federico Di Gregorio', 'Daniele Varrazzo']
+        },
+        {
+            id: 'pdo-pgsql',
+            name: 'PDO_PGSQL',
+            category: 'Driver',
+            language: 'PHP',
+            releaseDate: '2005-06-01',
+            description: 'PDO driver for PostgreSQL',
+            authors: ['PHP Group']
+        },
+        {
+            id: 'pq',
+            name: 'pq',
+            category: 'Driver',
+            language: 'Go',
+            releaseDate: '2011-12-01',
+            description: 'Pure Go Postgres driver for Go\'s database/sql package',
+            authors: ['Blake Mizerany']
+        },
+        {
+            id: 'pgx',
+            name: 'pgx',
+            category: 'Driver',
+            language: 'Go',
+            releaseDate: '2014-03-30',
+            description: 'PostgreSQL driver and toolkit for Go',
+            authors: ['Jack Christensen']
+        },
+
+        // Остальные фреймворки (ORM, Migration, etc.)
         {
             id: 'pgadmin',
             name: 'pgAdmin',
@@ -111,24 +206,6 @@ const postgresqlData: TimelineData = {
             authors: ['Jinzhu']
         },
         {
-            id: 'pq',
-            name: 'pq',
-            category: 'Driver',
-            language: 'Go',
-            releaseDate: '2011-12-01',
-            description: 'Pure Go Postgres driver for Go\'s database/sql package',
-            authors: ['Blake Mizerany']
-        },
-        {
-            id: 'pgx',
-            name: 'pgx',
-            category: 'Driver',
-            language: 'Go',
-            releaseDate: '2014-03-30',
-            description: 'PostgreSQL driver and toolkit for Go',
-            authors: ['Jack Christensen']
-        },
-        {
             id: 'flyway',
             name: 'Flyway',
             category: 'Migration',
@@ -172,13 +249,170 @@ const postgresqlData: TimelineData = {
             releaseDate: '2010-06-01',
             description: 'Universal database tool',
             authors: ['Serge Rider']
+        },
+
+        // BI инструменты
+        {
+            id: 'metabase',
+            name: 'Metabase',
+            category: 'BI',
+            language: 'Java',
+            releaseDate: '2015-10-01',
+            description: 'Open source business intelligence tool with PostgreSQL support',
+            authors: ['Metabase Team']
+        },
+        {
+            id: 'superset',
+            name: 'Apache Superset',
+            category: 'BI',
+            language: 'Python',
+            releaseDate: '2015-12-17',
+            description: 'Modern data exploration and visualization platform with PostgreSQL support',
+            authors: ['Airbnb', 'Apache Software Foundation']
+        },
+        {
+            id: 'redash',
+            name: 'Redash',
+            category: 'BI',
+            language: 'Python',
+            releaseDate: '2013-11-04',
+            description: 'Open source data visualization and dashboard tool with PostgreSQL support',
+            authors: ['Arik Fraimovich']
+        },
+
+        // Приложения с абстрактным хранилищем
+        {
+            id: 'nextcloud',
+            name: 'Nextcloud',
+            category: 'Apps with abstract storage',
+            language: 'PHP',
+            releaseDate: '2016-06-02',
+            description: 'Self-hosted productivity platform that can use PostgreSQL as backend',
+            authors: ['Nextcloud GmbH']
+        },
+        {
+            id: 'gitea',
+            name: 'Gitea',
+            category: 'Apps with abstract storage',
+            language: 'Go',
+            releaseDate: '2016-12-24',
+            description: 'Lightweight code hosting solution that supports PostgreSQL',
+            authors: ['Gitea Team']
+        },
+        {
+            id: 'wordpress',
+            name: 'WordPress',
+            category: 'Apps with abstract storage',
+            language: 'PHP',
+            releaseDate: '2003-05-27',
+            dbSupportDate: '2016-08-15', // Официальная поддержка PostgreSQL через плагин
+            description: 'Popular CMS with PostgreSQL support via plugins',
+            authors: ['WordPress Team']
+        },
+
+        // Логирование
+        {
+            id: 'fluentd',
+            name: 'Fluentd',
+            category: 'Logging',
+            language: 'Ruby',
+            releaseDate: '2011-10-01',
+            description: 'Open source data collector with PostgreSQL output plugin',
+            authors: ['Treasure Data']
+        },
+        {
+            id: 'logstash',
+            name: 'Logstash',
+            category: 'Logging',
+            language: 'Ruby',
+            releaseDate: '2010-08-02',
+            description: 'Data processing pipeline with PostgreSQL input/output support',
+            authors: ['Jordan Sissel', 'Elastic']
+        },
+
+        // Message Broker
+        {
+            id: 'kafka-connect',
+            name: 'Kafka Connect',
+            category: 'Message broker',
+            language: 'Java',
+            releaseDate: '2015-11-01',
+            description: 'Connector framework for Apache Kafka with PostgreSQL source/sink connectors',
+            authors: ['Apache Software Foundation', 'Confluent']
+        },
+        {
+            id: 'debezium',
+            name: 'Debezium',
+            category: 'Message broker',
+            language: 'Java',
+            releaseDate: '2016-06-10',
+            description: 'Platform for change data capture with PostgreSQL connector',
+            authors: ['Red Hat']
         }
     ],
     dependencies: [
+        // Зависимости драйверов от стандартов
+        {
+            source: 'psqlodbc',
+            target: 'odbc',
+            description: 'psqlODBC implements ODBC standard for PostgreSQL'
+        },
+        {
+            source: 'pgjdbc',
+            target: 'jdbc',
+            description: 'PostgreSQL JDBC driver implements JDBC API'
+        },
+        {
+            source: 'npgsql',
+            target: 'adonet',
+            description: 'Npgsql implements ADO.NET interfaces for PostgreSQL'
+        },
+        {
+            source: 'psycopg2',
+            target: 'dbapi',
+            description: 'Psycopg2 implements Python DB-API 2.0 specification'
+        },
+        {
+            source: 'pdo-pgsql',
+            target: 'pdo',
+            description: 'PDO_PGSQL implements PDO interface for PostgreSQL'
+        },
+        {
+            source: 'pq',
+            target: 'database-sql',
+            description: 'pq implements database/sql interface for PostgreSQL'
+        },
+        {
+            source: 'pgx',
+            target: 'database-sql',
+            description: 'pgx supports database/sql interface for PostgreSQL'
+        },
+
+        // Другие зависимости
         {
             source: 'sqlalchemy',
             target: 'alembic',
             description: 'Alembic was designed to work with SQLAlchemy'
+        },
+        {
+            source: 'pgjdbc',
+            target: 'hibernate',
+            description: 'Hibernate uses JDBC to connect to PostgreSQL'
+        },
+        {
+            source: 'psycopg2',
+            target: 'sqlalchemy',
+            description: 'SQLAlchemy uses Psycopg2 for PostgreSQL connections'
+        },
+        {
+            source: 'psycopg2',
+            target: 'django-orm',
+            description: 'Django ORM uses Psycopg2 for PostgreSQL connections'
+        },
+        {
+            source: 'pq',
+            target: 'gorm',
+            description: 'GORM uses pq driver for PostgreSQL support'
         }
     ]
 };

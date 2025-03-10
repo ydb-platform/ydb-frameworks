@@ -5,12 +5,17 @@ export type FrameworkCategory =
     | 'ORM'
     | 'Migration'
     | 'Driver'
+    | 'Standard'
     | 'ETL'
     | 'BI'
     | 'Visualization'
     | 'Admin'
     | 'Query Builder'
-    | 'Connection Pool';
+    | 'Connection Pool'
+    | 'Server-side feature'
+    | 'Apps with abstract storage'
+    | 'Logging'
+    | 'Message broker';
 
 export type ProgrammingLanguage =
     | 'JavaScript'

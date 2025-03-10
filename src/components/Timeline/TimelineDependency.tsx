@@ -24,24 +24,20 @@ const TimelineDependency: React.FC<TimelineDependencyProps> = ({
 
     const [points, setPoints] = useState({ sourceX: 0, sourceY: 0, targetX: 0, targetY: 0 });
     const [isVisible, setIsVisible] = useState(false);
-    const [debugMessage, setDebugMessage] = useState('');
 
-    // Обновленная функция поиска точек поддержки
+    // Обновленная функция поиска точек фреймворка в DOM
     const findFrameworkPoints = () => {
         if (!sourceFramework || !targetFramework) {
-            setDebugMessage('Source or target framework not found in data');
             return null;
         }
 
         if (!expandedCategories[sourceFramework.category] || !expandedCategories[targetFramework.category]) {
-            setDebugMessage('One of the categories is collapsed');
             return null;
         }
 
         // Находим все строки фреймворков
         const frameworkRows = document.querySelectorAll('[data-framework-id]');
         if (!frameworkRows || frameworkRows.length === 0) {
-            setDebugMessage('No framework rows found in the DOM');
             return null;
         }
 
@@ -56,12 +52,10 @@ const TimelineDependency: React.FC<TimelineDependencyProps> = ({
 
         // Проверяем наличие исходного и целевого фреймворков
         if (!frameworkMap.has(sourceFramework.id)) {
-            setDebugMessage(`Source framework ${sourceFramework.name} (${sourceFramework.id}) not found in DOM`);
             return null;
         }
 
         if (!frameworkMap.has(targetFramework.id)) {
-            setDebugMessage(`Target framework ${targetFramework.name} (${targetFramework.id}) not found in DOM`);
             return null;
         }
 
@@ -74,7 +68,6 @@ const TimelineDependency: React.FC<TimelineDependencyProps> = ({
         const targetLines = targetRow.querySelectorAll('[class*="frameworkLine"]');
 
         if (sourceLines.length === 0 || targetLines.length === 0) {
-            setDebugMessage('Framework lines not found');
             return null;
         }
 
@@ -85,7 +78,6 @@ const TimelineDependency: React.FC<TimelineDependencyProps> = ({
         // Получаем размеры и позиции
         const timelineContainer = document.querySelector('.timelineContainer') as HTMLElement;
         if (!timelineContainer) {
-            setDebugMessage('Timeline container not found');
             return null;
         }
 
@@ -110,8 +102,6 @@ const TimelineDependency: React.FC<TimelineDependencyProps> = ({
 
     // Обновляем точки при изменении данных
     useEffect(() => {
-        setDebugMessage('');
-
         // Задержка для уверенности, что DOM обновился
         const timer = setTimeout(() => {
             const result = findFrameworkPoints();
@@ -126,18 +116,12 @@ const TimelineDependency: React.FC<TimelineDependencyProps> = ({
         return () => clearTimeout(timer);
     }, [sourceFramework, targetFramework, expandedCategories, selectedDb]);
 
-    // Если точки не найдены, показываем отладочную информацию
-    if (!isVisible) {
+    // Если точки не найдены, не рендерим
+    if (!isVisible || !sourceFramework || !targetFramework) {
         return null;
     }
 
     const { sourceX, sourceY, targetX, targetY } = points;
-
-    // Проверяем, что фреймворки действительно существуют
-    if (!sourceFramework || !targetFramework) {
-        return null;
-    }
-
     const color = languageColors[sourceFramework.language];
 
     // Находим границы прямоугольника между точками
@@ -153,7 +137,7 @@ const TimelineDependency: React.FC<TimelineDependencyProps> = ({
     // Тип доминирующего направления
     const isHorizontalDominant = rectWidth > rectHeight;
 
-    // Расчет контрольных точек
+    // Расчет контрольных точек для кривой Безье
     let control1X, control1Y, control2X, control2Y;
 
     if (isHorizontalDominant) {
@@ -195,6 +179,7 @@ const TimelineDependency: React.FC<TimelineDependencyProps> = ({
   `;
 
     // Расчет угла стрелки
+    // Для кривой Безье направление в конечной точке определяется вектором от второй контрольной точки к концу
     const arrowDirX = targetX - control2X;
     const arrowDirY = targetY - control2Y;
     const arrowAngleRad = Math.atan2(arrowDirY, arrowDirX);
@@ -206,19 +191,21 @@ const TimelineDependency: React.FC<TimelineDependencyProps> = ({
             <path
                 d={mainPath}
                 stroke={color}
-                strokeWidth="1.5"
+                strokeWidth="2.5" // Увеличена толщина линии
                 fill="none"
-                strokeDasharray="3,3"
+                strokeDasharray="6,4" // Изменен стиль пунктира для лучшей визуализации
                 className={styles.dependencyLine}
             />
 
-            {/* Стрелка */}
             <g
                 transform={`translate(${targetX},${targetY}) rotate(${arrowAngleDeg})`}
             >
-                <polygon
-                    points="-10,-4 0,0 -10,4"
+                {/* Используем более крупную и заметную стрелку */}
+                <path
+                    d="M -18,-6 L 0,0 L -18,6 L -14,0 Z" // Более крупная и острая стрелка
                     fill={color}
+                    strokeWidth="1"
+                    stroke={color}
                     className={styles.arrowhead}
                 />
             </g>

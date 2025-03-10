@@ -17,19 +17,16 @@
 }
 
 .categoryContainer {
-    margin-bottom: 20px;
 }
 
 .categoryHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 12px;
     background-color: var(--category-header-bg);
     color: var(--category-header-text);
     cursor: pointer;
     border-radius: 4px;
-    margin-bottom: 8px;
     user-select: none;
 }
 

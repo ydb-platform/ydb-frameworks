@@ -1,7 +1,6 @@
 /* src/components/Timeline/TimelineFramework.module.css */
 .frameworkRow {
     display: flex;
-    margin-bottom: 12px;
     align-items: center;
     height: 30px;
     position: relative;
@@ -76,7 +75,7 @@
     right: -15px;
     top: -50%;
     transform: translateY(-50%);
-    font-size: 250%;
+    font-size: 275%;
 }
 
 .releasePoint, .supportPoint, .endPoint {

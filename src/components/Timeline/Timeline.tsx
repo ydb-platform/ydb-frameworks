@@ -1,11 +1,37 @@
 // src/components/Timeline/Timeline.tsx
+// Добавим массив с определенным порядком категорий и функцию сортировки
+
 import React, { useState, useRef, useEffect, useMemo } from 'react';
-import { Framework, Dependency, Database } from '../../data/types';
+import { Framework, Dependency, Database, FrameworkCategory } from '../../data/types';
 import TimelineAxis from './TimelineAxis';
 import TimelineFramework from './TimelineFramework';
 import TimelineDependency from './TimelineDependency';
 import { getTimelineBounds, parseDate } from '../../utils/dateUtils';
 import styles from './Timeline.module.css';
+
+// Определяем порядок категорий сверху вниз
+const categoryOrder: FrameworkCategory[] = [
+    'Server-side feature',
+    'Standard',
+    'Driver',
+    'ORM',
+    'Migration',
+    'Connection Pool',
+    'Query Builder',
+    'Admin',
+    'BI',
+    'Visualization',
+    'ETL',
+    'Apps with abstract storage',
+    'Logging',
+    'Message broker'
+];
+
+// Функция для получения индекса приоритета категории
+const getCategoryPriority = (category: string): number => {
+    const index = categoryOrder.indexOf(category as FrameworkCategory);
+    return index >= 0 ? index : categoryOrder.length; // Если категория не найдена, ставим её в конец
+};
 
 interface TimelineProps {
     frameworks: Framework[];
@@ -75,6 +101,13 @@ const Timeline: React.FC<TimelineProps> = ({ frameworks, dependencies, selectedD
         }));
     };
 
+    // Сортируем категории в соответствии с установленным порядком
+    const sortedCategories = useMemo(() => {
+        return Object.entries(frameworksByCategory).sort((a, b) => {
+            return getCategoryPriority(a[0]) - getCategoryPriority(b[0]);
+        });
+    }, [frameworksByCategory]);
+
     return (
         <div className={`${styles.timelineContainer} timelineContainer`} ref={timelineRef}>
             <TimelineAxis
@@ -84,7 +117,7 @@ const Timeline: React.FC<TimelineProps> = ({ frameworks, dependencies, selectedD
             />
 
             <div className={styles.timeline}>
-                {Object.entries(frameworksByCategory).map(([category, categoryFrameworks]) => (
+                {sortedCategories.map(([category, categoryFrameworks]) => (
                     <div key={category} className={styles.categoryContainer}>
                         <div
                             className={styles.categoryHeader}
