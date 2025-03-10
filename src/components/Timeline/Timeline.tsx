@@ -11,8 +11,8 @@ import styles from './Timeline.module.css';
 // Определяем порядок категорий сверху вниз
 const categoryOrder: FrameworkCategory[] = [
     'Server-side feature',
-    'Standard',
     'Driver',
+    'Standard',
     'ORM',
     'Migration',
     'Connection Pool',
@@ -48,6 +48,12 @@ const Timeline: React.FC<TimelineProps> = ({ frameworks, dependencies, selectedD
         framework: Framework;
         position: { x: number; y: number };
     } | null>(null);
+
+    // Добавляем состояние для выделенного фреймворка
+    const [highlightedFramework, setHighlightedFramework] = useState<string | null>(null);
+
+    // Добавляем состояние для связанных фреймворков (для подсветки зависимостей)
+    const [relatedFrameworks, setRelatedFrameworks] = useState<Set<string>>(new Set());
 
     // Group frameworks by category
     const frameworksByCategory = useMemo(() => {
@@ -123,6 +129,41 @@ const Timeline: React.FC<TimelineProps> = ({ frameworks, dependencies, selectedD
         setTooltips(null);
     };
 
+    // Функция для обработки клика по фреймворку
+    const handleFrameworkClick = (frameworkId: string) => {
+        // Если уже выделен этот же фреймворк, снимаем выделение
+        if (highlightedFramework === frameworkId) {
+            setHighlightedFramework(null);
+            setRelatedFrameworks(new Set());
+            return;
+        }
+
+        // Устанавливаем новый выделенный фреймворк
+        setHighlightedFramework(frameworkId);
+
+        // Находим все связанные фреймворки (через зависимости)
+        const related = new Set<string>([frameworkId]);
+
+        // Рекурсивная функция для поиска связанных фреймворков
+        const findRelated = (id: string) => {
+            dependencies.forEach(dep => {
+                // Если это зависимость от выделенного фреймворка
+                if (dep.source === id && !related.has(dep.target)) {
+                    related.add(dep.target);
+                    findRelated(dep.target);
+                }
+                // Если это зависимость к выделенному фреймворку
+                if (dep.target === id && !related.has(dep.source)) {
+                    related.add(dep.source);
+                    findRelated(dep.source);
+                }
+            });
+        };
+
+        findRelated(frameworkId);
+        setRelatedFrameworks(related);
+    };
+
     return (
         <div className={`${styles.timelineContainer} timelineContainer`} ref={timelineRef}>
             <TimelineAxis
@@ -156,6 +197,8 @@ const Timeline: React.FC<TimelineProps> = ({ frameworks, dependencies, selectedD
                                         selectedDb={selectedDb}
                                         onTooltipShow={showTooltip}
                                         onTooltipHide={hideTooltip}
+                                        isHighlighted={highlightedFramework === framework.id || relatedFrameworks.has(framework.id)}
+                                        onClick={handleFrameworkClick}
                                     />
                                 ))}
                             </div>
@@ -183,6 +226,11 @@ const Timeline: React.FC<TimelineProps> = ({ frameworks, dependencies, selectedD
                         expandedCategories={expandedCategories}
                         frameworksByCategory={frameworksByCategory}
                         selectedDb={selectedDb}
+                        isHighlighted={
+                            (highlightedFramework === dependency.source && relatedFrameworks.has(dependency.target)) ||
+                            (highlightedFramework === dependency.target && relatedFrameworks.has(dependency.source)) ||
+                            (relatedFrameworks.has(dependency.source) && relatedFrameworks.has(dependency.target))
+                        }
                     />
                 ))}
             </svg>

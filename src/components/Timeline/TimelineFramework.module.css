@@ -101,3 +101,45 @@
     right: 0; /* Точка окончания находится в конце цветной линии */
     transform: translate(50%, -50%);
 }
+
+.highlighted {
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.highlightedLabel {
+    font-weight: bold;
+    animation: pulse 0.5s infinite alternate;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+.highlightedLine {
+    animation: pulse 0.5s infinite alternate;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+.highlightedPoint {
+    animation: pulse 0.5s infinite alternate;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    z-index: 4;
+}
+
+.highlightedArrow {
+    animation: pulse 0.5s infinite alternate;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Добавляем курсор pointer для строк фреймворков */
+.frameworkRow {
+    cursor: pointer;
+}

@@ -13,6 +13,8 @@ interface TimelineFrameworkProps {
     selectedDb: Database;
     onTooltipShow: (framework: Framework, position: { x: number; y: number }) => void;
     onTooltipHide: () => void;
+    isHighlighted?: boolean;
+    onClick: (frameworkId: string) => void;
 }
 
 const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
@@ -22,7 +24,9 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
                                                                  width,
                                                                  selectedDb,
                                                                  onTooltipShow,
-                                                                 onTooltipHide
+                                                                 onTooltipHide,
+                                                                 isHighlighted = false,
+                                                                 onClick
                                                              }) => {
     const now = new Date();
     const frameworkReleaseDate = parseDate(framework.releaseDate);
@@ -50,6 +54,10 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
         });
     };
 
+    const handleMouseLeave = () => {
+        onTooltipHide();
+    };
+
     const handleMouseMove = (event: React.MouseEvent) => {
         onTooltipShow(framework, {
             x: event.clientX,
@@ -62,16 +70,34 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
     // Определяем, продолжается ли поддержка в настоящее время
     const isOngoing = !framework.endSupportDate;
 
+    // Определяем классы для элементов на основе статуса подсветки
+    const frameworkLabelClass = `${styles.frameworkLabel} ${isHighlighted ? styles.highlighted : ''}`;
+    const frameworkRowClass = `${styles.frameworkRow} ${isHighlighted ? styles.highlightedLabel : ''}`;
+    const frameworkLineClass = `${styles.frameworkLine} ${isHighlighted ? styles.highlightedLine : ''}`;
+    const releasePointClass = `${styles.releasePoint} releasePoint ${isHighlighted ? styles.highlightedPoint : ''}`;
+    const supportPointClass = `${styles.supportPoint} supportPoint ${isHighlighted ? styles.highlightedPoint : ''}`;
+    const endPointClass = `${styles.endPoint} endPoint ${isHighlighted ? styles.highlightedPoint : ''}`;
+    const arrowEndClass = `${styles.arrowEnd} ${isHighlighted ? styles.highlightedArrow : ''}`;
+
+    // Обработчик клика по фреймворку
+    const handleClick = () => {
+        onClick(framework.id);
+    };
+
     return (
-        <div className={styles.frameworkRow} data-framework-id={framework.id}>
-            <div className={styles.frameworkLabel}>
+        <div
+            className={frameworkRowClass}
+            data-framework-id={framework.id}
+            onClick={handleClick}
+        >
+            <div className={frameworkLabelClass}>
                 {framework.name}
             </div>
             <div className={styles.frameworkTimeline} style={{ width: `${width}px` }}>
                 {/* Gray line for framework existence before DB support */}
                 {!isDbSpecific && (
                     <div
-                        className={styles.frameworkLine}
+                        className={frameworkLineClass}
                         style={{
                             left: `${releasePosition}px`,
                             width: `${dbSupportPosition - releasePosition}px`,
@@ -79,10 +105,10 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
                         }}
                     >
                         <div
-                            className={`${styles.releasePoint} releasePoint`}
+                            className={releasePointClass}
                             style={{ backgroundColor: getColorWithOpacity(color, 0.5) }}
                             onMouseEnter={handleMouseEnter}
-                            onMouseLeave={onTooltipHide}
+                            onMouseLeave={handleMouseLeave}
                             onMouseMove={handleMouseMove}
                             data-tooltip-type="release"
                         ></div>
@@ -91,7 +117,7 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
 
                 {/* Colored line for active DB support */}
                 <div
-                    className={styles.frameworkLine}
+                    className={frameworkLineClass}
                     style={{
                         left: `${isDbSpecific ? releasePosition : dbSupportPosition}px`,
                         width: isOngoing
@@ -102,13 +128,13 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
                 >
                     {/* Точка поддержки выбранной БД */}
                     <div
-                        className={`${styles.supportPoint} supportPoint`}
+                        className={supportPointClass}
                         style={{
                             backgroundColor: color,
                             left: '0px'
                         }}
                         onMouseEnter={handleMouseEnter}
-                        onMouseLeave={onTooltipHide}
+                        onMouseLeave={handleMouseLeave}
                         onMouseMove={handleMouseMove}
                         data-tooltip-type="dbSupport"
                     ></div>
@@ -116,19 +142,19 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
                     {/* Support end point or arrow for ongoing support */}
                     {!isOngoing ? (
                         <div
-                            className={`${styles.endPoint} endPoint`}
+                            className={endPointClass}
                             style={{
                                 right: '0px',
                                 backgroundColor: color
                             }}
                             onMouseEnter={handleMouseEnter}
-                            onMouseLeave={onTooltipHide}
+                            onMouseLeave={handleMouseLeave}
                             onMouseMove={handleMouseMove}
                             data-tooltip-type="endSupport"
                         ></div>
                     ) : (
                         <div
-                            className={styles.arrowEnd}
+                            className={arrowEndClass}
                             style={{
                                 right: '-15px',
                                 color: color

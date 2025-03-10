@@ -10,6 +10,7 @@ interface TimelineDependencyProps {
     expandedCategories: Record<string, boolean>;
     frameworksByCategory: Record<string, Framework[]>;
     selectedDb: string;
+    isHighlighted?: boolean;
 }
 
 const TimelineDependency: React.FC<TimelineDependencyProps> = ({
@@ -17,7 +18,8 @@ const TimelineDependency: React.FC<TimelineDependencyProps> = ({
                                                                    frameworks,
                                                                    expandedCategories,
                                                                    frameworksByCategory,
-                                                                   selectedDb
+                                                                   selectedDb,
+                                                                   isHighlighted = false
                                                                }) => {
     const sourceFramework = frameworks.find(f => f.id === dependency.source);
     const targetFramework = frameworks.find(f => f.id === dependency.target);
@@ -186,27 +188,27 @@ const TimelineDependency: React.FC<TimelineDependencyProps> = ({
     const arrowAngleDeg = arrowAngleRad * (180 / Math.PI);
 
     return (
-        <g className={styles.dependencyPath}>
+        <g className={`${styles.dependencyPath} ${isHighlighted ? styles.highlightedDependency : ''}`}>
             {/* Основная пунктирная линия */}
             <path
                 d={mainPath}
                 stroke={color}
-                strokeWidth="2.5" // Увеличена толщина линии
+                strokeWidth="2.5"
                 fill="none"
-                strokeDasharray="6,4" // Изменен стиль пунктира для лучшей визуализации
-                className={styles.dependencyLine}
+                strokeDasharray="6,4"
+                className={`${styles.dependencyLine} ${isHighlighted ? styles.highlightedLine : ''}`}
             />
 
+            {/* Стрелка */}
             <g
                 transform={`translate(${targetX},${targetY}) rotate(${arrowAngleDeg})`}
             >
-                {/* Используем более крупную и заметную стрелку */}
                 <path
-                    d="M -18,-6 L 0,0 L -18,6 L -14,0 Z" // Более крупная и острая стрелка
+                    d="M -18,-6 L 0,0 L -18,6 L -14,0 Z"
                     fill={color}
                     strokeWidth="1"
                     stroke={color}
-                    className={styles.arrowhead}
+                    className={`${styles.arrowhead} ${isHighlighted ? styles.highlightedArrow : ''}`}
                 />
             </g>
         </g>
