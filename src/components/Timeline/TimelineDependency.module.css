@@ -33,7 +33,7 @@
 
 .highlightedLine {
     animation: dependencyPulse 0.5s infinite alternate;
-    stroke-width: 3.5px;
+    stroke-width: 2.0px;
     filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
     opacity: 1;
 }

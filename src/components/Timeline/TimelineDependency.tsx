@@ -193,7 +193,7 @@ const TimelineDependency: React.FC<TimelineDependencyProps> = ({
             <path
                 d={mainPath}
                 stroke={color}
-                strokeWidth="2.5"
+                strokeWidth="1.0"
                 fill="none"
                 strokeDasharray="6,4"
                 className={`${styles.dependencyLine} ${isHighlighted ? styles.highlightedLine : ''}`}
@@ -206,7 +206,7 @@ const TimelineDependency: React.FC<TimelineDependencyProps> = ({
                 <path
                     d="M -18,-6 L 0,0 L -18,6 L -14,0 Z"
                     fill={color}
-                    strokeWidth="1"
+                    strokeWidth="0.5"
                     stroke={color}
                     className={`${styles.arrowhead} ${isHighlighted ? styles.highlightedArrow : ''}`}
                 />

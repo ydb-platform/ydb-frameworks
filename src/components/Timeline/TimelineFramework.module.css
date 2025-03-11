@@ -24,7 +24,7 @@
 
 .frameworkLine {
     position: absolute;
-    height: 4px;
+    height: 0.26em;
     top: 50%;
     transform: translateY(-50%);
     border-radius: 2px;
@@ -67,10 +67,9 @@
 
 .arrowEnd {
     position: absolute;
-    right: -15px;
     top: -50%;
     transform: translateY(-50%);
-    font-size: 275%;
+    font-size: 3.05em;
 }
 
 .releasePoint, .supportPoint, .endPoint {
@@ -121,8 +120,9 @@
 }
 
 .highlightedArrow {
+    font-weight: normal;
     animation: pulse 0.5s infinite alternate;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+    filter: drop-shadow(0 0 2em rgba(255, 255, 255, 0.7));
 }
 
 @keyframes pulse {

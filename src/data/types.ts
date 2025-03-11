@@ -71,6 +71,7 @@ export interface Framework {
     version?: string;
     repository?: string;
     website?: string;
+    url?: string; // URL фреймворка, где лежит код
     dbImplementationName?: string; // Название конкретной реализации для выбранной БД
     contributorsType?: ContributorsType[]; // Новое поле - тип контрибьюторов
 }
