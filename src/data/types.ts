@@ -12,7 +12,9 @@ export type Database =
     | 'tidb'
     | 'cosmosdb'
     | 'dynamodb'
-    | 'sqlite3';
+    | 'sqlite3'
+    | 'firebase'
+    | 'db2';
 
 export type FrameworkCategory =
     | 'ORM'
@@ -45,7 +47,11 @@ export type ProgrammingLanguage =
     | 'Kotlin'
     | 'Swift'
     | 'Scala'
-    | 'YAML';
+    | 'YAML'
+    | 'Dart'
+    | 'SQL'
+    | 'XML'
+    | 'JSON';
 
 export type ContributorsType =
     | 'open-source'

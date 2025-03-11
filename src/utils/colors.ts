@@ -19,7 +19,11 @@ export const languageColors: Record<ProgrammingLanguage, string> = {
     'Kotlin': '#A97BFF',
     'Swift': '#ffac45',
     'Scala': '#c22d40',
-    'YAML': '#c92d90'
+    'YAML': '#c92d90',
+    'SQL': '#678600',
+    'XML': '#807219',
+    'Dart': '#5ea584',
+    'JSON': '#6F5D95',
 };
 
 /**

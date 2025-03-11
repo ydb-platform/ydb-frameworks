@@ -14,6 +14,8 @@ import sqlite3Data from "./sqlite3";
 import tidbData from "./tidb";
 import cosmosdbData from "./cosmosdb";
 import dynamodbData from "./dynamodb";
+import firebaseData from "./firebase";
+import db2Data from "./db2";
 
 const databaseData: Record<Database, TimelineData> = {
     postgresql: postgresqlData,
@@ -29,6 +31,8 @@ const databaseData: Record<Database, TimelineData> = {
     tidb: tidbData,
     cosmosdb: cosmosdbData,
     dynamodb: dynamodbData,
+    firebase: firebaseData,
+    db2: db2Data,
 };
 
 export default databaseData;
