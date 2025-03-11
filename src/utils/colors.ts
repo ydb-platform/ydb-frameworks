@@ -5,7 +5,7 @@ import { ProgrammingLanguage } from '../data/types';
  * Maps programming languages to specific colors
  */
 export const languageColors: Record<ProgrammingLanguage, string> = {
-    'JavaScript': '#f7df1e',
+    'JavaScript': '#b0a631',
     'TypeScript': '#007acc',
     'Python': '#3572A5',
     'Java': '#b07219',

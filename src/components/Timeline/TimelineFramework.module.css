@@ -13,12 +13,7 @@
     padding-right: 10px;
     font-size: 14px;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    position: relative;
     z-index: 4; /* Еще более высокий z-index для подписей */
-    background-color: var(--timeline-bg); /* Фон для подписей, чтобы они не были прозрачными */
-    border-radius: 4px; /* Опционально: закругление углов для более приятного вида */
 }
 
 .frameworkTimeline {
@@ -142,4 +137,8 @@
 /* Добавляем курсор pointer для строк фреймворков */
 .frameworkRow {
     cursor: pointer;
+}
+
+.frameworkRow:nth-child(odd) {
+    background-color: rgba(128,128,128,0.15);
 }

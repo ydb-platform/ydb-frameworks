@@ -21,7 +21,6 @@ const DatabaseSelector: React.FC<DatabaseSelectorProps> = ({
 
     return (
         <div className={styles.selectorContainer}>
-            <label className={styles.label}>Database:</label>
             <div className={styles.options}>
                 {databases.map(db => (
                     <button

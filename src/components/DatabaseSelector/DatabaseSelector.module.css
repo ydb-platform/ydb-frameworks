@@ -4,11 +4,6 @@
     align-items: center;
 }
 
-.label {
-    margin-right: 10px;
-    font-weight: bold;
-}
-
 .options {
     display: flex;
     gap: 5px;
@@ -22,6 +17,7 @@
     cursor: pointer;
     font-size: 14px;
     transition: all 0.2s;
+    color: var(--text-color);
 }
 
 .option:hover {

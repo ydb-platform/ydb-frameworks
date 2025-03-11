@@ -1,11 +1,11 @@
 // src/components/Timeline/Timeline.tsx
-import React, { useState, useRef, useEffect, useMemo } from 'react';
-import { Framework, Dependency, Database, FrameworkCategory } from '../../data/types';
+import React, {useState, useRef, useEffect, useMemo} from 'react';
+import {Framework, Dependency, Database, FrameworkCategory} from '../../data/types';
 import TimelineAxis from './TimelineAxis';
 import TimelineFramework from './TimelineFramework';
 import TimelineDependency from './TimelineDependency';
 import TimelineTooltip from './TimelineTooltip';
-import { getTimelineBounds, parseDate } from '../../utils/dateUtils';
+import {getTimelineBounds, parseDate} from '../../utils/dateUtils';
 import styles from './Timeline.module.css';
 
 // Определяем порядок категорий сверху вниз
@@ -38,7 +38,7 @@ interface TimelineProps {
     selectedDb: Database;
 }
 
-const Timeline: React.FC<TimelineProps> = ({ frameworks, dependencies, selectedDb }) => {
+const Timeline: React.FC<TimelineProps> = ({frameworks, dependencies, selectedDb}) => {
     const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({});
     const [timelineWidth, setTimelineWidth] = useState<number>(0);
     const timelineRef = useRef<HTMLDivElement>(null);
@@ -103,7 +103,7 @@ const Timeline: React.FC<TimelineProps> = ({ frameworks, dependencies, selectedD
         };
     }, []);
 
-    const { startDate, endDate } = getTimelineBounds(frameworks);
+    const {startDate, endDate} = getTimelineBounds(frameworks);
 
     const toggleCategory = (category: string) => {
         setExpandedCategories(prev => ({
@@ -121,7 +121,7 @@ const Timeline: React.FC<TimelineProps> = ({ frameworks, dependencies, selectedD
 
     // Функция для отображения тултипа
     const showTooltip = (framework: Framework, position: { x: number; y: number }) => {
-        setTooltips({ framework, position });
+        setTooltips({framework, position});
     };
 
     // Функция для скрытия тултипа
@@ -179,10 +179,13 @@ const Timeline: React.FC<TimelineProps> = ({ frameworks, dependencies, selectedD
                             className={styles.categoryHeader}
                             onClick={() => toggleCategory(category)}
                         >
+                            <span className={styles.expandIcon}>
+                                {expandedCategories[category] ? '▼' : '▶'}
+                            </span>
                             <span className={styles.categoryName}>{category}</span>
                             <span className={styles.expandIcon}>
-                {expandedCategories[category] ? '▼' : '▶'}
-              </span>
+                                {expandedCategories[category] ? '▼' : '▶'}
+                            </span>
                         </div>
 
                         {expandedCategories[category] && (
