@@ -163,7 +163,7 @@ const ydbData: TimelineData = {
             description: 'Official Go SDK for YDB',
             authors: ['Yandex'],
             contributorsType: ['staff', 'open-source'],
-            url: 'https://github.com/ydb-platform/ydb-go-sdk'
+            repository: 'https://github.com/ydb-platform/ydb-go-sdk'
         },
         {
             id: 'ydb-python-sdk',
@@ -174,7 +174,7 @@ const ydbData: TimelineData = {
             description: 'Official Python SDK for YDB',
             authors: ['Yandex'],
             contributorsType: ['staff', 'student'],
-            url: 'https://github.com/ydb-platform/ydb-python-sdk'
+            repository: 'https://github.com/ydb-platform/ydb-python-sdk'
         },
         {
             id: 'ydb-java-sdk',
@@ -185,7 +185,7 @@ const ydbData: TimelineData = {
             description: 'Official Java SDK for YDB',
             authors: ['Yandex'],
             contributorsType: ['staff', 'open-source'],
-            url: 'https://github.com/ydb-platform/ydb-java-sdk'
+            repository: 'https://github.com/ydb-platform/ydb-java-sdk'
         },
         {
             id: 'ydb-rust-sdk',
@@ -196,7 +196,7 @@ const ydbData: TimelineData = {
             description: 'Official Rust SDK for YDB',
             authors: ['Yandex'],
             contributorsType: ['staff', 'open-source'],
-            url: 'https://github.com/ydb-platform/ydb-rust-sdk'
+            repository: 'https://github.com/ydb-platform/ydb-rust-sdk'
         },
         {
             id: 'ydb-nodejs-sdk',
@@ -207,7 +207,7 @@ const ydbData: TimelineData = {
             description: 'Official Node.js SDK for YDB',
             authors: ['Yandex'],
             contributorsType: ['staff', 'open-source'],
-            url: 'https://github.com/ydb-platform/ydb-nodejs-sdk'
+            repository: 'https://github.com/ydb-platform/ydb-nodejs-sdk'
         },
         {
             id: 'ydb-dotnet-sdk',
@@ -218,7 +218,7 @@ const ydbData: TimelineData = {
             description: 'Official .NET SDK for YDB',
             authors: ['Yandex'],
             contributorsType: ['staff', 'open-source'],
-            url: 'https://github.com/ydb-platform/ydb-dotnet-sdk'
+            repository: 'https://github.com/ydb-platform/ydb-dotnet-sdk'
         },
         {
             id: 'ydb-php-sdk',
@@ -229,7 +229,7 @@ const ydbData: TimelineData = {
             description: 'Official PHP SDK for YDB',
             authors: ['Yandex'],
             contributorsType: ['staff', 'open-source'],
-            url: 'https://github.com/ydb-platform/ydb-php-sdk'
+            repository: 'https://github.com/ydb-platform/ydb-php-sdk'
         },
         {
             id: 'ydb-golang-database-sql',
@@ -250,7 +250,7 @@ const ydbData: TimelineData = {
             description: 'JDBC driver implementation for YDB',
             authors: ['Yandex'],
             contributorsType: ['staff', 'student'],
-            url: 'https://github.com/ydb-platform/ydb-jdbc-driver'
+            repository: 'https://github.com/ydb-platform/ydb-jdbc-driver'
         },
         {
             id: 'ydb-dbapi',
@@ -285,7 +285,7 @@ const ydbData: TimelineData = {
             authors: ['liamstask', 'pressly'],
             version: '3.18.0',
             contributorsType: ['open-source'],
-            url: 'https://github.com/pressly/goose'
+            repository: 'https://github.com/pressly/goose'
         },
         {
             id: 'ydb-migrate',
@@ -316,7 +316,7 @@ const ydbData: TimelineData = {
             description: 'Liquibase extension for YDB schema migrations',
             authors: ['Yandex'],
             contributorsType: ['staff', 'open-source'],
-            url: 'https://github.com/ydb-platform/liquibase-ydb'
+            repository: 'https://github.com/ydb-platform/liquibase-ydb'
         },
 
         // ORM
@@ -349,7 +349,7 @@ const ydbData: TimelineData = {
             description: 'YDB dialect for GORM',
             authors: ['Yandex'],
             contributorsType: ['staff', 'open-source'],
-            url: 'https://github.com/ydb-platform/gorm-driver'
+            repository: 'https://github.com/ydb-platform/gorm-driver'
         },
         {
             id: 'hibernate-ydb',
@@ -360,7 +360,7 @@ const ydbData: TimelineData = {
             description: 'Hibernate ORM dialect for YDB',
             authors: ['Yandex'],
             contributorsType: ['staff', 'open-source'],
-            url: 'https://github.com/ydb-platform/ydb-java-hibernate'
+            repository: 'https://github.com/ydb-platform/ydb-java-hibernate'
         },
         {
             id: 'spring-data-ydb',
@@ -371,7 +371,7 @@ const ydbData: TimelineData = {
             description: 'Spring Data repository support for YDB',
             authors: ['Yandex'],
             contributorsType: ['staff', 'open-source'],
-            url: 'https://github.com/ydb-platform/ydb-java-spring-data'
+            repository: 'https://github.com/ydb-platform/ydb-java-spring-data'
         },
         {
             id: 'entity-framework-ydb',
@@ -415,7 +415,7 @@ const ydbData: TimelineData = {
             description: 'Universal database tool with YDB support',
             authors: ['Serge Rider'],
             contributorsType: ['open-source'],
-            url: 'https://github.com/dbeaver/dbeaver'
+            repository: 'https://github.com/dbeaver/dbeaver'
         },
         {
             id: 'ydb-cli',
@@ -479,7 +479,7 @@ const ydbData: TimelineData = {
             description: 'Data analysis and manipulation library with YDB support',
             authors: ['Wes McKinney', 'PyData Development Team'],
             contributorsType: ['open-source', 'student'],
-            url: 'https://github.com/pandas-dev/pandas'
+            repository: 'https://github.com/pandas-dev/pandas'
         },
         {
             id: 'ydb-spark-connector',
@@ -510,7 +510,7 @@ const ydbData: TimelineData = {
             description: 'dbt (data build tool) adapter for YDB',
             authors: ['Yandex'],
             contributorsType: ['staff', 'open-source'],
-            url: 'https://github.com/ydb-platform/ydb-dbt-adapter'
+            repository: 'https://github.com/ydb-platform/ydb-dbt-adapter'
         },
         {
             id: 'ydb-airbyte-connector',
@@ -535,7 +535,7 @@ const ydbData: TimelineData = {
             authors: ['Metabase Team', 'Yandex'],
             version: '0.41.0',
             contributorsType: ['open-source', 'staff'],
-            url: 'https://github.com/metabase/metabase'
+            repository: 'https://github.com/metabase/metabase'
         },
         {
             id: 'superset',
@@ -547,7 +547,7 @@ const ydbData: TimelineData = {
             description: 'Modern data exploration and visualization platform with YDB support',
             authors: ['Apache Software Foundation', 'Yandex'],
             contributorsType: ['open-source', 'staff'],
-            url: 'https://github.com/apache/superset'
+            repository: 'https://github.com/apache/superset'
         },
         {
             id: 'tableau-ydb',
@@ -578,7 +578,7 @@ const ydbData: TimelineData = {
             description: 'Grafana data source plugin for YDB',
             authors: ['Yandex'],
             contributorsType: ['staff', 'open-source'],
-            url: 'https://github.com/ydb-platform/ydb-grafana-datasource-plugin'
+            repository: 'https://github.com/ydb-platform/ydb-grafana-datasource-plugin'
         },
 
         // Apps with abstract storage
@@ -611,7 +611,7 @@ const ydbData: TimelineData = {
             description: 'Terraform provider for YDB',
             authors: ['Yandex'],
             contributorsType: ['staff', 'open-source'],
-            url: 'https://github.com/ydb-platform/terraform-provider-ydb'
+            repository: 'https://github.com/ydb-platform/terraform-provider-ydb'
         },
         {
             id: 'ydb-dataloader',
@@ -642,7 +642,7 @@ const ydbData: TimelineData = {
             description: 'Spring Boot starter for YDB',
             authors: ['Yandex'],
             contributorsType: ['staff', 'open-source'],
-            url: 'https://github.com/ydb-platform/ydb-java-spring-boot-starter'
+            repository: 'https://github.com/ydb-platform/ydb-java-spring-boot-starter'
         },
         {
             id: 'ydb-nextjs-adapter',
