@@ -1,5 +1,5 @@
 // src/data/types.ts
-export type Database = 'postgresql' | 'mysql' | 'mongodb' | 'ydb' | 'cassandra';
+export type Database = 'postgresql' | 'mysql' | 'mongodb' | 'ydb' | 'cassandra' | 'oracle' | 'spanner' | 'yugabyte' | 'cockroach' | 'tidb' | 'sqlite3';
 
 export type FrameworkCategory =
     | 'ORM'
