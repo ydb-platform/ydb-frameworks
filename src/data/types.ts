@@ -1,5 +1,18 @@
 // src/data/types.ts
-export type Database = 'postgresql' | 'mysql' | 'mongodb' | 'ydb' | 'cassandra' | 'oracle' | 'spanner' | 'yugabyte' | 'cockroach' | 'tidb' | 'sqlite3';
+export type Database =
+    | 'postgresql'
+    | 'mysql'
+    | 'mongodb'
+    | 'ydb'
+    | 'cassandra'
+    | 'oracle'
+    | 'spanner'
+    | 'yugabyte'
+    | 'cockroach'
+    | 'tidb'
+    | 'cosmosdb'
+    | 'dynamodb'
+    | 'sqlite3';
 
 export type FrameworkCategory =
     | 'ORM'
@@ -31,7 +44,8 @@ export type ProgrammingLanguage =
     | 'Rust'
     | 'Kotlin'
     | 'Swift'
-    | 'Scala';
+    | 'Scala'
+    | 'YAML';
 
 export type ContributorsType =
     | 'open-source'

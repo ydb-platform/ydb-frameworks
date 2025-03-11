@@ -12,6 +12,8 @@ import yugabyteData from "./yugabyte";
 import cockroachData from "./cockroach";
 import sqlite3Data from "./sqlite3";
 import tidbData from "./tidb";
+import cosmosdbData from "./cosmosdb";
+import dynamodbData from "./dynamodb";
 
 const databaseData: Record<Database, TimelineData> = {
     postgresql: postgresqlData,
@@ -25,6 +27,8 @@ const databaseData: Record<Database, TimelineData> = {
     cockroach: cockroachData,
     sqlite3: sqlite3Data,
     tidb: tidbData,
+    cosmosdb: cosmosdbData,
+    dynamodb: dynamodbData,
 };
 
 export default databaseData;

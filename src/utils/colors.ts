@@ -18,7 +18,8 @@ export const languageColors: Record<ProgrammingLanguage, string> = {
     'Rust': '#dea584',
     'Kotlin': '#A97BFF',
     'Swift': '#ffac45',
-    'Scala': '#c22d40'
+    'Scala': '#c22d40',
+    'YAML': '#c92d90'
 };
 
 /**
