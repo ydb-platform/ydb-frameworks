@@ -24,8 +24,8 @@ This project visualizes the development timeline of various frameworks, librarie
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/db-frameworks-timeline.git
-cd db-frameworks-timeline
+git clone https://github.com/yourusername/ydb-frameworks.git
+cd ydb-frameworks
 ```
 2. Install dependencies
 ```bash
