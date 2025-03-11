@@ -45,6 +45,46 @@ const ydbData: TimelineData = {
             authors: ['Yandex'],
             contributorsType: ['staff']
         },
+        {
+            id: 'ydb-partitioning',
+            name: 'Advanced Partitioning',
+            category: 'Server-side feature',
+            language: 'C++',
+            releaseDate: '2020-06-01',
+            description: 'Flexible partitioning strategies for high-load systems',
+            authors: ['Yandex'],
+            contributorsType: ['staff']
+        },
+        {
+            id: 'ydb-json-support',
+            name: 'JSON Support',
+            category: 'Server-side feature',
+            language: 'C++',
+            releaseDate: '2021-03-01',
+            description: 'Native JSON data type and operations',
+            authors: ['Yandex'],
+            contributorsType: ['staff']
+        },
+        {
+            id: 'ydb-scripting',
+            name: 'Stored Procedures',
+            category: 'Server-side feature',
+            language: 'JavaScript',
+            releaseDate: '2022-01-15',
+            description: 'Server-side JavaScript procedures',
+            authors: ['Yandex'],
+            contributorsType: ['staff']
+        },
+        {
+            id: 'ydb-backup-restore',
+            name: 'Backup and Restore',
+            category: 'Server-side feature',
+            language: 'C++',
+            releaseDate: '2019-08-01',
+            description: 'Consistent backup and restore capabilities',
+            authors: ['Yandex'],
+            contributorsType: ['staff']
+        },
 
         // Стандарты API
         {
@@ -78,6 +118,28 @@ const ydbData: TimelineData = {
             dbSupportDate: '2019-10-01',
             description: 'Python Database API Specification (PEP 249)',
             authors: ['Python DB-SIG', 'Yandex'],
+            contributorsType: ['staff']
+        },
+        {
+            id: 'ado-net',
+            name: 'ADO.NET',
+            category: 'Standard',
+            language: 'C#',
+            releaseDate: '2000-01-01',
+            dbSupportDate: '2022-07-01',
+            description: 'Microsoft ADO.NET data provider',
+            authors: ['Microsoft', 'Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'grpc-api',
+            name: 'gRPC API',
+            category: 'Standard',
+            language: 'C++',
+            releaseDate: '2015-08-01',
+            dbSupportDate: '2018-11-15',
+            description: 'Protocol Buffers/gRPC based database API',
+            authors: ['Google', 'Yandex'],
             contributorsType: ['staff']
         },
 
@@ -123,6 +185,46 @@ const ydbData: TimelineData = {
             contributorsType: ['staff', 'open-source']
         },
         {
+            id: 'ydb-rust-sdk',
+            name: 'YDB Rust SDK',
+            category: 'Driver',
+            language: 'Rust',
+            releaseDate: '2021-11-01',
+            description: 'Official Rust SDK for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'ydb-nodejs-sdk',
+            name: 'YDB Node.js SDK',
+            category: 'Driver',
+            language: 'JavaScript',
+            releaseDate: '2020-09-01',
+            description: 'Official Node.js SDK for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'ydb-dotnet-sdk',
+            name: 'YDB .NET SDK',
+            category: 'Driver',
+            language: 'C#',
+            releaseDate: '2022-07-01',
+            description: 'Official .NET SDK for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'ydb-php-sdk',
+            name: 'YDB PHP SDK',
+            category: 'Driver',
+            language: 'PHP',
+            releaseDate: '2022-02-01',
+            description: 'Official PHP SDK for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
             id: 'ydb-golang-database-sql',
             name: 'YDB database/sql Driver',
             category: 'Driver',
@@ -152,6 +254,16 @@ const ydbData: TimelineData = {
             authors: ['Yandex'],
             contributorsType: ['staff', 'student']
         },
+        {
+            id: 'ydb-adonet',
+            name: 'YDB ADO.NET Provider',
+            category: 'Driver',
+            language: 'C#',
+            releaseDate: '2022-07-01',
+            description: 'ADO.NET data provider for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
 
         // Migration tools
         {
@@ -166,6 +278,36 @@ const ydbData: TimelineData = {
             version: '3.18.0',
             contributorsType: ['open-source']
         },
+        {
+            id: 'ydb-migrate',
+            name: 'YDB Migrate',
+            category: 'Migration',
+            language: 'Go',
+            releaseDate: '2022-10-01',
+            description: 'Official migration tool for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'ydb-data-transfer',
+            name: 'YDB Data Transfer',
+            category: 'Migration',
+            language: 'Go',
+            releaseDate: '2021-08-01',
+            description: 'Data migration tool for transferring data to/from YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff']
+        },
+        {
+            id: 'liquibase-ydb',
+            name: 'Liquibase YDB Extension',
+            category: 'Migration',
+            language: 'Java',
+            releaseDate: '2022-09-01',
+            description: 'Liquibase extension for YDB schema migrations',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
 
         // ORM
         {
@@ -177,6 +319,76 @@ const ydbData: TimelineData = {
             description: 'SQLAlchemy dialect for YDB',
             authors: ['Yandex'],
             contributorsType: ['staff', 'student']
+        },
+        {
+            id: 'sqlx-ydb',
+            name: 'sqlx YDB',
+            category: 'ORM',
+            language: 'Go',
+            releaseDate: '2022-06-01',
+            description: 'YDB adapter for sqlx library',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'gorm-ydb',
+            name: 'GORM YDB',
+            category: 'ORM',
+            language: 'Go',
+            releaseDate: '2022-08-01',
+            description: 'YDB dialect for GORM',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'hibernate-ydb',
+            name: 'Hibernate YDB Dialect',
+            category: 'ORM',
+            language: 'Java',
+            releaseDate: '2022-05-01',
+            description: 'Hibernate ORM dialect for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'spring-data-ydb',
+            name: 'Spring Data YDB',
+            category: 'ORM',
+            language: 'Java',
+            releaseDate: '2021-11-01',
+            description: 'Spring Data repository support for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'entity-framework-ydb',
+            name: 'Entity Framework Core YDB Provider',
+            category: 'ORM',
+            language: 'C#',
+            releaseDate: '2022-08-01',
+            description: 'Entity Framework Core provider for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'typeorm-ydb',
+            name: 'TypeORM YDB Driver',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2022-03-01',
+            description: 'TypeORM driver for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'prisma-ydb',
+            name: 'Prisma YDB Driver',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2023-02-01',
+            description: 'Prisma driver for YDB (experimental)',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
         },
 
         // Admin tools
@@ -211,6 +423,36 @@ const ydbData: TimelineData = {
             authors: ['Yandex'],
             contributorsType: ['staff']
         },
+        {
+            id: 'ydb-monitoring',
+            name: 'YDB Monitoring',
+            category: 'Admin',
+            language: 'Go',
+            releaseDate: '2020-04-01',
+            description: 'Monitoring and observability solution for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff']
+        },
+        {
+            id: 'ydb-console',
+            name: 'YDB Console',
+            category: 'Admin',
+            language: 'TypeScript',
+            releaseDate: '2021-05-01',
+            description: 'Advanced web console for YDB management',
+            authors: ['Yandex'],
+            contributorsType: ['staff']
+        },
+        {
+            id: 'datagrip-ydb',
+            name: 'DataGrip YDB Support',
+            category: 'Admin',
+            language: 'Java',
+            releaseDate: '2022-04-01',
+            description: 'YDB support in JetBrains DataGrip',
+            authors: ['JetBrains', 'Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
 
         // ETL Tools
         {
@@ -223,6 +465,46 @@ const ydbData: TimelineData = {
             description: 'Data analysis and manipulation library with YDB support',
             authors: ['Wes McKinney', 'PyData Development Team'],
             contributorsType: ['open-source', 'student']
+        },
+        {
+            id: 'ydb-spark-connector',
+            name: 'YDB Spark Connector',
+            category: 'ETL',
+            language: 'Scala',
+            releaseDate: '2021-09-01',
+            description: 'Apache Spark connector for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'ydb-flink-connector',
+            name: 'YDB Flink Connector',
+            category: 'ETL',
+            language: 'Java',
+            releaseDate: '2022-03-01',
+            description: 'Apache Flink connector for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'dbt-ydb',
+            name: 'dbt-ydb',
+            category: 'ETL',
+            language: 'Python',
+            releaseDate: '2022-07-01',
+            description: 'dbt (data build tool) adapter for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'ydb-airbyte-connector',
+            name: 'YDB Airbyte Connector',
+            category: 'ETL',
+            language: 'Java',
+            releaseDate: '2022-10-01',
+            description: 'Airbyte connector for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
         },
 
         // BI tools
@@ -249,6 +531,36 @@ const ydbData: TimelineData = {
             authors: ['Apache Software Foundation', 'Yandex'],
             contributorsType: ['open-source', 'staff']
         },
+        {
+            id: 'tableau-ydb',
+            name: 'Tableau YDB Connector',
+            category: 'BI',
+            language: 'Java',
+            releaseDate: '2022-09-01',
+            description: 'Tableau connector for YDB',
+            authors: ['Tableau Software', 'Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'powerbi-ydb',
+            name: 'Power BI YDB Connector',
+            category: 'BI',
+            language: 'C#',
+            releaseDate: '2022-11-01',
+            description: 'Microsoft Power BI connector for YDB',
+            authors: ['Microsoft', 'Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'grafana-ydb',
+            name: 'Grafana YDB Plugin',
+            category: 'BI',
+            language: 'TypeScript',
+            releaseDate: '2021-06-01',
+            description: 'Grafana data source plugin for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
 
         // Apps with abstract storage
         {
@@ -270,6 +582,56 @@ const ydbData: TimelineData = {
             description: 'Serverless compute platform with YDB integration',
             authors: ['Yandex'],
             contributorsType: ['staff']
+        },
+        {
+            id: 'ydb-terraform-provider',
+            name: 'YDB Terraform Provider',
+            category: 'Apps with abstract storage',
+            language: 'Go',
+            releaseDate: '2021-04-01',
+            description: 'Terraform provider for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'ydb-dataloader',
+            name: 'YDB DataLoader',
+            category: 'Apps with abstract storage',
+            language: 'Go',
+            releaseDate: '2021-10-01',
+            description: 'Bulk data loading utility for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff']
+        },
+        {
+            id: 'ydb-vector-search',
+            name: 'YDB Vector Search',
+            category: 'Apps with abstract storage',
+            language: 'C++',
+            releaseDate: '2023-03-01',
+            description: 'Vector similarity search capabilities for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff']
+        },
+        {
+            id: 'ydb-spring-boot-starter',
+            name: 'YDB Spring Boot Starter',
+            category: 'Apps with abstract storage',
+            language: 'Java',
+            releaseDate: '2021-07-01',
+            description: 'Spring Boot starter for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'ydb-nextjs-adapter',
+            name: 'YDB Next.js Adapter',
+            category: 'Apps with abstract storage',
+            language: 'TypeScript',
+            releaseDate: '2022-12-01',
+            description: 'Data adapter for Next.js applications with YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
         },
 
         // Logging
@@ -295,6 +657,26 @@ const ydbData: TimelineData = {
             authors: ['Elastic', 'Yandex'],
             contributorsType: ['open-source', 'staff']
         },
+        {
+            id: 'ydb-logger',
+            name: 'YDB Logger',
+            category: 'Logging',
+            language: 'Go',
+            releaseDate: '2021-05-01',
+            description: 'Structured logging library for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff']
+        },
+        {
+            id: 'opentelemetry-ydb',
+            name: 'OpenTelemetry YDB',
+            category: 'Logging',
+            language: 'Go',
+            releaseDate: '2022-02-01',
+            description: 'OpenTelemetry integration for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
 
         // Message Broker
         {
@@ -316,6 +698,80 @@ const ydbData: TimelineData = {
             description: 'Distributed queue implementation on top of YDB',
             authors: ['Yandex'],
             contributorsType: ['staff']
+        },
+        {
+            id: 'kafka-ydb-connector',
+            name: 'Kafka Connect YDB Connector',
+            category: 'Message broker',
+            language: 'Java',
+            releaseDate: '2022-08-01',
+            description: 'Kafka Connect connector for YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'ydb-grafana-alerting',
+            name: 'YDB Grafana Alerting',
+            category: 'Message broker',
+            language: 'Go',
+            releaseDate: '2022-05-01',
+            description: 'Grafana alerting integration with YDB',
+            authors: ['Yandex'],
+            contributorsType: ['staff']
+        },
+
+        // Query Builder
+        {
+            id: 'ydb-query-builder',
+            name: 'YDB Query Builder',
+            category: 'Query Builder',
+            language: 'TypeScript',
+            releaseDate: '2021-04-01',
+            description: 'TypeScript library for building YDB queries',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'yql-helper',
+            name: 'YQL Helper',
+            category: 'Query Builder',
+            language: 'Python',
+            releaseDate: '2020-09-01',
+            description: 'Python library for building YQL queries',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'student']
+        },
+        {
+            id: 'ydb-sqlbuilder',
+            name: 'YDB SQL Builder',
+            category: 'Query Builder',
+            language: 'Go',
+            releaseDate: '2022-01-01',
+            description: 'SQL query builder for YDB in Go',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
+        },
+
+        // Connection Pool
+        {
+            id: 'ydb-connection-pool',
+            name: 'YDB Connection Pool',
+            category: 'Connection Pool',
+            language: 'Go',
+            releaseDate: '2020-03-01',
+            description: 'Connection pooling library for YDB Go SDK',
+            authors: ['Yandex'],
+            contributorsType: ['staff']
+        },
+        {
+            id: 'hikaricp-ydb',
+            name: 'HikariCP for YDB',
+            category: 'Connection Pool',
+            language: 'Java',
+            releaseDate: '2021-08-01',
+            description: 'HikariCP connection pool for YDB JDBC driver',
+            authors: ['Yandex'],
+            contributorsType: ['staff', 'open-source']
         }
     ],
     dependencies: [
@@ -335,6 +791,16 @@ const ydbData: TimelineData = {
             target: 'ydb-dbapi',
             description: 'YDB DB-API implementation is built on top of Python SDK'
         },
+        {
+            source: 'ydb-dotnet-sdk',
+            target: 'ydb-adonet',
+            description: 'YDB ADO.NET provider is built on top of .NET SDK'
+        },
+        {
+            source: 'ydb-cpp-sdk',
+            target: 'grpc-api',
+            description: 'YDB C++ SDK implements gRPC API'
+        },
 
         // Зависимости от стандартов к драйверам
         {
@@ -352,6 +818,11 @@ const ydbData: TimelineData = {
             target: 'dbapi',
             description: 'YDB DB-API implements Python DB-API specification'
         },
+        {
+            source: 'ydb-adonet',
+            target: 'ado-net',
+            description: 'YDB ADO.NET provider implements ADO.NET standard'
+        },
 
         // Инструменты ORM и миграций
         {
@@ -364,6 +835,56 @@ const ydbData: TimelineData = {
             target: 'sqlalchemy-ydb',
             description: 'SQLAlchemy YDB dialect is built on DB-API'
         },
+        {
+            source: 'ydb-go-sdk',
+            target: 'sqlx-ydb',
+            description: 'sqlx YDB uses YDB Go SDK'
+        },
+        {
+            source: 'ydb-golang-database-sql',
+            target: 'gorm-ydb',
+            description: 'GORM YDB uses database/sql driver'
+        },
+        {
+            source: 'ydb-jdbc',
+            target: 'hibernate-ydb',
+            description: 'Hibernate YDB dialect uses JDBC driver'
+        },
+        {
+            source: 'ydb-java-sdk',
+            target: 'spring-data-ydb',
+            description: 'Spring Data YDB uses YDB Java SDK'
+        },
+        {
+            source: 'ydb-adonet',
+            target: 'entity-framework-ydb',
+            description: 'Entity Framework YDB uses ADO.NET provider'
+        },
+        {
+            source: 'ydb-nodejs-sdk',
+            target: 'typeorm-ydb',
+            description: 'TypeORM YDB uses Node.js SDK'
+        },
+        {
+            source: 'ydb-nodejs-sdk',
+            target: 'prisma-ydb',
+            description: 'Prisma YDB uses Node.js SDK'
+        },
+        {
+            source: 'ydb-go-sdk',
+            target: 'ydb-migrate',
+            description: 'YDB Migrate uses YDB Go SDK'
+        },
+        {
+            source: 'ydb-go-sdk',
+            target: 'ydb-data-transfer',
+            description: 'YDB Data Transfer uses YDB Go SDK'
+        },
+        {
+            source: 'ydb-jdbc',
+            target: 'liquibase-ydb',
+            description: 'Liquibase YDB Extension uses JDBC driver'
+        },
 
         // Admin tools
         {
@@ -371,12 +892,57 @@ const ydbData: TimelineData = {
             target: 'dbeaver',
             description: 'DBeaver needs JDBC driver for YDB support'
         },
+        {
+            source: 'ydb-go-sdk',
+            target: 'ydb-cli',
+            description: 'YDB CLI uses YDB Go SDK'
+        },
+        {
+            source: 'ydb-go-sdk',
+            target: 'ydb-monitoring',
+            description: 'YDB Monitoring uses YDB Go SDK'
+        },
+        {
+            source: 'ydb-nodejs-sdk',
+            target: 'ydb-ui',
+            description: 'YDB Web UI uses Node.js SDK'
+        },
+        {
+            source: 'ydb-nodejs-sdk',
+            target: 'ydb-console',
+            description: 'YDB Console uses Node.js SDK'
+        },
+        {
+            source: 'ydb-jdbc',
+            target: 'datagrip-ydb',
+            description: 'DataGrip uses JDBC to connect to YDB'
+        },
 
         // ETL и BI
         {
             source: 'ydb-dbapi',
             target: 'pandas',
             description: 'Pandas needs DB-API for YDB support'
+        },
+        {
+            source: 'ydb-java-sdk',
+            target: 'ydb-spark-connector',
+            description: 'YDB Spark Connector uses YDB Java SDK'
+        },
+        {
+            source: 'ydb-java-sdk',
+            target: 'ydb-flink-connector',
+            description: 'YDB Flink Connector uses YDB Java SDK'
+        },
+        {
+            source: 'ydb-dbapi',
+            target: 'dbt-ydb',
+            description: 'dbt-ydb uses YDB DB-API'
+        },
+        {
+            source: 'ydb-java-sdk',
+            target: 'ydb-airbyte-connector',
+            description: 'YDB Airbyte Connector uses YDB Java SDK'
         },
         {
             source: 'ydb-jdbc',
@@ -387,6 +953,21 @@ const ydbData: TimelineData = {
             source: 'sqlalchemy-ydb',
             target: 'superset',
             description: 'Superset uses SQLAlchemy to connect to YDB'
+        },
+        {
+            source: 'ydb-jdbc',
+            target: 'tableau-ydb',
+            description: 'Tableau connector uses JDBC to connect to YDB'
+        },
+        {
+            source: 'ydb-adonet',
+            target: 'powerbi-ydb',
+            description: 'Power BI connector uses ADO.NET provider'
+        },
+        {
+            source: 'ydb-nodejs-sdk',
+            target: 'grafana-ydb',
+            description: 'Grafana plugin uses Node.js SDK'
         },
 
         // Server-side features
@@ -400,6 +981,43 @@ const ydbData: TimelineData = {
             target: 'ydb-cdc',
             description: 'YDB CDC can publish changes to YDB Topic'
         },
+        {
+            source: 'ydb-cdc',
+            target: 'kafka-ydb-connector',
+            description: 'Kafka YDB Connector can use CDC for change data capture'
+        },
+        {
+            source: 'ydb-json-support',
+            target: 'ydb-vector-search',
+            description: 'Vector Search uses JSON support for vector storage'
+        },
+
+        // Applications
+        {
+            source: 'ydb-go-sdk',
+            target: 'ydb-terraform-provider',
+            description: 'YDB Terraform Provider uses YDB Go SDK'
+        },
+        {
+            source: 'ydb-go-sdk',
+            target: 'ydb-dataloader',
+            description: 'YDB DataLoader uses YDB Go SDK'
+        },
+        {
+            source: 'ydb-java-sdk',
+            target: 'ydb-spring-boot-starter',
+            description: 'YDB Spring Boot Starter uses YDB Java SDK'
+        },
+        {
+            source: 'ydb-nodejs-sdk',
+            target: 'ydb-nextjs-adapter',
+            description: 'YDB Next.js Adapter uses YDB Node.js SDK'
+        },
+        {
+            source: 'ydb-cpp-sdk',
+            target: 'clickhouse-ydb-dictionary',
+            description: 'ClickHouse YDB Dictionary uses YDB C++ SDK'
+        },
 
         // Логирование
         {
@@ -411,6 +1029,99 @@ const ydbData: TimelineData = {
             source: 'ydb-java-sdk',
             target: 'logstash',
             description: 'Logstash YDB plugin uses YDB Java SDK'
+        },
+        {
+            source: 'ydb-go-sdk',
+            target: 'ydb-logger',
+            description: 'YDB Logger uses YDB Go SDK'
+        },
+        {
+            source: 'ydb-go-sdk',
+            target: 'opentelemetry-ydb',
+            description: 'OpenTelemetry YDB uses YDB Go SDK'
+        },
+        {
+            source: 'ydb-go-sdk',
+            target: 'ydb-grafana-alerting',
+            description: 'YDB Grafana Alerting uses YDB Go SDK'
+        },
+
+        // Message Broker
+        {
+            source: 'ydb-cpp-sdk',
+            target: 'ydb-topic',
+            description: 'YDB Topic is part of YDB built on C++ SDK'
+        },
+        {
+            source: 'ydb-cpp-sdk',
+            target: 'ydb-queue',
+            description: 'YDB Queue is part of YDB built on C++ SDK'
+        },
+        {
+            source: 'ydb-java-sdk',
+            target: 'kafka-ydb-connector',
+            description: 'Kafka YDB connector uses YDB Java SDK'
+        },
+
+        // Query Builders
+        {
+            source: 'ydb-nodejs-sdk',
+            target: 'ydb-query-builder',
+            description: 'YDB Query Builder uses YDB Node.js SDK'
+        },
+        {
+            source: 'ydb-python-sdk',
+            target: 'yql-helper',
+            description: 'YQL Helper uses YDB Python SDK'
+        },
+        {
+            source: 'ydb-go-sdk',
+            target: 'ydb-sqlbuilder',
+            description: 'YDB SQL Builder uses YDB Go SDK'
+        },
+
+        // Connection Pools
+        {
+            source: 'ydb-go-sdk',
+            target: 'ydb-connection-pool',
+            description: 'YDB Connection Pool is built for YDB Go SDK'
+        },
+        {
+            source: 'ydb-jdbc',
+            target: 'hikaricp-ydb',
+            description: 'HikariCP for YDB works with YDB JDBC driver'
+        },
+
+        // Cross-dependencies
+        {
+            source: 'ydb-topic',
+            target: 'ydb-queue',
+            description: 'YDB Queue can be implemented on top of YDB Topic'
+        },
+        {
+            source: 'ydb-serverless-triggers',
+            target: 'yandex-cloud-functions',
+            description: 'YDB Serverless Triggers can invoke Yandex Cloud Functions'
+        },
+        {
+            source: 'spring-data-ydb',
+            target: 'ydb-spring-boot-starter',
+            description: 'YDB Spring Boot Starter uses Spring Data YDB'
+        },
+        {
+            source: 'hibernate-ydb',
+            target: 'spring-data-ydb',
+            description: 'Spring Data YDB can use Hibernate YDB dialect'
+        },
+        {
+            source: 'ydb-grafana-alerting',
+            target: 'grafana-ydb',
+            description: 'YDB Grafana Alerting uses Grafana YDB plugin'
+        },
+        {
+            source: 'ydb-monitoring',
+            target: 'opentelemetry-ydb',
+            description: 'YDB Monitoring can use OpenTelemetry YDB'
         }
     ]
 };
