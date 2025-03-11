@@ -162,7 +162,8 @@ const ydbData: TimelineData = {
             releaseDate: '2018-12-01',
             description: 'Official Go SDK for YDB',
             authors: ['Yandex'],
-            contributorsType: ['staff', 'open-source']
+            contributorsType: ['staff', 'open-source'],
+            url: 'https://github.com/ydb-platform/ydb-go-sdk'
         },
         {
             id: 'ydb-python-sdk',
@@ -172,7 +173,8 @@ const ydbData: TimelineData = {
             releaseDate: '2019-02-01',
             description: 'Official Python SDK for YDB',
             authors: ['Yandex'],
-            contributorsType: ['staff', 'student']
+            contributorsType: ['staff', 'student'],
+            url: 'https://github.com/ydb-platform/ydb-python-sdk'
         },
         {
             id: 'ydb-java-sdk',
@@ -182,7 +184,8 @@ const ydbData: TimelineData = {
             releaseDate: '2019-03-15',
             description: 'Official Java SDK for YDB',
             authors: ['Yandex'],
-            contributorsType: ['staff', 'open-source']
+            contributorsType: ['staff', 'open-source'],
+            url: 'https://github.com/ydb-platform/ydb-java-sdk'
         },
         {
             id: 'ydb-rust-sdk',
@@ -192,7 +195,8 @@ const ydbData: TimelineData = {
             releaseDate: '2021-11-01',
             description: 'Official Rust SDK for YDB',
             authors: ['Yandex'],
-            contributorsType: ['staff', 'open-source']
+            contributorsType: ['staff', 'open-source'],
+            url: 'https://github.com/ydb-platform/ydb-rust-sdk'
         },
         {
             id: 'ydb-nodejs-sdk',
@@ -202,7 +206,8 @@ const ydbData: TimelineData = {
             releaseDate: '2020-09-01',
             description: 'Official Node.js SDK for YDB',
             authors: ['Yandex'],
-            contributorsType: ['staff', 'open-source']
+            contributorsType: ['staff', 'open-source'],
+            url: 'https://github.com/ydb-platform/ydb-nodejs-sdk'
         },
         {
             id: 'ydb-dotnet-sdk',
@@ -212,7 +217,8 @@ const ydbData: TimelineData = {
             releaseDate: '2022-07-01',
             description: 'Official .NET SDK for YDB',
             authors: ['Yandex'],
-            contributorsType: ['staff', 'open-source']
+            contributorsType: ['staff', 'open-source'],
+            url: 'https://github.com/ydb-platform/ydb-dotnet-sdk'
         },
         {
             id: 'ydb-php-sdk',
@@ -222,7 +228,8 @@ const ydbData: TimelineData = {
             releaseDate: '2022-02-01',
             description: 'Official PHP SDK for YDB',
             authors: ['Yandex'],
-            contributorsType: ['staff', 'open-source']
+            contributorsType: ['staff', 'open-source'],
+            url: 'https://github.com/ydb-platform/ydb-php-sdk'
         },
         {
             id: 'ydb-golang-database-sql',
@@ -242,7 +249,8 @@ const ydbData: TimelineData = {
             releaseDate: '2020-04-01',
             description: 'JDBC driver implementation for YDB',
             authors: ['Yandex'],
-            contributorsType: ['staff', 'student']
+            contributorsType: ['staff', 'student'],
+            url: 'https://github.com/ydb-platform/ydb-jdbc-driver'
         },
         {
             id: 'ydb-dbapi',
@@ -276,7 +284,8 @@ const ydbData: TimelineData = {
             description: 'Database migration tool for Go',
             authors: ['liamstask', 'pressly'],
             version: '3.18.0',
-            contributorsType: ['open-source']
+            contributorsType: ['open-source'],
+            url: 'https://github.com/pressly/goose'
         },
         {
             id: 'ydb-migrate',
@@ -306,7 +315,8 @@ const ydbData: TimelineData = {
             releaseDate: '2022-09-01',
             description: 'Liquibase extension for YDB schema migrations',
             authors: ['Yandex'],
-            contributorsType: ['staff', 'open-source']
+            contributorsType: ['staff', 'open-source'],
+            url: 'https://github.com/ydb-platform/liquibase-ydb'
         },
 
         // ORM
@@ -338,7 +348,8 @@ const ydbData: TimelineData = {
             releaseDate: '2022-08-01',
             description: 'YDB dialect for GORM',
             authors: ['Yandex'],
-            contributorsType: ['staff', 'open-source']
+            contributorsType: ['staff', 'open-source'],
+            url: 'https://github.com/ydb-platform/gorm-driver'
         },
         {
             id: 'hibernate-ydb',
@@ -348,7 +359,8 @@ const ydbData: TimelineData = {
             releaseDate: '2022-05-01',
             description: 'Hibernate ORM dialect for YDB',
             authors: ['Yandex'],
-            contributorsType: ['staff', 'open-source']
+            contributorsType: ['staff', 'open-source'],
+            url: 'https://github.com/ydb-platform/ydb-java-hibernate'
         },
         {
             id: 'spring-data-ydb',
@@ -358,7 +370,8 @@ const ydbData: TimelineData = {
             releaseDate: '2021-11-01',
             description: 'Spring Data repository support for YDB',
             authors: ['Yandex'],
-            contributorsType: ['staff', 'open-source']
+            contributorsType: ['staff', 'open-source'],
+            url: 'https://github.com/ydb-platform/ydb-java-spring-data'
         },
         {
             id: 'entity-framework-ydb',
@@ -401,7 +414,8 @@ const ydbData: TimelineData = {
             dbSupportDate: '2020-06-15',
             description: 'Universal database tool with YDB support',
             authors: ['Serge Rider'],
-            contributorsType: ['open-source']
+            contributorsType: ['open-source'],
+            url: 'https://github.com/dbeaver/dbeaver'
         },
         {
             id: 'ydb-cli',
@@ -464,7 +478,8 @@ const ydbData: TimelineData = {
             dbSupportDate: '2020-01-15',
             description: 'Data analysis and manipulation library with YDB support',
             authors: ['Wes McKinney', 'PyData Development Team'],
-            contributorsType: ['open-source', 'student']
+            contributorsType: ['open-source', 'student'],
+            url: 'https://github.com/pandas-dev/pandas'
         },
         {
             id: 'ydb-spark-connector',
@@ -494,7 +509,8 @@ const ydbData: TimelineData = {
             releaseDate: '2022-07-01',
             description: 'dbt (data build tool) adapter for YDB',
             authors: ['Yandex'],
-            contributorsType: ['staff', 'open-source']
+            contributorsType: ['staff', 'open-source'],
+            url: 'https://github.com/ydb-platform/ydb-dbt-adapter'
         },
         {
             id: 'ydb-airbyte-connector',
@@ -518,7 +534,8 @@ const ydbData: TimelineData = {
             description: 'Open source business intelligence tool with YDB support',
             authors: ['Metabase Team', 'Yandex'],
             version: '0.41.0',
-            contributorsType: ['open-source', 'staff']
+            contributorsType: ['open-source', 'staff'],
+            url: 'https://github.com/metabase/metabase'
         },
         {
             id: 'superset',
@@ -529,7 +546,8 @@ const ydbData: TimelineData = {
             dbSupportDate: '2022-05-01',
             description: 'Modern data exploration and visualization platform with YDB support',
             authors: ['Apache Software Foundation', 'Yandex'],
-            contributorsType: ['open-source', 'staff']
+            contributorsType: ['open-source', 'staff'],
+            url: 'https://github.com/apache/superset'
         },
         {
             id: 'tableau-ydb',
@@ -559,7 +577,8 @@ const ydbData: TimelineData = {
             releaseDate: '2021-06-01',
             description: 'Grafana data source plugin for YDB',
             authors: ['Yandex'],
-            contributorsType: ['staff', 'open-source']
+            contributorsType: ['staff', 'open-source'],
+            url: 'https://github.com/ydb-platform/ydb-grafana-datasource-plugin'
         },
 
         // Apps with abstract storage
@@ -591,7 +610,8 @@ const ydbData: TimelineData = {
             releaseDate: '2021-04-01',
             description: 'Terraform provider for YDB',
             authors: ['Yandex'],
-            contributorsType: ['staff', 'open-source']
+            contributorsType: ['staff', 'open-source'],
+            url: 'https://github.com/ydb-platform/terraform-provider-ydb'
         },
         {
             id: 'ydb-dataloader',
@@ -621,7 +641,8 @@ const ydbData: TimelineData = {
             releaseDate: '2021-07-01',
             description: 'Spring Boot starter for YDB',
             authors: ['Yandex'],
-            contributorsType: ['staff', 'open-source']
+            contributorsType: ['staff', 'open-source'],
+            url: 'https://github.com/ydb-platform/ydb-java-spring-boot-starter'
         },
         {
             id: 'ydb-nextjs-adapter',
