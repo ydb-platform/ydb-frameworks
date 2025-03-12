@@ -1,6 +1,6 @@
 // src/components/Timeline/TimelineAxis.tsx
 import React from 'react';
-import { formatDate, getPositionForDate } from '../../utils/dateUtils';
+import { getPositionForDate } from '../../utils/dateUtils';
 import styles from './TimelineAxis.module.css';
 
 interface TimelineAxisProps {

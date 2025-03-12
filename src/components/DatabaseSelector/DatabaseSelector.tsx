@@ -2,6 +2,7 @@
 import React from 'react';
 import { Database } from '../../data/types';
 import styles from './DatabaseSelector.module.css';
+import dbDisplayNames from '../../data/dbDisplayNames';
 
 interface DatabaseSelectorProps {
     databases: Database[];
@@ -14,11 +15,6 @@ const DatabaseSelector: React.FC<DatabaseSelectorProps> = ({
                                                                selectedDb,
                                                                onDbChange
                                                            }) => {
-    const formatDbName = (db: string): string => {
-        // Convert database name to Title Case
-        return db.charAt(0).toUpperCase() + db.slice(1);
-    };
-
     return (
         <div className={styles.selectorContainer}>
             <div className={styles.options}>
@@ -28,7 +24,7 @@ const DatabaseSelector: React.FC<DatabaseSelectorProps> = ({
                         className={`${styles.option} ${selectedDb === db ? styles.selected : ''}`}
                         onClick={() => onDbChange(db)}
                     >
-                        {formatDbName(db)}
+                        {dbDisplayNames[db]}
                     </button>
                 ))}
             </div>
