@@ -105,6 +105,10 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
                             width: `${dbSupportPosition - releasePosition}px`,
                             backgroundColor: 'var(--gray-line)'
                         }}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        onMouseMove={handleMouseMove}
+                        data-tooltip-type="frameworkLine"
                     >
                         <div
                             className={releasePointClass}
@@ -127,6 +131,10 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
                             : `${endSupportPosition - (isDbSpecific ? releasePosition : dbSupportPosition)}px`, // До конца поддержки
                         backgroundColor: color
                     }}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    onMouseMove={handleMouseMove}
+                    data-tooltip-type="frameworkLine"
                 >
                     {/* Точка поддержки выбранной БД */}
                     <div
