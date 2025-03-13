@@ -3,6 +3,7 @@ import {TimelineData} from './types';
 
 const db2Data: TimelineData = {
     database: 'db2',
+    displayName: 'IBM Db2',
     frameworks: [
         // Стандарты API
         {

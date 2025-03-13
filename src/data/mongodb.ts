@@ -3,6 +3,7 @@ import { TimelineData } from './types';
 
 const mongodbData: TimelineData = {
     database: 'mongodb',
+    displayName: 'MongoDB',
     frameworks: [
         // Драйверы (MongoDB не использует стандартные API, все драйверы - нативные)
         {

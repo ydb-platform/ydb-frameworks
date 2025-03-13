@@ -3,6 +3,7 @@ import { TimelineData } from './types';
 
 const mysqlData: TimelineData = {
     database: 'mysql',
+    displayName: 'MySQL',
     frameworks: [
         // Стандарты API
         {

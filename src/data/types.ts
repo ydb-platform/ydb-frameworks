@@ -83,6 +83,7 @@ export interface Dependency {
 
 export interface TimelineData {
     database: Database;
+    displayName: string;
     frameworks: Framework[];
     dependencies: Dependency[];
 }

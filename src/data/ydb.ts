@@ -3,6 +3,7 @@ import { TimelineData } from './types';
 
 const ydbData: TimelineData = {
     database: 'ydb',
+    displayName: 'YDB',
     frameworks: [
         // Server-side features
         {

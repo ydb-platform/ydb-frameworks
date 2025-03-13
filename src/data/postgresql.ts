@@ -3,6 +3,7 @@ import { TimelineData } from './types';
 
 const postgresqlData: TimelineData = {
     database: 'postgresql',
+    displayName: 'PostgreSQL',
     frameworks: [
         // Стандарты API
         {

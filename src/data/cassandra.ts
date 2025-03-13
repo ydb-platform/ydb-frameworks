@@ -3,6 +3,7 @@ import { TimelineData } from './types';
 
 const cassandraData: TimelineData = {
     database: 'cassandra',
+    displayName: 'Apache Cassandra',
     frameworks: [
         // Стандарты API (Cassandra в основном использует свои собственные API,
         // но некоторые стандартные интерфейсы тоже поддерживаются)

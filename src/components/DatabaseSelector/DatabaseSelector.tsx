@@ -2,7 +2,7 @@
 import React from 'react';
 import { Database } from '../../data/types';
 import styles from './DatabaseSelector.module.css';
-import dbDisplayNames from '../../data/dbDisplayNames';
+import databaseData from '../../data/index';
 
 interface DatabaseSelectorProps {
     databases: Database[];
@@ -24,7 +24,7 @@ const DatabaseSelector: React.FC<DatabaseSelectorProps> = ({
                         className={`${styles.option} ${selectedDb === db ? styles.selected : ''}`}
                         onClick={() => onDbChange(db)}
                     >
-                        {dbDisplayNames[db]}
+                        {databaseData[db].displayName}
                     </button>
                 ))}
             </div>

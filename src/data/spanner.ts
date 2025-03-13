@@ -3,6 +3,7 @@ import { TimelineData } from './types';
 
 const spannerData: TimelineData = {
     database: 'spanner',
+    displayName: 'Google Cloud Spanner',
     frameworks: [
         // Стандарты API
         {

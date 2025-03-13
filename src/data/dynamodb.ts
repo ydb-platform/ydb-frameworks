@@ -3,6 +3,7 @@ import { TimelineData } from './types';
 
 const dynamodbData: TimelineData = {
     database: 'dynamodb',
+    displayName: 'Amazon DynamoDB',
     frameworks: [
         // Драйверы
         {

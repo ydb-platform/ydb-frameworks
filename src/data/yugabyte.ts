@@ -3,6 +3,7 @@ import { TimelineData } from './types';
 
 const yugabyteData: TimelineData = {
     database: 'yugabyte',
+    displayName: 'YugabyteDB',
     frameworks: [
         // Стандарты API
         {

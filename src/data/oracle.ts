@@ -3,6 +3,7 @@ import { TimelineData } from './types';
 
 const oracleData: TimelineData = {
     database: 'oracle',
+    displayName: 'Oracle Database',
     frameworks: [
         // Стандарты API
         {

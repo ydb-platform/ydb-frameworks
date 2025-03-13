@@ -3,6 +3,7 @@ import { TimelineData } from './types';
 
 const firebaseData: TimelineData = {
     database: 'firebase',
+    displayName: 'Firebase Realtime Database',
     frameworks: [
         // Драйверы - Web
         {

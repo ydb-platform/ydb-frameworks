@@ -3,6 +3,7 @@ import { TimelineData } from './types';
 
 const cockroachData: TimelineData = {
     database: 'cockroach',
+    displayName: 'CockroachDB',
     frameworks: [
         // Стандарты API
         {

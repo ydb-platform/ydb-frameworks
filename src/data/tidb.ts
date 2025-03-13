@@ -3,6 +3,7 @@ import { TimelineData } from './types';
 
 const tidbData: TimelineData = {
     database: 'tidb',
+    displayName: 'TiDB',
     frameworks: [
         // Стандарты API
         {

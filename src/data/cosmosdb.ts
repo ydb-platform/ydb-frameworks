@@ -3,6 +3,7 @@ import { TimelineData } from './types';
 
 const cosmosData: TimelineData = {
     database: 'cosmosdb',
+    displayName: 'Azure Cosmos DB',
     frameworks: [
         // Драйверы - SQL API
         {

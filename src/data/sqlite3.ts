@@ -3,6 +3,7 @@ import { TimelineData } from './types';
 
 const sqlite3Data: TimelineData = {
     database: 'sqlite3',
+    displayName: 'SQLite3',
     frameworks: [
         // Стандарты API
         {
