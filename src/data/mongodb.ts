@@ -13,7 +13,8 @@ const mongodbData: TimelineData = {
             language: 'C',
             releaseDate: '2009-02-11',
             description: 'Official MongoDB C driver (libmongoc)',
-            authors: ['MongoDB Inc.']
+            authors: ['MongoDB Inc.'],
+            repository: 'https://github.com/mongodb/mongo-c-driver'
         },
         {
             id: 'mongodb-node',
@@ -22,7 +23,8 @@ const mongodbData: TimelineData = {
             language: 'JavaScript',
             releaseDate: '2010-02-15',
             description: 'Official MongoDB driver for Node.js',
-            authors: ['MongoDB Inc.']
+            authors: ['MongoDB Inc.'],
+            repository: 'https://github.com/mongodb/node-mongodb-native'
         },
         {
             id: 'mongodb-java',
@@ -31,7 +33,8 @@ const mongodbData: TimelineData = {
             language: 'Java',
             releaseDate: '2009-06-15',
             description: 'Official MongoDB driver for Java',
-            authors: ['MongoDB Inc.']
+            authors: ['MongoDB Inc.'],
+            repository: 'https://github.com/mongodb/mongo-java-driver'
         },
         {
             id: 'pymongo',
@@ -40,7 +43,8 @@ const mongodbData: TimelineData = {
             language: 'Python',
             releaseDate: '2009-04-01',
             description: 'Official MongoDB driver for Python',
-            authors: ['MongoDB Inc.']
+            authors: ['MongoDB Inc.'],
+            repository: 'https://github.com/mongodb/mongo-python-driver'
         },
         {
             id: 'mongodb-csharp',
@@ -49,7 +53,8 @@ const mongodbData: TimelineData = {
             language: 'C#',
             releaseDate: '2010-01-15',
             description: 'Official MongoDB driver for C#/.NET',
-            authors: ['MongoDB Inc.']
+            authors: ['MongoDB Inc.'],
+            repository: 'https://github.com/mongodb/mongo-csharp-driver'
         },
         {
             id: 'mongo-go-driver',
@@ -58,7 +63,8 @@ const mongodbData: TimelineData = {
             language: 'Go',
             releaseDate: '2016-09-25',
             description: 'Official MongoDB driver for Go',
-            authors: ['MongoDB Inc.']
+            authors: ['MongoDB Inc.'],
+            repository: 'https://github.com/mongodb/mongo-go-driver'
         },
         {
             id: 'mgo',
@@ -68,7 +74,8 @@ const mongodbData: TimelineData = {
             releaseDate: '2011-03-01',
             description: 'MongoDB driver for Go (now superseded by mongo-go-driver)',
             authors: ['Gustavo Niemeyer'],
-            endSupportDate: '2018-05-01'
+            endSupportDate: '2018-05-01',
+            repository: 'https://github.com/go-mgo/mgo'
         },
 
         // ORM / ODM
@@ -79,7 +86,8 @@ const mongodbData: TimelineData = {
             language: 'JavaScript',
             releaseDate: '2010-12-16',
             description: 'MongoDB object modeling for Node.js',
-            authors: ['LearnBoost', 'Automattic']
+            authors: ['LearnBoost', 'Automattic'],
+            repository: 'https://github.com/Automattic/mongoose'
         },
         {
             id: 'spring-data-mongodb',
@@ -88,7 +96,8 @@ const mongodbData: TimelineData = {
             language: 'Java',
             releaseDate: '2011-03-02',
             description: 'Spring Data support for MongoDB',
-            authors: ['SpringSource', 'Pivotal']
+            authors: ['SpringSource', 'Pivotal'],
+            repository: 'https://github.com/spring-projects/spring-data-mongodb'
         },
         {
             id: 'mongoengine',
@@ -97,7 +106,8 @@ const mongodbData: TimelineData = {
             language: 'Python',
             releaseDate: '2009-12-01',
             description: 'Document-Object Mapper for MongoDB and Python',
-            authors: ['Harry Marr']
+            authors: ['Harry Marr'],
+            repository: 'https://github.com/mongoengine/mongoengine'
         },
         {
             id: 'mongoid',
@@ -106,7 +116,8 @@ const mongodbData: TimelineData = {
             language: 'Ruby',
             releaseDate: '2009-12-01',
             description: 'ODM (Object-Document-Mapper) for MongoDB in Ruby',
-            authors: ['Durran Jordan']
+            authors: ['Durran Jordan'],
+            repository: 'https://github.com/mongodb/mongoid'
         },
 
         // Инструменты асинхронной работы
@@ -117,7 +128,8 @@ const mongodbData: TimelineData = {
             language: 'Python',
             releaseDate: '2012-09-06',
             description: 'Asynchronous Python driver for MongoDB',
-            authors: ['A. Jesse Jiryu Davis', 'MongoDB Inc.']
+            authors: ['A. Jesse Jiryu Davis', 'MongoDB Inc.'],
+            repository: 'https://github.com/mongodb/motor'
         },
 
         // Admin tools
@@ -128,7 +140,8 @@ const mongodbData: TimelineData = {
             language: 'JavaScript',
             releaseDate: '2016-06-28',
             description: 'Official GUI for MongoDB',
-            authors: ['MongoDB Inc.']
+            authors: ['MongoDB Inc.'],
+            repository: 'https://github.com/mongodb-js/compass'
         },
         {
             id: 'studio3t',
@@ -137,7 +150,8 @@ const mongodbData: TimelineData = {
             language: 'Java',
             releaseDate: '2013-11-01',
             description: 'Professional GUI for MongoDB (formerly MongoChef)',
-            authors: ['3T Software Labs']
+            authors: ['3T Software Labs'],
+            repository: 'https://studio3t.com'
         },
 
         // BI инструменты
@@ -148,7 +162,8 @@ const mongodbData: TimelineData = {
             language: 'C++',
             releaseDate: '2016-11-29',
             description: 'Tool to use MongoDB as a data source for SQL-based BI and analytics platforms',
-            authors: ['MongoDB Inc.']
+            authors: ['MongoDB Inc.'],
+            repository: 'https://github.com/mongodb/bi-connector'
         },
         {
             id: 'metabase',
@@ -158,7 +173,8 @@ const mongodbData: TimelineData = {
             releaseDate: '2015-10-01',
             dbSupportDate: '2017-05-15',
             description: 'Open source business intelligence tool with MongoDB support',
-            authors: ['Metabase Team']
+            authors: ['Metabase Team'],
+            repository: 'https://github.com/metabase/metabase'
         },
         {
             id: 'superset',
@@ -168,7 +184,8 @@ const mongodbData: TimelineData = {
             releaseDate: '2015-12-17',
             dbSupportDate: '2018-03-01',
             description: 'Modern data exploration and visualization platform with MongoDB support',
-            authors: ['Airbnb', 'Apache Software Foundation']
+            authors: ['Airbnb', 'Apache Software Foundation'],
+            repository: 'https://github.com/apache/superset'
         },
 
         // Приложения с абстрактным хранилищем
@@ -179,7 +196,8 @@ const mongodbData: TimelineData = {
             language: 'JavaScript',
             releaseDate: '2015-09-14',
             description: 'Headless CMS with MongoDB support',
-            authors: ['Strapi Solutions']
+            authors: ['Strapi Solutions'],
+            repository: 'https://github.com/strapi/strapi'
         },
         {
             id: 'keystonejs',
@@ -188,7 +206,8 @@ const mongodbData: TimelineData = {
             language: 'JavaScript',
             releaseDate: '2013-07-19',
             description: 'CMS and web application framework with MongoDB as primary database',
-            authors: ['Jed Watson', 'Thinkmill']
+            authors: ['Jed Watson', 'Thinkmill'],
+            repository: 'https://github.com/keystonejs/keystone'
         },
         {
             id: 'nextcloud',

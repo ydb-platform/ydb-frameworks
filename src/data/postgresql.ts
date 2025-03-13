@@ -75,7 +75,8 @@ const postgresqlData: TimelineData = {
             language: 'C',
             releaseDate: '1998-01-01',
             description: 'PostgreSQL ODBC driver',
-            authors: ['PostgreSQL Global Development Group']
+            authors: ['PostgreSQL Global Development Group'],
+            repository: 'https://github.com/postgresql/psqlodbc'
         },
         {
             id: 'pgjdbc',
@@ -84,7 +85,8 @@ const postgresqlData: TimelineData = {
             language: 'Java',
             releaseDate: '1998-01-01',
             description: 'JDBC driver for PostgreSQL',
-            authors: ['PostgreSQL Global Development Group']
+            authors: ['PostgreSQL Global Development Group'],
+            repository: 'https://github.com/pgjdbc/pgjdbc'
         },
         {
             id: 'npgsql',
@@ -94,7 +96,8 @@ const postgresqlData: TimelineData = {
             releaseDate: '2006-06-24',
             description: 'PostgreSQL data provider for .NET',
             authors: ['Francisco Figueiredo Jr.', '.NET Foundation'],
-            version: '1.0'
+            version: '1.0',
+            repository: 'https://github.com/npgsql/npgsql'
         },
         {
             id: 'psycopg2',
@@ -103,7 +106,8 @@ const postgresqlData: TimelineData = {
             language: 'Python',
             releaseDate: '2001-12-18',
             description: 'PostgreSQL database adapter for Python',
-            authors: ['Federico Di Gregorio', 'Daniele Varrazzo']
+            authors: ['Federico Di Gregorio', 'Daniele Varrazzo'],
+            repository: 'https://github.com/psycopg/psycopg2'
         },
         {
             id: 'pdo-pgsql',
@@ -112,7 +116,8 @@ const postgresqlData: TimelineData = {
             language: 'PHP',
             releaseDate: '2005-06-01',
             description: 'PDO driver for PostgreSQL',
-            authors: ['PHP Group']
+            authors: ['PHP Group'],
+            repository: 'https://github.com/php/php-src'
         },
         {
             id: 'pq',
@@ -121,7 +126,8 @@ const postgresqlData: TimelineData = {
             language: 'Go',
             releaseDate: '2011-12-01',
             description: 'Pure Go Postgres driver for Go\'s database/sql package',
-            authors: ['Blake Mizerany']
+            authors: ['Blake Mizerany'],
+            repository: 'https://github.com/lib/pq'
         },
         {
             id: 'pgx',
@@ -130,7 +136,8 @@ const postgresqlData: TimelineData = {
             language: 'Go',
             releaseDate: '2014-03-30',
             description: 'PostgreSQL driver and toolkit for Go',
-            authors: ['Jack Christensen']
+            authors: ['Jack Christensen'],
+            repository: 'https://github.com/jackc/pgx'
         },
 
         // Остальные фреймворки (ORM, Migration, etc.)
@@ -141,7 +148,8 @@ const postgresqlData: TimelineData = {
             language: 'C++',
             releaseDate: '1998-09-09',
             description: 'Open source administration and management tool for PostgreSQL',
-            authors: ['Dave Page']
+            authors: ['Dave Page'],
+            repository: 'https://github.com/postgres/pgadmin4'
         },
         {
             id: 'typeorm',
@@ -150,7 +158,8 @@ const postgresqlData: TimelineData = {
             language: 'TypeScript',
             releaseDate: '2016-01-01',
             description: 'ORM for TypeScript and JavaScript',
-            authors: ['Umed Khudoiberdiev']
+            authors: ['Umed Khudoiberdiev'],
+            repository: 'https://github.com/typeorm/typeorm'
         },
         {
             id: 'prisma',
@@ -159,7 +168,8 @@ const postgresqlData: TimelineData = {
             language: 'TypeScript',
             releaseDate: '2019-06-01',
             description: 'Next-generation ORM for Node.js and TypeScript',
-            authors: ['Prisma']
+            authors: ['Prisma'],
+            repository: 'https://github.com/prisma/prisma'
         },
         {
             id: 'sequelize',
@@ -168,7 +178,8 @@ const postgresqlData: TimelineData = {
             language: 'JavaScript',
             releaseDate: '2011-07-18',
             description: 'Promise-based Node.js ORM',
-            authors: ['Sascha Depold']
+            authors: ['Sascha Depold'],
+            repository: 'https://github.com/sequelize/sequelize'
         },
         {
             id: 'sqlalchemy',
@@ -177,7 +188,8 @@ const postgresqlData: TimelineData = {
             language: 'Python',
             releaseDate: '2006-02-14',
             description: 'SQL toolkit and ORM for Python',
-            authors: ['Michael Bayer']
+            authors: ['Michael Bayer'],
+            repository: 'https://github.com/sqlalchemy/sqlalchemy'
         },
         {
             id: 'django-orm',
@@ -186,7 +198,8 @@ const postgresqlData: TimelineData = {
             language: 'Python',
             releaseDate: '2005-07-21',
             description: 'ORM built into Django web framework',
-            authors: ['Django Software Foundation']
+            authors: ['Django Software Foundation'],
+            repository: 'https://github.com/django/django'
         },
         {
             id: 'hibernate',
@@ -195,7 +208,8 @@ const postgresqlData: TimelineData = {
             language: 'Java',
             releaseDate: '2001-05-01',
             description: 'Object-relational mapping framework for Java',
-            authors: ['Gavin King']
+            authors: ['Gavin King'],
+            repository: 'https://github.com/hibernate/hibernate-orm'
         },
         {
             id: 'gorm',
@@ -204,7 +218,8 @@ const postgresqlData: TimelineData = {
             language: 'Go',
             releaseDate: '2013-10-25',
             description: 'The fantastic ORM library for Golang',
-            authors: ['Jinzhu']
+            authors: ['Jinzhu'],
+            repository: 'https://github.com/go-gorm/gorm'
         },
         {
             id: 'flyway',
@@ -213,7 +228,8 @@ const postgresqlData: TimelineData = {
             language: 'Java',
             releaseDate: '2010-06-29',
             description: 'Database migration tool',
-            authors: ['Axel Fontaine', 'Redgate']
+            authors: ['Axel Fontaine', 'Redgate'],
+            repository: 'https://github.com/flyway/flyway'
         },
         {
             id: 'liquibase',
@@ -222,7 +238,8 @@ const postgresqlData: TimelineData = {
             language: 'Java',
             releaseDate: '2006-12-05',
             description: 'Database schema change management',
-            authors: ['Nathan Voxland']
+            authors: ['Nathan Voxland'],
+            repository: 'https://github.com/liquibase/liquibase'
         },
         {
             id: 'alembic',
@@ -231,7 +248,8 @@ const postgresqlData: TimelineData = {
             language: 'Python',
             releaseDate: '2012-04-07',
             description: 'Database migration tool for SQLAlchemy',
-            authors: ['Michael Bayer']
+            authors: ['Michael Bayer'],
+            repository: 'https://github.com/sqlalchemy/alembic'
         },
         {
             id: 'knex',
@@ -240,7 +258,8 @@ const postgresqlData: TimelineData = {
             language: 'JavaScript',
             releaseDate: '2013-04-21',
             description: 'SQL query builder for JavaScript',
-            authors: ['Tim Griesser']
+            authors: ['Tim Griesser'],
+            repository: 'https://github.com/knex/knex'
         },
         {
             id: 'dbeaver',
@@ -249,7 +268,8 @@ const postgresqlData: TimelineData = {
             language: 'Java',
             releaseDate: '2010-06-01',
             description: 'Universal database tool',
-            authors: ['Serge Rider']
+            authors: ['Serge Rider'],
+            repository: 'https://github.com/dbeaver/dbeaver'
         },
 
         // BI инструменты
@@ -260,7 +280,8 @@ const postgresqlData: TimelineData = {
             language: 'Java',
             releaseDate: '2015-10-01',
             description: 'Open source business intelligence tool with PostgreSQL support',
-            authors: ['Metabase Team']
+            authors: ['Metabase Team'],
+            repository: 'https://github.com/metabase/metabase'
         },
         {
             id: 'superset',
@@ -269,7 +290,8 @@ const postgresqlData: TimelineData = {
             language: 'Python',
             releaseDate: '2015-12-17',
             description: 'Modern data exploration and visualization platform with PostgreSQL support',
-            authors: ['Airbnb', 'Apache Software Foundation']
+            authors: ['Airbnb', 'Apache Software Foundation'],
+            repository: 'https://github.com/apache/superset'
         },
         {
             id: 'redash',
@@ -278,7 +300,8 @@ const postgresqlData: TimelineData = {
             language: 'Python',
             releaseDate: '2013-11-04',
             description: 'Open source data visualization and dashboard tool with PostgreSQL support',
-            authors: ['Arik Fraimovich']
+            authors: ['Arik Fraimovich'],
+            repository: 'https://github.com/getredash/redash'
         },
 
         // Приложения с абстрактным хранилищем
@@ -289,7 +312,8 @@ const postgresqlData: TimelineData = {
             language: 'PHP',
             releaseDate: '2016-06-02',
             description: 'Self-hosted productivity platform that can use PostgreSQL as backend',
-            authors: ['Nextcloud GmbH']
+            authors: ['Nextcloud GmbH'],
+            repository: 'https://github.com/nextcloud/server'
         },
         {
             id: 'gitea',
@@ -298,7 +322,8 @@ const postgresqlData: TimelineData = {
             language: 'Go',
             releaseDate: '2016-12-24',
             description: 'Lightweight code hosting solution that supports PostgreSQL',
-            authors: ['Gitea Team']
+            authors: ['Gitea Team'],
+            repository: 'https://github.com/go-gitea/gitea'
         },
         {
             id: 'wordpress',

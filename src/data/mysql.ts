@@ -75,7 +75,8 @@ const mysqlData: TimelineData = {
             language: 'C',
             releaseDate: '1996-01-01',
             description: 'MySQL ODBC driver (Connector/ODBC)',
-            authors: ['MySQL AB', 'Oracle']
+            authors: ['MySQL AB', 'Oracle'],
+            repository: 'https://github.com/mysql/mysql-connector-odbc'
         },
         {
             id: 'mysql-connector-j',
@@ -84,7 +85,8 @@ const mysqlData: TimelineData = {
             language: 'Java',
             releaseDate: '1999-01-01',
             description: 'JDBC driver for MySQL',
-            authors: ['MySQL AB', 'Oracle']
+            authors: ['MySQL AB', 'Oracle'],
+            repository: 'https://github.com/mysql/mysql-connector-j'
         },
         {
             id: 'mysql-connector-net',
@@ -94,7 +96,8 @@ const mysqlData: TimelineData = {
             releaseDate: '2004-10-20',
             description: 'MySQL ADO.NET driver',
             authors: ['MySQL AB', 'Oracle'],
-            version: '1.0'
+            version: '1.0',
+            repository: 'https://github.com/mysql/mysql-connector-net'
         },
         {
             id: 'mysqlclient',
@@ -103,7 +106,8 @@ const mysqlData: TimelineData = {
             language: 'Python',
             releaseDate: '1999-01-01',
             description: 'MySQL database connector for Python (originally MySQLdb)',
-            authors: ['Andy Dustman', 'Community']
+            authors: ['Andy Dustman', 'Community'],
+            repository: 'https://github.com/PyMySQL/mysqlclient'
         },
         {
             id: 'pymysql',
@@ -112,7 +116,8 @@ const mysqlData: TimelineData = {
             language: 'Python',
             releaseDate: '2010-09-02',
             description: 'Pure-Python MySQL client library',
-            authors: ['yutaka.matsubara', 'Community']
+            authors: ['yutaka.matsubara', 'Community'],
+            repository: 'https://github.com/PyMySQL/PyMySQL'
         },
         {
             id: 'pdo-mysql',
@@ -121,7 +126,8 @@ const mysqlData: TimelineData = {
             language: 'PHP',
             releaseDate: '2005-06-01',
             description: 'PDO driver for MySQL',
-            authors: ['PHP Group']
+            authors: ['PHP Group'],
+            repository: 'https://github.com/php/php-src'
         },
         {
             id: 'go-mysql-driver',
@@ -130,7 +136,8 @@ const mysqlData: TimelineData = {
             language: 'Go',
             releaseDate: '2012-07-18',
             description: 'MySQL driver for Go\'s database/sql',
-            authors: ['Julien Schmidt']
+            authors: ['Julien Schmidt'],
+            repository: 'https://github.com/go-sql-driver/mysql'
         },
 
         // Admin tools
@@ -141,7 +148,8 @@ const mysqlData: TimelineData = {
             language: 'PHP',
             releaseDate: '1998-09-09',
             description: 'Web-based MySQL administration tool',
-            authors: ['Tobias Ratschiller', 'phpMyAdmin contributors']
+            authors: ['Tobias Ratschiller', 'phpMyAdmin contributors'],
+            repository: 'https://github.com/phpmyadmin/phpmyadmin'
         },
         {
             id: 'mysql-workbench',
@@ -150,7 +158,8 @@ const mysqlData: TimelineData = {
             language: 'C++',
             releaseDate: '2005-09-01',
             description: 'Visual database design tool for MySQL',
-            authors: ['MySQL AB', 'Oracle']
+            authors: ['MySQL AB', 'Oracle'],
+            repository: 'https://github.com/mysql/mysql-workbench'
         },
 
         // ORM frameworks
@@ -161,7 +170,8 @@ const mysqlData: TimelineData = {
             language: 'TypeScript',
             releaseDate: '2016-01-01',
             description: 'ORM for TypeScript and JavaScript with MySQL support',
-            authors: ['Umed Khudoiberdiev']
+            authors: ['Umed Khudoiberdiev'],
+            repository: 'https://github.com/typeorm/typeorm'
         },
         {
             id: 'prisma',
@@ -170,7 +180,8 @@ const mysqlData: TimelineData = {
             language: 'TypeScript',
             releaseDate: '2019-06-01',
             description: 'Next-generation ORM for Node.js and TypeScript with MySQL support',
-            authors: ['Prisma']
+            authors: ['Prisma'],
+            repository: 'https://github.com/prisma/prisma'
         },
         {
             id: 'sequelize',
@@ -179,7 +190,8 @@ const mysqlData: TimelineData = {
             language: 'JavaScript',
             releaseDate: '2011-07-18',
             description: 'Promise-based Node.js ORM with MySQL support',
-            authors: ['Sascha Depold']
+            authors: ['Sascha Depold'],
+            repository: 'https://github.com/sequelize/sequelize'
         },
         {
             id: 'sqlalchemy',
@@ -188,7 +200,8 @@ const mysqlData: TimelineData = {
             language: 'Python',
             releaseDate: '2006-02-14',
             description: 'SQL toolkit and ORM for Python with MySQL support',
-            authors: ['Michael Bayer']
+            authors: ['Michael Bayer'],
+            repository: 'https://github.com/sqlalchemy/sqlalchemy'
         },
         {
             id: 'django-orm',
@@ -197,7 +210,8 @@ const mysqlData: TimelineData = {
             language: 'Python',
             releaseDate: '2005-07-21',
             description: 'ORM built into Django web framework with MySQL support',
-            authors: ['Django Software Foundation']
+            authors: ['Django Software Foundation'],
+            repository: 'https://github.com/django/django'
         },
         {
             id: 'hibernate',
@@ -206,7 +220,8 @@ const mysqlData: TimelineData = {
             language: 'Java',
             releaseDate: '2001-05-01',
             description: 'Object-relational mapping framework for Java with MySQL support',
-            authors: ['Gavin King']
+            authors: ['Gavin King'],
+            repository: 'https://github.com/hibernate/hibernate-orm'
         },
         {
             id: 'gorm',
@@ -215,7 +230,8 @@ const mysqlData: TimelineData = {
             language: 'Go',
             releaseDate: '2013-10-25',
             description: 'The fantastic ORM library for Golang with MySQL support',
-            authors: ['Jinzhu']
+            authors: ['Jinzhu'],
+            repository: 'https://github.com/go-gorm/gorm'
         },
 
         // Migration tools
@@ -226,7 +242,8 @@ const mysqlData: TimelineData = {
             language: 'Java',
             releaseDate: '2010-06-29',
             description: 'Database migration tool with MySQL support',
-            authors: ['Axel Fontaine', 'Redgate']
+            authors: ['Axel Fontaine', 'Redgate'],
+            repository: 'https://github.com/flyway/flyway'
         },
         {
             id: 'liquibase',
@@ -235,7 +252,8 @@ const mysqlData: TimelineData = {
             language: 'Java',
             releaseDate: '2006-12-05',
             description: 'Database schema change management with MySQL support',
-            authors: ['Nathan Voxland']
+            authors: ['Nathan Voxland'],
+            repository: 'https://github.com/liquibase/liquibase'
         },
         {
             id: 'knex',
@@ -244,7 +262,8 @@ const mysqlData: TimelineData = {
             language: 'JavaScript',
             releaseDate: '2013-04-21',
             description: 'SQL query builder for JavaScript with MySQL support',
-            authors: ['Tim Griesser']
+            authors: ['Tim Griesser'],
+            repository: 'https://github.com/knex/knex'
         },
         {
             id: 'dbeaver',
