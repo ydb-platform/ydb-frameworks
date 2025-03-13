@@ -361,6 +361,108 @@ const mysqlData: TimelineData = {
             releaseDate: '2015-08-01',
             description: 'MySQL binlog processor that streams changes to Kafka, RabbitMQ, or other destinations',
             authors: ['Zendesk']
+        },
+
+        // Node.js фреймворки и библиотеки
+        {
+            id: 'mysql2',
+            name: 'mysql2',
+            category: 'Driver',
+            language: 'JavaScript',
+            releaseDate: '2016-06-06',
+            description: 'Fast MySQL driver for Node.js with focus on performance',
+            authors: ['Andrey Sidorov', 'Community'],
+            repository: 'https://github.com/sidorares/node-mysql2'
+        },
+        {
+            id: 'mysql-node',
+            name: 'mysql',
+            category: 'Driver',
+            language: 'JavaScript',
+            releaseDate: '2012-02-11',
+            description: 'A pure Node.js JavaScript Client implementing the MySQL protocol',
+            authors: ['Felix Geisendörfer', 'Community'],
+            repository: 'https://github.com/mysqljs/mysql'
+        },
+        {
+            id: 'knex-mysql',
+            name: 'Knex.js for MySQL',
+            category: 'Query Builder',
+            language: 'JavaScript',
+            releaseDate: '2013-04-21',
+            description: 'SQL query builder for MySQL in Node.js',
+            authors: ['Tim Griesser', 'Community'],
+            repository: 'https://github.com/knex/knex'
+        },
+        {
+            id: 'objection-mysql',
+            name: 'Objection.js for MySQL',
+            category: 'ORM',
+            language: 'JavaScript',
+            releaseDate: '2015-03-01',
+            description: 'ORM built on Knex.js for MySQL',
+            authors: ['Sami Koskimäki', 'Community'],
+            repository: 'https://github.com/Vincit/objection.js'
+        },
+        {
+            id: 'mikro-orm-mysql',
+            name: 'MikroORM for MySQL',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2018-12-09',
+            description: 'TypeScript ORM for Node.js based on Data Mapper pattern',
+            authors: ['Martin Adámek', 'Community'],
+            repository: 'https://github.com/mikro-orm/mikro-orm'
+        },
+        {
+            id: 'bookshelf-mysql',
+            name: 'Bookshelf.js for MySQL',
+            category: 'ORM',
+            language: 'JavaScript',
+            releaseDate: '2013-05-01',
+            description: 'JavaScript ORM for Node.js, built on Knex',
+            authors: ['Tim Griesser', 'Community'],
+            repository: 'https://github.com/bookshelf/bookshelf'
+        },
+        {
+            id: 'nestjs-mysql',
+            name: 'NestJS with MySQL',
+            category: 'Apps with abstract storage',
+            language: 'TypeScript',
+            releaseDate: '2017-11-01',
+            description: 'Progressive Node.js framework with MySQL support',
+            authors: ['Kamil Myśliwiec', 'Community'],
+            repository: 'https://github.com/nestjs/nest'
+        },
+        {
+            id: 'typeorm-mysql-query-builder',
+            name: 'TypeORM Query Builder for MySQL',
+            category: 'Query Builder',
+            language: 'TypeScript',
+            releaseDate: '2016-01-01',
+            description: 'Powerful query builder provided by TypeORM for MySQL',
+            authors: ['Umed Khudoiberdiev', 'Community'],
+            repository: 'https://github.com/typeorm/typeorm'
+        },
+        {
+            id: 'sequelize-auto',
+            name: 'Sequelize-Auto',
+            category: 'ORM',
+            language: 'JavaScript',
+            releaseDate: '2015-03-21',
+            description: 'Automatically generate models for Sequelize from MySQL database',
+            authors: ['Daniel Durante', 'Community'],
+            repository: 'https://github.com/sequelize/sequelize-auto'
+        },
+        {
+            id: 'drizzle-orm-mysql',
+            name: 'DrizzleORM for MySQL',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2022-05-15',
+            description: 'TypeScript ORM with MySQL support focused on type-safety and performance',
+            authors: ['Drizzle Team', 'Community'],
+            repository: 'https://github.com/drizzle-team/drizzle-orm'
         }
     ],
     dependencies: [

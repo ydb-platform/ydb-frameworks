@@ -331,6 +331,28 @@ const cockroachData: TimelineData = {
             releaseDate: '2020-06-01',
             description: 'Debezium CDC connector for CockroachDB',
             authors: ['Red Hat', 'Cockroach Labs']
+        },
+
+        // Node.js фреймворки и библиотеки
+        {
+            id: 'typeorm-cockroach',
+            name: 'TypeORM for CockroachDB',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2018-03-01',
+            description: 'TypeScript ORM with CockroachDB support',
+            authors: ['Umed Khudoiberdiev', 'Community'],
+            repository: 'https://github.com/typeorm/typeorm'
+        },
+        {
+            id: 'drizzle-orm-cockroach',
+            name: 'DrizzleORM for CockroachDB',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2023-01-01',
+            description: 'TypeScript ORM with CockroachDB support via PostgreSQL driver',
+            authors: ['Drizzle Team', 'Community'],
+            repository: 'https://github.com/drizzle-team/drizzle-orm'
         }
     ],
     dependencies: [

@@ -248,7 +248,109 @@ const mongodbData: TimelineData = {
             releaseDate: '2018-02-07',
             description: 'Native feature for real-time notifications of data changes in MongoDB',
             authors: ['MongoDB Inc.']
-        }
+        },
+
+        // Node.js фреймворки и библиотеки
+        {
+            id: 'mongodb-core',
+            name: 'mongodb-core',
+            category: 'Driver',
+            language: 'JavaScript',
+            releaseDate: '2014-10-15',
+            description: 'Core MongoDB driver functionality, low-level API',
+            authors: ['MongoDB Inc.', 'Community'],
+            repository: 'https://github.com/mongodb-js/mongodb-core'
+        },
+        {
+            id: 'monk',
+            name: 'Monk',
+            category: 'Driver',
+            language: 'JavaScript',
+            releaseDate: '2012-08-24',
+            description: 'Tiny layer that provides simple yet substantial usability improvements for MongoDB usage within Node.js',
+            authors: ['Guillermo Rauch', 'Community'],
+            repository: 'https://github.com/Automattic/monk'
+        },
+        {
+            id: 'mongoist',
+            name: 'Mongoist',
+            category: 'Driver',
+            language: 'JavaScript',
+            releaseDate: '2017-09-15',
+            description: 'Mongoose-like MongoDB API based on promises',
+            authors: ['Philipp Thürwächter', 'Community'],
+            repository: 'https://github.com/saintedlama/mongoist'
+        },
+        {
+            id: 'nestjs-mongodb',
+            name: 'NestJS with MongoDB',
+            category: 'Apps with abstract storage',
+            language: 'TypeScript',
+            releaseDate: '2017-11-01',
+            description: 'Progressive Node.js framework with MongoDB support',
+            authors: ['Kamil Myśliwiec', 'Community'],
+            repository: 'https://github.com/nestjs/nest'
+        },
+        {
+            id: 'typegoose',
+            name: 'Typegoose',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2017-06-01',
+            description: 'Define Mongoose models using TypeScript classes',
+            authors: ['Ben Grynhaus', 'Community'],
+            repository: 'https://github.com/typegoose/typegoose'
+        },
+        {
+            id: 'mongoose-paginate',
+            name: 'mongoose-paginate',
+            category: 'ORM',
+            language: 'JavaScript',
+            releaseDate: '2014-06-01',
+            description: 'Pagination plugin for Mongoose',
+            authors: ['Edward Hotchkiss', 'Community'],
+            repository: 'https://github.com/edwardhotchkiss/mongoose-paginate'
+        },
+        {
+            id: 'mongoose-aggregate-paginate',
+            name: 'mongoose-aggregate-paginate',
+            category: 'ORM',
+            language: 'JavaScript',
+            releaseDate: '2016-02-01',
+            description: 'Mongoose plugin for pagination in aggregation framework',
+            authors: ['Maheshkumar Kakade', 'Community'],
+            repository: 'https://github.com/aravindnc/mongoose-aggregate-paginate-v2'
+        },
+        {
+            id: 'connect-mongo',
+            name: 'connect-mongo',
+            category: 'Apps with abstract storage',
+            language: 'JavaScript',
+            releaseDate: '2011-04-30',
+            description: 'MongoDB session store for Express.js',
+            authors: ['Casey Banner', 'Community'],
+            repository: 'https://github.com/jdesboeufs/connect-mongo'
+        },
+        {
+            id: 'mongodb-memory-server',
+            name: 'mongodb-memory-server',
+            category: 'Driver',
+            language: 'TypeScript',
+            releaseDate: '2018-03-12',
+            description: 'Spinning up mongod in memory for fast testing',
+            authors: ['Nikolay Zhuravlev', 'Community'],
+            repository: 'https://github.com/nodkz/mongodb-memory-server'
+        },
+        {
+            id: 'drizzle-orm-mongodb',
+            name: 'DrizzleORM for MongoDB',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2023-06-01',
+            description: 'TypeScript ORM with MongoDB support (beta) focused on type-safety',
+            authors: ['Drizzle Team', 'Community'],
+            repository: 'https://github.com/drizzle-team/drizzle-orm'
+        },
     ],
     dependencies: [
         // Зависимости ORM от драйверов

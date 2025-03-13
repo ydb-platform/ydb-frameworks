@@ -349,7 +349,109 @@ const postgresqlData: TimelineData = {
             releaseDate: '2016-06-10',
             description: 'Platform for change data capture with PostgreSQL connector',
             authors: ['Red Hat']
-        }
+        },
+
+        // Node.js фреймворки и библиотеки
+        {
+            id: 'node-postgres',
+            name: 'node-postgres (pg)',
+            category: 'Driver',
+            language: 'JavaScript',
+            releaseDate: '2010-12-12',
+            description: 'Non-blocking PostgreSQL client for Node.js',
+            authors: ['Brian Carlson', 'Community'],
+            repository: 'https://github.com/brianc/node-postgres'
+        },
+        {
+            id: 'knex-pg',
+            name: 'Knex.js for PostgreSQL',
+            category: 'Query Builder',
+            language: 'JavaScript',
+            releaseDate: '2013-04-21',
+            description: 'SQL query builder for PostgreSQL in Node.js',
+            authors: ['Tim Griesser', 'Community'],
+            repository: 'https://github.com/knex/knex'
+        },
+        {
+            id: 'objection-pg',
+            name: 'Objection.js for PostgreSQL',
+            category: 'ORM',
+            language: 'JavaScript',
+            releaseDate: '2015-03-01',
+            description: 'ORM built on Knex.js for PostgreSQL',
+            authors: ['Sami Koskimäki', 'Community'],
+            repository: 'https://github.com/Vincit/objection.js'
+        },
+        {
+            id: 'mikro-orm-pg',
+            name: 'MikroORM for PostgreSQL',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2018-12-09',
+            description: 'TypeScript ORM for Node.js based on Data Mapper pattern',
+            authors: ['Martin Adámek', 'Community'],
+            repository: 'https://github.com/mikro-orm/mikro-orm'
+        },
+        {
+            id: 'bookshelf-pg',
+            name: 'Bookshelf.js for PostgreSQL',
+            category: 'ORM',
+            language: 'JavaScript',
+            releaseDate: '2013-05-01',
+            description: 'JavaScript ORM for Node.js, built on Knex',
+            authors: ['Tim Griesser', 'Community'],
+            repository: 'https://github.com/bookshelf/bookshelf'
+        },
+        {
+            id: 'slonik',
+            name: 'Slonik',
+            category: 'Query Builder',
+            language: 'TypeScript',
+            releaseDate: '2019-01-01',
+            description: 'PostgreSQL client with strict types, detailed logging and assertions',
+            authors: ['Gajus Kuizinas', 'Community'],
+            repository: 'https://github.com/gajus/slonik'
+        },
+        {
+            id: 'pg-promise',
+            name: 'pg-promise',
+            category: 'Driver',
+            language: 'JavaScript',
+            releaseDate: '2015-07-17',
+            description: 'PostgreSQL interface for Node.js with powerful extensions',
+            authors: ['Vitaly Tomilov', 'Community'],
+            repository: 'https://github.com/vitaly-t/pg-promise'
+        },
+        {
+            id: 'nestjs-pg',
+            name: 'NestJS with PostgreSQL',
+            category: 'Apps with abstract storage',
+            language: 'TypeScript',
+            releaseDate: '2017-11-01',
+            description: 'Progressive Node.js framework with PostgreSQL support',
+            authors: ['Kamil Myśliwiec', 'Community'],
+            repository: 'https://github.com/nestjs/nest'
+        },
+        {
+            id: 'typegoose-pg',
+            name: 'Typegoose for PostgreSQL',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2017-06-01',
+            description: 'Define Mongoose models using TypeScript classes',
+            authors: ['Ben Grynhaus', 'Community'],
+            repository: 'https://github.com/typegoose/typegoose'
+        },
+        {
+            id: 'drizzle-orm-pg',
+            name: 'DrizzleORM for PostgreSQL',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2022-05-15',
+            description: 'TypeScript ORM with PostgreSQL support focused on type-safety and performance',
+            authors: ['Drizzle Team', 'Community'],
+            repository: 'https://github.com/drizzle-team/drizzle-orm'
+        },
     ],
     dependencies: [
         // Зависимости драйверов от стандартов

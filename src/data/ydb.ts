@@ -794,6 +794,96 @@ const ydbData: TimelineData = {
             description: 'HikariCP connection pool for YDB JDBC driver',
             authors: ['Yandex'],
             contributorsType: ['staff', 'open-source']
+        },
+
+        // Node.js фреймворки и библиотеки
+        {
+            id: 'ydb-sdk-nodejs',
+            name: 'YDB Node.js SDK',
+            category: 'Driver',
+            language: 'TypeScript',
+            releaseDate: '2021-03-15',
+            description: 'Official Node.js SDK for YDB',
+            authors: ['Yandex', 'Community'],
+            repository: 'https://github.com/ydb-platform/ydb-nodejs-sdk',
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'ydb-orm',
+            name: 'YDB ORM',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2022-01-20',
+            description: 'TypeScript ORM for YDB',
+            authors: ['Yandex', 'Community'],
+            repository: 'https://github.com/ydb-platform/ydb-nodejs-sdk',
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'nestjs-ydb',
+            name: 'NestJS YDB Integration',
+            category: 'Apps with abstract storage',
+            language: 'TypeScript',
+            releaseDate: '2022-05-10',
+            description: 'NestJS module for YDB integration',
+            authors: ['Community'],
+            repository: 'https://github.com/ydb-platform/ydb-nodejs-sdk',
+            contributorsType: ['open-source']
+        },
+        {
+            id: 'ydb-query-builder',
+            name: 'YDB Query Builder',
+            category: 'Query Builder',
+            language: 'TypeScript',
+            releaseDate: '2021-09-01',
+            description: 'Query builder for YDB in Node.js',
+            authors: ['Yandex', 'Community'],
+            repository: 'https://github.com/ydb-platform/ydb-nodejs-sdk',
+            contributorsType: ['staff', 'open-source']
+        },
+        {
+            id: 'ydb-express-session',
+            name: 'YDB Express Session',
+            category: 'Apps with abstract storage',
+            language: 'JavaScript',
+            releaseDate: '2022-03-15',
+            description: 'Express.js session store implementation for YDB',
+            authors: ['Community'],
+            repository: 'https://github.com/ydb-platform/ydb-nodejs-examples',
+            contributorsType: ['open-source']
+        },
+        {
+            id: 'ydb-typeorm',
+            name: 'TypeORM YDB Adapter',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2022-06-01',
+            description: 'TypeORM adapter for YDB',
+            authors: ['Community'],
+            repository: 'https://github.com/ydb-platform/ydb-nodejs-sdk',
+            contributorsType: ['open-source']
+        },
+        {
+            id: 'ydb-prisma',
+            name: 'Prisma YDB Adapter',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2022-08-15',
+            description: 'Prisma adapter for YDB',
+            authors: ['Community'],
+            repository: 'https://github.com/ydb-platform/ydb-nodejs-sdk',
+            contributorsType: ['open-source']
+        },
+        {
+            id: 'ydb-serverless-functions',
+            name: 'YDB Serverless Functions',
+            category: 'Apps with abstract storage',
+            language: 'JavaScript',
+            releaseDate: '2021-10-01',
+            description: 'Integration of YDB with serverless functions',
+            authors: ['Yandex', 'Community'],
+            repository: 'https://github.com/ydb-platform/ydb-nodejs-examples',
+            contributorsType: ['staff', 'open-source']
         }
     ],
     dependencies: [

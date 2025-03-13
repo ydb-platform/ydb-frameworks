@@ -246,6 +246,88 @@ const cassandraData: TimelineData = {
             releaseDate: '2018-09-01',
             description: 'Apache Pulsar connector for Cassandra',
             authors: ['StreamNative', 'Apache Software Foundation']
+        },
+
+        // Node.js фреймворки и библиотеки
+        {
+            id: 'cassandra-driver-nodejs-express',
+            name: 'Express.js with Cassandra',
+            category: 'Apps with abstract storage',
+            language: 'JavaScript',
+            releaseDate: '2015-03-01',
+            description: 'Express.js web framework with Cassandra integration',
+            authors: ['Community', 'DataStax'],
+            repository: 'https://github.com/datastax/nodejs-driver'
+        },
+        {
+            id: 'nestjs-cassandra',
+            name: 'NestJS with Cassandra',
+            category: 'Apps with abstract storage',
+            language: 'TypeScript',
+            releaseDate: '2018-05-01',
+            description: 'Progressive Node.js framework with Cassandra support',
+            authors: ['Kamil Myśliwiec', 'Community'],
+            repository: 'https://github.com/nestjs/nest'
+        },
+        {
+            id: 'express-cassandra',
+            name: 'Express-Cassandra',
+            category: 'ORM',
+            language: 'JavaScript',
+            releaseDate: '2016-01-15',
+            description: 'Cassandra ORM/ODM/OGM for Node.js with Express.js integration',
+            authors: ['Mahafuzur Rahman', 'Community'],
+            repository: 'https://github.com/masumsoft/express-cassandra'
+        },
+        {
+            id: 'cassandra-store',
+            name: 'cassandra-store',
+            category: 'Apps with abstract storage',
+            language: 'JavaScript',
+            releaseDate: '2015-07-01',
+            description: 'Cassandra session store for Express.js',
+            authors: ['João Jerónimo', 'Community'],
+            repository: 'https://github.com/webcc/cassandra-store'
+        },
+        {
+            id: 'cassandra-migration',
+            name: 'cassandra-migration',
+            category: 'Migration',
+            language: 'JavaScript',
+            releaseDate: '2017-02-01',
+            description: 'Node.js migration tool for Apache Cassandra',
+            authors: ['Tomas Della Vedova', 'Community'],
+            repository: 'https://github.com/gocql/gocql'
+        },
+        {
+            id: 'typeorm-cassandra',
+            name: 'TypeORM for Cassandra',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2018-01-01',
+            description: 'TypeORM support for Cassandra',
+            authors: ['Umed Khudoiberdiev', 'Community'],
+            repository: 'https://github.com/typeorm/typeorm'
+        },
+        {
+            id: 'cassanknex',
+            name: 'CassanKnex',
+            category: 'Query Builder',
+            language: 'JavaScript',
+            releaseDate: '2015-08-01',
+            description: 'Knex.js inspired query builder for Cassandra CQL',
+            authors: ['Austin Delamar', 'Community'],
+            repository: 'https://github.com/azuqua/cassanknex'
+        },
+        {
+            id: 'priam-js',
+            name: 'Priam.js',
+            category: 'ORM',
+            language: 'JavaScript',
+            releaseDate: '2016-05-01',
+            description: 'Node.js ORM for Cassandra inspired by Netflix Priam',
+            authors: ['Community'],
+            repository: 'https://github.com/godaddy/priam'
         }
     ],
     dependencies: [

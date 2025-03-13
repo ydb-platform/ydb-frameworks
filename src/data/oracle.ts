@@ -358,6 +358,28 @@ const oracleData: TimelineData = {
             releaseDate: '2018-07-01',
             description: 'Platform for change data capture with Oracle connector',
             authors: ['Red Hat']
+        },
+
+        // Node.js фреймворки и библиотеки
+        {
+            id: 'node-oracledb',
+            name: 'node-oracledb',
+            category: 'Driver',
+            language: 'JavaScript',
+            releaseDate: '2015-01-26',
+            description: 'Oracle Database driver for Node.js maintained by Oracle Corp',
+            authors: ['Oracle Corporation', 'Community'],
+            repository: 'https://github.com/oracle/node-oracledb'
+        },
+        {
+            id: 'typeorm-oracle',
+            name: 'TypeORM for Oracle',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2017-06-01',
+            description: 'TypeScript ORM with Oracle Database support',
+            authors: ['Umed Khudoiberdiev', 'Community'],
+            repository: 'https://github.com/typeorm/typeorm'
         }
     ],
     dependencies: [

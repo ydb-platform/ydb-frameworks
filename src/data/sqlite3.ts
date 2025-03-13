@@ -396,6 +396,128 @@ const sqlite3Data: TimelineData = {
             releaseDate: '2010-04-01',
             description: 'Flask web framework with SQLite storage',
             authors: ['Armin Ronacher', 'Community']
+        },
+
+        // Node.js фреймворки и библиотеки
+        {
+            id: 'sequelize-sqlite',
+            name: 'Sequelize for SQLite',
+            category: 'ORM',
+            language: 'JavaScript',
+            releaseDate: '2011-07-18',
+            description: 'Promise-based Node.js ORM with SQLite support',
+            authors: ['Sascha Depold', 'Community'],
+            repository: 'https://github.com/sequelize/sequelize'
+        },
+        {
+            id: 'typeorm-sqlite',
+            name: 'TypeORM for SQLite',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2016-01-01',
+            description: 'ORM for TypeScript and JavaScript with SQLite support',
+            authors: ['Umed Khudoiberdiev', 'Community'],
+            repository: 'https://github.com/typeorm/typeorm'
+        },
+        {
+            id: 'prisma-sqlite',
+            name: 'Prisma for SQLite',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2019-06-01',
+            description: 'Next-generation ORM for Node.js and TypeScript with SQLite support',
+            authors: ['Prisma', 'Community'],
+            repository: 'https://github.com/prisma/prisma'
+        },
+        {
+            id: 'knex-sqlite',
+            name: 'Knex.js for SQLite',
+            category: 'Query Builder',
+            language: 'JavaScript',
+            releaseDate: '2013-04-21',
+            description: 'SQL query builder for SQLite in Node.js',
+            authors: ['Tim Griesser', 'Community'],
+            repository: 'https://github.com/knex/knex'
+        },
+        {
+            id: 'sqlite',
+            name: 'sqlite',
+            category: 'Driver',
+            language: 'JavaScript',
+            releaseDate: '2017-05-18',
+            description: 'ES6 Promise-based interface to SQLite3',
+            authors: ['Joshua Wise', 'Community'],
+            repository: 'https://github.com/kriasoft/node-sqlite'
+        },
+        {
+            id: 'sql.js',
+            name: 'sql.js',
+            category: 'Driver',
+            language: 'JavaScript',
+            releaseDate: '2014-01-12',
+            description: 'SQLite compiled to JavaScript through Emscripten',
+            authors: ['Ophir LOJKINE', 'Community'],
+            repository: 'https://github.com/sql-js/sql.js'
+        },
+        {
+            id: 'nestjs-sqlite',
+            name: 'NestJS with SQLite',
+            category: 'Apps with abstract storage',
+            language: 'TypeScript',
+            releaseDate: '2017-11-01',
+            description: 'Progressive Node.js framework with SQLite support',
+            authors: ['Kamil Myśliwiec', 'Community'],
+            repository: 'https://github.com/nestjs/nest'
+        },
+        {
+            id: 'mikro-orm-sqlite',
+            name: 'MikroORM for SQLite',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2018-12-09',
+            description: 'TypeScript ORM for Node.js based on Data Mapper pattern with SQLite support',
+            authors: ['Martin Adámek', 'Community'],
+            repository: 'https://github.com/mikro-orm/mikro-orm'
+        },
+        {
+            id: 'objection-sqlite',
+            name: 'Objection.js for SQLite',
+            category: 'ORM',
+            language: 'JavaScript',
+            releaseDate: '2015-03-01',
+            description: 'ORM built on Knex.js for SQLite',
+            authors: ['Sami Koskimäki', 'Community'],
+            repository: 'https://github.com/Vincit/objection.js'
+        },
+        {
+            id: 'drizzle-orm-sqlite',
+            name: 'DrizzleORM for SQLite',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2022-05-15',
+            description: 'TypeScript ORM with SQLite support focused on type-safety and performance',
+            authors: ['Drizzle Team', 'Community'],
+            repository: 'https://github.com/drizzle-team/drizzle-orm'
+        },
+        {
+            id: 'drizzle-orm-libsql',
+            name: 'DrizzleORM for Libsql/Turso',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2023-02-10',
+            description: 'TypeScript ORM with Libsql/Turso support (SQLite-compatible edge database)',
+            authors: ['Drizzle Team', 'Community'],
+            repository: 'https://github.com/drizzle-team/drizzle-orm'
+        },
+        {
+            id: 'drizzle-orm-d1',
+            name: 'DrizzleORM for Cloudflare D1',
+            category: 'ORM',
+            language: 'TypeScript',
+            releaseDate: '2023-01-15',
+            description: 'TypeScript ORM with Cloudflare D1 support (SQLite-compatible edge database)',
+            authors: ['Drizzle Team', 'Community'],
+            repository: 'https://github.com/drizzle-team/drizzle-orm'
         }
     ],
     dependencies: [
