@@ -79,6 +79,23 @@ const TimelineTooltip: React.FC<TimelineTooltipProps> = ({framework, position, d
                     </div>
                 )}
 
+                {framework.repository && (
+                    <div className={styles.tooltipRow}>
+                        <span className={styles.tooltipLabel}>Repository:</span>
+                        <span>
+                            <a 
+                                href={framework.repository} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className={styles.tooltipLink}
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                {framework.repository.replace(/^https?:\/\/(www\.)?/, '')}
+                            </a>
+                        </span>
+                    </div>
+                )}
+
                 {framework.contributorsType && framework.contributorsType.length > 0 && (
                     <div className={styles.tooltipRow}>
                         <span className={styles.tooltipLabel}>Contributors:</span>

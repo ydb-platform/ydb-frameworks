@@ -35,3 +35,13 @@
     margin-top: 8px;
     font-style: italic;
 }
+
+.tooltipLink {
+    color: var(--link-color, #0077cc);
+    text-decoration: underline;
+    pointer-events: auto;
+}
+
+.tooltipLink:hover {
+    color: var(--link-hover-color, #0055aa);
+}

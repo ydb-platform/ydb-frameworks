@@ -132,17 +132,6 @@ const ydbData: TimelineData = {
             authors: ['Microsoft', 'Yandex'],
             contributorsType: ['staff', 'open-source']
         },
-        {
-            id: 'grpc-api',
-            name: 'gRPC API',
-            category: 'Standard',
-            language: 'C++',
-            releaseDate: '2015-08-01',
-            dbSupportDate: '2018-11-15',
-            description: 'Protocol Buffers/gRPC based database API',
-            authors: ['Google', 'Yandex'],
-            contributorsType: ['staff']
-        },
 
         // Драйверы
         {
