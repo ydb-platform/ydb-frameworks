@@ -11,8 +11,8 @@ import styles from './Timeline.module.css';
 // Определяем порядок категорий сверху вниз
 const categoryOrder: FrameworkCategory[] = [
     'Server-side feature',
-    'Driver',
     'Standard',
+    'Driver',
     'ORM',
     'Migration',
     'Connection Pool',
@@ -58,6 +58,9 @@ const Timeline: React.FC<TimelineProps> = ({frameworks, dependencies, selectedDb
     // Group frameworks by category
     const frameworksByCategory = useMemo(() => {
         const grouped: Record<string, Framework[]> = {};
+
+        // Всегда инициализируем категорию "Server-side feature", даже если в данных нет фреймворков с этой категорией
+        grouped['Server-side feature'] = [];
 
         frameworks.forEach(framework => {
             if (!grouped[framework.category]) {
@@ -174,39 +177,42 @@ const Timeline: React.FC<TimelineProps> = ({frameworks, dependencies, selectedDb
 
             <div className={styles.timeline}>
                 {sortedCategories.map(([category, categoryFrameworks]) => (
-                    <div key={category} className={styles.categoryContainer}>
-                        <div
-                            className={styles.categoryHeader}
-                            onClick={() => toggleCategory(category)}
-                        >
-                            <span className={styles.expandIcon}>
-                                {expandedCategories[category] ? '▼' : '▶'}
-                            </span>
-                            <span className={styles.categoryName}>{category}</span>
-                            <span className={styles.expandIcon}>
-                                {expandedCategories[category] ? '▼' : '▶'}
-                            </span>
-                        </div>
-
-                        {expandedCategories[category] && (
-                            <div className={styles.frameworksContainer}>
-                                {categoryFrameworks.map(framework => (
-                                    <TimelineFramework
-                                        key={framework.id}
-                                        framework={framework}
-                                        startDate={startDate}
-                                        endDate={endDate}
-                                        width={timelineWidth}
-                                        selectedDb={selectedDb}
-                                        onTooltipShow={showTooltip}
-                                        onTooltipHide={hideTooltip}
-                                        isHighlighted={highlightedFramework === framework.id || relatedFrameworks.has(framework.id)}
-                                        onClick={handleFrameworkClick}
-                                    />
-                                ))}
+                    // Не отображаем категорию, если в ней нет фреймворков
+                    categoryFrameworks.length > 0 ? (
+                        <div key={category} className={styles.categoryContainer}>
+                            <div
+                                className={styles.categoryHeader}
+                                onClick={() => toggleCategory(category)}
+                            >
+                                <span className={styles.expandIcon}>
+                                    {expandedCategories[category] ? '▼' : '▶'}
+                                </span>
+                                <span className={styles.categoryName}>{category}</span>
+                                <span className={styles.expandIcon}>
+                                    {expandedCategories[category] ? '▼' : '▶'}
+                                </span>
                             </div>
-                        )}
-                    </div>
+
+                            {expandedCategories[category] && (
+                                <div className={styles.frameworksContainer}>
+                                    {categoryFrameworks.map(framework => (
+                                        <TimelineFramework
+                                            key={framework.id}
+                                            framework={framework}
+                                            startDate={startDate}
+                                            endDate={endDate}
+                                            width={timelineWidth}
+                                            selectedDb={selectedDb}
+                                            onTooltipShow={showTooltip}
+                                            onTooltipHide={hideTooltip}
+                                            isHighlighted={highlightedFramework === framework.id || relatedFrameworks.has(framework.id)}
+                                            onClick={handleFrameworkClick}
+                                        />
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    ) : null
                 ))}
             </div>
 
