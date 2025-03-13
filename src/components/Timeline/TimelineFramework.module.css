@@ -25,7 +25,7 @@
 
 .frameworkLine {
     position: absolute;
-    height: 0.26em;
+    height: 0.16em;
     top: 50%;
     transform: translateY(-50%);
     border-radius: 2px;
@@ -69,9 +69,7 @@
 
 .arrowEnd {
     position: absolute;
-    top: -50%;
-    transform: translateY(-50%);
-    font-size: 3.05em;
+    transform: translate(-50%, -50%);
 }
 
 .releasePoint, .supportPoint, .endPoint {

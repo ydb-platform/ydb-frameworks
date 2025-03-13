@@ -169,7 +169,7 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
                                 right: '-15px',
                                 color: color
                             }}
-                        >↠</div>
+                        >»</div>
                     )}
                 </div>
             </div>
