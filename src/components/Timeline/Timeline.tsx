@@ -36,9 +36,10 @@ interface TimelineProps {
     frameworks: Framework[];
     dependencies: Dependency[];
     selectedDb: Database;
+    showDependencies: boolean;
 }
 
-const Timeline: React.FC<TimelineProps> = ({frameworks, dependencies, selectedDb}) => {
+const Timeline: React.FC<TimelineProps> = ({frameworks, dependencies, selectedDb, showDependencies}) => {
     const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({});
     const [timelineWidth, setTimelineWidth] = useState<number>(0);
     const timelineRef = useRef<HTMLDivElement>(null);
@@ -105,6 +106,14 @@ const Timeline: React.FC<TimelineProps> = ({frameworks, dependencies, selectedDb
             window.removeEventListener('resize', updateDimensions);
         };
     }, []);
+
+    // Сбрасываем выделение фреймворка при отключении зависимостей
+    useEffect(() => {
+        if (!showDependencies) {
+            setHighlightedFramework(null);
+            setRelatedFrameworks(new Set());
+        }
+    }, [showDependencies]);
 
     const {startDate, endDate} = getTimelineBounds(frameworks);
 
@@ -205,8 +214,11 @@ const Timeline: React.FC<TimelineProps> = ({frameworks, dependencies, selectedDb
                                             selectedDb={selectedDb}
                                             onTooltipShow={showTooltip}
                                             onTooltipHide={hideTooltip}
-                                            isHighlighted={highlightedFramework === framework.id || relatedFrameworks.has(framework.id)}
-                                            onClick={handleFrameworkClick}
+                                            isHighlighted={
+                                                highlightedFramework === framework.id || 
+                                                (showDependencies && relatedFrameworks.has(framework.id))
+                                            }
+                                            onClick={showDependencies ? handleFrameworkClick : undefined}
                                         />
                                     ))}
                                 </div>
@@ -227,7 +239,7 @@ const Timeline: React.FC<TimelineProps> = ({frameworks, dependencies, selectedDb
                     pointerEvents: 'none'
                 }}
             >
-                {dependencies.map((dependency, index) => (
+                {showDependencies && dependencies.map((dependency, index) => (
                     <TimelineDependency
                         key={`${dependency.source}-${dependency.target}-${index}`}
                         dependency={dependency}

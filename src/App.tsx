@@ -17,6 +17,7 @@ const App: React.FC = () => {
     const [selectedLanguages, setSelectedLanguages] = useState<ProgrammingLanguage[]>([]);
     const [selectedContributorsTypes, setSelectedContributorsTypes] = useState<ContributorsType[]>([]);
     const [isDarkTheme, setIsDarkTheme] = useState<boolean>(localStorage.getItem('theme') === 'dark');
+    const [showDependencies, setShowDependencies] = useState<boolean>(true);
 
     const { frameworks, frameworkCategories, languages, contributorsTypes, dependencies, databases } = useTimelineData(selectedDb);
 
@@ -83,6 +84,12 @@ const App: React.FC = () => {
         document.documentElement.setAttribute('data-theme', newTheme ? 'dark' : 'light');
     };
 
+    // Функция для переключения отображения зависимостей
+    const toggleDependencies = () => {
+        const newValue = !showDependencies;
+        setShowDependencies(newValue);
+    };
+
     // Set initial theme
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', isDarkTheme ? 'dark' : 'light');
@@ -124,8 +131,21 @@ const App: React.FC = () => {
             </header>
 
             <div className="main-content">
-                {/* Фильтры по левой стороне */}
                 <div className="sidebar">
+                    <div className="filter-section">
+                        <div className="filter-header">Settings</div>
+                        <div className="filter-content">
+                            <label className="checkbox-label">
+                                <input
+                                    type="checkbox"
+                                    checked={showDependencies}
+                                    onChange={toggleDependencies}
+                                />
+                                <span>Показать зависимости</span>
+                            </label>
+                        </div>
+                    </div>
+
                     <LanguageFilter
                         languages={languages}
                         selectedLanguages={selectedLanguages}
@@ -150,6 +170,7 @@ const App: React.FC = () => {
                         frameworks={filteredFrameworks}
                         dependencies={filteredDependencies}
                         selectedDb={selectedDb}
+                        showDependencies={showDependencies}
                     />
                 </div>
             </div>

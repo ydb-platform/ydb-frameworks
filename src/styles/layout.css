@@ -41,6 +41,41 @@ header {
     gap: 15px;
 }
 
+/* Стили для секций фильтров */
+.filter-section {
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    background-color: var(--timeline-bg);
+    border-radius: 4px;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.filter-header {
+    color: var(--category-header-text);
+    border-bottom: 1px solid var(--timeline-line);
+    font-weight: bold;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
+.filter-content {
+    padding-top: 10px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 5px;
+}
+
+.checkbox-label input {
+    margin-right: 8px;
+}
+
 /* Адаптивная верстка для мобильных устройств */
 @media (max-width: 768px) {
     .main-content {

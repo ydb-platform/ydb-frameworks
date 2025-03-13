@@ -14,7 +14,7 @@ interface TimelineFrameworkProps {
     onTooltipShow: (framework: Framework, position: { x: number; y: number }) => void;
     onTooltipHide: () => void;
     isHighlighted?: boolean;
-    onClick: (frameworkId: string) => void;
+    onClick?: (frameworkId: string) => void;
 }
 
 const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
@@ -70,9 +70,9 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
     // Определяем, продолжается ли поддержка в настоящее время
     const isOngoing = !framework.endSupportDate;
 
-    // Определяем классы для элементов на основе статуса подсветки
-    const frameworkLabelClass = `${styles.frameworkLabel} ${isHighlighted ? styles.highlighted : ''}`;
-    const frameworkRowClass = `${styles.frameworkRow} ${isHighlighted ? styles.highlightedLabel : ''}`;
+    // Определяем классы для элементов на основе статуса подсветки и наличия обработчика клика
+    const frameworkLabelClass = `${styles.frameworkLabel} ${isHighlighted ? styles.highlighted : ''} ${onClick ? styles.clickable : ''}`;
+    const frameworkRowClass = `${styles.frameworkRow} ${isHighlighted ? styles.highlightedLabel : ''} ${onClick ? styles.clickable : ''}`;
     const frameworkLineClass = `${styles.frameworkLine} ${isHighlighted ? styles.highlightedLine : ''}`;
     const releasePointClass = `${styles.releasePoint} releasePoint ${isHighlighted ? styles.highlightedPoint : ''}`;
     const supportPointClass = `${styles.supportPoint} supportPoint ${isHighlighted ? styles.highlightedPoint : ''}`;
@@ -81,7 +81,9 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
 
     // Обработчик клика по фреймворку
     const handleClick = () => {
-        onClick(framework.id);
+        if (onClick) {
+            onClick(framework.id);
+        }
     };
 
     return (

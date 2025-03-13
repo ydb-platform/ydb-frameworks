@@ -5,6 +5,7 @@
     height: 30px;
     position: relative;
     z-index: 3; /* Высокий z-index, чтобы строки были над линиями */
+    cursor: default;
 }
 
 .frameworkLabel {
@@ -136,6 +137,10 @@
 
 /* Добавляем курсор pointer для строк фреймворков */
 .frameworkRow {
+    cursor: default;
+}
+
+.clickable {
     cursor: pointer;
 }
 
