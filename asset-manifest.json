@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ydb-frameworks/static/css/main.5b24dfdc.css",
-    "main.js": "/ydb-frameworks/static/js/main.6f5f6faa.js",
+    "main.css": "/ydb-frameworks/static/css/main.42e27b26.css",
+    "main.js": "/ydb-frameworks/static/js/main.609c0438.js",
     "index.html": "/ydb-frameworks/index.html",
-    "main.5b24dfdc.css.map": "/ydb-frameworks/static/css/main.5b24dfdc.css.map",
-    "main.6f5f6faa.js.map": "/ydb-frameworks/static/js/main.6f5f6faa.js.map"
+    "main.42e27b26.css.map": "/ydb-frameworks/static/css/main.42e27b26.css.map",
+    "main.609c0438.js.map": "/ydb-frameworks/static/js/main.609c0438.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b24dfdc.css",
-    "static/js/main.6f5f6faa.js"
+    "static/css/main.42e27b26.css",
+    "static/js/main.609c0438.js"
   ]
 }
