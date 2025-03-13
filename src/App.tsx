@@ -5,6 +5,7 @@ import LanguageFilter from './components/LanguageFilter/LanguageFilter';
 import ContributorsFilter from './components/ContributorsFilter/ContributorsFilter';
 import DatabaseSelector from './components/DatabaseSelector/DatabaseSelector';
 import ThemeToggle from './components/ThemeToggle/ThemeToggle';
+import ReportMistakeButton from './components/ReportMistakeButton/ReportMistakeButton';
 import { useQueryParams } from './hooks/useQueryParams';
 import { useTimelineData } from './hooks/useTimelineData';
 import { Database, FrameworkCategory, ProgrammingLanguage, ContributorsType } from './data/types';
@@ -121,11 +122,14 @@ const App: React.FC = () => {
             <header>
                 <h1>Database Frameworks Timeline</h1>
                 <div className="controls">
-                    <DatabaseSelector
-                        databases={databases}
-                        selectedDb={selectedDb}
-                        onDbChange={handleDbChange}
-                    />
+                    <div className="control-group">
+                        <DatabaseSelector
+                            databases={databases}
+                            selectedDb={selectedDb}
+                            onDbChange={handleDbChange}
+                        />
+                        <ReportMistakeButton selectedDb={selectedDb} />
+                    </div>
                     <ThemeToggle isDarkTheme={isDarkTheme} onToggle={handleThemeToggle} />
                 </div>
             </header>

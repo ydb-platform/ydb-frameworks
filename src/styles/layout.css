@@ -39,6 +39,12 @@ header {
 .controls {
     display: flex;
     gap: 15px;
+    align-items: center;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
 }
 
 /* Стили для секций фильтров */

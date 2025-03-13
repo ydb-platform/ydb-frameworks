@@ -1,0 +1,28 @@
+/* src/components/ReportMistakeButton/ReportMistakeButton.module.css */
+.reportButton {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    background-color: var(--filter-bg);
+    border: 1px solid var(--timeline-line);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.reportButton:hover {
+    background-color: var(--highlight-bg);
+}
+
+.icon {
+    margin-right: 6px;
+    font-size: 16px;
+}
+
+.text {
+    font-weight: 500;
+} 
