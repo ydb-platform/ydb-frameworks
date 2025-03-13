@@ -3,7 +3,7 @@
     position: relative;
     overflow-x: auto;
     overflow-y: visible;
-    border: 1px solid var(--timeline-line);
+    border: 1px solid var(--gray-line);
     border-radius: 4px;
     background-color: var(--timeline-bg);
 }
@@ -15,7 +15,7 @@
 }
 
 .categoryContainer {
-    border: 1px solid;
+    border: 1px solid var(--timeline-line);
 }
 
 .categoryHeader {
