@@ -61,23 +61,3 @@
     pointer-events: none;
     z-index: 9999; /* Очень высокий z-index */
 }
-
-.controlsContainer {
-    position: absolute;
-    z-index: 10;
-    background-color: var(--timeline-bg);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-.checkboxLabel {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    cursor: pointer;
-    user-select: none;
-    color: var(--category-header-text);
-}
-
-.checkboxLabel input {
-    margin-right: 5px;
-}
