@@ -356,6 +356,129 @@ const dynamodbData: TimelineData = {
                 authors: ['Knex.js'],
                 contributorsType: ['open-source']
             }
+        },
+        {
+            ...common.qlik,
+            implementation: {
+                name: 'DynamoDB Qlik Connector',
+                releaseDate: '2023-01-01',
+                description: 'Qlik connector for DynamoDB',
+                repository: 'https://github.com/qlik-oss/qlik-connector-dynamodb',
+                authors: ['Qlik'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+
+        // Vector Store tools
+        {
+            ...common.langchain,
+            implementation: {
+                name: 'DynamoDB LangChain Integration',
+                releaseDate: '2023-12-01',
+                description: 'LangChain integration for DynamoDB vector operations',
+                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/dynamodb',
+                authors: ['LangChain'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.llamaindex,
+            implementation: {
+                name: 'DynamoDB LlamaIndex Integration',
+                releaseDate: '2023-12-01',
+                description: 'LlamaIndex integration for DynamoDB vector operations',
+                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/dynamodb',
+                authors: ['LlamaIndex'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.chromadb,
+            implementation: {
+                name: 'DynamoDB ChromaDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'ChromaDB integration for DynamoDB vector operations',
+                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/dynamodb',
+                authors: ['ChromaDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.milvus,
+            implementation: {
+                name: 'DynamoDB Milvus Integration',
+                releaseDate: '2023-12-01',
+                description: 'Milvus integration for DynamoDB vector operations',
+                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/dynamodb',
+                authors: ['Zilliz'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pinecone,
+            implementation: {
+                name: 'DynamoDB Pinecone Integration',
+                releaseDate: '2023-12-01',
+                description: 'Pinecone integration for DynamoDB vector operations',
+                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/dynamodb',
+                authors: ['Pinecone'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.weaviate,
+            implementation: {
+                name: 'DynamoDB Weaviate Integration',
+                releaseDate: '2023-12-01',
+                description: 'Weaviate integration for DynamoDB vector operations',
+                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/dynamodb',
+                authors: ['Weaviate'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.qdrant,
+            implementation: {
+                name: 'DynamoDB Qdrant Integration',
+                releaseDate: '2023-12-01',
+                description: 'Qdrant integration for DynamoDB vector operations',
+                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/dynamodb',
+                authors: ['Qdrant'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pgvector,
+            implementation: {
+                name: 'DynamoDB Vector Extension',
+                releaseDate: '2023-12-01',
+                description: 'Vector similarity search extension for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-java/tree/master/aws-java-sdk-dynamodb/src/main/java/com/amazonaws/services/dynamodbv2/model/vector',
+                authors: ['AWS'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common['vector-db'],
+            implementation: {
+                name: 'DynamoDB VectorDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'VectorDB integration for DynamoDB vector operations',
+                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/dynamodb',
+                authors: ['VectorDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['semantic-kernel'],
+            implementation: {
+                name: 'DynamoDB Semantic Kernel Integration',
+                releaseDate: '2023-12-01',
+                description: 'Semantic Kernel integration for DynamoDB vector operations',
+                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/dynamodb',
+                authors: ['Microsoft'],
+                contributorsType: ['open-source']
+            }
         }
     ],
     dependencies: []

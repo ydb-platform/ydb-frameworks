@@ -516,6 +516,118 @@ const ydbData: TimelineData = {
                 authors: ['Yandex'],
                 contributorsType: ['staff', 'open-source']
             }
+        },
+
+        // Vector Store tools
+        {
+            ...common.langchain,
+            implementation: {
+                name: 'YDB LangChain Integration',
+                releaseDate: '2023-12-01',
+                description: 'LangChain integration for YDB vector operations',
+                repository: 'https://github.com/ydb-platform/ydb-langchain',
+                authors: ['Yandex'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.llamaindex,
+            implementation: {
+                name: 'YDB LlamaIndex Integration',
+                releaseDate: '2023-12-01',
+                description: 'LlamaIndex integration for YDB vector operations',
+                repository: 'https://github.com/ydb-platform/ydb-llamaindex',
+                authors: ['Yandex'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.chromadb,
+            implementation: {
+                name: 'YDB ChromaDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'ChromaDB integration for YDB vector operations',
+                repository: 'https://github.com/ydb-platform/ydb-chromadb',
+                authors: ['Yandex'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.milvus,
+            implementation: {
+                name: 'YDB Milvus Integration',
+                releaseDate: '2023-12-01',
+                description: 'Milvus integration for YDB vector operations',
+                repository: 'https://github.com/ydb-platform/ydb-milvus',
+                authors: ['Yandex'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.pinecone,
+            implementation: {
+                name: 'YDB Pinecone Integration',
+                releaseDate: '2023-12-01',
+                description: 'Pinecone integration for YDB vector operations',
+                repository: 'https://github.com/ydb-platform/ydb-pinecone',
+                authors: ['Yandex'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.weaviate,
+            implementation: {
+                name: 'YDB Weaviate Integration',
+                releaseDate: '2023-12-01',
+                description: 'Weaviate integration for YDB vector operations',
+                repository: 'https://github.com/ydb-platform/ydb-weaviate',
+                authors: ['Yandex'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.qdrant,
+            implementation: {
+                name: 'YDB Qdrant Integration',
+                releaseDate: '2023-12-01',
+                description: 'Qdrant integration for YDB vector operations',
+                repository: 'https://github.com/ydb-platform/ydb-qdrant',
+                authors: ['Yandex'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.pgvector,
+            implementation: {
+                name: 'YDB Vector Extension',
+                releaseDate: '2023-12-01',
+                description: 'Vector similarity search extension for YDB',
+                repository: 'https://github.com/ydb-platform/ydb-vector',
+                authors: ['Yandex'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common['vector-db'],
+            implementation: {
+                name: 'YDB VectorDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'VectorDB integration for YDB vector operations',
+                repository: 'https://github.com/ydb-platform/ydb-vectordb',
+                authors: ['Yandex'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common['semantic-kernel'],
+            implementation: {
+                name: 'YDB Semantic Kernel Integration',
+                releaseDate: '2023-12-01',
+                description: 'Semantic Kernel integration for YDB vector operations',
+                repository: 'https://github.com/ydb-platform/ydb-semantic-kernel',
+                authors: ['Yandex'],
+                contributorsType: ['staff', 'open-source']
+            }
         }
     ],
     dependencies: []

@@ -16,6 +16,7 @@ import sqlite3Data from './sqlite3';
 import yugabytedbData from './yugabytedb';
 import cockroachdbData from './cockroachdb';
 import redisData from './redis';
+import cassandraData from './cassandra';
 
 export * from './types';
 
@@ -37,6 +38,7 @@ export const databases = {
     yugabytedb: yugabytedbData,
     cockroachdb: cockroachdbData,
     redis: redisData,
+    cassandra: cassandraData
 };
 
 export {
@@ -55,5 +57,7 @@ export {
     spannerData,
     sqlite3Data,
     yugabytedbData,
-    cockroachdbData
+    cockroachdbData,
+    redisData,
+    cassandraData
 };

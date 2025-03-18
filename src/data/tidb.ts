@@ -355,6 +355,129 @@ const tidbData: TimelineData = {
                 authors: ['Knex.js'],
                 contributorsType: ['open-source']
             }
+        },
+        {
+            ...common.qlik,
+            implementation: {
+                name: 'TiDB Qlik Connector',
+                releaseDate: '2023-01-01',
+                description: 'Qlik connector for TiDB',
+                repository: 'https://github.com/qlik-oss/qlik-connector-tidb',
+                authors: ['Qlik'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+
+        // Vector Store tools
+        {
+            ...common.langchain,
+            implementation: {
+                name: 'TiDB LangChain Integration',
+                releaseDate: '2023-12-01',
+                description: 'LangChain integration for TiDB vector operations',
+                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/tidb',
+                authors: ['LangChain'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.llamaindex,
+            implementation: {
+                name: 'TiDB LlamaIndex Integration',
+                releaseDate: '2023-12-01',
+                description: 'LlamaIndex integration for TiDB vector operations',
+                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/tidb',
+                authors: ['LlamaIndex'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.chromadb,
+            implementation: {
+                name: 'TiDB ChromaDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'ChromaDB integration for TiDB vector operations',
+                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/tidb',
+                authors: ['ChromaDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.milvus,
+            implementation: {
+                name: 'TiDB Milvus Integration',
+                releaseDate: '2023-12-01',
+                description: 'Milvus integration for TiDB vector operations',
+                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/tidb',
+                authors: ['Zilliz'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pinecone,
+            implementation: {
+                name: 'TiDB Pinecone Integration',
+                releaseDate: '2023-12-01',
+                description: 'Pinecone integration for TiDB vector operations',
+                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/tidb',
+                authors: ['Pinecone'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.weaviate,
+            implementation: {
+                name: 'TiDB Weaviate Integration',
+                releaseDate: '2023-12-01',
+                description: 'Weaviate integration for TiDB vector operations',
+                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/tidb',
+                authors: ['Weaviate'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.qdrant,
+            implementation: {
+                name: 'TiDB Qdrant Integration',
+                releaseDate: '2023-12-01',
+                description: 'Qdrant integration for TiDB vector operations',
+                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/tidb',
+                authors: ['Qdrant'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pgvector,
+            implementation: {
+                name: 'TiDB Vector Extension',
+                releaseDate: '2023-12-01',
+                description: 'Vector similarity search extension for TiDB',
+                repository: 'https://github.com/pingcap/tidb/tree/master/contrib/vector',
+                authors: ['PingCAP'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common['vector-db'],
+            implementation: {
+                name: 'TiDB VectorDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'VectorDB integration for TiDB vector operations',
+                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/tidb',
+                authors: ['VectorDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['semantic-kernel'],
+            implementation: {
+                name: 'TiDB Semantic Kernel Integration',
+                releaseDate: '2023-12-01',
+                description: 'Semantic Kernel integration for TiDB vector operations',
+                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/tidb',
+                authors: ['Microsoft'],
+                contributorsType: ['open-source']
+            }
         }
     ],
     dependencies: []

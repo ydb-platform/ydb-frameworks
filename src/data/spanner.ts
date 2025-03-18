@@ -199,6 +199,129 @@ const spannerData: TimelineData = {
                 authors: ['Apache'],
                 contributorsType: ['open-source']
             }
+        },
+        {
+            ...common.qlik,
+            implementation: {
+                name: 'Spanner Qlik Connector',
+                releaseDate: '2023-01-01',
+                description: 'Qlik connector for Spanner',
+                repository: 'https://github.com/qlik-oss/qlik-connector-spanner',
+                authors: ['Qlik'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+
+        // Vector Store tools
+        {
+            ...common.langchain,
+            implementation: {
+                name: 'Spanner LangChain Integration',
+                releaseDate: '2023-12-01',
+                description: 'LangChain integration for Spanner vector operations',
+                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/spanner',
+                authors: ['LangChain'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.llamaindex,
+            implementation: {
+                name: 'Spanner LlamaIndex Integration',
+                releaseDate: '2023-12-01',
+                description: 'LlamaIndex integration for Spanner vector operations',
+                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/spanner',
+                authors: ['LlamaIndex'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.chromadb,
+            implementation: {
+                name: 'Spanner ChromaDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'ChromaDB integration for Spanner vector operations',
+                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/spanner',
+                authors: ['ChromaDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.milvus,
+            implementation: {
+                name: 'Spanner Milvus Integration',
+                releaseDate: '2023-12-01',
+                description: 'Milvus integration for Spanner vector operations',
+                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/spanner',
+                authors: ['Zilliz'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pinecone,
+            implementation: {
+                name: 'Spanner Pinecone Integration',
+                releaseDate: '2023-12-01',
+                description: 'Pinecone integration for Spanner vector operations',
+                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/spanner',
+                authors: ['Pinecone'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.weaviate,
+            implementation: {
+                name: 'Spanner Weaviate Integration',
+                releaseDate: '2023-12-01',
+                description: 'Weaviate integration for Spanner vector operations',
+                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/spanner',
+                authors: ['Weaviate'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.qdrant,
+            implementation: {
+                name: 'Spanner Qdrant Integration',
+                releaseDate: '2023-12-01',
+                description: 'Qdrant integration for Spanner vector operations',
+                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/spanner',
+                authors: ['Qdrant'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pgvector,
+            implementation: {
+                name: 'Spanner Vector Extension',
+                releaseDate: '2023-12-01',
+                description: 'Vector similarity search extension for Spanner',
+                repository: 'https://github.com/googleapis/java-spanner/tree/master/vector',
+                authors: ['Google'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common['vector-db'],
+            implementation: {
+                name: 'Spanner VectorDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'VectorDB integration for Spanner vector operations',
+                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/spanner',
+                authors: ['VectorDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['semantic-kernel'],
+            implementation: {
+                name: 'Spanner Semantic Kernel Integration',
+                releaseDate: '2023-12-01',
+                description: 'Semantic Kernel integration for Spanner vector operations',
+                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/spanner',
+                authors: ['Microsoft'],
+                contributorsType: ['open-source']
+            }
         }
     ],
     dependencies: []

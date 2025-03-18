@@ -507,5 +507,107 @@ export const common: Record<string, Framework> = {
         description: 'Data analytics and business intelligence platform',
         authors: ['Qlik'],
         repository: 'https://github.com/qlik-oss'
+    },
+
+    // Vector Store tools
+    langchain: {
+        id: 'langchain',
+        name: 'LangChain',
+        category: 'Vector Store',
+        language: 'Python',
+        releaseDate: '2022-10-01',
+        description: 'Framework for developing applications powered by language models',
+        authors: ['LangChain'],
+        repository: 'https://github.com/langchain-ai/langchain'
+    },
+    llamaindex: {
+        id: 'llamaindex',
+        name: 'LlamaIndex',
+        category: 'Vector Store',
+        language: 'Python',
+        releaseDate: '2022-11-01',
+        description: 'Data framework for LLM applications',
+        authors: ['LlamaIndex'],
+        repository: 'https://github.com/run-llama/llama_index'
+    },
+    chromadb: {
+        id: 'chromadb',
+        name: 'ChromaDB',
+        category: 'Vector Store',
+        language: 'Python',
+        releaseDate: '2022-12-01',
+        description: 'AI-native open-source vector database',
+        authors: ['ChromaDB'],
+        repository: 'https://github.com/chroma-core/chroma'
+    },
+    milvus: {
+        id: 'milvus',
+        name: 'Milvus',
+        category: 'Vector Store',
+        language: 'Go',
+        releaseDate: '2019-10-01',
+        description: 'Cloud-native vector database for scalable similarity search',
+        authors: ['Zilliz'],
+        repository: 'https://github.com/milvus-io/milvus'
+    },
+    pinecone: {
+        id: 'pinecone',
+        name: 'Pinecone',
+        category: 'Vector Store',
+        language: 'Python',
+        releaseDate: '2021-01-01',
+        description: 'Vector database for machine learning applications',
+        authors: ['Pinecone'],
+        repository: 'https://github.com/pinecone-io/pinecone-client'
+    },
+    weaviate: {
+        id: 'weaviate',
+        name: 'Weaviate',
+        category: 'Vector Store',
+        language: 'Go',
+        releaseDate: '2019-01-01',
+        description: 'Cloud-native vector database for semantic search',
+        authors: ['Weaviate'],
+        repository: 'https://github.com/weaviate/weaviate'
+    },
+    qdrant: {
+        id: 'qdrant',
+        name: 'Qdrant',
+        category: 'Vector Store',
+        language: 'Rust',
+        releaseDate: '2021-06-01',
+        description: 'Vector database and vector similarity search engine',
+        authors: ['Qdrant'],
+        repository: 'https://github.com/qdrant/qdrant'
+    },
+    pgvector: {
+        id: 'pgvector',
+        name: 'pgvector',
+        category: 'Vector Store',
+        language: 'C',
+        releaseDate: '2021-01-01',
+        description: 'Open-source vector similarity search for PostgreSQL',
+        authors: ['pgvector'],
+        repository: 'https://github.com/pgvector/pgvector'
+    },
+    'vector-db': {
+        id: 'vector-db',
+        name: 'VectorDB',
+        category: 'Vector Store',
+        language: 'Python',
+        releaseDate: '2023-01-01',
+        description: 'Vector database for AI/ML applications',
+        authors: ['VectorDB'],
+        repository: 'https://github.com/vectordb/vectordb'
+    },
+    'semantic-kernel': {
+        id: 'semantic-kernel',
+        name: 'Semantic Kernel',
+        category: 'Vector Store',
+        language: 'C#',
+        releaseDate: '2023-03-01',
+        description: 'AI orchestration layer for building AI applications',
+        authors: ['Microsoft'],
+        repository: 'https://github.com/microsoft/semantic-kernel'
     }
 }; 

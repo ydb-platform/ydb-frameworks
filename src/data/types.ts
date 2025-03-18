@@ -33,7 +33,8 @@ export type FrameworkCategory =
     | 'ETL'
     | 'Apps with abstract storage'
     | 'Logging'
-    | 'Message broker';
+    | 'Message broker'
+    | 'Vector Store';
 
 export type ProgrammingLanguage = 
     | 'Java'

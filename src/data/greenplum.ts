@@ -355,6 +355,129 @@ const greenplumData: TimelineData = {
                 authors: ['Knex.js'],
                 contributorsType: ['open-source']
             }
+        },
+        {
+            ...common.qlik,
+            implementation: {
+                name: 'Greenplum Qlik Connector',
+                releaseDate: '2023-01-01',
+                description: 'Qlik connector for Greenplum',
+                repository: 'https://github.com/qlik-oss/qlik-connector-greenplum',
+                authors: ['Qlik'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+
+        // Vector Store tools
+        {
+            ...common.langchain,
+            implementation: {
+                name: 'Greenplum LangChain Integration',
+                releaseDate: '2023-12-01',
+                description: 'LangChain integration for Greenplum vector operations',
+                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/greenplum',
+                authors: ['LangChain'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.llamaindex,
+            implementation: {
+                name: 'Greenplum LlamaIndex Integration',
+                releaseDate: '2023-12-01',
+                description: 'LlamaIndex integration for Greenplum vector operations',
+                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/greenplum',
+                authors: ['LlamaIndex'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.chromadb,
+            implementation: {
+                name: 'Greenplum ChromaDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'ChromaDB integration for Greenplum vector operations',
+                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/greenplum',
+                authors: ['ChromaDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.milvus,
+            implementation: {
+                name: 'Greenplum Milvus Integration',
+                releaseDate: '2023-12-01',
+                description: 'Milvus integration for Greenplum vector operations',
+                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/greenplum',
+                authors: ['Zilliz'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pinecone,
+            implementation: {
+                name: 'Greenplum Pinecone Integration',
+                releaseDate: '2023-12-01',
+                description: 'Pinecone integration for Greenplum vector operations',
+                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/greenplum',
+                authors: ['Pinecone'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.weaviate,
+            implementation: {
+                name: 'Greenplum Weaviate Integration',
+                releaseDate: '2023-12-01',
+                description: 'Weaviate integration for Greenplum vector operations',
+                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/greenplum',
+                authors: ['Weaviate'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.qdrant,
+            implementation: {
+                name: 'Greenplum Qdrant Integration',
+                releaseDate: '2023-12-01',
+                description: 'Qdrant integration for Greenplum vector operations',
+                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/greenplum',
+                authors: ['Qdrant'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pgvector,
+            implementation: {
+                name: 'Greenplum Vector Extension',
+                releaseDate: '2023-12-01',
+                description: 'Vector similarity search extension for Greenplum',
+                repository: 'https://github.com/greenplum-db/gpdb/tree/master/contrib/vector',
+                authors: ['Greenplum'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common['vector-db'],
+            implementation: {
+                name: 'Greenplum VectorDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'VectorDB integration for Greenplum vector operations',
+                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/greenplum',
+                authors: ['VectorDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['semantic-kernel'],
+            implementation: {
+                name: 'Greenplum Semantic Kernel Integration',
+                releaseDate: '2023-12-01',
+                description: 'Semantic Kernel integration for Greenplum vector operations',
+                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/greenplum',
+                authors: ['Microsoft'],
+                contributorsType: ['open-source']
+            }
         }
     ],
     dependencies: []

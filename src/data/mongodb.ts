@@ -381,11 +381,11 @@ const mongodbData: TimelineData = {
             ...common.qlik,
             implementation: {
                 name: 'MongoDB Qlik Connector',
-                releaseDate: '1993-01-01',
+                releaseDate: '2023-01-01',
                 description: 'Qlik connector for MongoDB',
-                repository: 'https://github.com/qlik-oss',
+                repository: 'https://github.com/qlik-oss/qlik-connector-mongodb',
                 authors: ['Qlik'],
-                contributorsType: ['staff']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -541,6 +541,118 @@ const mongodbData: TimelineData = {
                 description: 'MongoDB driver for Knex.js',
                 repository: 'https://github.com/knex/knex',
                 authors: ['Knex.js'],
+                contributorsType: ['open-source']
+            }
+        },
+
+        // Vector Store tools
+        {
+            ...common.langchain,
+            implementation: {
+                name: 'MongoDB LangChain Integration',
+                releaseDate: '2023-12-01',
+                description: 'LangChain integration for MongoDB vector operations',
+                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/mongodb',
+                authors: ['LangChain'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.llamaindex,
+            implementation: {
+                name: 'MongoDB LlamaIndex Integration',
+                releaseDate: '2023-12-01',
+                description: 'LlamaIndex integration for MongoDB vector operations',
+                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/mongodb',
+                authors: ['LlamaIndex'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.chromadb,
+            implementation: {
+                name: 'MongoDB ChromaDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'ChromaDB integration for MongoDB vector operations',
+                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/mongodb',
+                authors: ['ChromaDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.milvus,
+            implementation: {
+                name: 'MongoDB Milvus Integration',
+                releaseDate: '2023-12-01',
+                description: 'Milvus integration for MongoDB vector operations',
+                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/mongodb',
+                authors: ['Zilliz'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pinecone,
+            implementation: {
+                name: 'MongoDB Pinecone Integration',
+                releaseDate: '2023-12-01',
+                description: 'Pinecone integration for MongoDB vector operations',
+                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/mongodb',
+                authors: ['Pinecone'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.weaviate,
+            implementation: {
+                name: 'MongoDB Weaviate Integration',
+                releaseDate: '2023-12-01',
+                description: 'Weaviate integration for MongoDB vector operations',
+                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/mongodb',
+                authors: ['Weaviate'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.qdrant,
+            implementation: {
+                name: 'MongoDB Qdrant Integration',
+                releaseDate: '2023-12-01',
+                description: 'Qdrant integration for MongoDB vector operations',
+                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/mongodb',
+                authors: ['Qdrant'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pgvector,
+            implementation: {
+                name: 'MongoDB Vector Extension',
+                releaseDate: '2023-12-01',
+                description: 'Vector similarity search extension for MongoDB',
+                repository: 'https://github.com/mongodb/mongo-server/tree/master/src/mongo/db/vector',
+                authors: ['MongoDB'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common['vector-db'],
+            implementation: {
+                name: 'MongoDB VectorDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'VectorDB integration for MongoDB vector operations',
+                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/mongodb',
+                authors: ['VectorDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['semantic-kernel'],
+            implementation: {
+                name: 'MongoDB Semantic Kernel Integration',
+                releaseDate: '2023-12-01',
+                description: 'Semantic Kernel integration for MongoDB vector operations',
+                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/mongodb',
+                authors: ['Microsoft'],
                 contributorsType: ['open-source']
             }
         }

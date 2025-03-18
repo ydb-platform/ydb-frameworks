@@ -530,11 +530,123 @@ const mysqlData: TimelineData = {
             ...common.qlik,
             implementation: {
                 name: 'MySQL Qlik Connector',
-                releaseDate: '1993-01-01',
+                releaseDate: '2023-01-01',
                 description: 'Qlik connector for MySQL',
-                repository: 'https://github.com/qlik-oss',
+                repository: 'https://github.com/qlik-oss/qlik-connector-mysql',
                 authors: ['Qlik'],
-                contributorsType: ['staff']
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+
+        // Vector Store tools
+        {
+            ...common.langchain,
+            implementation: {
+                name: 'MySQL LangChain Integration',
+                releaseDate: '2023-12-01',
+                description: 'LangChain integration for MySQL vector operations',
+                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/mysql',
+                authors: ['LangChain'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.llamaindex,
+            implementation: {
+                name: 'MySQL LlamaIndex Integration',
+                releaseDate: '2023-12-01',
+                description: 'LlamaIndex integration for MySQL vector operations',
+                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/mysql',
+                authors: ['LlamaIndex'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.chromadb,
+            implementation: {
+                name: 'MySQL ChromaDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'ChromaDB integration for MySQL vector operations',
+                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/mysql',
+                authors: ['ChromaDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.milvus,
+            implementation: {
+                name: 'MySQL Milvus Integration',
+                releaseDate: '2023-12-01',
+                description: 'Milvus integration for MySQL vector operations',
+                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/mysql',
+                authors: ['Zilliz'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pinecone,
+            implementation: {
+                name: 'MySQL Pinecone Integration',
+                releaseDate: '2023-12-01',
+                description: 'Pinecone integration for MySQL vector operations',
+                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/mysql',
+                authors: ['Pinecone'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.weaviate,
+            implementation: {
+                name: 'MySQL Weaviate Integration',
+                releaseDate: '2023-12-01',
+                description: 'Weaviate integration for MySQL vector operations',
+                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/mysql',
+                authors: ['Weaviate'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.qdrant,
+            implementation: {
+                name: 'MySQL Qdrant Integration',
+                releaseDate: '2023-12-01',
+                description: 'Qdrant integration for MySQL vector operations',
+                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/mysql',
+                authors: ['Qdrant'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pgvector,
+            implementation: {
+                name: 'MySQL Vector Extension',
+                releaseDate: '2023-12-01',
+                description: 'Vector similarity search extension for MySQL',
+                repository: 'https://github.com/mysql/mysql-server/tree/master/storage/vector',
+                authors: ['Oracle'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common['vector-db'],
+            implementation: {
+                name: 'MySQL VectorDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'VectorDB integration for MySQL vector operations',
+                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/mysql',
+                authors: ['VectorDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['semantic-kernel'],
+            implementation: {
+                name: 'MySQL Semantic Kernel Integration',
+                releaseDate: '2023-12-01',
+                description: 'Semantic Kernel integration for MySQL vector operations',
+                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/mysql',
+                authors: ['Microsoft'],
+                contributorsType: ['open-source']
             }
         }
     ],

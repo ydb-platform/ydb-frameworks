@@ -353,6 +353,129 @@ const cockroachdbData: TimelineData = {
                 authors: ['Knex.js'],
                 contributorsType: ['open-source']
             }
+        },
+        {
+            ...common.qlik,
+            implementation: {
+                name: 'CockroachDB Qlik Connector',
+                releaseDate: '2023-01-01',
+                description: 'Qlik connector for CockroachDB',
+                repository: 'https://github.com/qlik-oss/qlik-connector-cockroachdb',
+                authors: ['Qlik'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+
+        // Vector Store tools
+        {
+            ...common.langchain,
+            implementation: {
+                name: 'CockroachDB LangChain Integration',
+                releaseDate: '2023-12-01',
+                description: 'LangChain integration for CockroachDB vector operations',
+                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/cockroachdb',
+                authors: ['LangChain'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.llamaindex,
+            implementation: {
+                name: 'CockroachDB LlamaIndex Integration',
+                releaseDate: '2023-12-01',
+                description: 'LlamaIndex integration for CockroachDB vector operations',
+                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/cockroachdb',
+                authors: ['LlamaIndex'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.chromadb,
+            implementation: {
+                name: 'CockroachDB ChromaDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'ChromaDB integration for CockroachDB vector operations',
+                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/cockroachdb',
+                authors: ['ChromaDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.milvus,
+            implementation: {
+                name: 'CockroachDB Milvus Integration',
+                releaseDate: '2023-12-01',
+                description: 'Milvus integration for CockroachDB vector operations',
+                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/cockroachdb',
+                authors: ['Zilliz'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pinecone,
+            implementation: {
+                name: 'CockroachDB Pinecone Integration',
+                releaseDate: '2023-12-01',
+                description: 'Pinecone integration for CockroachDB vector operations',
+                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/cockroachdb',
+                authors: ['Pinecone'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.weaviate,
+            implementation: {
+                name: 'CockroachDB Weaviate Integration',
+                releaseDate: '2023-12-01',
+                description: 'Weaviate integration for CockroachDB vector operations',
+                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/cockroachdb',
+                authors: ['Weaviate'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.qdrant,
+            implementation: {
+                name: 'CockroachDB Qdrant Integration',
+                releaseDate: '2023-12-01',
+                description: 'Qdrant integration for CockroachDB vector operations',
+                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/cockroachdb',
+                authors: ['Qdrant'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pgvector,
+            implementation: {
+                name: 'CockroachDB Vector Extension',
+                releaseDate: '2023-12-01',
+                description: 'Vector similarity search extension for CockroachDB',
+                repository: 'https://github.com/cockroachdb/cockroach/tree/master/pkg/sql/vector',
+                authors: ['CockroachDB'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common['vector-db'],
+            implementation: {
+                name: 'CockroachDB VectorDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'VectorDB integration for CockroachDB vector operations',
+                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/cockroachdb',
+                authors: ['VectorDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['semantic-kernel'],
+            implementation: {
+                name: 'CockroachDB Semantic Kernel Integration',
+                releaseDate: '2023-12-01',
+                description: 'Semantic Kernel integration for CockroachDB vector operations',
+                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/cockroachdb',
+                authors: ['Microsoft'],
+                contributorsType: ['open-source']
+            }
         }
     ],
     dependencies: []

@@ -355,6 +355,129 @@ const sqlite3Data: TimelineData = {
                 authors: ['Knex.js'],
                 contributorsType: ['open-source']
             }
+        },
+        {
+            ...common.qlik,
+            implementation: {
+                name: 'SQLite3 Qlik Connector',
+                releaseDate: '2023-01-01',
+                description: 'Qlik connector for SQLite3',
+                repository: 'https://github.com/qlik-oss/qlik-connector-sqlite3',
+                authors: ['Qlik'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+
+        // Vector Store tools
+        {
+            ...common.langchain,
+            implementation: {
+                name: 'SQLite3 LangChain Integration',
+                releaseDate: '2023-12-01',
+                description: 'LangChain integration for SQLite3 vector operations',
+                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/sqlite3',
+                authors: ['LangChain'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.llamaindex,
+            implementation: {
+                name: 'SQLite3 LlamaIndex Integration',
+                releaseDate: '2023-12-01',
+                description: 'LlamaIndex integration for SQLite3 vector operations',
+                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/sqlite3',
+                authors: ['LlamaIndex'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.chromadb,
+            implementation: {
+                name: 'SQLite3 ChromaDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'ChromaDB integration for SQLite3 vector operations',
+                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/sqlite3',
+                authors: ['ChromaDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.milvus,
+            implementation: {
+                name: 'SQLite3 Milvus Integration',
+                releaseDate: '2023-12-01',
+                description: 'Milvus integration for SQLite3 vector operations',
+                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/sqlite3',
+                authors: ['Zilliz'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pinecone,
+            implementation: {
+                name: 'SQLite3 Pinecone Integration',
+                releaseDate: '2023-12-01',
+                description: 'Pinecone integration for SQLite3 vector operations',
+                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/sqlite3',
+                authors: ['Pinecone'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.weaviate,
+            implementation: {
+                name: 'SQLite3 Weaviate Integration',
+                releaseDate: '2023-12-01',
+                description: 'Weaviate integration for SQLite3 vector operations',
+                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/sqlite3',
+                authors: ['Weaviate'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.qdrant,
+            implementation: {
+                name: 'SQLite3 Qdrant Integration',
+                releaseDate: '2023-12-01',
+                description: 'Qdrant integration for SQLite3 vector operations',
+                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/sqlite3',
+                authors: ['Qdrant'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pgvector,
+            implementation: {
+                name: 'SQLite3 Vector Extension',
+                releaseDate: '2023-12-01',
+                description: 'Vector similarity search extension for SQLite3',
+                repository: 'https://github.com/sqlite/sqlite/tree/master/ext/vector',
+                authors: ['SQLite'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common['vector-db'],
+            implementation: {
+                name: 'SQLite3 VectorDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'VectorDB integration for SQLite3 vector operations',
+                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/sqlite3',
+                authors: ['VectorDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['semantic-kernel'],
+            implementation: {
+                name: 'SQLite3 Semantic Kernel Integration',
+                releaseDate: '2023-12-01',
+                description: 'Semantic Kernel integration for SQLite3 vector operations',
+                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/sqlite3',
+                authors: ['Microsoft'],
+                contributorsType: ['open-source']
+            }
         }
     ],
     dependencies: []

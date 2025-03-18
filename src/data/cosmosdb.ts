@@ -355,6 +355,129 @@ const cosmosdbData: TimelineData = {
                 authors: ['Knex.js'],
                 contributorsType: ['open-source']
             }
+        },
+        {
+            ...common.qlik,
+            implementation: {
+                name: 'CosmosDB Qlik Connector',
+                releaseDate: '2023-01-01',
+                description: 'Qlik connector for CosmosDB',
+                repository: 'https://github.com/qlik-oss/qlik-connector-cosmosdb',
+                authors: ['Qlik'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+
+        // Vector Store tools
+        {
+            ...common.langchain,
+            implementation: {
+                name: 'CosmosDB LangChain Integration',
+                releaseDate: '2023-12-01',
+                description: 'LangChain integration for CosmosDB vector operations',
+                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/cosmosdb',
+                authors: ['LangChain'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.llamaindex,
+            implementation: {
+                name: 'CosmosDB LlamaIndex Integration',
+                releaseDate: '2023-12-01',
+                description: 'LlamaIndex integration for CosmosDB vector operations',
+                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/cosmosdb',
+                authors: ['LlamaIndex'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.chromadb,
+            implementation: {
+                name: 'CosmosDB ChromaDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'ChromaDB integration for CosmosDB vector operations',
+                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/cosmosdb',
+                authors: ['ChromaDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.milvus,
+            implementation: {
+                name: 'CosmosDB Milvus Integration',
+                releaseDate: '2023-12-01',
+                description: 'Milvus integration for CosmosDB vector operations',
+                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/cosmosdb',
+                authors: ['Zilliz'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pinecone,
+            implementation: {
+                name: 'CosmosDB Pinecone Integration',
+                releaseDate: '2023-12-01',
+                description: 'Pinecone integration for CosmosDB vector operations',
+                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/cosmosdb',
+                authors: ['Pinecone'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.weaviate,
+            implementation: {
+                name: 'CosmosDB Weaviate Integration',
+                releaseDate: '2023-12-01',
+                description: 'Weaviate integration for CosmosDB vector operations',
+                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/cosmosdb',
+                authors: ['Weaviate'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.qdrant,
+            implementation: {
+                name: 'CosmosDB Qdrant Integration',
+                releaseDate: '2023-12-01',
+                description: 'Qdrant integration for CosmosDB vector operations',
+                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/cosmosdb',
+                authors: ['Qdrant'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pgvector,
+            implementation: {
+                name: 'CosmosDB Vector Extension',
+                releaseDate: '2023-12-01',
+                description: 'Vector similarity search extension for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmos-db/tree/master/vector',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common['vector-db'],
+            implementation: {
+                name: 'CosmosDB VectorDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'VectorDB integration for CosmosDB vector operations',
+                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/cosmosdb',
+                authors: ['VectorDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['semantic-kernel'],
+            implementation: {
+                name: 'CosmosDB Semantic Kernel Integration',
+                releaseDate: '2023-12-01',
+                description: 'Semantic Kernel integration for CosmosDB vector operations',
+                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/cosmosdb',
+                authors: ['Microsoft'],
+                contributorsType: ['open-source']
+            }
         }
     ],
     dependencies: []

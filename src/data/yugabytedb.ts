@@ -355,6 +355,129 @@ const yugabytedbData: TimelineData = {
                 authors: ['Knex.js'],
                 contributorsType: ['open-source']
             }
+        },
+        {
+            ...common.qlik,
+            implementation: {
+                name: 'YugabyteDB Qlik Connector',
+                releaseDate: '2023-01-01',
+                description: 'Qlik connector for YugabyteDB',
+                repository: 'https://github.com/qlik-oss/qlik-connector-yugabytedb',
+                authors: ['Qlik'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+
+        // Vector Store tools
+        {
+            ...common.langchain,
+            implementation: {
+                name: 'YugabyteDB LangChain Integration',
+                releaseDate: '2023-12-01',
+                description: 'LangChain integration for YugabyteDB vector operations',
+                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/yugabytedb',
+                authors: ['LangChain'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.llamaindex,
+            implementation: {
+                name: 'YugabyteDB LlamaIndex Integration',
+                releaseDate: '2023-12-01',
+                description: 'LlamaIndex integration for YugabyteDB vector operations',
+                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/yugabytedb',
+                authors: ['LlamaIndex'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.chromadb,
+            implementation: {
+                name: 'YugabyteDB ChromaDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'ChromaDB integration for YugabyteDB vector operations',
+                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/yugabytedb',
+                authors: ['ChromaDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.milvus,
+            implementation: {
+                name: 'YugabyteDB Milvus Integration',
+                releaseDate: '2023-12-01',
+                description: 'Milvus integration for YugabyteDB vector operations',
+                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/yugabytedb',
+                authors: ['Zilliz'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pinecone,
+            implementation: {
+                name: 'YugabyteDB Pinecone Integration',
+                releaseDate: '2023-12-01',
+                description: 'Pinecone integration for YugabyteDB vector operations',
+                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/yugabytedb',
+                authors: ['Pinecone'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.weaviate,
+            implementation: {
+                name: 'YugabyteDB Weaviate Integration',
+                releaseDate: '2023-12-01',
+                description: 'Weaviate integration for YugabyteDB vector operations',
+                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/yugabytedb',
+                authors: ['Weaviate'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.qdrant,
+            implementation: {
+                name: 'YugabyteDB Qdrant Integration',
+                releaseDate: '2023-12-01',
+                description: 'Qdrant integration for YugabyteDB vector operations',
+                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/yugabytedb',
+                authors: ['Qdrant'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pgvector,
+            implementation: {
+                name: 'YugabyteDB Vector Extension',
+                releaseDate: '2023-12-01',
+                description: 'Vector similarity search extension for YugabyteDB',
+                repository: 'https://github.com/yugabyte/yugabyte-db/tree/master/contrib/vector',
+                authors: ['Yugabyte'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common['vector-db'],
+            implementation: {
+                name: 'YugabyteDB VectorDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'VectorDB integration for YugabyteDB vector operations',
+                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/yugabytedb',
+                authors: ['VectorDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['semantic-kernel'],
+            implementation: {
+                name: 'YugabyteDB Semantic Kernel Integration',
+                releaseDate: '2023-12-01',
+                description: 'Semantic Kernel integration for YugabyteDB vector operations',
+                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/yugabytedb',
+                authors: ['Microsoft'],
+                contributorsType: ['open-source']
+            }
         }
     ],
     dependencies: []

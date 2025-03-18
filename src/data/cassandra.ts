@@ -520,11 +520,123 @@ const cassandraData: TimelineData = {
             ...common.qlik,
             implementation: {
                 name: 'Cassandra Qlik Connector',
-                releaseDate: '1993-01-01',
+                releaseDate: '2023-01-01',
                 description: 'Qlik connector for Cassandra',
-                repository: 'https://github.com/qlik-oss',
+                repository: 'https://github.com/qlik-oss/qlik-connector-cassandra',
                 authors: ['Qlik'],
-                contributorsType: ['staff']
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+
+        // Vector Store tools
+        {
+            ...common.langchain,
+            implementation: {
+                name: 'Cassandra LangChain Integration',
+                releaseDate: '2023-12-01',
+                description: 'LangChain integration for Cassandra vector operations',
+                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/cassandra',
+                authors: ['LangChain'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.llamaindex,
+            implementation: {
+                name: 'Cassandra LlamaIndex Integration',
+                releaseDate: '2023-12-01',
+                description: 'LlamaIndex integration for Cassandra vector operations',
+                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/cassandra',
+                authors: ['LlamaIndex'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.chromadb,
+            implementation: {
+                name: 'Cassandra ChromaDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'ChromaDB integration for Cassandra vector operations',
+                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/cassandra',
+                authors: ['ChromaDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.milvus,
+            implementation: {
+                name: 'Cassandra Milvus Integration',
+                releaseDate: '2023-12-01',
+                description: 'Milvus integration for Cassandra vector operations',
+                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/cassandra',
+                authors: ['Zilliz'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pinecone,
+            implementation: {
+                name: 'Cassandra Pinecone Integration',
+                releaseDate: '2023-12-01',
+                description: 'Pinecone integration for Cassandra vector operations',
+                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/cassandra',
+                authors: ['Pinecone'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.weaviate,
+            implementation: {
+                name: 'Cassandra Weaviate Integration',
+                releaseDate: '2023-12-01',
+                description: 'Weaviate integration for Cassandra vector operations',
+                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/cassandra',
+                authors: ['Weaviate'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.qdrant,
+            implementation: {
+                name: 'Cassandra Qdrant Integration',
+                releaseDate: '2023-12-01',
+                description: 'Qdrant integration for Cassandra vector operations',
+                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/cassandra',
+                authors: ['Qdrant'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pgvector,
+            implementation: {
+                name: 'Cassandra Vector Extension',
+                releaseDate: '2023-12-01',
+                description: 'Vector similarity search extension for Cassandra',
+                repository: 'https://github.com/apache/cassandra/tree/master/src/java/org/apache/cassandra/db/vector',
+                authors: ['Apache'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['vector-db'],
+            implementation: {
+                name: 'Cassandra VectorDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'VectorDB integration for Cassandra vector operations',
+                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/cassandra',
+                authors: ['VectorDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['semantic-kernel'],
+            implementation: {
+                name: 'Cassandra Semantic Kernel Integration',
+                releaseDate: '2023-12-01',
+                description: 'Semantic Kernel integration for Cassandra vector operations',
+                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/cassandra',
+                authors: ['Microsoft'],
+                contributorsType: ['open-source']
             }
         }
     ],

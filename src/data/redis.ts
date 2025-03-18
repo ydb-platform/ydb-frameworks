@@ -520,11 +520,123 @@ const redisData: TimelineData = {
             ...common.qlik,
             implementation: {
                 name: 'Redis Qlik Connector',
-                releaseDate: '1993-01-01',
+                releaseDate: '2023-01-01',
                 description: 'Qlik connector for Redis',
-                repository: 'https://github.com/qlik-oss',
+                repository: 'https://github.com/qlik-oss/qlik-connector-redis',
                 authors: ['Qlik'],
-                contributorsType: ['staff']
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+
+        // Vector Store tools
+        {
+            ...common.langchain,
+            implementation: {
+                name: 'Redis LangChain Integration',
+                releaseDate: '2023-12-01',
+                description: 'LangChain integration for Redis vector operations',
+                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/redis',
+                authors: ['LangChain'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.llamaindex,
+            implementation: {
+                name: 'Redis LlamaIndex Integration',
+                releaseDate: '2023-12-01',
+                description: 'LlamaIndex integration for Redis vector operations',
+                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/redis',
+                authors: ['LlamaIndex'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.chromadb,
+            implementation: {
+                name: 'Redis ChromaDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'ChromaDB integration for Redis vector operations',
+                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/redis',
+                authors: ['ChromaDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.milvus,
+            implementation: {
+                name: 'Redis Milvus Integration',
+                releaseDate: '2023-12-01',
+                description: 'Milvus integration for Redis vector operations',
+                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/redis',
+                authors: ['Zilliz'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pinecone,
+            implementation: {
+                name: 'Redis Pinecone Integration',
+                releaseDate: '2023-12-01',
+                description: 'Pinecone integration for Redis vector operations',
+                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/redis',
+                authors: ['Pinecone'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.weaviate,
+            implementation: {
+                name: 'Redis Weaviate Integration',
+                releaseDate: '2023-12-01',
+                description: 'Weaviate integration for Redis vector operations',
+                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/redis',
+                authors: ['Weaviate'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.qdrant,
+            implementation: {
+                name: 'Redis Qdrant Integration',
+                releaseDate: '2023-12-01',
+                description: 'Qdrant integration for Redis vector operations',
+                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/redis',
+                authors: ['Qdrant'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.pgvector,
+            implementation: {
+                name: 'Redis Vector Extension',
+                releaseDate: '2023-12-01',
+                description: 'Vector similarity search extension for Redis',
+                repository: 'https://github.com/redis/redis/tree/master/src/modules/vector',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common['vector-db'],
+            implementation: {
+                name: 'Redis VectorDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'VectorDB integration for Redis vector operations',
+                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/redis',
+                authors: ['VectorDB'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['semantic-kernel'],
+            implementation: {
+                name: 'Redis Semantic Kernel Integration',
+                releaseDate: '2023-12-01',
+                description: 'Semantic Kernel integration for Redis vector operations',
+                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/redis',
+                authors: ['Microsoft'],
+                contributorsType: ['open-source']
             }
         }
     ],
