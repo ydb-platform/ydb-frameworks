@@ -1,79 +1,98 @@
 // src/data/types.ts
-export type Database =
-    | 'ydb';
+export type Database = 'ydb' | 'postgresql' | 'mysql' | 'mssql' | 'oracle';
 
-export type FrameworkCategory =
+export type FrameworkCategory = 
+    | 'Server-side feature'
     | 'Standard API'
     | 'Driver'
-    | 'Migration'
     | 'ORM'
-    | 'Admin'
-    | 'ETL'
-    | 'BI'
-    | 'Logging'
-    | 'Visualization'
-    | 'Query Builder'
+    | 'Migration'
     | 'Connection Pool'
-    | 'Server-side feature'
+    | 'Query Builder'
+    | 'Admin'
+    | 'BI'
+    | 'Visualization'
+    | 'ETL'
     | 'Apps with abstract storage'
+    | 'Logging'
     | 'Message broker';
 
-export type ProgrammingLanguage =
-    | 'JavaScript'
-    | 'TypeScript'
-    | 'Python'
+export type ProgrammingLanguage = 
     | 'Java'
     | 'Go'
+    | 'Python'
     | 'C#'
-    | 'C'
     | 'C++'
-    | 'Ruby'
-    | 'PHP'
+    | 'C'
     | 'Rust'
+    | 'JavaScript'
+    | 'TypeScript'
+    | 'PHP'
+    | 'Scala'
+    | 'Ruby'
+    | 'Erlang'
+    | 'Elixir'
+    | 'Haskell'
     | 'Kotlin'
     | 'Swift'
-    | 'Scala'
+    | 'SQL'
     | 'YAML'
     | 'Dart'
-    | 'SQL'
-    | 'XML'
     | 'JSON'
     | 'Erlang'
     | 'Elixir'
-    | 'Haskell';
+    | 'Haskell'
+    | 'Kotlin'
+    | 'Swift'
+    | 'SQL'
+    | 'YAML'
+    | 'Dart'
+    | 'XML'
+    | 'Ruby'
+    | 'PHP'
+    | 'Scala'
+    | 'Erlang'
+    | 'Elixir'
+    | 'Haskell'
+    | 'Kotlin'
+    | 'Swift'
+    | 'SQL'
+    | 'YAML'
+    | 'Dart'
+    | 'XML'
     
-export type ContributorsType =
-    | 'open-source'
-    | 'student'
+    ;
+export type ContributorType = 
     | 'staff'
-    | 'freelance';
+    | 'student'
+    | 'freelance'
+    | 'open-source';
+
+export interface Implementation {
+    name?: string;
+    releaseDate: string;
+    description?: string;
+    repository?: string;
+    authors?: string[];
+    contributorsType?: ContributorType[];
+}
 
 export interface Framework {
     id: string;
     name: string;
     category: FrameworkCategory;
     language: ProgrammingLanguage;
-    releaseDate: string; // ISO date string
+    releaseDate: string;
     description: string;
-    authors?: string[];
-    version?: string;
+    authors: string[];
     repository?: string;
-    website?: string;
-    // Информация о реализации для конкретной БД
-    implementation?: {
-        name?: string; // Название конкретной реализации (например, "Hibernate YDB Dialect")
-        description?: string; // Описание реализации
-        releaseDate?: string; // ISO date string
-        repository?: string; // Репозиторий реализации
-        version?: string;
-        authors?: string[]; // Авторы реализации
-        contributorsType?: ContributorsType[]; // Тип контрибьюторов реализации
-    };
+    implementation?: Implementation;
 }
 
 export interface Dependency {
-    source: string; // Framework ID
-    target: string; // Framework ID
+    source: string;
+    target: string;
+    type: string;
     description?: string;
 }
 

@@ -1,8 +1,8 @@
 // src/components/DatabaseSelector/DatabaseSelector.tsx
 import React, { useState, useRef, useEffect } from 'react';
-import { Database } from '../../data/types';
+import { Database, TimelineData } from '../../data/types';
 import styles from './DatabaseSelector.module.css';
-import databaseData from '../../data/index';
+import { databases } from '../../data';
 
 interface DatabaseSelectorProps {
     databases: Database[];
@@ -11,7 +11,7 @@ interface DatabaseSelectorProps {
 }
 
 const DatabaseSelector: React.FC<DatabaseSelectorProps> = ({
-    databases,
+    databases: availableDatabases,
     selectedDb,
     onDbChange
 }) => {
@@ -57,9 +57,13 @@ const DatabaseSelector: React.FC<DatabaseSelectorProps> = ({
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
-        if (!isOpen) {
-            setSearchTerm('');
+        if (!isOpen && searchInputRef.current) {
+            setTimeout(() => searchInputRef.current?.focus(), 0);
         }
+    };
+
+    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchTerm(e.target.value);
     };
 
     const handleSelect = (db: Database) => {
@@ -68,19 +72,15 @@ const DatabaseSelector: React.FC<DatabaseSelectorProps> = ({
         setSearchTerm('');
     };
 
-    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchTerm(e.target.value);
-    };
-
     // Фильтруем базы данных по поисковому запросу
-    const filteredDatabases = databases.filter(db => 
-        databaseData[db].displayName.toLowerCase().includes(searchTerm.toLowerCase())
+    const filteredDatabases = availableDatabases.filter(db => 
+        (databases[db] as TimelineData).displayName.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     return (
         <div className={styles.selectorContainer} ref={dropdownRef}>
             <div className={styles.selectedOption} onClick={toggleDropdown}>
-                <span>{databaseData[selectedDb].displayName}</span>
+                <span>{(databases[selectedDb] as TimelineData).displayName}</span>
                 <span className={styles.arrow}>{isOpen ? '▲' : '▼'}</span>
             </div>
             {isOpen && (
@@ -105,7 +105,7 @@ const DatabaseSelector: React.FC<DatabaseSelectorProps> = ({
                                     className={`${styles.option} ${selectedDb === db ? styles.selected : ''}`}
                                     onClick={() => handleSelect(db)}
                                 >
-                                    {databaseData[db].displayName}
+                                    {(databases[db] as TimelineData).displayName}
                                 </div>
                             ))
                         ) : (

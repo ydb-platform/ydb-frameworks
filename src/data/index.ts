@@ -1,9 +1,16 @@
 // src/data/index.ts
-import { TimelineData, Database } from './types';
 import ydbData from './ydb';
+import postgresqlData from './postgresql';
+import mysqlData from './mysql';
+import mssqlData from './mssql';
+import oracleData from './oracle';
 
-const databaseData: Record<Database, TimelineData> = {
+export * from './types';
+
+export const databases = {
     ydb: ydbData,
+    postgresql: postgresqlData,
+    mysql: mysqlData,
+    mssql: mssqlData,
+    oracle: oracleData
 };
-
-export default databaseData;

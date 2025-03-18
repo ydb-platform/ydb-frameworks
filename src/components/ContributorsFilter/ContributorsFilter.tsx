@@ -1,23 +1,21 @@
 // src/components/ContributorsFilter/ContributorsFilter.tsx
 import React from 'react';
-import { ContributorsType } from '../../data/types';
+import { ContributorType } from '../../data/types';
 import styles from './ContributorsFilter.module.css';
 
 interface ContributorsFilterProps {
-    contributorsTypes: ContributorsType[];
-    selectedTypes: ContributorsType[];
-    onToggle: (type: ContributorsType) => void;
-    onSelectAll: () => void;
+    selectedContributors: ContributorType[];
+    onContributorsChange: (contributors: ContributorType[]) => void;
+    availableContributors: ContributorType[];
 }
 
 const ContributorsFilter: React.FC<ContributorsFilterProps> = ({
-                                                                   contributorsTypes,
-                                                                   selectedTypes,
-                                                                   onToggle,
-                                                                   onSelectAll
+                                                                   selectedContributors,
+                                                                   onContributorsChange,
+                                                                   availableContributors
                                                                }) => {
     // Словарь с понятными названиями
-    const typeLabels: Record<ContributorsType, string> = {
+    const typeLabels: Record<ContributorType, string> = {
         'open-source': 'Open Source Contributors',
         'student': 'Student Contributors',
         'staff': 'Staff Contributors',
@@ -25,7 +23,7 @@ const ContributorsFilter: React.FC<ContributorsFilterProps> = ({
     };
 
     // Словарь с цветами для типов
-    const typeColors: Record<ContributorsType, string> = {
+    const typeColors: Record<ContributorType, string> = {
         'open-source': '#4CAF50', // Зеленый
         'student': '#2196F3',    // Синий
         'staff': '#FF9800',       // Оранжевый
@@ -33,7 +31,7 @@ const ContributorsFilter: React.FC<ContributorsFilterProps> = ({
     };
 
     // Проверяем, выбраны ли все типы
-    const allSelected = contributorsTypes.length === selectedTypes.length;
+    const allSelected = availableContributors.length === selectedContributors.length;
 
     return (
         <div className={styles.filterContainer}>
@@ -41,20 +39,20 @@ const ContributorsFilter: React.FC<ContributorsFilterProps> = ({
                 <h3 className={styles.filterTitle}>Contributors</h3>
                 <button
                     className={styles.selectAllButton}
-                    onClick={onSelectAll}
+                    onClick={() => onContributorsChange(availableContributors)}
                     disabled={allSelected}
                 >
                     {allSelected ? 'All Selected' : 'Select All'}
                 </button>
             </div>
             <div className={styles.filterOptions}>
-                {contributorsTypes.map(type => (
+                {availableContributors.map(type => (
                     <div key={type} className={styles.contributorItem}>
                         <label className={styles.filterOption}>
                             <input
                                 type="checkbox"
-                                checked={selectedTypes.includes(type)}
-                                onChange={() => onToggle(type)}
+                                checked={selectedContributors.includes(type)}
+                                onChange={() => onContributorsChange(selectedContributors.includes(type) ? selectedContributors.filter(t => t !== type) : [...selectedContributors, type])}
                                 className={styles.checkbox}
                             />
                             <div

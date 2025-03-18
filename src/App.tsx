@@ -8,7 +8,7 @@ import ThemeToggle from './components/ThemeToggle/ThemeToggle';
 import ReportMistakeButton from './components/ReportMistakeButton/ReportMistakeButton';
 import { useQueryParams } from './hooks/useQueryParams';
 import { useTimelineData } from './hooks/useTimelineData';
-import { Database, FrameworkCategory, ProgrammingLanguage, ContributorsType } from './data/types';
+import { Database, FrameworkCategory, ProgrammingLanguage, ContributorType, Framework, Dependency } from './data/types';
 import './styles/layout.css';
 
 const App: React.FC = () => {
@@ -16,11 +16,11 @@ const App: React.FC = () => {
     const [selectedDb, setSelectedDb] = useState<Database>((getQueryParam('db') as Database) || 'ydb');
     const [selectedCategories, setSelectedCategories] = useState<FrameworkCategory[]>([]);
     const [selectedLanguages, setSelectedLanguages] = useState<ProgrammingLanguage[]>([]);
-    const [selectedContributorsTypes, setSelectedContributorsTypes] = useState<ContributorsType[]>([]);
+    const [selectedContributorsTypes, setSelectedContributorsTypes] = useState<ContributorType[]>([]);
     const [isDarkTheme, setIsDarkTheme] = useState<boolean>(localStorage.getItem('theme') === 'dark');
     const [showDependencies, setShowDependencies] = useState<boolean>(true);
 
-    const { frameworks, frameworkCategories, languages, contributorsTypes, dependencies, databases } = useTimelineData(selectedDb);
+    const { data, frameworkCategories, languages, contributorsTypes, availableDatabases } = useTimelineData(selectedDb);
 
     // Initialize all categories as selected
     useEffect(() => {
@@ -64,17 +64,8 @@ const App: React.FC = () => {
     };
 
     // Handle contributor type toggle
-    const handleContributorTypeToggle = (type: ContributorsType) => {
-        if (selectedContributorsTypes.includes(type)) {
-            setSelectedContributorsTypes(selectedContributorsTypes.filter(t => t !== type));
-        } else {
-            setSelectedContributorsTypes([...selectedContributorsTypes, type]);
-        }
-    };
-
-    // Handle select all contributor types
-    const handleSelectAllContributorTypes = () => {
-        setSelectedContributorsTypes([...contributorsTypes]);
+    const handleContributorTypeToggle = (contributors: ContributorType[]) => {
+        setSelectedContributorsTypes(contributors);
     };
 
     // Handle theme toggle
@@ -96,7 +87,7 @@ const App: React.FC = () => {
         document.documentElement.setAttribute('data-theme', isDarkTheme ? 'dark' : 'light');
     }, [isDarkTheme]);
 
-    const filteredFrameworks = frameworks.filter(framework => {
+    const filteredFrameworks = data.frameworks.filter((framework: Framework) => {
         // Проверка по категории и языку
         const categoryMatch = selectedCategories.includes(framework.category);
         const languageMatch = selectedLanguages.includes(framework.language);
@@ -105,7 +96,7 @@ const App: React.FC = () => {
         // Если типы контрибьюторов не указаны или список выбранных типов пуст, пропускаем фильтрацию
         let contributorMatch = true;
         if (framework.implementation?.contributorsType && selectedContributorsTypes.length > 0) {
-            contributorMatch = framework.implementation?.contributorsType.some(type =>
+            contributorMatch = framework.implementation?.contributorsType.some((type: ContributorType) =>
                 selectedContributorsTypes.includes(type)
             );
         }
@@ -113,8 +104,8 @@ const App: React.FC = () => {
         return categoryMatch && languageMatch && contributorMatch;
     });
 
-    const filteredDependencies = dependencies.filter(dep =>
-        filteredFrameworks.some(f => f.id === dep.source || f.id === dep.target)
+    const filteredDependencies = data.dependencies.filter((dep: Dependency) =>
+        filteredFrameworks.some((f: Framework) => f.id === dep.source || f.id === dep.target)
     );
 
     return (
@@ -124,7 +115,7 @@ const App: React.FC = () => {
                 <div className="controls">
                     <div className="control-group">
                         <DatabaseSelector
-                            databases={databases}
+                            databases={availableDatabases}
                             selectedDb={selectedDb}
                             onDbChange={handleDbChange}
                         />
@@ -160,10 +151,9 @@ const App: React.FC = () => {
                     {/* Отображаем фильтр контрибьюторов только если есть данные */}
                     {contributorsTypes.length > 0 && (
                         <ContributorsFilter
-                            contributorsTypes={contributorsTypes}
-                            selectedTypes={selectedContributorsTypes}
-                            onToggle={handleContributorTypeToggle}
-                            onSelectAll={handleSelectAllContributorTypes}
+                            availableContributors={contributorsTypes}
+                            selectedContributors={selectedContributorsTypes}
+                            onContributorsChange={handleContributorTypeToggle}
                         />
                     )}
                 </div>

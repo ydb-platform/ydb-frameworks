@@ -148,7 +148,7 @@ const Timeline: React.FC<TimelineProps> = ({frameworks, dependencies, selectedDb
                     categoryFrameworks.length > 0 ? (
                         <div key={category} className={styles.categoryContainer}>
                             <TimelineCategory
-                                category={category}
+                                category={category as FrameworkCategory}
                                 frameworks={categoryFrameworks}
                                 startDate={startDate}
                                 endDate={endDate}

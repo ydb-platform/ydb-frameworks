@@ -235,7 +235,6 @@ const ydbData: TimelineData = {
             releaseDate: '2013-05-01',
             description: 'Database migration tool for Go',
             authors: ['liamstask', 'pressly'],
-            version: '3.18.0',
             repository: 'https://github.com/pressly/goose',
             implementation: {
                 name: 'goose YDB Driver',
@@ -421,6 +420,7 @@ const ydbData: TimelineData = {
             authors: ['Yandex'],
             implementation: {
                 releaseDate: '2019-08-01',
+                authors: ['Yandex'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -433,7 +433,10 @@ const ydbData: TimelineData = {
             description: 'Web-based administration interface for YDB',
             authors: ['Yandex'],
             implementation: {
+                name: 'YDB Embedded (Web) UI',
                 releaseDate: '2019-10-01',
+                description: 'Web-based administration interface for YDB',
+                authors: ['Yandex'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -447,6 +450,8 @@ const ydbData: TimelineData = {
             authors: ['Yandex'],
             repository: 'https://github.com/ydb-platform/terraform-provider-ydb',
             implementation: {
+                releaseDate: '2021-04-01',
+                authors: ['Yandex'],
                 contributorsType: ['staff', 'open-source']
             }
         },
