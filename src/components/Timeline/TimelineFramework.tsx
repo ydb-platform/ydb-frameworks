@@ -103,7 +103,7 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
                         style={{
                             left: `${releasePosition}px`,
                             width: `${dbSupportPosition - releasePosition}px`,
-                            backgroundColor: 'var(--gray-line)'
+                            border: '2px dashed var(--gray-line)'
                         }}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
