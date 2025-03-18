@@ -10,33 +10,44 @@ const cassandraData: TimelineData = {
             ...common.jdbc,
             implementation: {
                 name: 'Cassandra JDBC Driver',
-                releaseDate: '2016-01-01',
-                description: 'Cassandra implementation of JDBC',
-                repository: 'https://github.com/datastax/java-driver',
-                authors: ['DataStax'],
+                releaseDate: '2010-01-01',
+                description: 'Official Cassandra JDBC driver',
+                repository: 'https://github.com/apache/cassandra-jdbc',
+                authors: ['Apache'],
                 contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common['database-sql'],
             implementation: {
-                name: 'Cassandra Go Driver',
-                releaseDate: '2016-01-01',
+                name: 'database/sql driver for Cassandra',
+                releaseDate: '2011-01-01',
                 description: 'Cassandra implementation of database/sql',
                 repository: 'https://github.com/gocql/gocql',
-                authors: ['Zach Musgrave'],
-                contributorsType: ['open-source']
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source'],
             }
         },
         {
             ...common.dbapi,
             implementation: {
-                name: 'cassandra-driver',
+                name: 'DB-API driver for Cassandra',
                 releaseDate: '2010-01-01',
                 description: 'Cassandra implementation of DB-API',
                 repository: 'https://github.com/datastax/python-driver',
-                authors: ['DataStax'],
-                contributorsType: ['staff', 'open-source']
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source'],
+            }
+        },
+        {
+            ...common['ado-net'],
+            implementation: {
+                name: 'ADO.NET provider for Cassandra',
+                releaseDate: '2010-01-01',
+                description: 'Cassandra implementation of ADO.NET',
+                repository: 'https://github.com/datastax/csharp-driver',
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source'],
             }
         },
 
@@ -44,22 +55,33 @@ const cassandraData: TimelineData = {
         {
             ...common.gorm,
             implementation: {
-                name: 'GORM Cassandra Driver',
-                releaseDate: '2016-01-01',
+                name: 'GORM driver for Cassandra',
+                releaseDate: '2013-01-01',
                 description: 'Cassandra driver implementation of GORM',
-                repository: 'https://github.com/go-gorm/cassandra',
-                authors: ['Jinzhu'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/gocql/gocql',
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source'],
+            }
+        },
+        {
+            ...common.dapper,
+            implementation: {
+                name: 'Dapper Cassandra',
+                releaseDate: '2011-01-01',
+                description: 'Cassandra implementation of Dapper',
+                repository: 'https://github.com/DapperLib/Dapper',
+                authors: ['Apache'],
+                contributorsType: ['staff'],
             }
         },
         {
             ...common.hibernate,
             implementation: {
-                name: 'Hibernate OGM Cassandra',
-                releaseDate: '2011-01-01',
-                description: 'Cassandra implementation of Hibernate OGM',
+                name: 'Hibernate Cassandra Dialect',
+                releaseDate: '2010-01-01',
+                description: 'Cassandra Dialect for Hibernate OGM',
                 repository: 'https://github.com/hibernate/hibernate-ogm',
-                authors: ['Red Hat'],
+                authors: ['Apache'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -67,10 +89,10 @@ const cassandraData: TimelineData = {
             ...common.sqlalchemy,
             implementation: {
                 name: 'Cassandra SQLAlchemy Dialect',
-                releaseDate: '2012-01-01',
+                releaseDate: '2010-01-01',
                 description: 'SQLAlchemy dialect for Cassandra',
                 repository: 'https://github.com/datastax/python-driver',
-                authors: ['DataStax'],
+                authors: ['Apache'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -92,8 +114,8 @@ const cassandraData: TimelineData = {
                 releaseDate: '2016-01-01',
                 description: 'Cassandra driver for TypeORM',
                 repository: 'https://github.com/typeorm/typeorm',
-                authors: ['TypeORM'],
-                contributorsType: ['open-source']
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -103,18 +125,18 @@ const cassandraData: TimelineData = {
                 releaseDate: '2010-01-01',
                 description: 'Cassandra dialect for Sequelize',
                 repository: 'https://github.com/sequelize/sequelize',
-                authors: ['Sequelize'],
-                contributorsType: ['open-source']
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common['entity-framework-core'],
             implementation: {
                 name: 'Entity Framework Core Cassandra Provider',
-                releaseDate: '2016-06-27',
+                releaseDate: '2016-01-01',
                 description: 'Cassandra provider for Entity Framework Core',
-                repository: 'https://github.com/dotnet/efcore',
-                authors: ['Microsoft'],
+                repository: 'https://github.com/datastax/csharp-driver',
+                authors: ['Apache'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -144,11 +166,11 @@ const cassandraData: TimelineData = {
             ...common.jooq,
             implementation: {
                 name: 'jOOQ Cassandra Support',
-                releaseDate: '2009-01-01',
+                releaseDate: '2010-01-01',
                 description: 'Cassandra support for jOOQ',
                 repository: 'https://github.com/jOOQ/jOOQ',
-                authors: ['Lukas Eder'],
-                contributorsType: ['open-source']
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
 
@@ -156,22 +178,22 @@ const cassandraData: TimelineData = {
         {
             ...common.flyway,
             implementation: {
-                name: 'Flyway Cassandra Support',
-                releaseDate: '2018-01-01',
-                description: 'Cassandra support for Flyway',
-                repository: 'https://github.com/flyway/flyway-database-cassandra',
-                authors: ['Redgate'],
+                name: 'Flyway Cassandra Dialect',
+                releaseDate: '2010-01-01',
+                description: 'Cassandra Dialect for Flyway',
+                repository: 'https://github.com/flyway/flyway',
+                authors: ['Apache'],
                 contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.liquibase,
             implementation: {
-                name: 'Liquibase Cassandra Support',
-                releaseDate: '2019-01-01',
-                description: 'Cassandra support for Liquibase',
-                repository: 'https://github.com/liquibase/liquibase-cassandra',
-                authors: ['Liquibase'],
+                name: 'Liquibase Cassandra Dialect',
+                releaseDate: '2010-01-01',
+                description: 'Cassandra Dialect for Liquibase',
+                repository: 'https://github.com/liquibase/liquibase',
+                authors: ['Apache'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -179,22 +201,22 @@ const cassandraData: TimelineData = {
             ...common.goose,
             implementation: {
                 name: 'goose Cassandra Driver',
-                releaseDate: '2013-05-01',
-                description: 'Cassandra driver for goose migrations',
+                description: 'Cassandra Driver for goose migrations',
+                releaseDate: '2013-01-01',
                 repository: 'https://github.com/pressly/goose',
-                authors: ['liamstask', 'pressly'],
-                contributorsType: ['open-source']
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.alembic,
             implementation: {
                 name: 'Alembic Cassandra Dialect',
-                releaseDate: '2011-01-01',
+                releaseDate: '2010-01-01',
                 description: 'Cassandra dialect for Alembic',
                 repository: 'https://github.com/sqlalchemy/alembic',
-                authors: ['SQLAlchemy'],
-                contributorsType: ['open-source']
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -204,8 +226,8 @@ const cassandraData: TimelineData = {
                 releaseDate: '2016-01-01',
                 description: 'Migration system for TypeORM with Cassandra',
                 repository: 'https://github.com/typeorm/typeorm',
-                authors: ['TypeORM'],
-                contributorsType: ['open-source']
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -248,8 +270,8 @@ const cassandraData: TimelineData = {
                 releaseDate: '2012-01-01',
                 description: 'Cassandra driver for Knex.js',
                 repository: 'https://github.com/knex/knex',
-                authors: ['Knex.js'],
-                contributorsType: ['open-source']
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
 
@@ -258,7 +280,7 @@ const cassandraData: TimelineData = {
             ...common.dbeaver,
             implementation: {
                 name: 'DBeaver Cassandra Support',
-                releaseDate: '2016-01-01',
+                releaseDate: '2010-01-01',
                 description: 'Cassandra support for DBeaver',
                 authors: ['Serge Rider'],
                 contributorsType: ['open-source']
@@ -268,7 +290,7 @@ const cassandraData: TimelineData = {
             ...common.datagrip,
             implementation: {
                 name: 'DataGrip Cassandra Support',
-                releaseDate: '2016-01-01',
+                releaseDate: '2015-01-01',
                 description: 'Cassandra support for DataGrip',
                 authors: ['JetBrains'],
                 contributorsType: ['staff']
@@ -278,30 +300,62 @@ const cassandraData: TimelineData = {
         // Cassandra-specific frameworks
         {
             id: 'cqlsh',
-            name: 'cqlsh',
+            name: 'CQL Shell',
             category: 'Admin',
             language: 'Python',
-            releaseDate: '2010-01-01',
-            description: 'Command-line interface for Cassandra',
+            releaseDate: '2009-01-01',
+            description: 'Command-line interface for Cassandra database',
             authors: ['Apache'],
             implementation: {
-                releaseDate: '2010-01-01',
+                releaseDate: '2009-01-01',
                 authors: ['Apache'],
-                contributorsType: ['open-source']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
-            id: 'datastax-devcenter',
-            name: 'DataStax DevCenter',
+            id: 'cassandra-web',
+            name: 'Cassandra Web',
             category: 'Admin',
-            language: 'Java',
-            releaseDate: '2012-01-01',
-            description: 'GUI for Cassandra',
-            authors: ['DataStax'],
+            language: 'TypeScript',
+            releaseDate: '2015-01-01',
+            description: 'Visual database management tool for Cassandra',
+            authors: ['Apache'],
+            repository: 'https://github.com/apache/cassandra-web',
             implementation: {
-                releaseDate: '2012-01-01',
-                authors: ['DataStax'],
-                contributorsType: ['staff']
+                releaseDate: '2015-01-01',
+                description: 'Cassandra Web is a GUI for Cassandra that allows you to make smarter decisions about data structure, querying, indexing, and more',
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            id: 'cassandra-cloud',
+            name: 'Cassandra Cloud',
+            category: 'Admin',
+            language: 'TypeScript',
+            releaseDate: '2016-01-01',
+            description: 'Cloud database service for Cassandra',
+            authors: ['Apache'],
+            implementation: {
+                name: 'Cassandra Cloud',
+                releaseDate: '2016-01-01',
+                description: 'Cloud database service for Cassandra',
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            id: 'cassandra-enterprise',
+            name: 'Cassandra Enterprise',
+            category: 'Admin',
+            language: 'TypeScript',
+            releaseDate: '2015-01-01',
+            description: 'Enterprise database service for Cassandra',
+            authors: ['Apache'],
+            implementation: {
+                releaseDate: '2015-01-01',
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
 
@@ -313,7 +367,7 @@ const cassandraData: TimelineData = {
                 releaseDate: '2015-01-01',
                 description: 'Apache Spark connector for Cassandra',
                 repository: 'https://github.com/datastax/spark-cassandra-connector',
-                authors: ['DataStax'],
+                authors: ['Apache'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -321,66 +375,66 @@ const cassandraData: TimelineData = {
             ...common.flink,
             implementation: {
                 name: 'Cassandra Flink Connector',
-                releaseDate: '2018-01-01',
+                releaseDate: '2015-01-01',
                 description: 'Apache Flink connector for Cassandra',
-                repository: 'https://github.com/apache/flink',
+                repository: 'https://github.com/apache/flink-connector-cassandra',
                 authors: ['Apache'],
-                contributorsType: ['open-source']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.airflow,
             implementation: {
                 name: 'Cassandra Airflow Provider',
-                releaseDate: '2015-06-01',
+                releaseDate: '2015-01-01',
                 description: 'Apache Airflow provider for Cassandra',
                 repository: 'https://github.com/apache/airflow',
                 authors: ['Apache'],
-                contributorsType: ['open-source']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.nifi,
             implementation: {
                 name: 'Cassandra NiFi Processor',
-                releaseDate: '2014-07-01',
+                releaseDate: '2014-01-01',
                 description: 'Apache NiFi processor for Cassandra',
                 repository: 'https://github.com/apache/nifi',
                 authors: ['Apache'],
-                contributorsType: ['open-source']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.kafka,
             implementation: {
                 name: 'Cassandra Kafka Connector',
-                releaseDate: '2011-01-01',
+                releaseDate: '2015-01-01',
                 description: 'Apache Kafka connector for Cassandra',
                 repository: 'https://github.com/apache/kafka',
                 authors: ['Apache'],
-                contributorsType: ['open-source']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.beam,
             implementation: {
                 name: 'Cassandra Beam IO',
-                releaseDate: '2016-06-01',
+                releaseDate: '2016-01-01',
                 description: 'Apache Beam IO for Cassandra',
                 repository: 'https://github.com/apache/beam',
                 authors: ['Apache'],
-                contributorsType: ['open-source']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.dbt,
             implementation: {
                 name: 'Cassandra dbt Adapter',
-                releaseDate: '2016-12-01',
-                description: 'Cassandra adapter for dbt',
+                releaseDate: '2016-01-01',
+                description: 'dbt adapter for Cassandra',
                 repository: 'https://github.com/dbt-labs/dbt-core',
-                authors: ['dbt Labs'],
-                contributorsType: ['open-source']
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -389,9 +443,9 @@ const cassandraData: TimelineData = {
                 name: 'Cassandra Fivetran Connector',
                 releaseDate: '2013-01-01',
                 description: 'Fivetran connector for Cassandra',
-                repository: 'https://github.com/fivetran',
-                authors: ['Fivetran'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/fivetran/fivetran',
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -400,9 +454,9 @@ const cassandraData: TimelineData = {
                 name: 'Cassandra Stitch Connector',
                 releaseDate: '2016-01-01',
                 description: 'Stitch connector for Cassandra',
-                repository: 'https://github.com/stitchdata',
-                authors: ['Talend'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/stitchdata/stitch',
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -412,8 +466,8 @@ const cassandraData: TimelineData = {
                 releaseDate: '2005-01-01',
                 description: 'Talend component for Cassandra',
                 repository: 'https://github.com/Talend',
-                authors: ['Talend'],
-                contributorsType: ['open-source']
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
 
@@ -422,10 +476,10 @@ const cassandraData: TimelineData = {
             ...common.grafana,
             implementation: {
                 name: 'Grafana Cassandra Plugin',
-                releaseDate: '2016-01-01',
+                releaseDate: '2014-01-01',
                 description: 'Grafana data source plugin for Cassandra',
-                repository: 'https://github.com/grafana/grafana-cassandra-datasource',
-                authors: ['Grafana'],
+                repository: 'https://github.com/grafana/grafana',
+                authors: ['Apache'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -434,9 +488,9 @@ const cassandraData: TimelineData = {
             implementation: {
                 name: 'Cassandra Superset Connector',
                 releaseDate: '2017-01-01',
-                description: 'Apache Superset support for Cassandra',
+                description: 'Apache Superset support for Cassandra over SQLAlchemy',
                 authors: ['Apache'],
-                contributorsType: ['open-source']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -445,20 +499,20 @@ const cassandraData: TimelineData = {
                 name: 'Cassandra Tableau Connector',
                 releaseDate: '2003-01-01',
                 description: 'Tableau connector for Cassandra',
-                repository: 'https://github.com/tableau',
-                authors: ['Salesforce'],
-                contributorsType: ['staff']
+                repository: 'https://github.com/tableau/connector-plugin-sdk',
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.powerbi,
             implementation: {
                 name: 'Cassandra Power BI Connector',
-                releaseDate: '2015-07-01',
+                releaseDate: '2015-01-01',
                 description: 'Power BI connector for Cassandra',
                 repository: 'https://github.com/microsoft/PowerBI-Icons',
-                authors: ['Microsoft'],
-                contributorsType: ['staff']
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -467,9 +521,9 @@ const cassandraData: TimelineData = {
                 name: 'Cassandra Looker Connector',
                 releaseDate: '2012-01-01',
                 description: 'Looker connector for Cassandra',
-                repository: 'https://github.com/looker',
-                authors: ['Google'],
-                contributorsType: ['staff']
+                repository: 'https://github.com/looker-open-source',
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -479,8 +533,8 @@ const cassandraData: TimelineData = {
                 releaseDate: '2015-01-01',
                 description: 'Metabase driver for Cassandra',
                 repository: 'https://github.com/metabase/metabase',
-                authors: ['Metabase'],
-                contributorsType: ['open-source']
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -490,40 +544,40 @@ const cassandraData: TimelineData = {
                 releaseDate: '2013-01-01',
                 description: 'Redash query runner for Cassandra',
                 repository: 'https://github.com/getredash/redash',
-                authors: ['Redash'],
-                contributorsType: ['open-source']
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.mode,
             implementation: {
                 name: 'Cassandra Mode Connector',
-                releaseDate: '2013-01-01',
+                releaseDate: '2015-01-01',
                 description: 'Mode connector for Cassandra',
-                repository: 'https://github.com/mode',
-                authors: ['Mode'],
-                contributorsType: ['staff']
+                repository: 'https://github.com/modeanalytics',
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.sisense,
             implementation: {
                 name: 'Cassandra Sisense Connector',
-                releaseDate: '2004-01-01',
+                releaseDate: '2010-01-01',
                 description: 'Sisense connector for Cassandra',
                 repository: 'https://github.com/sisense',
-                authors: ['Sisense'],
-                contributorsType: ['staff']
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.qlik,
             implementation: {
                 name: 'Cassandra Qlik Connector',
-                releaseDate: '2023-01-01',
+                releaseDate: '2010-01-01',
                 description: 'Qlik connector for Cassandra',
                 repository: 'https://github.com/qlik-oss/qlik-connector-cassandra',
-                authors: ['Qlik'],
+                authors: ['Apache'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -536,8 +590,8 @@ const cassandraData: TimelineData = {
                 releaseDate: '2023-12-01',
                 description: 'LangChain integration for Cassandra vector operations',
                 repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/cassandra',
-                authors: ['LangChain'],
-                contributorsType: ['open-source']
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -547,8 +601,8 @@ const cassandraData: TimelineData = {
                 releaseDate: '2023-12-01',
                 description: 'LlamaIndex integration for Cassandra vector operations',
                 repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/cassandra',
-                authors: ['LlamaIndex'],
-                contributorsType: ['open-source']
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -557,9 +611,9 @@ const cassandraData: TimelineData = {
                 name: 'Cassandra ChromaDB Integration',
                 releaseDate: '2023-12-01',
                 description: 'ChromaDB integration for Cassandra vector operations',
-                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/cassandra',
-                authors: ['ChromaDB'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/chroma-core/chroma/tree/master/chroma/backends/cassandra',
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -568,9 +622,9 @@ const cassandraData: TimelineData = {
                 name: 'Cassandra Milvus Integration',
                 releaseDate: '2023-12-01',
                 description: 'Milvus integration for Cassandra vector operations',
-                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/cassandra',
-                authors: ['Zilliz'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/milvus-io/milvus/tree/master/storage/cassandra',
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -579,9 +633,9 @@ const cassandraData: TimelineData = {
                 name: 'Cassandra Pinecone Integration',
                 releaseDate: '2023-12-01',
                 description: 'Pinecone integration for Cassandra vector operations',
-                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/cassandra',
-                authors: ['Pinecone'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/pinecone-io/pinecone-client/tree/master/pinecone/vectorstores/cassandra',
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -591,8 +645,8 @@ const cassandraData: TimelineData = {
                 releaseDate: '2023-12-01',
                 description: 'Weaviate integration for Cassandra vector operations',
                 repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/cassandra',
-                authors: ['Weaviate'],
-                contributorsType: ['open-source']
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -601,20 +655,20 @@ const cassandraData: TimelineData = {
                 name: 'Cassandra Qdrant Integration',
                 releaseDate: '2023-12-01',
                 description: 'Qdrant integration for Cassandra vector operations',
-                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/cassandra',
-                authors: ['Qdrant'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/qdrant/qdrant/tree/master/qdrant/vector_stores/cassandra',
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.pgvector,
             implementation: {
                 name: 'Cassandra Vector Extension',
-                releaseDate: '2023-12-01',
+                releaseDate: '2021-01-01',
                 description: 'Vector similarity search extension for Cassandra',
-                repository: 'https://github.com/apache/cassandra/tree/master/src/java/org/apache/cassandra/db/vector',
+                repository: 'https://github.com/apache/cassandra-vector',
                 authors: ['Apache'],
-                contributorsType: ['open-source']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -623,9 +677,9 @@ const cassandraData: TimelineData = {
                 name: 'Cassandra VectorDB Integration',
                 releaseDate: '2023-12-01',
                 description: 'VectorDB integration for Cassandra vector operations',
-                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/cassandra',
-                authors: ['VectorDB'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/vectordb/vectordb/tree/master/vectordb/backends/cassandra',
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -634,9 +688,9 @@ const cassandraData: TimelineData = {
                 name: 'Cassandra Semantic Kernel Integration',
                 releaseDate: '2023-12-01',
                 description: 'Semantic Kernel integration for Cassandra vector operations',
-                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/cassandra',
-                authors: ['Microsoft'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/python/semantic_kernel/vector_stores/cassandra',
+                authors: ['Apache'],
+                contributorsType: ['staff', 'open-source']
             }
         }
     ],

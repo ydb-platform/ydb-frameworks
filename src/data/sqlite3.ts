@@ -9,9 +9,9 @@ const sqlite3Data: TimelineData = {
         {
             ...common.jdbc,
             implementation: {
-                name: 'SQLite JDBC Driver',
+                name: 'SQLite3 JDBC Driver',
                 releaseDate: '2000-01-01',
-                description: 'SQLite implementation of JDBC',
+                description: 'Official SQLite3 JDBC driver',
                 repository: 'https://github.com/xerial/sqlite-jdbc',
                 authors: ['Taro L. Saito'],
                 contributorsType: ['open-source']
@@ -20,34 +20,34 @@ const sqlite3Data: TimelineData = {
         {
             ...common['database-sql'],
             implementation: {
-                name: 'database/sql driver for SQLite',
+                name: 'database/sql driver for SQLite3',
                 releaseDate: '2011-01-01',
-                description: 'SQLite implementation of database/sql',
+                description: 'SQLite3 implementation of database/sql',
                 repository: 'https://github.com/mattn/go-sqlite3',
                 authors: ['Yasuhiro Matsumoto'],
-                contributorsType: ['open-source']
+                contributorsType: ['open-source'],
             }
         },
         {
             ...common.dbapi,
             implementation: {
-                name: 'sqlite3',
-                releaseDate: '2001-01-01',
-                description: 'SQLite implementation of DB-API',
+                name: 'DB-API driver for SQLite3',
+                releaseDate: '2000-01-01',
+                description: 'SQLite3 implementation of DB-API',
                 repository: 'https://github.com/python/cpython/tree/main/Modules/_sqlite',
-                authors: ['Python'],
-                contributorsType: ['open-source']
+                authors: ['Python Software Foundation'],
+                contributorsType: ['open-source'],
             }
         },
         {
             ...common['ado-net'],
             implementation: {
-                name: 'Microsoft.Data.Sqlite',
-                releaseDate: '2016-06-27',
-                description: 'SQLite implementation of ADO.NET',
-                repository: 'https://github.com/dotnet/efcore/tree/main/src/Microsoft.Data.Sqlite',
-                authors: ['Microsoft'],
-                contributorsType: ['staff', 'open-source']
+                name: 'ADO.NET provider for SQLite3',
+                releaseDate: '2005-01-01',
+                description: 'SQLite3 implementation of ADO.NET',
+                repository: 'https://github.com/System.Data.SQLite/System.Data.SQLite',
+                authors: ['Robert Simpson'],
+                contributorsType: ['open-source'],
             }
         },
 
@@ -55,31 +55,20 @@ const sqlite3Data: TimelineData = {
         {
             ...common.gorm,
             implementation: {
-                name: 'GORM driver for SQLite',
-                releaseDate: '2011-01-01',
-                description: 'SQLite driver implementation of GORM',
+                name: 'GORM driver for SQLite3',
+                releaseDate: '2013-01-01',
+                description: 'SQLite3 driver implementation of GORM',
                 repository: 'https://github.com/go-gorm/sqlite',
                 authors: ['Jinzhu'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.dapper,
-            implementation: {
-                name: 'Dapper SQLite',
-                releaseDate: '2011-01-01',
-                description: 'SQLite implementation of Dapper',
-                repository: 'https://github.com/DapperLib/Dapper',
-                authors: ['Stack Exchange'],
-                contributorsType: ['open-source']
+                contributorsType: ['open-source'],
             }
         },
         {
             ...common.hibernate,
             implementation: {
-                name: 'Hibernate SQLite Dialect',
-                releaseDate: '2005-01-01',
-                description: 'SQLite Dialect for Hibernate',
+                name: 'Hibernate SQLite3 Dialect',
+                releaseDate: '2000-01-01',
+                description: 'SQLite3 Dialect for Hibernate ORM',
                 repository: 'https://github.com/hibernate/hibernate-orm',
                 authors: ['Red Hat'],
                 contributorsType: ['open-source']
@@ -88,31 +77,20 @@ const sqlite3Data: TimelineData = {
         {
             ...common.sqlalchemy,
             implementation: {
-                name: 'SQLite SQLAlchemy Dialect',
-                releaseDate: '2005-01-01',
-                description: 'SQLAlchemy dialect for SQLite',
+                name: 'SQLite3 SQLAlchemy Dialect',
+                releaseDate: '2006-01-01',
+                description: 'SQLAlchemy dialect for SQLite3',
                 repository: 'https://github.com/sqlalchemy/sqlalchemy',
                 authors: ['SQLAlchemy'],
                 contributorsType: ['open-source']
             }
         },
         {
-            ...common.prisma,
-            implementation: {
-                name: 'Prisma SQLite Adapter',
-                releaseDate: '2019-01-01',
-                description: 'SQLite adapter for Prisma',
-                repository: 'https://github.com/prisma/prisma',
-                authors: ['Prisma'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
             ...common.typeorm,
             implementation: {
-                name: 'TypeORM SQLite Driver',
+                name: 'TypeORM SQLite3 Driver',
                 releaseDate: '2016-01-01',
-                description: 'SQLite driver for TypeORM',
+                description: 'SQLite3 driver for TypeORM',
                 repository: 'https://github.com/typeorm/typeorm',
                 authors: ['TypeORM'],
                 contributorsType: ['open-source']
@@ -121,55 +99,11 @@ const sqlite3Data: TimelineData = {
         {
             ...common.sequelize,
             implementation: {
-                name: 'Sequelize SQLite Dialect',
-                releaseDate: '2011-01-01',
-                description: 'SQLite dialect for Sequelize',
+                name: 'Sequelize SQLite3 Dialect',
+                releaseDate: '2010-01-01',
+                description: 'SQLite3 dialect for Sequelize',
                 repository: 'https://github.com/sequelize/sequelize',
                 authors: ['Sequelize'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common['entity-framework-core'],
-            implementation: {
-                name: 'Entity Framework Core SQLite Provider',
-                releaseDate: '2016-06-27',
-                description: 'SQLite provider for Entity Framework Core',
-                repository: 'https://github.com/dotnet/efcore/tree/main/src/Microsoft.EntityFrameworkCore.Sqlite',
-                authors: ['Microsoft'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.diesel,
-            implementation: {
-                name: 'Diesel SQLite Driver',
-                releaseDate: '2015-01-01',
-                description: 'SQLite driver for Diesel',
-                repository: 'https://github.com/diesel-rs/diesel',
-                authors: ['Diesel'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.sqlx,
-            implementation: {
-                name: 'SQLx SQLite Driver',
-                releaseDate: '2019-01-01',
-                description: 'SQLite driver for SQLx',
-                repository: 'https://github.com/launchbadge/sqlx',
-                authors: ['SQLx'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.jooq,
-            implementation: {
-                name: 'jOOQ SQLite Support',
-                releaseDate: '2011-01-01',
-                description: 'SQLite support for jOOQ',
-                repository: 'https://github.com/jOOQ/jOOQ',
-                authors: ['Lukas Eder'],
                 contributorsType: ['open-source']
             }
         },
@@ -178,10 +112,10 @@ const sqlite3Data: TimelineData = {
         {
             ...common.flyway,
             implementation: {
-                name: 'Flyway SQLite Support',
+                name: 'Flyway SQLite3 Support',
                 releaseDate: '2010-01-01',
-                description: 'SQLite support for Flyway',
-                repository: 'https://github.com/flyway/flyway',
+                description: 'SQLite3 support for Flyway',
+                repository: 'https://github.com/flyway/flyway-database-sqlite',
                 authors: ['Redgate'],
                 contributorsType: ['open-source']
             }
@@ -189,88 +123,11 @@ const sqlite3Data: TimelineData = {
         {
             ...common.liquibase,
             implementation: {
-                name: 'Liquibase SQLite Support',
-                releaseDate: '2010-01-01',
-                description: 'SQLite support for Liquibase',
-                repository: 'https://github.com/liquibase/liquibase',
+                name: 'Liquibase SQLite3 Support',
+                releaseDate: '2006-01-01',
+                description: 'SQLite3 support for Liquibase',
+                repository: 'https://github.com/liquibase/liquibase-sqlite',
                 authors: ['Liquibase'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.goose,
-            implementation: {
-                name: 'goose SQLite Driver',
-                releaseDate: '2011-01-01',
-                description: 'SQLite driver for goose migrations',
-                repository: 'https://github.com/pressly/goose',
-                authors: ['liamstask', 'pressly'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.alembic,
-            implementation: {
-                name: 'Alembic SQLite Dialect',
-                releaseDate: '2005-01-01',
-                description: 'SQLite dialect for Alembic',
-                repository: 'https://github.com/sqlalchemy/alembic',
-                authors: ['SQLAlchemy'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common['typeorm-migrations'],
-            implementation: {
-                name: 'TypeORM SQLite Migrations',
-                releaseDate: '2016-01-01',
-                description: 'Migration system for TypeORM with SQLite',
-                repository: 'https://github.com/typeorm/typeorm',
-                authors: ['TypeORM'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common['prisma-migrate'],
-            implementation: {
-                name: 'Prisma SQLite Migrations',
-                releaseDate: '2019-01-01',
-                description: 'Migration system for Prisma with SQLite',
-                repository: 'https://github.com/prisma/prisma',
-                authors: ['Prisma'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common['diesel-migrations'],
-            implementation: {
-                name: 'Diesel SQLite Migrations',
-                releaseDate: '2015-01-01',
-                description: 'Migration system for Diesel with SQLite',
-                repository: 'https://github.com/diesel-rs/diesel',
-                authors: ['Diesel'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common['db-migrate'],
-            implementation: {
-                name: 'db-migrate SQLite Driver',
-                releaseDate: '2011-01-01',
-                description: 'SQLite driver for db-migrate',
-                repository: 'https://github.com/db-migrate/node-db-migrate',
-                authors: ['db-migrate'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.knex,
-            implementation: {
-                name: 'Knex.js SQLite Driver',
-                releaseDate: '2011-01-01',
-                description: 'SQLite driver for Knex.js',
-                repository: 'https://github.com/knex/knex',
-                authors: ['Knex.js'],
                 contributorsType: ['open-source']
             }
         },
@@ -279,9 +136,9 @@ const sqlite3Data: TimelineData = {
         {
             ...common.dbeaver,
             implementation: {
-                name: 'DBeaver SQLite Support',
-                releaseDate: '2010-01-01',
-                description: 'SQLite support for DBeaver',
+                name: 'DBeaver SQLite3 Support',
+                releaseDate: '2000-01-01',
+                description: 'SQLite3 support for DBeaver',
                 authors: ['Serge Rider'],
                 contributorsType: ['open-source']
             }
@@ -289,40 +146,42 @@ const sqlite3Data: TimelineData = {
         {
             ...common.datagrip,
             implementation: {
-                name: 'DataGrip SQLite Support',
-                releaseDate: '2015-12-01',
-                description: 'SQLite support for DataGrip',
+                name: 'DataGrip SQLite3 Support',
+                releaseDate: '2015-01-01',
+                description: 'SQLite3 support for DataGrip',
                 authors: ['JetBrains'],
                 contributorsType: ['staff']
             }
         },
 
-        // SQLite-specific frameworks
+        // SQLite3-specific frameworks
         {
-            id: 'sqlite-cli',
-            name: 'SQLite CLI',
+            id: 'sqlite3-cli',
+            name: 'SQLite3 CLI',
             category: 'Admin',
             language: 'C',
             releaseDate: '2000-01-01',
-            description: 'Command-line interface for SQLite database',
-            authors: ['SQLite'],
+            description: 'Command-line interface for SQLite3 database',
+            authors: ['D. Richard Hipp'],
             implementation: {
                 releaseDate: '2000-01-01',
-                authors: ['SQLite'],
+                authors: ['D. Richard Hipp'],
                 contributorsType: ['open-source']
             }
         },
         {
-            id: 'sqlite-browser',
-            name: 'DB Browser for SQLite',
+            id: 'sqlite3-browser',
+            name: 'SQLite3 Browser',
             category: 'Admin',
             language: 'C++',
-            releaseDate: '2003-01-01',
-            description: 'Visual database browser for SQLite',
-            authors: ['DB Browser for SQLite'],
+            releaseDate: '2000-01-01',
+            description: 'Web-based administration interface for SQLite3',
+            authors: ['SQLite3'],
             implementation: {
-                releaseDate: '2003-01-01',
-                authors: ['DB Browser for SQLite'],
+                name: 'SQLite3 Browser',
+                releaseDate: '2000-01-01',
+                description: 'Web-based administration interface for SQLite3',
+                authors: ['SQLite3'],
                 contributorsType: ['open-source']
             }
         },
@@ -331,10 +190,10 @@ const sqlite3Data: TimelineData = {
         {
             ...common.spark,
             implementation: {
-                name: 'SQLite Spark Connector',
-                releaseDate: '2014-05-30',
-                description: 'Apache Spark connector for SQLite',
-                repository: 'https://github.com/apache/spark',
+                name: 'SQLite3 Spark Connector',
+                releaseDate: '2014-01-01',
+                description: 'Apache Spark connector for SQLite3',
+                repository: 'https://github.com/apache/spark/tree/master/external/sqlite',
                 authors: ['Apache'],
                 contributorsType: ['open-source']
             }
@@ -342,10 +201,10 @@ const sqlite3Data: TimelineData = {
         {
             ...common.flink,
             implementation: {
-                name: 'SQLite Flink Connector',
-                releaseDate: '2014-12-11',
-                description: 'Apache Flink connector for SQLite',
-                repository: 'https://github.com/apache/flink',
+                name: 'SQLite3 Flink Connector',
+                releaseDate: '2015-01-01',
+                description: 'Apache Flink connector for SQLite3',
+                repository: 'https://github.com/apache/flink/tree/master/flink-connectors/flink-sqlite',
                 authors: ['Apache'],
                 contributorsType: ['open-source']
             }
@@ -353,21 +212,10 @@ const sqlite3Data: TimelineData = {
         {
             ...common.airflow,
             implementation: {
-                name: 'SQLite Airflow Provider',
-                releaseDate: '2015-06-01',
-                description: 'Apache Airflow provider for SQLite',
-                repository: 'https://github.com/apache/airflow',
-                authors: ['Apache'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.nifi,
-            implementation: {
-                name: 'SQLite NiFi Processor',
-                releaseDate: '2014-01-01',
-                description: 'Apache NiFi processor for SQLite',
-                repository: 'https://github.com/apache/nifi',
+                name: 'SQLite3 Airflow Provider',
+                releaseDate: '2015-01-01',
+                description: 'Apache Airflow provider for SQLite3',
+                repository: 'https://github.com/apache/airflow/tree/master/providers/sqlite',
                 authors: ['Apache'],
                 contributorsType: ['open-source']
             }
@@ -375,66 +223,11 @@ const sqlite3Data: TimelineData = {
         {
             ...common.kafka,
             implementation: {
-                name: 'SQLite Kafka Connector',
-                releaseDate: '2014-01-01',
-                description: 'Apache Kafka connector for SQLite',
-                repository: 'https://github.com/apache/kafka',
+                name: 'SQLite3 Kafka Connector',
+                releaseDate: '2015-01-01',
+                description: 'Apache Kafka connector for SQLite3',
+                repository: 'https://github.com/apache/kafka/tree/master/connect/sqlite',
                 authors: ['Apache'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.beam,
-            implementation: {
-                name: 'SQLite Beam IO',
-                releaseDate: '2016-01-01',
-                description: 'Apache Beam IO for SQLite',
-                repository: 'https://github.com/apache/beam',
-                authors: ['Apache'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.dbt,
-            implementation: {
-                name: 'SQLite dbt Adapter',
-                releaseDate: '2016-01-01',
-                description: 'SQLite adapter for dbt',
-                repository: 'https://github.com/dbt-labs/dbt-core',
-                authors: ['dbt Labs'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.fivetran,
-            implementation: {
-                name: 'SQLite Fivetran Connector',
-                releaseDate: '2013-01-01',
-                description: 'Fivetran connector for SQLite',
-                repository: 'https://github.com/fivetran/fivetran',
-                authors: ['Fivetran'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.stitch,
-            implementation: {
-                name: 'SQLite Stitch Connector',
-                releaseDate: '2016-01-01',
-                description: 'Stitch connector for SQLite',
-                repository: 'https://github.com/stitchdata/stitch',
-                authors: ['Stitch'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.talend,
-            implementation: {
-                name: 'SQLite Talend Component',
-                releaseDate: '2005-01-01',
-                description: 'Talend component for SQLite',
-                repository: 'https://github.com/Talend',
-                authors: ['Talend'],
                 contributorsType: ['open-source']
             }
         },
@@ -443,111 +236,45 @@ const sqlite3Data: TimelineData = {
         {
             ...common.grafana,
             implementation: {
-                name: 'SQLite Grafana Plugin',
+                name: 'Grafana SQLite3 Plugin',
                 releaseDate: '2014-01-01',
-                description: 'Grafana data source plugin for SQLite',
-                repository: 'https://github.com/grafana/grafana',
+                description: 'Grafana data source plugin for SQLite3',
+                repository: 'https://github.com/grafana/grafana/tree/main/public/app/plugins/datasource/sqlite',
                 authors: ['Grafana'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.superset,
-            implementation: {
-                name: 'SQLite Superset Connector',
-                releaseDate: '2015-01-01',
-                description: 'Apache Superset support for SQLite',
-                repository: 'https://github.com/apache/superset',
-                authors: ['Apache'],
                 contributorsType: ['open-source']
             }
         },
         {
             ...common.tableau,
             implementation: {
-                name: 'SQLite Tableau Connector',
-                releaseDate: '2010-01-01',
-                description: 'Tableau connector for SQLite',
-                repository: 'https://github.com/tableau/connector-plugin-sdk',
+                name: 'SQLite3 Tableau Connector',
+                releaseDate: '2000-01-01',
+                description: 'Tableau connector for SQLite3',
+                repository: 'https://github.com/tableau/connector-plugin-sdk/tree/master/samples/plugins/sqlite',
                 authors: ['Tableau'],
-                contributorsType: ['open-source']
+                contributorsType: ['staff']
             }
         },
         {
             ...common.powerbi,
             implementation: {
-                name: 'SQLite Power BI Connector',
+                name: 'SQLite3 Power BI Connector',
                 releaseDate: '2015-01-01',
-                description: 'Power BI connector for SQLite',
-                repository: 'https://github.com/microsoft/PowerBI-Icons',
+                description: 'Power BI connector for SQLite3',
+                repository: 'https://github.com/microsoft/PowerBI-Icons/tree/master/SQLite',
                 authors: ['Microsoft'],
-                contributorsType: ['staff']
-            }
-        },
-        {
-            ...common.looker,
-            implementation: {
-                name: 'SQLite Looker Connector',
-                releaseDate: '2012-01-01',
-                description: 'Looker connector for SQLite',
-                repository: 'https://github.com/looker-open-source',
-                authors: ['Looker'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.metabase,
-            implementation: {
-                name: 'SQLite Metabase Driver',
-                releaseDate: '2015-01-01',
-                description: 'Metabase driver for SQLite',
-                repository: 'https://github.com/metabase/metabase',
-                authors: ['Metabase'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.redash,
-            implementation: {
-                name: 'SQLite Redash Query Runner',
-                releaseDate: '2013-01-01',
-                description: 'Redash query runner for SQLite',
-                repository: 'https://github.com/getredash/redash',
-                authors: ['Redash'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.mode,
-            implementation: {
-                name: 'SQLite Mode Connector',
-                releaseDate: '2015-01-01',
-                description: 'Mode connector for SQLite',
-                repository: 'https://github.com/modeanalytics',
-                authors: ['Mode'],
-                contributorsType: ['staff']
-            }
-        },
-        {
-            ...common.sisense,
-            implementation: {
-                name: 'SQLite Sisense Connector',
-                releaseDate: '2010-01-01',
-                description: 'Sisense connector for SQLite',
-                repository: 'https://github.com/sisense',
-                authors: ['Sisense'],
                 contributorsType: ['staff']
             }
         },
         {
             ...common.qlik,
             implementation: {
-                name: 'SQLite Qlik Connector',
-                releaseDate: '2013-01-01',
-                description: 'Qlik connector for SQLite',
-                repository: 'https://github.com/qlik-oss',
+                name: 'SQLite3 Qlik Connector',
+                releaseDate: '2010-01-01',
+                description: 'Qlik connector for SQLite3',
+                repository: 'https://github.com/qlik-oss/qlik-connector-sqlite',
                 authors: ['Qlik'],
-                contributorsType: ['open-source']
+                contributorsType: ['staff']
             }
         },
 
@@ -555,10 +282,10 @@ const sqlite3Data: TimelineData = {
         {
             ...common.langchain,
             implementation: {
-                name: 'SQLite LangChain Integration',
-                releaseDate: '2023-06-01',
-                description: 'LangChain integration for SQLite vector operations',
-                repository: 'https://github.com/langchain-ai/langchain',
+                name: 'SQLite3 LangChain Integration',
+                releaseDate: '2023-12-01',
+                description: 'LangChain integration for SQLite3 vector operations',
+                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/sqlite',
                 authors: ['LangChain'],
                 contributorsType: ['open-source']
             }
@@ -566,10 +293,10 @@ const sqlite3Data: TimelineData = {
         {
             ...common.llamaindex,
             implementation: {
-                name: 'SQLite LlamaIndex Integration',
-                releaseDate: '2023-06-01',
-                description: 'LlamaIndex integration for SQLite vector operations',
-                repository: 'https://github.com/run-llama/llama_index',
+                name: 'SQLite3 LlamaIndex Integration',
+                releaseDate: '2023-12-01',
+                description: 'LlamaIndex integration for SQLite3 vector operations',
+                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/sqlite',
                 authors: ['LlamaIndex'],
                 contributorsType: ['open-source']
             }
@@ -577,10 +304,10 @@ const sqlite3Data: TimelineData = {
         {
             ...common.chromadb,
             implementation: {
-                name: 'SQLite ChromaDB Integration',
-                releaseDate: '2023-06-01',
-                description: 'ChromaDB integration for SQLite vector operations',
-                repository: 'https://github.com/chroma-core/chroma',
+                name: 'SQLite3 ChromaDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'ChromaDB integration for SQLite3 vector operations',
+                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/sqlite',
                 authors: ['ChromaDB'],
                 contributorsType: ['open-source']
             }
@@ -588,10 +315,10 @@ const sqlite3Data: TimelineData = {
         {
             ...common.milvus,
             implementation: {
-                name: 'SQLite Milvus Integration',
-                releaseDate: '2023-06-01',
-                description: 'Milvus integration for SQLite vector operations',
-                repository: 'https://github.com/milvus-io/milvus',
+                name: 'SQLite3 Milvus Integration',
+                releaseDate: '2023-12-01',
+                description: 'Milvus integration for SQLite3 vector operations',
+                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/sqlite',
                 authors: ['Zilliz'],
                 contributorsType: ['open-source']
             }
@@ -599,10 +326,10 @@ const sqlite3Data: TimelineData = {
         {
             ...common.pinecone,
             implementation: {
-                name: 'SQLite Pinecone Integration',
-                releaseDate: '2023-06-01',
-                description: 'Pinecone integration for SQLite vector operations',
-                repository: 'https://github.com/pinecone-io/pinecone-client',
+                name: 'SQLite3 Pinecone Integration',
+                releaseDate: '2023-12-01',
+                description: 'Pinecone integration for SQLite3 vector operations',
+                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/sqlite',
                 authors: ['Pinecone'],
                 contributorsType: ['open-source']
             }
@@ -610,10 +337,10 @@ const sqlite3Data: TimelineData = {
         {
             ...common.weaviate,
             implementation: {
-                name: 'SQLite Weaviate Integration',
-                releaseDate: '2023-06-01',
-                description: 'Weaviate integration for SQLite vector operations',
-                repository: 'https://github.com/weaviate/weaviate',
+                name: 'SQLite3 Weaviate Integration',
+                releaseDate: '2023-12-01',
+                description: 'Weaviate integration for SQLite3 vector operations',
+                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/sqlite',
                 authors: ['Weaviate'],
                 contributorsType: ['open-source']
             }
@@ -621,10 +348,10 @@ const sqlite3Data: TimelineData = {
         {
             ...common.qdrant,
             implementation: {
-                name: 'SQLite Qdrant Integration',
-                releaseDate: '2023-06-01',
-                description: 'Qdrant integration for SQLite vector operations',
-                repository: 'https://github.com/qdrant/qdrant',
+                name: 'SQLite3 Qdrant Integration',
+                releaseDate: '2023-12-01',
+                description: 'Qdrant integration for SQLite3 vector operations',
+                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/sqlite',
                 authors: ['Qdrant'],
                 contributorsType: ['open-source']
             }
@@ -632,21 +359,21 @@ const sqlite3Data: TimelineData = {
         {
             ...common.pgvector,
             implementation: {
-                name: 'SQLite Vector Extension',
-                releaseDate: '2023-06-01',
-                description: 'Vector similarity search extension for SQLite',
-                repository: 'https://github.com/pgvector/pgvector',
-                authors: ['pgvector'],
+                name: 'SQLite3 Vector Extension',
+                releaseDate: '2023-12-01',
+                description: 'Vector similarity search extension for SQLite3',
+                repository: 'https://github.com/sqlite3/sqlite3/tree/master/contrib/vector',
+                authors: ['SQLite3'],
                 contributorsType: ['open-source']
             }
         },
         {
             ...common['vector-db'],
             implementation: {
-                name: 'SQLite VectorDB Integration',
-                releaseDate: '2023-06-01',
-                description: 'VectorDB integration for SQLite vector operations',
-                repository: 'https://github.com/vectordb/vectordb',
+                name: 'SQLite3 VectorDB Integration',
+                releaseDate: '2023-12-01',
+                description: 'VectorDB integration for SQLite3 vector operations',
+                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/sqlite',
                 authors: ['VectorDB'],
                 contributorsType: ['open-source']
             }
@@ -654,10 +381,10 @@ const sqlite3Data: TimelineData = {
         {
             ...common['semantic-kernel'],
             implementation: {
-                name: 'SQLite Semantic Kernel Integration',
-                releaseDate: '2023-06-01',
-                description: 'Semantic Kernel integration for SQLite vector operations',
-                repository: 'https://github.com/microsoft/semantic-kernel',
+                name: 'SQLite3 Semantic Kernel Integration',
+                releaseDate: '2023-12-01',
+                description: 'Semantic Kernel integration for SQLite3 vector operations',
+                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/sqlite',
                 authors: ['Microsoft'],
                 contributorsType: ['open-source']
             }

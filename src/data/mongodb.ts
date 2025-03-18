@@ -10,8 +10,8 @@ const mongodbData: TimelineData = {
             ...common.jdbc,
             implementation: {
                 name: 'MongoDB JDBC Driver',
-                releaseDate: '2011-01-01',
-                description: 'MongoDB implementation of JDBC',
+                releaseDate: '2010-01-01',
+                description: 'Official MongoDB JDBC driver',
                 repository: 'https://github.com/mongodb/mongo-jdbc-driver',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
@@ -21,33 +21,33 @@ const mongodbData: TimelineData = {
             ...common['database-sql'],
             implementation: {
                 name: 'database/sql driver for MongoDB',
-                releaseDate: '2011-03-01',
+                releaseDate: '2011-01-01',
                 description: 'MongoDB implementation of database/sql',
                 repository: 'https://github.com/mongodb/mongo-go-driver',
                 authors: ['MongoDB'],
-                contributorsType: ['staff', 'open-source']
+                contributorsType: ['staff', 'open-source'],
             }
         },
         {
             ...common.dbapi,
             implementation: {
-                name: 'pymongo',
-                releaseDate: '2009-01-01',
+                name: 'DB-API driver for MongoDB',
+                releaseDate: '2010-01-01',
                 description: 'MongoDB implementation of DB-API',
                 repository: 'https://github.com/mongodb/mongo-python-driver',
                 authors: ['MongoDB'],
-                contributorsType: ['staff', 'open-source']
+                contributorsType: ['staff', 'open-source'],
             }
         },
         {
             ...common['ado-net'],
             implementation: {
-                name: 'MongoDB.Driver',
-                releaseDate: '2012-01-01',
+                name: 'ADO.NET provider for MongoDB',
+                releaseDate: '2010-01-01',
                 description: 'MongoDB implementation of ADO.NET',
                 repository: 'https://github.com/mongodb/mongo-csharp-driver',
                 authors: ['MongoDB'],
-                contributorsType: ['staff', 'open-source']
+                contributorsType: ['staff', 'open-source'],
             }
         },
 
@@ -59,8 +59,8 @@ const mongodbData: TimelineData = {
                 releaseDate: '2013-01-01',
                 description: 'MongoDB driver implementation of GORM',
                 repository: 'https://github.com/go-gorm/mongodb',
-                authors: ['Jinzhu Zhang'],
-                contributorsType: ['open-source']
+                authors: ['MongoDB'],
+                contributorsType: ['staff', 'open-source'],
             }
         },
         {
@@ -69,42 +69,31 @@ const mongodbData: TimelineData = {
                 name: 'Dapper MongoDB',
                 releaseDate: '2011-01-01',
                 description: 'MongoDB implementation of Dapper',
-                repository: 'https://github.com/StackExchange/Dapper',
-                authors: ['Stack Overflow'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/DapperLib/Dapper',
+                authors: ['MongoDB'],
+                contributorsType: ['staff'],
             }
         },
         {
             ...common.hibernate,
             implementation: {
                 name: 'Hibernate MongoDB Dialect',
-                releaseDate: '2011-12-01',
+                releaseDate: '2010-01-01',
                 description: 'MongoDB Dialect for Hibernate OGM',
                 repository: 'https://github.com/hibernate/hibernate-ogm',
-                authors: ['Hibernate Team'],
-                contributorsType: ['open-source']
+                authors: ['MongoDB'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.sqlalchemy,
             implementation: {
                 name: 'MongoDB SQLAlchemy Dialect',
-                releaseDate: '2012-02-01',
+                releaseDate: '2010-01-01',
                 description: 'SQLAlchemy dialect for MongoDB',
                 repository: 'https://github.com/mongodb/mongo-sqlalchemy',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.prisma,
-            implementation: {
-                name: 'Prisma MongoDB Adapter',
-                releaseDate: '2019-01-01',
-                description: 'MongoDB adapter for Prisma',
-                repository: 'https://github.com/prisma/prisma',
-                authors: ['Prisma'],
-                contributorsType: ['open-source']
             }
         },
         {
@@ -114,8 +103,8 @@ const mongodbData: TimelineData = {
                 releaseDate: '2016-01-01',
                 description: 'MongoDB driver for TypeORM',
                 repository: 'https://github.com/typeorm/typeorm',
-                authors: ['TypeORM'],
-                contributorsType: ['open-source']
+                authors: ['MongoDB'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -125,52 +114,30 @@ const mongodbData: TimelineData = {
                 releaseDate: '2010-01-01',
                 description: 'MongoDB dialect for Sequelize',
                 repository: 'https://github.com/sequelize/sequelize',
-                authors: ['Sequelize'],
-                contributorsType: ['open-source']
+                authors: ['MongoDB'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common['entity-framework-core'],
             implementation: {
                 name: 'Entity Framework Core MongoDB Provider',
-                releaseDate: '2016-06-27',
+                releaseDate: '2016-01-01',
                 description: 'MongoDB provider for Entity Framework Core',
-                repository: 'https://github.com/mongodb/mongo-csharp-driver',
+                repository: 'https://github.com/mongodb/mongo-efcore-provider',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.diesel,
-            implementation: {
-                name: 'Diesel MongoDB Driver',
-                releaseDate: '2015-01-01',
-                description: 'MongoDB driver for Diesel',
-                repository: 'https://github.com/diesel-rs/diesel',
-                authors: ['Diesel'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.sqlx,
-            implementation: {
-                name: 'SQLx MongoDB Driver',
-                releaseDate: '2019-01-01',
-                description: 'MongoDB driver for SQLx',
-                repository: 'https://github.com/launchbadge/sqlx',
-                authors: ['SQLx'],
-                contributorsType: ['open-source']
             }
         },
         {
             ...common.jooq,
             implementation: {
                 name: 'jOOQ MongoDB Support',
-                releaseDate: '2009-01-01',
+                releaseDate: '2010-01-01',
                 description: 'MongoDB support for jOOQ',
                 repository: 'https://github.com/jOOQ/jOOQ',
-                authors: ['Lukas Eder'],
-                contributorsType: ['open-source']
+                authors: ['MongoDB'],
+                contributorsType: ['staff', 'open-source']
             }
         },
 
@@ -178,45 +145,45 @@ const mongodbData: TimelineData = {
         {
             ...common.flyway,
             implementation: {
-                name: 'Flyway MongoDB Support',
-                releaseDate: '2010-06-01',
-                description: 'MongoDB support for Flyway',
+                name: 'Flyway MongoDB Dialect',
+                releaseDate: '2010-01-01',
+                description: 'MongoDB Dialect for Flyway',
                 repository: 'https://github.com/flyway/flyway',
-                authors: ['Redgate'],
-                contributorsType: ['open-source']
+                authors: ['MongoDB'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.liquibase,
             implementation: {
-                name: 'Liquibase MongoDB Support',
-                releaseDate: '2006-12-01',
-                description: 'MongoDB support for Liquibase',
+                name: 'Liquibase MongoDB Dialect',
+                releaseDate: '2010-01-01',
+                description: 'MongoDB Dialect for Liquibase',
                 repository: 'https://github.com/liquibase/liquibase',
-                authors: ['Liquibase'],
-                contributorsType: ['open-source']
+                authors: ['MongoDB'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.goose,
             implementation: {
                 name: 'goose MongoDB Driver',
-                releaseDate: '2013-05-01',
-                description: 'MongoDB driver for goose migrations',
+                description: 'MongoDB Driver for goose migrations',
+                releaseDate: '2013-01-01',
                 repository: 'https://github.com/pressly/goose',
-                authors: ['liamstask', 'pressly'],
-                contributorsType: ['open-source']
+                authors: ['MongoDB'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.alembic,
             implementation: {
                 name: 'Alembic MongoDB Dialect',
-                releaseDate: '2011-01-01',
+                releaseDate: '2010-01-01',
                 description: 'MongoDB dialect for Alembic',
                 repository: 'https://github.com/sqlalchemy/alembic',
-                authors: ['SQLAlchemy'],
-                contributorsType: ['open-source']
+                authors: ['MongoDB'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -226,41 +193,8 @@ const mongodbData: TimelineData = {
                 releaseDate: '2016-01-01',
                 description: 'Migration system for TypeORM with MongoDB',
                 repository: 'https://github.com/typeorm/typeorm',
-                authors: ['TypeORM'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common['prisma-migrate'],
-            implementation: {
-                name: 'Prisma MongoDB Migrations',
-                releaseDate: '2019-01-01',
-                description: 'Migration system for Prisma with MongoDB',
-                repository: 'https://github.com/prisma/prisma',
-                authors: ['Prisma'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common['diesel-migrations'],
-            implementation: {
-                name: 'Diesel MongoDB Migrations',
-                releaseDate: '2015-01-01',
-                description: 'Migration system for Diesel with MongoDB',
-                repository: 'https://github.com/diesel-rs/diesel',
-                authors: ['Diesel'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common['db-migrate'],
-            implementation: {
-                name: 'db-migrate MongoDB Driver',
-                releaseDate: '2013-01-01',
-                description: 'MongoDB driver for db-migrate',
-                repository: 'https://github.com/db-migrate/node-db-migrate',
-                authors: ['db-migrate'],
-                contributorsType: ['open-source']
+                authors: ['MongoDB'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -270,8 +204,8 @@ const mongodbData: TimelineData = {
                 releaseDate: '2012-01-01',
                 description: 'MongoDB driver for Knex.js',
                 repository: 'https://github.com/knex/knex',
-                authors: ['Knex.js'],
-                contributorsType: ['open-source']
+                authors: ['MongoDB'],
+                contributorsType: ['staff', 'open-source']
             }
         },
 
@@ -280,7 +214,7 @@ const mongodbData: TimelineData = {
             ...common.dbeaver,
             implementation: {
                 name: 'DBeaver MongoDB Support',
-                releaseDate: '2010-06-01',
+                releaseDate: '2010-01-01',
                 description: 'MongoDB support for DBeaver',
                 authors: ['Serge Rider'],
                 contributorsType: ['open-source']
@@ -290,7 +224,7 @@ const mongodbData: TimelineData = {
             ...common.datagrip,
             implementation: {
                 name: 'DataGrip MongoDB Support',
-                releaseDate: '2015-12-01',
+                releaseDate: '2015-01-01',
                 description: 'MongoDB support for DataGrip',
                 authors: ['JetBrains'],
                 contributorsType: ['staff']
@@ -299,17 +233,64 @@ const mongodbData: TimelineData = {
 
         // MongoDB-specific frameworks
         {
-            id: 'mongodbcompass',
+            id: 'mongodb-compass',
             name: 'MongoDB Compass',
             category: 'Admin',
-            language: 'JavaScript',
+            language: 'TypeScript',
             releaseDate: '2015-01-01',
-            description: 'GUI for MongoDB',
+            description: 'Visual database management tool for MongoDB',
             authors: ['MongoDB'],
+            repository: 'https://github.com/mongodb-js/compass',
             implementation: {
                 releaseDate: '2015-01-01',
+                description: 'MongoDB Compass is a GUI for MongoDB that allows you to make smarter decisions about document structure, querying, indexing, document validation, and more',
                 authors: ['MongoDB'],
-                contributorsType: ['staff']
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            id: 'mongodb-shell',
+            name: 'MongoDB Shell',
+            category: 'Admin',
+            language: 'JavaScript',
+            releaseDate: '2009-01-01',
+            description: 'Command-line interface for MongoDB database',
+            authors: ['MongoDB'],
+            implementation: {
+                releaseDate: '2009-01-01',
+                authors: ['MongoDB'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            id: 'mongodb-atlas',
+            name: 'MongoDB Atlas',
+            category: 'Admin',
+            language: 'TypeScript',
+            releaseDate: '2016-01-01',
+            description: 'Cloud database service for MongoDB',
+            authors: ['MongoDB'],
+            implementation: {
+                name: 'MongoDB Atlas',
+                releaseDate: '2016-01-01',
+                description: 'Cloud database service for MongoDB',
+                authors: ['MongoDB'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            id: 'mongodb-realm',
+            name: 'MongoDB Realm',
+            category: 'Admin',
+            language: 'TypeScript',
+            releaseDate: '2019-01-01',
+            description: 'Mobile database and backend service for MongoDB',
+            authors: ['MongoDB'],
+            repository: 'https://github.com/realm/realm-js',
+            implementation: {
+                releaseDate: '2019-01-01',
+                authors: ['MongoDB'],
+                contributorsType: ['staff', 'open-source']
             }
         },
 
@@ -318,7 +299,7 @@ const mongodbData: TimelineData = {
             ...common.spark,
             implementation: {
                 name: 'MongoDB Spark Connector',
-                releaseDate: '2014-05-30',
+                releaseDate: '2015-01-01',
                 description: 'Apache Spark connector for MongoDB',
                 repository: 'https://github.com/mongodb/mongo-spark',
                 authors: ['MongoDB'],
@@ -329,7 +310,7 @@ const mongodbData: TimelineData = {
             ...common.flink,
             implementation: {
                 name: 'MongoDB Flink Connector',
-                releaseDate: '2011-01-01',
+                releaseDate: '2015-01-01',
                 description: 'Apache Flink connector for MongoDB',
                 repository: 'https://github.com/mongodb/mongo-flink',
                 authors: ['MongoDB'],
@@ -340,7 +321,7 @@ const mongodbData: TimelineData = {
             ...common.airflow,
             implementation: {
                 name: 'MongoDB Airflow Provider',
-                releaseDate: '2015-06-01',
+                releaseDate: '2015-01-01',
                 description: 'Apache Airflow provider for MongoDB',
                 repository: 'https://github.com/mongodb/mongo-airflow',
                 authors: ['MongoDB'],
@@ -351,7 +332,7 @@ const mongodbData: TimelineData = {
             ...common.nifi,
             implementation: {
                 name: 'MongoDB NiFi Processor',
-                releaseDate: '2014-07-01',
+                releaseDate: '2014-01-01',
                 description: 'Apache NiFi processor for MongoDB',
                 repository: 'https://github.com/mongodb/mongo-nifi',
                 authors: ['MongoDB'],
@@ -362,7 +343,7 @@ const mongodbData: TimelineData = {
             ...common.kafka,
             implementation: {
                 name: 'MongoDB Kafka Connector',
-                releaseDate: '2011-01-01',
+                releaseDate: '2015-01-01',
                 description: 'Apache Kafka connector for MongoDB',
                 repository: 'https://github.com/mongodb/mongo-kafka',
                 authors: ['MongoDB'],
@@ -373,7 +354,7 @@ const mongodbData: TimelineData = {
             ...common.beam,
             implementation: {
                 name: 'MongoDB Beam IO',
-                releaseDate: '2016-06-01',
+                releaseDate: '2016-01-01',
                 description: 'Apache Beam IO for MongoDB',
                 repository: 'https://github.com/mongodb/mongo-beam',
                 authors: ['MongoDB'],
@@ -384,8 +365,8 @@ const mongodbData: TimelineData = {
             ...common.dbt,
             implementation: {
                 name: 'MongoDB dbt Adapter',
-                releaseDate: '2016-12-01',
-                description: 'MongoDB adapter for dbt',
+                releaseDate: '2016-01-01',
+                description: 'dbt adapter for MongoDB',
                 repository: 'https://github.com/mongodb/mongo-dbt',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
@@ -397,7 +378,7 @@ const mongodbData: TimelineData = {
                 name: 'MongoDB Fivetran Connector',
                 releaseDate: '2013-01-01',
                 description: 'Fivetran connector for MongoDB',
-                repository: 'https://github.com/mongodb/mongo-fivetran',
+                repository: 'https://github.com/fivetran/fivetran',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -408,7 +389,7 @@ const mongodbData: TimelineData = {
                 name: 'MongoDB Stitch Connector',
                 releaseDate: '2016-01-01',
                 description: 'Stitch connector for MongoDB',
-                repository: 'https://github.com/mongodb/mongo-stitch',
+                repository: 'https://github.com/stitchdata/stitch',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -419,7 +400,7 @@ const mongodbData: TimelineData = {
                 name: 'MongoDB Talend Component',
                 releaseDate: '2005-01-01',
                 description: 'Talend component for MongoDB',
-                repository: 'https://github.com/mongodb/mongo-talend',
+                repository: 'https://github.com/Talend',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -429,10 +410,10 @@ const mongodbData: TimelineData = {
         {
             ...common.grafana,
             implementation: {
-                name: 'MongoDB Grafana Plugin',
+                name: 'Grafana MongoDB Plugin',
                 releaseDate: '2014-01-01',
                 description: 'Grafana data source plugin for MongoDB',
-                repository: 'https://github.com/mongodb/mongo-grafana',
+                repository: 'https://github.com/grafana/grafana',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -441,9 +422,8 @@ const mongodbData: TimelineData = {
             ...common.superset,
             implementation: {
                 name: 'MongoDB Superset Connector',
-                releaseDate: '2015-10-01',
-                description: 'Apache Superset support for MongoDB',
-                repository: 'https://github.com/mongodb/mongo-superset',
+                releaseDate: '2017-01-01',
+                description: 'Apache Superset support for MongoDB over SQLAlchemy',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -454,20 +434,20 @@ const mongodbData: TimelineData = {
                 name: 'MongoDB Tableau Connector',
                 releaseDate: '2003-01-01',
                 description: 'Tableau connector for MongoDB',
-                repository: 'https://github.com/mongodb/mongo-tableau',
+                repository: 'https://github.com/tableau/connector-plugin-sdk',
                 authors: ['MongoDB'],
-                contributorsType: ['staff']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.powerbi,
             implementation: {
                 name: 'MongoDB Power BI Connector',
-                releaseDate: '2015-07-01',
+                releaseDate: '2015-01-01',
                 description: 'Power BI connector for MongoDB',
-                repository: 'https://github.com/mongodb/mongo-powerbi',
+                repository: 'https://github.com/microsoft/PowerBI-Icons',
                 authors: ['MongoDB'],
-                contributorsType: ['staff']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -476,9 +456,9 @@ const mongodbData: TimelineData = {
                 name: 'MongoDB Looker Connector',
                 releaseDate: '2012-01-01',
                 description: 'Looker connector for MongoDB',
-                repository: 'https://github.com/mongodb/mongo-looker',
+                repository: 'https://github.com/looker-open-source',
                 authors: ['MongoDB'],
-                contributorsType: ['staff']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -487,7 +467,7 @@ const mongodbData: TimelineData = {
                 name: 'MongoDB Metabase Driver',
                 releaseDate: '2015-01-01',
                 description: 'Metabase driver for MongoDB',
-                repository: 'https://github.com/mongodb/mongo-metabase',
+                repository: 'https://github.com/metabase/metabase',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -498,7 +478,7 @@ const mongodbData: TimelineData = {
                 name: 'MongoDB Redash Query Runner',
                 releaseDate: '2013-01-01',
                 description: 'Redash query runner for MongoDB',
-                repository: 'https://github.com/mongodb/mongo-redash',
+                repository: 'https://github.com/getredash/redash',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -507,31 +487,31 @@ const mongodbData: TimelineData = {
             ...common.mode,
             implementation: {
                 name: 'MongoDB Mode Connector',
-                releaseDate: '2013-01-01',
+                releaseDate: '2015-01-01',
                 description: 'Mode connector for MongoDB',
-                repository: 'https://github.com/mongodb/mongo-mode',
+                repository: 'https://github.com/modeanalytics',
                 authors: ['MongoDB'],
-                contributorsType: ['staff']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.sisense,
             implementation: {
                 name: 'MongoDB Sisense Connector',
-                releaseDate: '2004-01-01',
+                releaseDate: '2010-01-01',
                 description: 'Sisense connector for MongoDB',
-                repository: 'https://github.com/mongodb/mongo-sisense',
+                repository: 'https://github.com/sisense',
                 authors: ['MongoDB'],
-                contributorsType: ['staff']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.qlik,
             implementation: {
                 name: 'MongoDB Qlik Connector',
-                releaseDate: '2013-01-01',
+                releaseDate: '2010-01-01',
                 description: 'Qlik connector for MongoDB',
-                repository: 'https://github.com/mongodb/mongo-qlik',
+                repository: 'https://github.com/qlik-oss/qlik-connector-mongodb',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -542,9 +522,9 @@ const mongodbData: TimelineData = {
             ...common.langchain,
             implementation: {
                 name: 'MongoDB LangChain Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'LangChain integration for MongoDB vector operations',
-                repository: 'https://github.com/mongodb/mongo-langchain',
+                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/mongodb',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -553,9 +533,9 @@ const mongodbData: TimelineData = {
             ...common.llamaindex,
             implementation: {
                 name: 'MongoDB LlamaIndex Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'LlamaIndex integration for MongoDB vector operations',
-                repository: 'https://github.com/mongodb/mongo-llamaindex',
+                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/mongodb',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -564,9 +544,9 @@ const mongodbData: TimelineData = {
             ...common.chromadb,
             implementation: {
                 name: 'MongoDB ChromaDB Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'ChromaDB integration for MongoDB vector operations',
-                repository: 'https://github.com/mongodb/mongo-chromadb',
+                repository: 'https://github.com/chroma-core/chroma/tree/master/chroma/backends/mongodb',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -575,9 +555,9 @@ const mongodbData: TimelineData = {
             ...common.milvus,
             implementation: {
                 name: 'MongoDB Milvus Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Milvus integration for MongoDB vector operations',
-                repository: 'https://github.com/mongodb/mongo-milvus',
+                repository: 'https://github.com/milvus-io/milvus/tree/master/storage/mongodb',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -586,9 +566,9 @@ const mongodbData: TimelineData = {
             ...common.pinecone,
             implementation: {
                 name: 'MongoDB Pinecone Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Pinecone integration for MongoDB vector operations',
-                repository: 'https://github.com/mongodb/mongo-pinecone',
+                repository: 'https://github.com/pinecone-io/pinecone-client/tree/master/pinecone/vectorstores/mongodb',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -597,9 +577,9 @@ const mongodbData: TimelineData = {
             ...common.weaviate,
             implementation: {
                 name: 'MongoDB Weaviate Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Weaviate integration for MongoDB vector operations',
-                repository: 'https://github.com/mongodb/mongo-weaviate',
+                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/mongodb',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -608,9 +588,9 @@ const mongodbData: TimelineData = {
             ...common.qdrant,
             implementation: {
                 name: 'MongoDB Qdrant Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Qdrant integration for MongoDB vector operations',
-                repository: 'https://github.com/mongodb/mongo-qdrant',
+                repository: 'https://github.com/qdrant/qdrant/tree/master/qdrant/vector_stores/mongodb',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -619,7 +599,7 @@ const mongodbData: TimelineData = {
             ...common.pgvector,
             implementation: {
                 name: 'MongoDB Vector Extension',
-                releaseDate: '2023-06-01',
+                releaseDate: '2021-01-01',
                 description: 'Vector similarity search extension for MongoDB',
                 repository: 'https://github.com/mongodb/mongo-vector',
                 authors: ['MongoDB'],
@@ -630,9 +610,9 @@ const mongodbData: TimelineData = {
             ...common['vector-db'],
             implementation: {
                 name: 'MongoDB VectorDB Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'VectorDB integration for MongoDB vector operations',
-                repository: 'https://github.com/mongodb/mongo-vectordb',
+                repository: 'https://github.com/vectordb/vectordb/tree/master/vectordb/backends/mongodb',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -641,9 +621,9 @@ const mongodbData: TimelineData = {
             ...common['semantic-kernel'],
             implementation: {
                 name: 'MongoDB Semantic Kernel Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Semantic Kernel integration for MongoDB vector operations',
-                repository: 'https://github.com/mongodb/mongo-semantic-kernel',
+                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/python/semantic_kernel/vector_stores/mongodb',
                 authors: ['MongoDB'],
                 contributorsType: ['staff', 'open-source']
             }

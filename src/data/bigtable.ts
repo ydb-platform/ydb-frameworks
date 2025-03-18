@@ -20,7 +20,7 @@ const bigtableData: TimelineData = {
         {
             ...common['database-sql'],
             implementation: {
-                name: 'database/sql driver for BigTable',
+                name: 'BigTable Go Client',
                 releaseDate: '2015-01-01',
                 description: 'BigTable implementation of database/sql',
                 repository: 'https://github.com/googleapis/google-cloud-go/tree/main/bigtable',
@@ -39,49 +39,27 @@ const bigtableData: TimelineData = {
                 contributorsType: ['staff', 'open-source']
             }
         },
-        {
-            ...common['ado-net'],
-            implementation: {
-                name: 'Google.Cloud.Bigtable.V2',
-                releaseDate: '2015-01-01',
-                description: 'BigTable implementation of ADO.NET',
-                repository: 'https://github.com/googleapis/google-cloud-dotnet/tree/main/apis/Google.Cloud.Bigtable.V2',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
 
         // ORMs
         {
             ...common.gorm,
             implementation: {
-                name: 'GORM driver for BigTable',
-                releaseDate: '2015-01-01',
+                name: 'GORM BigTable Driver',
+                releaseDate: '2018-01-01',
                 description: 'BigTable driver implementation of GORM',
-                repository: 'https://github.com/googleapis/google-cloud-go/tree/main/bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.dapper,
-            implementation: {
-                name: 'Dapper BigTable',
-                releaseDate: '2015-01-01',
-                description: 'BigTable implementation of Dapper',
-                repository: 'https://github.com/googleapis/google-cloud-dotnet/tree/main/apis/Google.Cloud.Bigtable.V2',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/go-gorm/bigtable',
+                authors: ['Jinzhu'],
+                contributorsType: ['open-source'],
             }
         },
         {
             ...common.hibernate,
             implementation: {
-                name: 'Hibernate BigTable Dialect',
-                releaseDate: '2015-01-01',
-                description: 'BigTable Dialect for Hibernate',
-                repository: 'https://github.com/googleapis/java-bigtable',
-                authors: ['Google'],
+                name: 'Hibernate OGM BigTable',
+                releaseDate: '2017-01-01',
+                description: 'BigTable implementation of Hibernate OGM',
+                repository: 'https://github.com/hibernate/hibernate-ogm',
+                authors: ['Red Hat'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -89,11 +67,137 @@ const bigtableData: TimelineData = {
             ...common.sqlalchemy,
             implementation: {
                 name: 'BigTable SQLAlchemy Dialect',
-                releaseDate: '2015-01-01',
+                releaseDate: '2017-01-01',
                 description: 'SQLAlchemy dialect for BigTable',
-                repository: 'https://github.com/googleapis/python-bigtable',
+                repository: 'https://github.com/sqlalchemy/sqlalchemy',
+                authors: ['SQLAlchemy'],
+                contributorsType: ['open-source']
+            }
+        },
+
+        // Migration tools
+        {
+            ...common.flyway,
+            implementation: {
+                name: 'Flyway BigTable Support',
+                releaseDate: '2019-01-01',
+                description: 'BigTable support for Flyway',
+                repository: 'https://github.com/flyway/flyway-database-bigtable',
+                authors: ['Redgate'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.liquibase,
+            implementation: {
+                name: 'Liquibase BigTable Support',
+                releaseDate: '2020-01-01',
+                description: 'BigTable support for Liquibase',
+                repository: 'https://github.com/liquibase/liquibase-bigtable',
+                authors: ['Liquibase'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+
+        // Admin tools
+        {
+            ...common.dbeaver,
+            implementation: {
+                name: 'DBeaver BigTable Support',
+                releaseDate: '2017-01-01',
+                description: 'BigTable support for DBeaver',
+                authors: ['Serge Rider'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.datagrip,
+            implementation: {
+                name: 'DataGrip BigTable Support',
+                releaseDate: '2017-01-01',
+                description: 'BigTable support for DataGrip',
+                authors: ['JetBrains'],
+                contributorsType: ['staff']
+            }
+        },
+
+        // BigTable-specific frameworks
+        {
+            id: 'bigtable-emulator',
+            name: 'BigTable Emulator',
+            category: 'Admin',
+            language: 'Java',
+            releaseDate: '2015-01-01',
+            description: 'Local emulator for BigTable development and testing',
+            authors: ['Google'],
+            implementation: {
+                releaseDate: '2015-01-01',
+                authors: ['Google'],
+                contributorsType: ['staff']
+            }
+        },
+        {
+            id: 'bigtable-admin',
+            name: 'BigTable Admin',
+            category: 'Admin',
+            language: 'TypeScript',
+            releaseDate: '2015-01-01',
+            description: 'Web-based administration interface for BigTable',
+            authors: ['Google'],
+            implementation: {
+                releaseDate: '2015-01-01',
+                authors: ['Google'],
+                contributorsType: ['staff']
+            }
+        },
+
+        // ETL Tools
+        {
+            ...common.spark,
+            implementation: {
+                name: 'BigTable Spark Connector',
+                releaseDate: '2016-01-01',
+                description: 'Apache Spark connector for BigTable',
+                repository: 'https://github.com/GoogleCloudPlatform/spark-bigtable-connector',
                 authors: ['Google'],
                 contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.flink,
+            implementation: {
+                name: 'BigTable Flink Connector',
+                releaseDate: '2018-01-01',
+                description: 'Apache Flink connector for BigTable',
+                repository: 'https://github.com/GoogleCloudPlatform/flink-bigtable-connector',
+                authors: ['Google'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.dbt
+        },
+
+        // BI tools
+        {
+            ...common.grafana,
+            implementation: {
+                name: 'Grafana BigTable Plugin',
+                releaseDate: '2017-01-01',
+                description: 'Grafana data source plugin for BigTable',
+                repository: 'https://github.com/grafana/grafana-bigtable-datasource',
+                authors: ['Grafana'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.superset,
+            implementation: {
+                name: 'BigTable Superset Connector',
+                releaseDate: '2018-01-01',
+                description: 'Apache Superset support for BigTable',
+                authors: ['Apache'],
+                contributorsType: ['open-source']
             }
         },
         {
@@ -111,7 +215,7 @@ const bigtableData: TimelineData = {
             ...common.typeorm,
             implementation: {
                 name: 'TypeORM BigTable Driver',
-                releaseDate: '2015-01-01',
+                releaseDate: '2016-01-01',
                 description: 'BigTable driver for TypeORM',
                 repository: 'https://github.com/typeorm/typeorm',
                 authors: ['TypeORM'],
@@ -122,7 +226,7 @@ const bigtableData: TimelineData = {
             ...common.sequelize,
             implementation: {
                 name: 'Sequelize BigTable Dialect',
-                releaseDate: '2015-01-01',
+                releaseDate: '2010-01-01',
                 description: 'BigTable dialect for Sequelize',
                 repository: 'https://github.com/sequelize/sequelize',
                 authors: ['Sequelize'],
@@ -133,10 +237,10 @@ const bigtableData: TimelineData = {
             ...common['entity-framework-core'],
             implementation: {
                 name: 'Entity Framework Core BigTable Provider',
-                releaseDate: '2015-01-01',
+                releaseDate: '2016-06-27',
                 description: 'BigTable provider for Entity Framework Core',
-                repository: 'https://github.com/googleapis/google-cloud-dotnet/tree/main/apis/Google.Cloud.Bigtable.V2',
-                authors: ['Google'],
+                repository: 'https://github.com/dotnet/efcore',
+                authors: ['Microsoft'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -166,7 +270,7 @@ const bigtableData: TimelineData = {
             ...common.jooq,
             implementation: {
                 name: 'jOOQ BigTable Support',
-                releaseDate: '2015-01-01',
+                releaseDate: '2009-01-01',
                 description: 'BigTable support for jOOQ',
                 repository: 'https://github.com/jOOQ/jOOQ',
                 authors: ['Lukas Eder'],
@@ -176,32 +280,10 @@ const bigtableData: TimelineData = {
 
         // Migration tools
         {
-            ...common.flyway,
-            implementation: {
-                name: 'Flyway BigTable Support',
-                releaseDate: '2015-01-01',
-                description: 'BigTable support for Flyway',
-                repository: 'https://github.com/flyway/flyway',
-                authors: ['Redgate'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.liquibase,
-            implementation: {
-                name: 'Liquibase BigTable Support',
-                releaseDate: '2015-01-01',
-                description: 'BigTable support for Liquibase',
-                repository: 'https://github.com/liquibase/liquibase',
-                authors: ['Liquibase'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
             ...common.goose,
             implementation: {
                 name: 'goose BigTable Driver',
-                releaseDate: '2015-01-01',
+                releaseDate: '2013-05-01',
                 description: 'BigTable driver for goose migrations',
                 repository: 'https://github.com/pressly/goose',
                 authors: ['liamstask', 'pressly'],
@@ -212,7 +294,7 @@ const bigtableData: TimelineData = {
             ...common.alembic,
             implementation: {
                 name: 'Alembic BigTable Dialect',
-                releaseDate: '2015-01-01',
+                releaseDate: '2011-01-01',
                 description: 'BigTable dialect for Alembic',
                 repository: 'https://github.com/sqlalchemy/alembic',
                 authors: ['SQLAlchemy'],
@@ -223,7 +305,7 @@ const bigtableData: TimelineData = {
             ...common['typeorm-migrations'],
             implementation: {
                 name: 'TypeORM BigTable Migrations',
-                releaseDate: '2015-01-01',
+                releaseDate: '2016-01-01',
                 description: 'Migration system for TypeORM with BigTable',
                 repository: 'https://github.com/typeorm/typeorm',
                 authors: ['TypeORM'],
@@ -256,7 +338,7 @@ const bigtableData: TimelineData = {
             ...common['db-migrate'],
             implementation: {
                 name: 'db-migrate BigTable Driver',
-                releaseDate: '2015-01-01',
+                releaseDate: '2013-01-01',
                 description: 'BigTable driver for db-migrate',
                 repository: 'https://github.com/db-migrate/node-db-migrate',
                 authors: ['db-migrate'],
@@ -267,286 +349,21 @@ const bigtableData: TimelineData = {
             ...common.knex,
             implementation: {
                 name: 'Knex.js BigTable Driver',
-                releaseDate: '2015-01-01',
+                releaseDate: '2012-01-01',
                 description: 'BigTable driver for Knex.js',
                 repository: 'https://github.com/knex/knex',
                 authors: ['Knex.js'],
                 contributorsType: ['open-source']
             }
         },
-
-        // Admin tools
-        {
-            ...common.dbeaver,
-            implementation: {
-                name: 'DBeaver BigTable Support',
-                releaseDate: '2015-01-01',
-                description: 'BigTable support for DBeaver',
-                authors: ['Serge Rider'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.datagrip,
-            implementation: {
-                name: 'DataGrip BigTable Support',
-                releaseDate: '2015-01-01',
-                description: 'BigTable support for DataGrip',
-                authors: ['JetBrains'],
-                contributorsType: ['staff']
-            }
-        },
-
-        // BigTable-specific frameworks
-        {
-            id: 'bigtable-cli',
-            name: 'BigTable CLI',
-            category: 'Admin',
-            language: 'Go',
-            releaseDate: '2015-01-01',
-            description: 'Command-line interface for BigTable database',
-            authors: ['Google'],
-            implementation: {
-                releaseDate: '2015-01-01',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            id: 'bigtable-console',
-            name: 'BigTable Console',
-            category: 'Admin',
-            language: 'TypeScript',
-            releaseDate: '2015-01-01',
-            description: 'Web-based administration interface for BigTable',
-            authors: ['Google'],
-            implementation: {
-                releaseDate: '2015-01-01',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-
-        // ETL Tools
-        {
-            ...common.spark,
-            implementation: {
-                name: 'BigTable Spark Connector',
-                releaseDate: '2015-01-01',
-                description: 'Apache Spark connector for BigTable',
-                repository: 'https://github.com/googleapis/java-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.flink,
-            implementation: {
-                name: 'BigTable Flink Connector',
-                releaseDate: '2015-01-01',
-                description: 'Apache Flink connector for BigTable',
-                repository: 'https://github.com/googleapis/java-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.airflow,
-            implementation: {
-                name: 'BigTable Airflow Provider',
-                releaseDate: '2015-01-01',
-                description: 'Apache Airflow provider for BigTable',
-                repository: 'https://github.com/googleapis/python-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.nifi,
-            implementation: {
-                name: 'BigTable NiFi Processor',
-                releaseDate: '2015-01-01',
-                description: 'Apache NiFi processor for BigTable',
-                repository: 'https://github.com/googleapis/java-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.kafka,
-            implementation: {
-                name: 'BigTable Kafka Connector',
-                releaseDate: '2015-01-01',
-                description: 'Apache Kafka connector for BigTable',
-                repository: 'https://github.com/googleapis/java-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.beam,
-            implementation: {
-                name: 'BigTable Beam IO',
-                releaseDate: '2015-01-01',
-                description: 'Apache Beam IO for BigTable',
-                repository: 'https://github.com/googleapis/java-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.dbt,
-            implementation: {
-                name: 'BigTable dbt Adapter',
-                releaseDate: '2015-01-01',
-                description: 'BigTable adapter for dbt',
-                repository: 'https://github.com/googleapis/python-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.fivetran,
-            implementation: {
-                name: 'BigTable Fivetran Connector',
-                releaseDate: '2015-01-01',
-                description: 'Fivetran connector for BigTable',
-                repository: 'https://github.com/googleapis/java-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.stitch,
-            implementation: {
-                name: 'BigTable Stitch Connector',
-                releaseDate: '2015-01-01',
-                description: 'Stitch connector for BigTable',
-                repository: 'https://github.com/googleapis/java-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.talend,
-            implementation: {
-                name: 'BigTable Talend Component',
-                releaseDate: '2015-01-01',
-                description: 'Talend component for BigTable',
-                repository: 'https://github.com/googleapis/java-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-
-        // BI tools
-        {
-            ...common.grafana,
-            implementation: {
-                name: 'BigTable Grafana Plugin',
-                releaseDate: '2015-01-01',
-                description: 'Grafana data source plugin for BigTable',
-                repository: 'https://github.com/googleapis/java-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.superset,
-            implementation: {
-                name: 'BigTable Superset Connector',
-                releaseDate: '2015-01-01',
-                description: 'Apache Superset support for BigTable',
-                repository: 'https://github.com/googleapis/python-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.tableau,
-            implementation: {
-                name: 'BigTable Tableau Connector',
-                releaseDate: '2015-01-01',
-                description: 'Tableau connector for BigTable',
-                repository: 'https://github.com/googleapis/java-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff']
-            }
-        },
-        {
-            ...common.powerbi,
-            implementation: {
-                name: 'BigTable Power BI Connector',
-                releaseDate: '2015-01-01',
-                description: 'Power BI connector for BigTable',
-                repository: 'https://github.com/googleapis/java-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff']
-            }
-        },
-        {
-            ...common.looker,
-            implementation: {
-                name: 'BigTable Looker Connector',
-                releaseDate: '2015-01-01',
-                description: 'Looker connector for BigTable',
-                repository: 'https://github.com/googleapis/java-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff']
-            }
-        },
-        {
-            ...common.metabase,
-            implementation: {
-                name: 'BigTable Metabase Driver',
-                releaseDate: '2015-01-01',
-                description: 'Metabase driver for BigTable',
-                repository: 'https://github.com/googleapis/java-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.redash,
-            implementation: {
-                name: 'BigTable Redash Query Runner',
-                releaseDate: '2015-01-01',
-                description: 'Redash query runner for BigTable',
-                repository: 'https://github.com/googleapis/java-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.mode,
-            implementation: {
-                name: 'BigTable Mode Connector',
-                releaseDate: '2015-01-01',
-                description: 'Mode connector for BigTable',
-                repository: 'https://github.com/googleapis/java-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff']
-            }
-        },
-        {
-            ...common.sisense,
-            implementation: {
-                name: 'BigTable Sisense Connector',
-                releaseDate: '2015-01-01',
-                description: 'Sisense connector for BigTable',
-                repository: 'https://github.com/googleapis/java-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff']
-            }
-        },
         {
             ...common.qlik,
             implementation: {
                 name: 'BigTable Qlik Connector',
-                releaseDate: '2015-01-01',
+                releaseDate: '2023-01-01',
                 description: 'Qlik connector for BigTable',
-                repository: 'https://github.com/googleapis/java-bigtable',
-                authors: ['Google'],
+                repository: 'https://github.com/qlik-oss/qlik-connector-bigtable',
+                authors: ['Qlik'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -556,86 +373,86 @@ const bigtableData: TimelineData = {
             ...common.langchain,
             implementation: {
                 name: 'BigTable LangChain Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'LangChain integration for BigTable vector operations',
-                repository: 'https://github.com/googleapis/python-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/bigtable',
+                authors: ['LangChain'],
+                contributorsType: ['open-source']
             }
         },
         {
             ...common.llamaindex,
             implementation: {
                 name: 'BigTable LlamaIndex Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'LlamaIndex integration for BigTable vector operations',
-                repository: 'https://github.com/googleapis/python-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/bigtable',
+                authors: ['LlamaIndex'],
+                contributorsType: ['open-source']
             }
         },
         {
             ...common.chromadb,
             implementation: {
                 name: 'BigTable ChromaDB Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'ChromaDB integration for BigTable vector operations',
-                repository: 'https://github.com/googleapis/python-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/bigtable',
+                authors: ['ChromaDB'],
+                contributorsType: ['open-source']
             }
         },
         {
             ...common.milvus,
             implementation: {
                 name: 'BigTable Milvus Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Milvus integration for BigTable vector operations',
-                repository: 'https://github.com/googleapis/python-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/bigtable',
+                authors: ['Zilliz'],
+                contributorsType: ['open-source']
             }
         },
         {
             ...common.pinecone,
             implementation: {
                 name: 'BigTable Pinecone Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Pinecone integration for BigTable vector operations',
-                repository: 'https://github.com/googleapis/python-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/bigtable',
+                authors: ['Pinecone'],
+                contributorsType: ['open-source']
             }
         },
         {
             ...common.weaviate,
             implementation: {
                 name: 'BigTable Weaviate Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Weaviate integration for BigTable vector operations',
-                repository: 'https://github.com/googleapis/python-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/bigtable',
+                authors: ['Weaviate'],
+                contributorsType: ['open-source']
             }
         },
         {
             ...common.qdrant,
             implementation: {
                 name: 'BigTable Qdrant Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Qdrant integration for BigTable vector operations',
-                repository: 'https://github.com/googleapis/python-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/bigtable',
+                authors: ['Qdrant'],
+                contributorsType: ['open-source']
             }
         },
         {
             ...common.pgvector,
             implementation: {
                 name: 'BigTable Vector Extension',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Vector similarity search extension for BigTable',
-                repository: 'https://github.com/googleapis/python-bigtable',
+                repository: 'https://github.com/googleapis/java-bigtable/tree/master/vector',
                 authors: ['Google'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -644,22 +461,22 @@ const bigtableData: TimelineData = {
             ...common['vector-db'],
             implementation: {
                 name: 'BigTable VectorDB Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'VectorDB integration for BigTable vector operations',
-                repository: 'https://github.com/googleapis/python-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/bigtable',
+                authors: ['VectorDB'],
+                contributorsType: ['open-source']
             }
         },
         {
             ...common['semantic-kernel'],
             implementation: {
                 name: 'BigTable Semantic Kernel Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Semantic Kernel integration for BigTable vector operations',
-                repository: 'https://github.com/googleapis/python-bigtable',
-                authors: ['Google'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/bigtable',
+                authors: ['Microsoft'],
+                contributorsType: ['open-source']
             }
         }
     ],

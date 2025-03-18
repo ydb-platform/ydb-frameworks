@@ -20,8 +20,8 @@ const greenplumData: TimelineData = {
         {
             ...common['database-sql'],
             implementation: {
-                name: 'database/sql driver for Greenplum',
-                releaseDate: '2011-03-01',
+                name: 'Greenplum Go Driver',
+                releaseDate: '2005-01-01',
                 description: 'Greenplum implementation of database/sql',
                 repository: 'https://github.com/greenplum-db/gpdb',
                 authors: ['Greenplum'],
@@ -32,21 +32,10 @@ const greenplumData: TimelineData = {
             ...common.dbapi,
             implementation: {
                 name: 'psycopg2',
-                releaseDate: '2001-01-01',
+                releaseDate: '2005-01-01',
                 description: 'Greenplum implementation of DB-API',
                 repository: 'https://github.com/psycopg/psycopg2',
                 authors: ['Federico Di Gregorio'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common['ado-net'],
-            implementation: {
-                name: 'Npgsql',
-                releaseDate: '2002-01-01',
-                description: 'Greenplum implementation of ADO.NET',
-                repository: 'https://github.com/npgsql/npgsql',
-                authors: ['Shay Rojansky'],
                 contributorsType: ['open-source']
             }
         },
@@ -55,33 +44,22 @@ const greenplumData: TimelineData = {
         {
             ...common.gorm,
             implementation: {
-                name: 'GORM driver for Greenplum',
-                releaseDate: '2011-03-01',
+                name: 'GORM Greenplum Driver',
+                releaseDate: '2018-01-01',
                 description: 'Greenplum driver implementation of GORM',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.dapper,
-            implementation: {
-                name: 'Dapper Greenplum',
-                releaseDate: '2011-01-01',
-                description: 'Greenplum implementation of Dapper',
-                repository: 'https://github.com/StackExchange/Dapper',
-                authors: ['Stack Overflow'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/go-gorm/postgres',
+                authors: ['Jinzhu'],
+                contributorsType: ['open-source'],
             }
         },
         {
             ...common.hibernate,
             implementation: {
                 name: 'Hibernate Greenplum Dialect',
-                releaseDate: '2005-01-01',
-                description: 'Greenplum Dialect for Hibernate',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
+                releaseDate: '2010-01-01',
+                description: 'Greenplum dialect for Hibernate ORM',
+                repository: 'https://github.com/hibernate/hibernate-orm',
+                authors: ['Red Hat'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -89,11 +67,137 @@ const greenplumData: TimelineData = {
             ...common.sqlalchemy,
             implementation: {
                 name: 'Greenplum SQLAlchemy Dialect',
-                releaseDate: '2005-01-01',
+                releaseDate: '2012-01-01',
                 description: 'SQLAlchemy dialect for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
+                repository: 'https://github.com/sqlalchemy/sqlalchemy',
+                authors: ['SQLAlchemy'],
+                contributorsType: ['open-source']
+            }
+        },
+
+        // Migration tools
+        {
+            ...common.flyway,
+            implementation: {
+                name: 'Flyway Greenplum Support',
+                releaseDate: '2015-01-01',
+                description: 'Greenplum support for Flyway',
+                repository: 'https://github.com/flyway/flyway-database-postgresql',
+                authors: ['Redgate'],
                 contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.liquibase,
+            implementation: {
+                name: 'Liquibase Greenplum Support',
+                releaseDate: '2016-01-01',
+                description: 'Greenplum support for Liquibase',
+                repository: 'https://github.com/liquibase/liquibase-postgresql',
+                authors: ['Liquibase'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+
+        // Admin tools
+        {
+            ...common.dbeaver,
+            implementation: {
+                name: 'DBeaver Greenplum Support',
+                releaseDate: '2015-01-01',
+                description: 'Greenplum support for DBeaver',
+                authors: ['Serge Rider'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.datagrip,
+            implementation: {
+                name: 'DataGrip Greenplum Support',
+                releaseDate: '2015-01-01',
+                description: 'Greenplum support for DataGrip',
+                authors: ['JetBrains'],
+                contributorsType: ['staff']
+            }
+        },
+
+        // Greenplum-specific frameworks
+        {
+            id: 'gpadmin',
+            name: 'GPAdmin',
+            category: 'Admin',
+            language: 'Python',
+            releaseDate: '2005-01-01',
+            description: 'Greenplum administration tool',
+            authors: ['Pivotal'],
+            implementation: {
+                releaseDate: '2005-01-01',
+                authors: ['Pivotal'],
+                contributorsType: ['staff']
+            }
+        },
+        {
+            id: 'gpcc',
+            name: 'GPCC',
+            category: 'Admin',
+            language: 'Java',
+            releaseDate: '2010-01-01',
+            description: 'Greenplum Command Center',
+            authors: ['Pivotal'],
+            implementation: {
+                releaseDate: '2010-01-01',
+                authors: ['Pivotal'],
+                contributorsType: ['staff']
+            }
+        },
+
+        // ETL Tools
+        {
+            ...common.spark,
+            implementation: {
+                name: 'Greenplum Spark Connector',
+                releaseDate: '2016-01-01',
+                description: 'Apache Spark connector for Greenplum',
+                repository: 'https://github.com/pivotal/gp-spark-connector',
+                authors: ['Pivotal'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.flink,
+            implementation: {
+                name: 'Greenplum Flink Connector',
+                releaseDate: '2018-01-01',
+                description: 'Apache Flink connector for Greenplum',
+                repository: 'https://github.com/pivotal/gp-flink-connector',
+                authors: ['Pivotal'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.dbt
+        },
+
+        // BI tools
+        {
+            ...common.grafana,
+            implementation: {
+                name: 'Grafana Greenplum Plugin',
+                releaseDate: '2016-01-01',
+                description: 'Grafana data source plugin for Greenplum',
+                repository: 'https://github.com/grafana/grafana-postgresql-datasource',
+                authors: ['Grafana'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.superset,
+            implementation: {
+                name: 'Greenplum Superset Connector',
+                releaseDate: '2017-01-01',
+                description: 'Apache Superset support for Greenplum',
+                authors: ['Apache'],
+                contributorsType: ['open-source']
             }
         },
         {
@@ -122,7 +226,7 @@ const greenplumData: TimelineData = {
             ...common.sequelize,
             implementation: {
                 name: 'Sequelize Greenplum Dialect',
-                releaseDate: '2011-01-01',
+                releaseDate: '2010-01-01',
                 description: 'Greenplum dialect for Sequelize',
                 repository: 'https://github.com/sequelize/sequelize',
                 authors: ['Sequelize'],
@@ -175,28 +279,6 @@ const greenplumData: TimelineData = {
         },
 
         // Migration tools
-        {
-            ...common.flyway,
-            implementation: {
-                name: 'Flyway Greenplum Support',
-                releaseDate: '2010-01-01',
-                description: 'Greenplum support for Flyway',
-                repository: 'https://github.com/flyway/flyway',
-                authors: ['Redgate'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.liquibase,
-            implementation: {
-                name: 'Liquibase Greenplum Support',
-                releaseDate: '2010-01-01',
-                description: 'Greenplum support for Liquibase',
-                repository: 'https://github.com/liquibase/liquibase',
-                authors: ['Liquibase'],
-                contributorsType: ['open-source']
-            }
-        },
         {
             ...common.goose,
             implementation: {
@@ -274,265 +356,14 @@ const greenplumData: TimelineData = {
                 contributorsType: ['open-source']
             }
         },
-
-        // Admin tools
-        {
-            ...common.dbeaver,
-            implementation: {
-                name: 'DBeaver Greenplum Support',
-                releaseDate: '2010-01-01',
-                description: 'Greenplum support for DBeaver',
-                authors: ['Serge Rider'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.datagrip,
-            implementation: {
-                name: 'DataGrip Greenplum Support',
-                releaseDate: '2015-12-01',
-                description: 'Greenplum support for DataGrip',
-                authors: ['JetBrains'],
-                contributorsType: ['staff']
-            }
-        },
-
-        // Greenplum-specific frameworks
-        {
-            id: 'gpadmin',
-            name: 'GPAdmin',
-            category: 'Admin',
-            language: 'Python',
-            releaseDate: '2005-01-01',
-            description: 'Web-based Greenplum administration interface',
-            authors: ['Greenplum'],
-            implementation: {
-                releaseDate: '2005-01-01',
-                authors: ['Greenplum'],
-                contributorsType: ['staff']
-            }
-        },
-
-        // ETL Tools
-        {
-            ...common.spark,
-            implementation: {
-                name: 'Greenplum Spark Connector',
-                releaseDate: '2014-05-30',
-                description: 'Apache Spark connector for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.flink,
-            implementation: {
-                name: 'Greenplum Flink Connector',
-                releaseDate: '2014-12-11',
-                description: 'Apache Flink connector for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.airflow,
-            implementation: {
-                name: 'Greenplum Airflow Provider',
-                releaseDate: '2015-06-01',
-                description: 'Apache Airflow provider for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.nifi,
-            implementation: {
-                name: 'Greenplum NiFi Processor',
-                releaseDate: '2014-07-01',
-                description: 'Apache NiFi processor for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.kafka,
-            implementation: {
-                name: 'Greenplum Kafka Connector',
-                releaseDate: '2014-01-01',
-                description: 'Apache Kafka connector for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.beam,
-            implementation: {
-                name: 'Greenplum Beam IO',
-                releaseDate: '2016-06-01',
-                description: 'Apache Beam IO for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.dbt,
-            implementation: {
-                name: 'Greenplum dbt Adapter',
-                releaseDate: '2016-12-01',
-                description: 'Greenplum adapter for dbt',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.fivetran,
-            implementation: {
-                name: 'Greenplum Fivetran Connector',
-                releaseDate: '2013-01-01',
-                description: 'Fivetran connector for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.stitch,
-            implementation: {
-                name: 'Greenplum Stitch Connector',
-                releaseDate: '2016-01-01',
-                description: 'Stitch connector for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.talend,
-            implementation: {
-                name: 'Greenplum Talend Component',
-                releaseDate: '2010-01-01',
-                description: 'Talend component for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-
-        // BI tools
-        {
-            ...common.grafana,
-            implementation: {
-                name: 'Greenplum Grafana Plugin',
-                releaseDate: '2014-01-01',
-                description: 'Grafana data source plugin for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.superset,
-            implementation: {
-                name: 'Greenplum Superset Connector',
-                releaseDate: '2015-10-01',
-                description: 'Apache Superset support for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.tableau,
-            implementation: {
-                name: 'Greenplum Tableau Connector',
-                releaseDate: '2010-01-01',
-                description: 'Tableau connector for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff']
-            }
-        },
-        {
-            ...common.powerbi,
-            implementation: {
-                name: 'Greenplum Power BI Connector',
-                releaseDate: '2015-07-01',
-                description: 'Power BI connector for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff']
-            }
-        },
-        {
-            ...common.looker,
-            implementation: {
-                name: 'Greenplum Looker Connector',
-                releaseDate: '2010-01-01',
-                description: 'Looker connector for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff']
-            }
-        },
-        {
-            ...common.metabase,
-            implementation: {
-                name: 'Greenplum Metabase Driver',
-                releaseDate: '2015-01-01',
-                description: 'Metabase driver for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.redash,
-            implementation: {
-                name: 'Greenplum Redash Query Runner',
-                releaseDate: '2013-01-01',
-                description: 'Redash query runner for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.mode,
-            implementation: {
-                name: 'Greenplum Mode Connector',
-                releaseDate: '2013-01-01',
-                description: 'Mode connector for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff']
-            }
-        },
-        {
-            ...common.sisense,
-            implementation: {
-                name: 'Greenplum Sisense Connector',
-                releaseDate: '2010-01-01',
-                description: 'Sisense connector for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff']
-            }
-        },
         {
             ...common.qlik,
             implementation: {
                 name: 'Greenplum Qlik Connector',
-                releaseDate: '2013-01-01',
+                releaseDate: '2023-01-01',
                 description: 'Qlik connector for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
+                repository: 'https://github.com/qlik-oss/qlik-connector-greenplum',
+                authors: ['Qlik'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -542,86 +373,86 @@ const greenplumData: TimelineData = {
             ...common.langchain,
             implementation: {
                 name: 'Greenplum LangChain Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'LangChain integration for Greenplum vector operations',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/greenplum',
+                authors: ['LangChain'],
+                contributorsType: ['open-source']
             }
         },
         {
             ...common.llamaindex,
             implementation: {
                 name: 'Greenplum LlamaIndex Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'LlamaIndex integration for Greenplum vector operations',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/greenplum',
+                authors: ['LlamaIndex'],
+                contributorsType: ['open-source']
             }
         },
         {
             ...common.chromadb,
             implementation: {
                 name: 'Greenplum ChromaDB Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'ChromaDB integration for Greenplum vector operations',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/greenplum',
+                authors: ['ChromaDB'],
+                contributorsType: ['open-source']
             }
         },
         {
             ...common.milvus,
             implementation: {
                 name: 'Greenplum Milvus Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Milvus integration for Greenplum vector operations',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/greenplum',
+                authors: ['Zilliz'],
+                contributorsType: ['open-source']
             }
         },
         {
             ...common.pinecone,
             implementation: {
                 name: 'Greenplum Pinecone Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Pinecone integration for Greenplum vector operations',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/greenplum',
+                authors: ['Pinecone'],
+                contributorsType: ['open-source']
             }
         },
         {
             ...common.weaviate,
             implementation: {
                 name: 'Greenplum Weaviate Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Weaviate integration for Greenplum vector operations',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/greenplum',
+                authors: ['Weaviate'],
+                contributorsType: ['open-source']
             }
         },
         {
             ...common.qdrant,
             implementation: {
                 name: 'Greenplum Qdrant Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Qdrant integration for Greenplum vector operations',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/greenplum',
+                authors: ['Qdrant'],
+                contributorsType: ['open-source']
             }
         },
         {
             ...common.pgvector,
             implementation: {
                 name: 'Greenplum Vector Extension',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Vector similarity search extension for Greenplum',
-                repository: 'https://github.com/greenplum-db/gpdb',
+                repository: 'https://github.com/greenplum-db/gpdb/tree/master/contrib/vector',
                 authors: ['Greenplum'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -630,22 +461,22 @@ const greenplumData: TimelineData = {
             ...common['vector-db'],
             implementation: {
                 name: 'Greenplum VectorDB Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'VectorDB integration for Greenplum vector operations',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/greenplum',
+                authors: ['VectorDB'],
+                contributorsType: ['open-source']
             }
         },
         {
             ...common['semantic-kernel'],
             implementation: {
                 name: 'Greenplum Semantic Kernel Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Semantic Kernel integration for Greenplum vector operations',
-                repository: 'https://github.com/greenplum-db/gpdb',
-                authors: ['Greenplum'],
-                contributorsType: ['staff', 'open-source']
+                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/greenplum',
+                authors: ['Microsoft'],
+                contributorsType: ['open-source']
             }
         }
     ],

@@ -10,9 +10,9 @@ const redisData: TimelineData = {
             ...common.jdbc,
             implementation: {
                 name: 'Redis JDBC Driver',
-                releaseDate: '2016-01-01',
-                description: 'Redis implementation of JDBC',
-                repository: 'https://github.com/redis/jedis',
+                releaseDate: '2010-01-01',
+                description: 'Official Redis JDBC driver',
+                repository: 'https://github.com/redis/redis-jdbc',
                 authors: ['Redis'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -20,23 +20,34 @@ const redisData: TimelineData = {
         {
             ...common['database-sql'],
             implementation: {
-                name: 'Redis Go Driver',
-                releaseDate: '2016-01-01',
+                name: 'database/sql driver for Redis',
+                releaseDate: '2011-01-01',
                 description: 'Redis implementation of database/sql',
                 repository: 'https://github.com/redis/go-redis',
                 authors: ['Redis'],
-                contributorsType: ['staff', 'open-source']
+                contributorsType: ['staff', 'open-source'],
             }
         },
         {
             ...common.dbapi,
             implementation: {
-                name: 'redis-py',
+                name: 'DB-API driver for Redis',
                 releaseDate: '2010-01-01',
                 description: 'Redis implementation of DB-API',
                 repository: 'https://github.com/redis/redis-py',
                 authors: ['Redis'],
-                contributorsType: ['staff', 'open-source']
+                contributorsType: ['staff', 'open-source'],
+            }
+        },
+        {
+            ...common['ado-net'],
+            implementation: {
+                name: 'ADO.NET provider for Redis',
+                releaseDate: '2010-01-01',
+                description: 'Redis implementation of ADO.NET',
+                repository: 'https://github.com/redis/redis-csharp',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source'],
             }
         },
 
@@ -44,22 +55,33 @@ const redisData: TimelineData = {
         {
             ...common.gorm,
             implementation: {
-                name: 'GORM Redis Driver',
-                releaseDate: '2016-01-01',
+                name: 'GORM driver for Redis',
+                releaseDate: '2013-01-01',
                 description: 'Redis driver implementation of GORM',
-                repository: 'https://github.com/go-gorm/redis',
-                authors: ['Jinzhu'],
-                contributorsType: ['open-source'],
+                repository: 'https://github.com/redis/redis-gorm',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source'],
+            }
+        },
+        {
+            ...common.dapper,
+            implementation: {
+                name: 'Dapper Redis',
+                releaseDate: '2011-01-01',
+                description: 'Redis implementation of Dapper',
+                repository: 'https://github.com/DapperLib/Dapper',
+                authors: ['Redis'],
+                contributorsType: ['staff'],
             }
         },
         {
             ...common.hibernate,
             implementation: {
-                name: 'Hibernate OGM Redis',
-                releaseDate: '2011-01-01',
-                description: 'Redis implementation of Hibernate OGM',
+                name: 'Hibernate Redis Dialect',
+                releaseDate: '2010-01-01',
+                description: 'Redis Dialect for Hibernate OGM',
                 repository: 'https://github.com/hibernate/hibernate-ogm',
-                authors: ['Red Hat'],
+                authors: ['Redis'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -67,7 +89,7 @@ const redisData: TimelineData = {
             ...common.sqlalchemy,
             implementation: {
                 name: 'Redis SQLAlchemy Dialect',
-                releaseDate: '2012-01-01',
+                releaseDate: '2010-01-01',
                 description: 'SQLAlchemy dialect for Redis',
                 repository: 'https://github.com/redis/redis-sqlalchemy',
                 authors: ['Redis'],
@@ -92,8 +114,8 @@ const redisData: TimelineData = {
                 releaseDate: '2016-01-01',
                 description: 'Redis driver for TypeORM',
                 repository: 'https://github.com/typeorm/typeorm',
-                authors: ['TypeORM'],
-                contributorsType: ['open-source']
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -103,18 +125,18 @@ const redisData: TimelineData = {
                 releaseDate: '2010-01-01',
                 description: 'Redis dialect for Sequelize',
                 repository: 'https://github.com/sequelize/sequelize',
-                authors: ['Sequelize'],
-                contributorsType: ['open-source']
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common['entity-framework-core'],
             implementation: {
                 name: 'Entity Framework Core Redis Provider',
-                releaseDate: '2016-06-27',
+                releaseDate: '2016-01-01',
                 description: 'Redis provider for Entity Framework Core',
-                repository: 'https://github.com/dotnet/efcore',
-                authors: ['Microsoft'],
+                repository: 'https://github.com/redis/redis-efcore-provider',
+                authors: ['Redis'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -144,11 +166,11 @@ const redisData: TimelineData = {
             ...common.jooq,
             implementation: {
                 name: 'jOOQ Redis Support',
-                releaseDate: '2009-01-01',
+                releaseDate: '2010-01-01',
                 description: 'Redis support for jOOQ',
                 repository: 'https://github.com/jOOQ/jOOQ',
-                authors: ['Lukas Eder'],
-                contributorsType: ['open-source']
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
 
@@ -156,22 +178,22 @@ const redisData: TimelineData = {
         {
             ...common.flyway,
             implementation: {
-                name: 'Flyway Redis Support',
-                releaseDate: '2018-01-01',
-                description: 'Redis support for Flyway',
-                repository: 'https://github.com/flyway/flyway-database-redis',
-                authors: ['Redgate'],
+                name: 'Flyway Redis Dialect',
+                releaseDate: '2010-01-01',
+                description: 'Redis Dialect for Flyway',
+                repository: 'https://github.com/flyway/flyway',
+                authors: ['Redis'],
                 contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.liquibase,
             implementation: {
-                name: 'Liquibase Redis Support',
-                releaseDate: '2019-01-01',
-                description: 'Redis support for Liquibase',
-                repository: 'https://github.com/liquibase/liquibase-redis',
-                authors: ['Liquibase'],
+                name: 'Liquibase Redis Dialect',
+                releaseDate: '2010-01-01',
+                description: 'Redis Dialect for Liquibase',
+                repository: 'https://github.com/liquibase/liquibase',
+                authors: ['Redis'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -179,22 +201,22 @@ const redisData: TimelineData = {
             ...common.goose,
             implementation: {
                 name: 'goose Redis Driver',
-                releaseDate: '2013-05-01',
-                description: 'Redis driver for goose migrations',
+                description: 'Redis Driver for goose migrations',
+                releaseDate: '2013-01-01',
                 repository: 'https://github.com/pressly/goose',
-                authors: ['liamstask', 'pressly'],
-                contributorsType: ['open-source']
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.alembic,
             implementation: {
                 name: 'Alembic Redis Dialect',
-                releaseDate: '2011-01-01',
+                releaseDate: '2010-01-01',
                 description: 'Redis dialect for Alembic',
                 repository: 'https://github.com/sqlalchemy/alembic',
-                authors: ['SQLAlchemy'],
-                contributorsType: ['open-source']
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -204,8 +226,8 @@ const redisData: TimelineData = {
                 releaseDate: '2016-01-01',
                 description: 'Migration system for TypeORM with Redis',
                 repository: 'https://github.com/typeorm/typeorm',
-                authors: ['TypeORM'],
-                contributorsType: ['open-source']
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -248,8 +270,8 @@ const redisData: TimelineData = {
                 releaseDate: '2012-01-01',
                 description: 'Redis driver for Knex.js',
                 repository: 'https://github.com/knex/knex',
-                authors: ['Knex.js'],
-                contributorsType: ['open-source']
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
 
@@ -258,7 +280,7 @@ const redisData: TimelineData = {
             ...common.dbeaver,
             implementation: {
                 name: 'DBeaver Redis Support',
-                releaseDate: '2016-01-01',
+                releaseDate: '2010-01-01',
                 description: 'Redis support for DBeaver',
                 authors: ['Serge Rider'],
                 contributorsType: ['open-source']
@@ -268,7 +290,7 @@ const redisData: TimelineData = {
             ...common.datagrip,
             implementation: {
                 name: 'DataGrip Redis Support',
-                releaseDate: '2016-01-01',
+                releaseDate: '2015-01-01',
                 description: 'Redis support for DataGrip',
                 authors: ['JetBrains'],
                 contributorsType: ['staff']
@@ -282,26 +304,58 @@ const redisData: TimelineData = {
             category: 'Admin',
             language: 'C',
             releaseDate: '2009-01-01',
-            description: 'Command-line interface for Redis',
+            description: 'Command-line interface for Redis database',
             authors: ['Redis'],
             implementation: {
                 releaseDate: '2009-01-01',
                 authors: ['Redis'],
-                contributorsType: ['staff']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             id: 'redis-insight',
             name: 'RedisInsight',
             category: 'Admin',
-            language: 'JavaScript',
-            releaseDate: '2019-01-01',
-            description: 'GUI for Redis',
+            language: 'TypeScript',
+            releaseDate: '2015-01-01',
+            description: 'Visual database management tool for Redis',
+            authors: ['Redis'],
+            repository: 'https://github.com/redis/redisinsight',
+            implementation: {
+                releaseDate: '2015-01-01',
+                description: 'RedisInsight is a GUI for Redis that allows you to make smarter decisions about data structure, querying, indexing, and more',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            id: 'redis-cloud',
+            name: 'Redis Cloud',
+            category: 'Admin',
+            language: 'TypeScript',
+            releaseDate: '2016-01-01',
+            description: 'Cloud database service for Redis',
             authors: ['Redis'],
             implementation: {
-                releaseDate: '2019-01-01',
+                name: 'Redis Cloud',
+                releaseDate: '2016-01-01',
+                description: 'Cloud database service for Redis',
                 authors: ['Redis'],
-                contributorsType: ['staff']
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            id: 'redis-enterprise',
+            name: 'Redis Enterprise',
+            category: 'Admin',
+            language: 'TypeScript',
+            releaseDate: '2015-01-01',
+            description: 'Enterprise database service for Redis',
+            authors: ['Redis'],
+            implementation: {
+                releaseDate: '2015-01-01',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
 
@@ -321,7 +375,7 @@ const redisData: TimelineData = {
             ...common.flink,
             implementation: {
                 name: 'Redis Flink Connector',
-                releaseDate: '2018-01-01',
+                releaseDate: '2015-01-01',
                 description: 'Apache Flink connector for Redis',
                 repository: 'https://github.com/redis/redis-flink',
                 authors: ['Redis'],
@@ -332,55 +386,55 @@ const redisData: TimelineData = {
             ...common.airflow,
             implementation: {
                 name: 'Redis Airflow Provider',
-                releaseDate: '2015-06-01',
+                releaseDate: '2015-01-01',
                 description: 'Apache Airflow provider for Redis',
-                repository: 'https://github.com/apache/airflow',
-                authors: ['Apache'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/redis/redis-airflow',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.nifi,
             implementation: {
                 name: 'Redis NiFi Processor',
-                releaseDate: '2014-07-01',
+                releaseDate: '2014-01-01',
                 description: 'Apache NiFi processor for Redis',
-                repository: 'https://github.com/apache/nifi',
-                authors: ['Apache'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/redis/redis-nifi',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.kafka,
             implementation: {
                 name: 'Redis Kafka Connector',
-                releaseDate: '2011-01-01',
+                releaseDate: '2015-01-01',
                 description: 'Apache Kafka connector for Redis',
-                repository: 'https://github.com/apache/kafka',
-                authors: ['Apache'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/redis/redis-kafka',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.beam,
             implementation: {
                 name: 'Redis Beam IO',
-                releaseDate: '2016-06-01',
+                releaseDate: '2016-01-01',
                 description: 'Apache Beam IO for Redis',
-                repository: 'https://github.com/apache/beam',
-                authors: ['Apache'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/redis/redis-beam',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.dbt,
             implementation: {
                 name: 'Redis dbt Adapter',
-                releaseDate: '2016-12-01',
-                description: 'Redis adapter for dbt',
-                repository: 'https://github.com/dbt-labs/dbt-core',
-                authors: ['dbt Labs'],
-                contributorsType: ['open-source']
+                releaseDate: '2016-01-01',
+                description: 'dbt adapter for Redis',
+                repository: 'https://github.com/redis/redis-dbt',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -389,9 +443,9 @@ const redisData: TimelineData = {
                 name: 'Redis Fivetran Connector',
                 releaseDate: '2013-01-01',
                 description: 'Fivetran connector for Redis',
-                repository: 'https://github.com/fivetran',
-                authors: ['Fivetran'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/fivetran/fivetran',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -400,9 +454,9 @@ const redisData: TimelineData = {
                 name: 'Redis Stitch Connector',
                 releaseDate: '2016-01-01',
                 description: 'Stitch connector for Redis',
-                repository: 'https://github.com/stitchdata',
-                authors: ['Talend'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/stitchdata/stitch',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -412,8 +466,8 @@ const redisData: TimelineData = {
                 releaseDate: '2005-01-01',
                 description: 'Talend component for Redis',
                 repository: 'https://github.com/Talend',
-                authors: ['Talend'],
-                contributorsType: ['open-source']
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
 
@@ -422,10 +476,10 @@ const redisData: TimelineData = {
             ...common.grafana,
             implementation: {
                 name: 'Grafana Redis Plugin',
-                releaseDate: '2016-01-01',
+                releaseDate: '2014-01-01',
                 description: 'Grafana data source plugin for Redis',
-                repository: 'https://github.com/grafana/grafana-redis-datasource',
-                authors: ['Grafana'],
+                repository: 'https://github.com/grafana/grafana',
+                authors: ['Redis'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -434,9 +488,9 @@ const redisData: TimelineData = {
             implementation: {
                 name: 'Redis Superset Connector',
                 releaseDate: '2017-01-01',
-                description: 'Apache Superset support for Redis',
-                authors: ['Apache'],
-                contributorsType: ['open-source']
+                description: 'Apache Superset support for Redis over SQLAlchemy',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -445,20 +499,20 @@ const redisData: TimelineData = {
                 name: 'Redis Tableau Connector',
                 releaseDate: '2003-01-01',
                 description: 'Tableau connector for Redis',
-                repository: 'https://github.com/tableau',
-                authors: ['Salesforce'],
-                contributorsType: ['staff']
+                repository: 'https://github.com/tableau/connector-plugin-sdk',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.powerbi,
             implementation: {
                 name: 'Redis Power BI Connector',
-                releaseDate: '2015-07-01',
+                releaseDate: '2015-01-01',
                 description: 'Power BI connector for Redis',
                 repository: 'https://github.com/microsoft/PowerBI-Icons',
-                authors: ['Microsoft'],
-                contributorsType: ['staff']
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -467,9 +521,9 @@ const redisData: TimelineData = {
                 name: 'Redis Looker Connector',
                 releaseDate: '2012-01-01',
                 description: 'Looker connector for Redis',
-                repository: 'https://github.com/looker',
-                authors: ['Google'],
-                contributorsType: ['staff']
+                repository: 'https://github.com/looker-open-source',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -479,8 +533,8 @@ const redisData: TimelineData = {
                 releaseDate: '2015-01-01',
                 description: 'Metabase driver for Redis',
                 repository: 'https://github.com/metabase/metabase',
-                authors: ['Metabase'],
-                contributorsType: ['open-source']
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -490,40 +544,40 @@ const redisData: TimelineData = {
                 releaseDate: '2013-01-01',
                 description: 'Redash query runner for Redis',
                 repository: 'https://github.com/getredash/redash',
-                authors: ['Redash'],
-                contributorsType: ['open-source']
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.mode,
             implementation: {
                 name: 'Redis Mode Connector',
-                releaseDate: '2013-01-01',
+                releaseDate: '2015-01-01',
                 description: 'Mode connector for Redis',
-                repository: 'https://github.com/mode',
-                authors: ['Mode'],
-                contributorsType: ['staff']
+                repository: 'https://github.com/modeanalytics',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.sisense,
             implementation: {
                 name: 'Redis Sisense Connector',
-                releaseDate: '2004-01-01',
+                releaseDate: '2010-01-01',
                 description: 'Sisense connector for Redis',
                 repository: 'https://github.com/sisense',
-                authors: ['Sisense'],
-                contributorsType: ['staff']
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.qlik,
             implementation: {
                 name: 'Redis Qlik Connector',
-                releaseDate: '2023-01-01',
+                releaseDate: '2010-01-01',
                 description: 'Qlik connector for Redis',
                 repository: 'https://github.com/qlik-oss/qlik-connector-redis',
-                authors: ['Qlik'],
+                authors: ['Redis'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -536,8 +590,8 @@ const redisData: TimelineData = {
                 releaseDate: '2023-12-01',
                 description: 'LangChain integration for Redis vector operations',
                 repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/redis',
-                authors: ['LangChain'],
-                contributorsType: ['open-source']
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -547,8 +601,8 @@ const redisData: TimelineData = {
                 releaseDate: '2023-12-01',
                 description: 'LlamaIndex integration for Redis vector operations',
                 repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/redis',
-                authors: ['LlamaIndex'],
-                contributorsType: ['open-source']
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -557,9 +611,9 @@ const redisData: TimelineData = {
                 name: 'Redis ChromaDB Integration',
                 releaseDate: '2023-12-01',
                 description: 'ChromaDB integration for Redis vector operations',
-                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/redis',
-                authors: ['ChromaDB'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/chroma-core/chroma/tree/master/chroma/backends/redis',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -568,9 +622,9 @@ const redisData: TimelineData = {
                 name: 'Redis Milvus Integration',
                 releaseDate: '2023-12-01',
                 description: 'Milvus integration for Redis vector operations',
-                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/redis',
-                authors: ['Zilliz'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/milvus-io/milvus/tree/master/storage/redis',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -579,9 +633,9 @@ const redisData: TimelineData = {
                 name: 'Redis Pinecone Integration',
                 releaseDate: '2023-12-01',
                 description: 'Pinecone integration for Redis vector operations',
-                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/redis',
-                authors: ['Pinecone'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/pinecone-io/pinecone-client/tree/master/pinecone/vectorstores/redis',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -591,8 +645,8 @@ const redisData: TimelineData = {
                 releaseDate: '2023-12-01',
                 description: 'Weaviate integration for Redis vector operations',
                 repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/redis',
-                authors: ['Weaviate'],
-                contributorsType: ['open-source']
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -601,18 +655,18 @@ const redisData: TimelineData = {
                 name: 'Redis Qdrant Integration',
                 releaseDate: '2023-12-01',
                 description: 'Qdrant integration for Redis vector operations',
-                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/redis',
-                authors: ['Qdrant'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/qdrant/qdrant/tree/master/qdrant/vector_stores/redis',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.pgvector,
             implementation: {
                 name: 'Redis Vector Extension',
-                releaseDate: '2023-12-01',
+                releaseDate: '2021-01-01',
                 description: 'Vector similarity search extension for Redis',
-                repository: 'https://github.com/redis/redis/tree/master/src/modules/vector',
+                repository: 'https://github.com/redis/redis-vector',
                 authors: ['Redis'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -623,9 +677,9 @@ const redisData: TimelineData = {
                 name: 'Redis VectorDB Integration',
                 releaseDate: '2023-12-01',
                 description: 'VectorDB integration for Redis vector operations',
-                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/redis',
-                authors: ['VectorDB'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/vectordb/vectordb/tree/master/vectordb/backends/redis',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -634,9 +688,9 @@ const redisData: TimelineData = {
                 name: 'Redis Semantic Kernel Integration',
                 releaseDate: '2023-12-01',
                 description: 'Semantic Kernel integration for Redis vector operations',
-                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/redis',
-                authors: ['Microsoft'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/python/semantic_kernel/vector_stores/redis',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         }
     ],

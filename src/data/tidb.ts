@@ -11,7 +11,7 @@ const tidbData: TimelineData = {
             implementation: {
                 name: 'TiDB JDBC Driver',
                 releaseDate: '2016-01-01',
-                description: 'TiDB implementation of JDBC',
+                description: 'Official TiDB JDBC driver',
                 repository: 'https://github.com/pingcap/tidb-jdbc',
                 authors: ['PingCAP'],
                 contributorsType: ['staff', 'open-source']
@@ -23,31 +23,31 @@ const tidbData: TimelineData = {
                 name: 'database/sql driver for TiDB',
                 releaseDate: '2016-01-01',
                 description: 'TiDB implementation of database/sql',
-                repository: 'https://github.com/pingcap/tidb-go-driver',
+                repository: 'https://github.com/pingcap/tidb-go-sdk',
                 authors: ['PingCAP'],
-                contributorsType: ['staff', 'open-source']
+                contributorsType: ['staff', 'open-source'],
             }
         },
         {
             ...common.dbapi,
             implementation: {
-                name: 'mysql-connector-python',
+                name: 'DB-API driver for TiDB',
                 releaseDate: '2016-01-01',
                 description: 'TiDB implementation of DB-API',
-                repository: 'https://github.com/pingcap/tidb-python-driver',
+                repository: 'https://github.com/pingcap/tidb-python-sdk',
                 authors: ['PingCAP'],
-                contributorsType: ['staff', 'open-source']
+                contributorsType: ['staff', 'open-source'],
             }
         },
         {
             ...common['ado-net'],
             implementation: {
-                name: 'TiDB ADO.NET Provider',
+                name: 'ADO.NET provider for TiDB',
                 releaseDate: '2016-01-01',
                 description: 'TiDB implementation of ADO.NET',
-                repository: 'https://github.com/pingcap/tidb-dotnet-driver',
+                repository: 'https://github.com/pingcap/tidb-dotnet-sdk',
                 authors: ['PingCAP'],
-                contributorsType: ['staff', 'open-source']
+                contributorsType: ['staff', 'open-source'],
             }
         },
 
@@ -58,20 +58,9 @@ const tidbData: TimelineData = {
                 name: 'GORM driver for TiDB',
                 releaseDate: '2016-01-01',
                 description: 'TiDB driver implementation of GORM',
-                repository: 'https://github.com/pingcap/tidb-go-driver',
+                repository: 'https://github.com/pingcap/tidb-go-sdk',
                 authors: ['PingCAP'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.dapper,
-            implementation: {
-                name: 'Dapper TiDB',
-                releaseDate: '2016-01-01',
-                description: 'TiDB implementation of Dapper',
-                repository: 'https://github.com/pingcap/tidb-dotnet-driver',
-                authors: ['PingCAP'],
-                contributorsType: ['staff', 'open-source']
+                contributorsType: ['staff', 'open-source'],
             }
         },
         {
@@ -79,7 +68,7 @@ const tidbData: TimelineData = {
             implementation: {
                 name: 'Hibernate TiDB Dialect',
                 releaseDate: '2016-01-01',
-                description: 'TiDB Dialect for Hibernate',
+                description: 'TiDB Dialect for Hibernate ORM',
                 repository: 'https://github.com/pingcap/tidb-jdbc',
                 authors: ['PingCAP'],
                 contributorsType: ['staff', 'open-source']
@@ -91,20 +80,9 @@ const tidbData: TimelineData = {
                 name: 'TiDB SQLAlchemy Dialect',
                 releaseDate: '2016-01-01',
                 description: 'SQLAlchemy dialect for TiDB',
-                repository: 'https://github.com/pingcap/tidb-python-driver',
+                repository: 'https://github.com/pingcap/tidb-python-sdk',
                 authors: ['PingCAP'],
                 contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.prisma,
-            implementation: {
-                name: 'Prisma TiDB Adapter',
-                releaseDate: '2019-01-01',
-                description: 'TiDB adapter for Prisma',
-                repository: 'https://github.com/prisma/prisma',
-                authors: ['Prisma'],
-                contributorsType: ['open-source']
             }
         },
         {
@@ -113,9 +91,9 @@ const tidbData: TimelineData = {
                 name: 'TypeORM TiDB Driver',
                 releaseDate: '2016-01-01',
                 description: 'TiDB driver for TypeORM',
-                repository: 'https://github.com/typeorm/typeorm',
-                authors: ['TypeORM'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/pingcap/tidb-typescript-sdk',
+                authors: ['PingCAP'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -124,53 +102,9 @@ const tidbData: TimelineData = {
                 name: 'Sequelize TiDB Dialect',
                 releaseDate: '2016-01-01',
                 description: 'TiDB dialect for Sequelize',
-                repository: 'https://github.com/sequelize/sequelize',
-                authors: ['Sequelize'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common['entity-framework-core'],
-            implementation: {
-                name: 'Entity Framework Core TiDB Provider',
-                releaseDate: '2016-06-27',
-                description: 'TiDB provider for Entity Framework Core',
-                repository: 'https://github.com/pingcap/tidb-dotnet-driver',
+                repository: 'https://github.com/pingcap/tidb-typescript-sdk',
                 authors: ['PingCAP'],
                 contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.diesel,
-            implementation: {
-                name: 'Diesel TiDB Driver',
-                releaseDate: '2016-01-01',
-                description: 'TiDB driver for Diesel',
-                repository: 'https://github.com/diesel-rs/diesel',
-                authors: ['Diesel'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.sqlx,
-            implementation: {
-                name: 'SQLx TiDB Driver',
-                releaseDate: '2019-01-01',
-                description: 'TiDB driver for SQLx',
-                repository: 'https://github.com/launchbadge/sqlx',
-                authors: ['SQLx'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.jooq,
-            implementation: {
-                name: 'jOOQ TiDB Support',
-                releaseDate: '2016-01-01',
-                description: 'TiDB support for jOOQ',
-                repository: 'https://github.com/jOOQ/jOOQ',
-                authors: ['Lukas Eder'],
-                contributorsType: ['open-source']
             }
         },
 
@@ -181,9 +115,9 @@ const tidbData: TimelineData = {
                 name: 'Flyway TiDB Support',
                 releaseDate: '2016-01-01',
                 description: 'TiDB support for Flyway',
-                repository: 'https://github.com/flyway/flyway',
-                authors: ['Redgate'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/pingcap/tidb-jdbc',
+                authors: ['PingCAP'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -192,86 +126,9 @@ const tidbData: TimelineData = {
                 name: 'Liquibase TiDB Support',
                 releaseDate: '2016-01-01',
                 description: 'TiDB support for Liquibase',
-                repository: 'https://github.com/liquibase/liquibase',
-                authors: ['Liquibase'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.goose,
-            implementation: {
-                name: 'goose TiDB Driver',
-                releaseDate: '2016-01-01',
-                description: 'TiDB driver for goose migrations',
-                repository: 'https://github.com/pressly/goose',
-                authors: ['liamstask', 'pressly'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.alembic,
-            implementation: {
-                name: 'Alembic TiDB Dialect',
-                releaseDate: '2016-01-01',
-                description: 'TiDB dialect for Alembic',
-                repository: 'https://github.com/sqlalchemy/alembic',
-                authors: ['SQLAlchemy'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common['typeorm-migrations'],
-            implementation: {
-                name: 'TypeORM TiDB Migrations',
-                releaseDate: '2016-01-01',
-                description: 'Migration system for TypeORM with TiDB',
-                repository: 'https://github.com/typeorm/typeorm',
-                authors: ['TypeORM'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common['prisma-migrate'],
-            implementation: {
-                name: 'Prisma TiDB Migrations',
-                releaseDate: '2019-01-01',
-                description: 'Migration system for Prisma with TiDB',
-                repository: 'https://github.com/prisma/prisma',
-                authors: ['Prisma'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common['diesel-migrations'],
-            implementation: {
-                name: 'Diesel TiDB Migrations',
-                releaseDate: '2016-01-01',
-                description: 'Migration system for Diesel with TiDB',
-                repository: 'https://github.com/diesel-rs/diesel',
-                authors: ['Diesel'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common['db-migrate'],
-            implementation: {
-                name: 'db-migrate TiDB Driver',
-                releaseDate: '2016-01-01',
-                description: 'TiDB driver for db-migrate',
-                repository: 'https://github.com/db-migrate/node-db-migrate',
-                authors: ['db-migrate'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.knex,
-            implementation: {
-                name: 'Knex.js TiDB Driver',
-                releaseDate: '2016-01-01',
-                description: 'TiDB driver for Knex.js',
-                repository: 'https://github.com/knex/knex',
-                authors: ['Knex.js'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/pingcap/tidb-jdbc',
+                authors: ['PingCAP'],
+                contributorsType: ['staff', 'open-source']
             }
         },
 
@@ -317,11 +174,13 @@ const tidbData: TimelineData = {
             name: 'TiDB Dashboard',
             category: 'Admin',
             language: 'TypeScript',
-            releaseDate: '2019-01-01',
+            releaseDate: '2016-01-01',
             description: 'Web-based administration interface for TiDB',
             authors: ['PingCAP'],
             implementation: {
-                releaseDate: '2019-01-01',
+                name: 'TiDB Dashboard',
+                releaseDate: '2016-01-01',
+                description: 'Web-based administration interface for TiDB',
                 authors: ['PingCAP'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -362,17 +221,6 @@ const tidbData: TimelineData = {
             }
         },
         {
-            ...common.nifi,
-            implementation: {
-                name: 'TiDB NiFi Processor',
-                releaseDate: '2016-01-01',
-                description: 'Apache NiFi processor for TiDB',
-                repository: 'https://github.com/pingcap/tidb-nifi-processor',
-                authors: ['PingCAP'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
             ...common.kafka,
             implementation: {
                 name: 'TiDB Kafka Connector',
@@ -383,81 +231,15 @@ const tidbData: TimelineData = {
                 contributorsType: ['staff', 'open-source']
             }
         },
-        {
-            ...common.beam,
-            implementation: {
-                name: 'TiDB Beam IO',
-                releaseDate: '2016-01-01',
-                description: 'Apache Beam IO for TiDB',
-                repository: 'https://github.com/pingcap/tidb-beam-io',
-                authors: ['PingCAP'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.dbt,
-            implementation: {
-                name: 'TiDB dbt Adapter',
-                releaseDate: '2016-01-01',
-                description: 'TiDB adapter for dbt',
-                repository: 'https://github.com/pingcap/tidb-dbt-adapter',
-                authors: ['PingCAP'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.fivetran,
-            implementation: {
-                name: 'TiDB Fivetran Connector',
-                releaseDate: '2016-01-01',
-                description: 'Fivetran connector for TiDB',
-                repository: 'https://github.com/pingcap/tidb-fivetran-connector',
-                authors: ['PingCAP'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.stitch,
-            implementation: {
-                name: 'TiDB Stitch Connector',
-                releaseDate: '2016-01-01',
-                description: 'Stitch connector for TiDB',
-                repository: 'https://github.com/pingcap/tidb-stitch-connector',
-                authors: ['PingCAP'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.talend,
-            implementation: {
-                name: 'TiDB Talend Component',
-                releaseDate: '2016-01-01',
-                description: 'Talend component for TiDB',
-                repository: 'https://github.com/pingcap/tidb-talend-component',
-                authors: ['PingCAP'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
 
         // BI tools
         {
             ...common.grafana,
             implementation: {
-                name: 'TiDB Grafana Plugin',
+                name: 'Grafana TiDB Plugin',
                 releaseDate: '2016-01-01',
                 description: 'Grafana data source plugin for TiDB',
                 repository: 'https://github.com/pingcap/tidb-grafana-plugin',
-                authors: ['PingCAP'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.superset,
-            implementation: {
-                name: 'TiDB Superset Connector',
-                releaseDate: '2016-01-01',
-                description: 'Apache Superset support for TiDB',
-                repository: 'https://github.com/pingcap/tidb-superset-connector',
                 authors: ['PingCAP'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -470,7 +252,7 @@ const tidbData: TimelineData = {
                 description: 'Tableau connector for TiDB',
                 repository: 'https://github.com/pingcap/tidb-tableau-connector',
                 authors: ['PingCAP'],
-                contributorsType: ['staff']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -481,62 +263,7 @@ const tidbData: TimelineData = {
                 description: 'Power BI connector for TiDB',
                 repository: 'https://github.com/pingcap/tidb-powerbi-connector',
                 authors: ['PingCAP'],
-                contributorsType: ['staff']
-            }
-        },
-        {
-            ...common.looker,
-            implementation: {
-                name: 'TiDB Looker Connector',
-                releaseDate: '2016-01-01',
-                description: 'Looker connector for TiDB',
-                repository: 'https://github.com/pingcap/tidb-looker-connector',
-                authors: ['PingCAP'],
-                contributorsType: ['staff']
-            }
-        },
-        {
-            ...common.metabase,
-            implementation: {
-                name: 'TiDB Metabase Driver',
-                releaseDate: '2016-01-01',
-                description: 'Metabase driver for TiDB',
-                repository: 'https://github.com/pingcap/tidb-metabase-driver',
-                authors: ['PingCAP'],
                 contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.redash,
-            implementation: {
-                name: 'TiDB Redash Query Runner',
-                releaseDate: '2016-01-01',
-                description: 'Redash query runner for TiDB',
-                repository: 'https://github.com/pingcap/tidb-redash-query-runner',
-                authors: ['PingCAP'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.mode,
-            implementation: {
-                name: 'TiDB Mode Connector',
-                releaseDate: '2016-01-01',
-                description: 'Mode connector for TiDB',
-                repository: 'https://github.com/pingcap/tidb-mode-connector',
-                authors: ['PingCAP'],
-                contributorsType: ['staff']
-            }
-        },
-        {
-            ...common.sisense,
-            implementation: {
-                name: 'TiDB Sisense Connector',
-                releaseDate: '2016-01-01',
-                description: 'Sisense connector for TiDB',
-                repository: 'https://github.com/pingcap/tidb-sisense-connector',
-                authors: ['PingCAP'],
-                contributorsType: ['staff']
             }
         },
         {
@@ -556,7 +283,7 @@ const tidbData: TimelineData = {
             ...common.langchain,
             implementation: {
                 name: 'TiDB LangChain Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'LangChain integration for TiDB vector operations',
                 repository: 'https://github.com/pingcap/tidb-langchain',
                 authors: ['PingCAP'],
@@ -567,7 +294,7 @@ const tidbData: TimelineData = {
             ...common.llamaindex,
             implementation: {
                 name: 'TiDB LlamaIndex Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'LlamaIndex integration for TiDB vector operations',
                 repository: 'https://github.com/pingcap/tidb-llamaindex',
                 authors: ['PingCAP'],
@@ -578,7 +305,7 @@ const tidbData: TimelineData = {
             ...common.chromadb,
             implementation: {
                 name: 'TiDB ChromaDB Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'ChromaDB integration for TiDB vector operations',
                 repository: 'https://github.com/pingcap/tidb-chromadb',
                 authors: ['PingCAP'],
@@ -589,7 +316,7 @@ const tidbData: TimelineData = {
             ...common.milvus,
             implementation: {
                 name: 'TiDB Milvus Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Milvus integration for TiDB vector operations',
                 repository: 'https://github.com/pingcap/tidb-milvus',
                 authors: ['PingCAP'],
@@ -600,7 +327,7 @@ const tidbData: TimelineData = {
             ...common.pinecone,
             implementation: {
                 name: 'TiDB Pinecone Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Pinecone integration for TiDB vector operations',
                 repository: 'https://github.com/pingcap/tidb-pinecone',
                 authors: ['PingCAP'],
@@ -611,7 +338,7 @@ const tidbData: TimelineData = {
             ...common.weaviate,
             implementation: {
                 name: 'TiDB Weaviate Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Weaviate integration for TiDB vector operations',
                 repository: 'https://github.com/pingcap/tidb-weaviate',
                 authors: ['PingCAP'],
@@ -622,7 +349,7 @@ const tidbData: TimelineData = {
             ...common.qdrant,
             implementation: {
                 name: 'TiDB Qdrant Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Qdrant integration for TiDB vector operations',
                 repository: 'https://github.com/pingcap/tidb-qdrant',
                 authors: ['PingCAP'],
@@ -633,7 +360,7 @@ const tidbData: TimelineData = {
             ...common.pgvector,
             implementation: {
                 name: 'TiDB Vector Extension',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Vector similarity search extension for TiDB',
                 repository: 'https://github.com/pingcap/tidb-vector',
                 authors: ['PingCAP'],
@@ -644,7 +371,7 @@ const tidbData: TimelineData = {
             ...common['vector-db'],
             implementation: {
                 name: 'TiDB VectorDB Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'VectorDB integration for TiDB vector operations',
                 repository: 'https://github.com/pingcap/tidb-vectordb',
                 authors: ['PingCAP'],
@@ -655,7 +382,7 @@ const tidbData: TimelineData = {
             ...common['semantic-kernel'],
             implementation: {
                 name: 'TiDB Semantic Kernel Integration',
-                releaseDate: '2023-06-01',
+                releaseDate: '2023-12-01',
                 description: 'Semantic Kernel integration for TiDB vector operations',
                 repository: 'https://github.com/pingcap/tidb-semantic-kernel',
                 authors: ['PingCAP'],
