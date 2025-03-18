@@ -1,5 +1,21 @@
 // src/data/types.ts
-export type Database = 'ydb' | 'postgresql' | 'mysql' | 'mssql' | 'oracle';
+export type Database = 
+    | 'ydb' 
+    | 'postgresql' 
+    | 'mysql' 
+    | 'mssql' 
+    | 'oracle'
+    | 'mongodb'
+    | 'dynamodb'
+    | 'greenplum'
+    | 'vertica'
+    | 'tidb'
+    | 'cosmosdb'
+    | 'bigtable'
+    | 'spanner'
+    | 'sqlite3'
+    | 'yugabytedb'
+    | 'cockroachdb';
 
 export type FrameworkCategory = 
     | 'Server-side feature'
