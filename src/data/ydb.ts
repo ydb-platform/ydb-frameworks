@@ -249,16 +249,6 @@ const ydbData: TimelineData = {
 
         // ORM
         {
-            id: 'sqlx',
-            name: 'sqlx',
-            category: 'ORM',
-            language: 'Go',
-            releaseDate: '2019-06-15',
-            description: 'The practical SQL library for Go',
-            authors: ['sqlx authors'],
-            repository: 'https://github.com/jmoiron/sqlx'
-        },
-        {
             id: 'gorm',
             name: 'GORM',
             category: 'ORM',
@@ -275,16 +265,6 @@ const ydbData: TimelineData = {
                 authors: ['Yandex'],
                 contributorsType: ['staff', 'open-source'],
             }
-        },
-        {
-            id: 'xorm',
-            name: 'XORM',
-            category: 'ORM',
-            language: 'Go',
-            releaseDate: '2015-01-01',
-            description: 'Simple and powerful ORM for Go',
-            authors: ['Lunny Xiao'],
-            repository: 'https://github.com/go-xorm/xorm'
         },
         {
             id: 'dapper',
@@ -317,16 +297,6 @@ const ydbData: TimelineData = {
                 releaseDate: '2023-12-28',
                 description: 'YDB ORM for Java (YOJ) is a lightweight ORM for immutable entities, with native support for YDB',
             }
-        },
-        {
-            id: 'linq2db',
-            name: 'LINQ to DB',
-            category: 'ORM',
-            language: 'C#',
-            releaseDate: '2014-01-01',
-            description: 'Fastest LINQ database access library',
-            authors: ['Igor Tkachev'],
-            repository: 'https://github.com/linq2db/linq2db'
         },
         {
             id: 'spring-data',
@@ -363,6 +333,55 @@ const ydbData: TimelineData = {
                 authors: ['Yandex'],
                 contributorsType: ['staff', 'open-source']
             }
+        },
+        {
+            id: 'sqlalchemy',
+            name: 'SQLAlchemy',
+            category: 'ORM',
+            language: 'Python',
+            releaseDate: '2006-02-01',
+            description: 'The Python SQL Toolkit and ORM',
+            authors: ['Michael Bayer'],
+            repository: 'https://github.com/sqlalchemy/sqlalchemy',
+            implementation: {
+                name: 'YDB SQLAlchemy Dialect',
+                releaseDate: '2023-09-01',
+                description: 'SQLAlchemy dialect for YDB',
+                repository: 'https://github.com/ydb-platform/ydb-sqlalchemy',
+                authors: ['Yandex'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        // ORM without YDB support (planned)
+        {
+            id: 'sqlx',
+            name: 'sqlx',
+            category: 'ORM',
+            language: 'Go',
+            releaseDate: '2019-06-15',
+            description: 'The practical SQL library for Go',
+            authors: ['sqlx authors'],
+            repository: 'https://github.com/jmoiron/sqlx'
+        },
+        {
+            id: 'xorm',
+            name: 'XORM',
+            category: 'ORM',
+            language: 'Go',
+            releaseDate: '2015-01-01',
+            description: 'Simple and powerful ORM for Go',
+            authors: ['Lunny Xiao'],
+            repository: 'https://github.com/go-xorm/xorm'
+        },
+        {
+            id: 'linq2db',
+            name: 'LINQ to DB',
+            category: 'ORM',
+            language: 'C#',
+            releaseDate: '2014-01-01',
+            description: 'Fastest LINQ database access library',
+            authors: ['Igor Tkachev'],
+            repository: 'https://github.com/linq2db/linq2db'
         },
 
         // Admin tools
@@ -478,14 +497,6 @@ const ydbData: TimelineData = {
             description: 'Data transformation tool that enables data analysts and engineers to transform data',
             authors: ['dbt Labs'],
             repository: 'https://github.com/dbt-labs/dbt-core',
-            implementation: {
-                name: 'dbt-ydb',
-                releaseDate: '2022-07-01',
-                description: 'dbt (data build tool) adapter for YDB',
-                repository: 'https://github.com/ydb-platform/ydb-dbt-adapter',
-                authors: ['Yandex'],
-                contributorsType: ['staff', 'open-source']
-            }
         },
 
         // BI tools
@@ -507,8 +518,77 @@ const ydbData: TimelineData = {
                 contributorsType: ['staff', 'open-source']
             }
         },
-
-        // Apps with abstract storage
+        {
+            id: 'superset',
+            name: 'Apache Superset',
+            category: 'BI',
+            language: 'Python',
+            releaseDate: '2015-10-01',
+            description: 'Modern data exploration and visualization platform',
+            authors: ['Airbnb', 'Apache Software Foundation'],
+            repository: 'https://github.com/apache/superset',
+            implementation: {
+                name: 'YDB Superset Connector',
+                releaseDate: '2024-12-01',
+                description: 'Apache Superset support for YDB over SQLAlchemy',
+                authors: ['Yandex'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            id: 'airflow',
+            name: 'Apache Airflow',
+            category: 'ETL',
+            language: 'Python',
+            releaseDate: '2015-06-01',
+            description: 'Platform to programmatically author, schedule, and monitor workflows',
+            authors: ['Airbnb', 'Apache Software Foundation'],
+            repository: 'https://github.com/apache/airflow',
+            implementation: {
+                name: 'YDB Airflow Provider',
+                releaseDate: '2023-09-01',
+                description: 'Apache Airflow provider for YDB',
+                repository: 'https://github.com/ydb-platform/ydb-airflow-provider',
+                authors: ['Yandex'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            id: 'jupyter',
+            name: 'Jupyter Notebook',
+            category: 'BI',
+            language: 'Python',
+            releaseDate: '2014-02-01',
+            description: 'Web-based interactive computing platform for creating and sharing documents containing live code, equations, visualizations, and narrative text',
+            authors: ['Project Jupyter'],
+            repository: 'https://github.com/jupyter/notebook',
+            implementation: {
+                name: 'YDB Jupyter Extension',
+                releaseDate: '2023-09-01',
+                description: 'Jupyter extension for YDB integration',
+                repository: 'https://github.com/ydb-platform/ydb-jupyter-extension',
+                authors: ['Yandex'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            id: 'pandas',
+            name: 'Pandas',
+            category: 'ETL',
+            language: 'Python',
+            releaseDate: '2009-01-01',
+            description: 'Data manipulation and analysis library for Python',
+            authors: ['Wes McKinney'],
+            repository: 'https://github.com/pandas-dev/pandas',
+            implementation: {
+                name: 'YDB Pandas Integration',
+                releaseDate: '2023-09-01',
+                description: 'Pandas integration for YDB',
+                repository: 'https://github.com/ydb-platform/ydb-pandas',
+                authors: ['Yandex'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
 
         // Logging
         {

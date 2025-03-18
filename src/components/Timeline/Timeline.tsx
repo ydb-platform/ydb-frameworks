@@ -2,11 +2,11 @@
 import React, {useState, useRef, useEffect, useMemo} from 'react';
 import {Framework, Dependency, Database, FrameworkCategory} from '../../data/types';
 import TimelineAxis from './TimelineAxis';
-import TimelineFramework from './TimelineFramework';
 import TimelineDependency from './TimelineDependency';
 import TimelineTooltip from './TimelineTooltip';
 import {getTimelineBounds, parseDate} from '../../utils/dateUtils';
 import styles from './Timeline.module.css';
+import TimelineCategory from './TimelineCategory';
 
 // Определяем порядок категорий сверху вниз
 const categoryOrder: FrameworkCategory[] = [
@@ -118,13 +118,6 @@ const Timeline: React.FC<TimelineProps> = ({frameworks, dependencies, selectedDb
 
     const {startDate, endDate} = getTimelineBounds(frameworks);
 
-    const toggleCategory = (category: string) => {
-        setExpandedCategories(prev => ({
-            ...prev,
-            [category]: !prev[category]
-        }));
-    };
-
     // Сортируем категории в соответствии с установленным порядком
     const sortedCategories = useMemo(() => {
         return Object.entries(frameworksByCategory).sort((a, b) => {
@@ -141,41 +134,6 @@ const Timeline: React.FC<TimelineProps> = ({frameworks, dependencies, selectedDb
         setTooltips({ framework, position, tooltipType });
     };
 
-    // Функция для обработки клика по фреймворку
-    const handleFrameworkClick = (frameworkId: string) => {
-        // Если уже выделен этот же фреймворк, снимаем выделение
-        if (highlightedFramework === frameworkId) {
-            setHighlightedFramework(null);
-            setRelatedFrameworks(new Set());
-            return;
-        }
-
-        // Устанавливаем новый выделенный фреймворк
-        setHighlightedFramework(frameworkId);
-
-        // Находим все связанные фреймворки (через зависимости)
-        const related = new Set<string>([frameworkId]);
-
-        // Рекурсивная функция для поиска связанных фреймворков
-        const findRelated = (id: string) => {
-            dependencies.forEach(dep => {
-                // Если это зависимость от выделенного фреймворка
-                if (dep.source === id && !related.has(dep.target)) {
-                    related.add(dep.target);
-                    findRelated(dep.target);
-                }
-                // Если это зависимость к выделенному фреймворку
-                if (dep.target === id && !related.has(dep.source)) {
-                    related.add(dep.source);
-                    findRelated(dep.source);
-                }
-            });
-        };
-
-        findRelated(frameworkId);
-        setRelatedFrameworks(related);
-    };
-
     return (
         <div className={`${styles.timelineContainer} timelineContainer`} ref={timelineRef}>
             <TimelineAxis
@@ -189,40 +147,16 @@ const Timeline: React.FC<TimelineProps> = ({frameworks, dependencies, selectedDb
                     // Не отображаем категорию, если в ней нет фреймворков
                     categoryFrameworks.length > 0 ? (
                         <div key={category} className={styles.categoryContainer}>
-                            <div
-                                className={styles.categoryHeader}
-                                onClick={() => toggleCategory(category)}
-                            >
-                                <span className={styles.expandIcon}>
-                                    {expandedCategories[category] ? '▼' : '▶'}
-                                </span>
-                                <span className={styles.categoryName}>{category}</span>
-                                <span className={styles.expandIcon}>
-                                    {expandedCategories[category] ? '▼' : '▶'}
-                                </span>
-                            </div>
-
-                            {expandedCategories[category] && (
-                                <div className={styles.frameworksContainer}>
-                                    {categoryFrameworks.map(framework => (
-                                        <TimelineFramework
-                                            key={framework.id}
-                                            framework={framework}
-                                            startDate={startDate}
-                                            endDate={endDate}
-                                            width={timelineWidth}
-                                            selectedDb={selectedDb}
-                                            onTooltipShow={showTooltip}
-                                            onTooltipHide={() => setTooltips(null)}
-                                            isHighlighted={
-                                                highlightedFramework === framework.id || 
-                                                (showDependencies && relatedFrameworks.has(framework.id))
-                                            }
-                                            onClick={showDependencies ? handleFrameworkClick : undefined}
-                                        />
-                                    ))}
-                                </div>
-                            )}
+                            <TimelineCategory
+                                category={category}
+                                frameworks={categoryFrameworks}
+                                startDate={startDate}
+                                endDate={endDate}
+                                width={timelineWidth}
+                                selectedDb={selectedDb}
+                                onTooltipShow={showTooltip}
+                                onTooltipHide={() => setTooltips(null)}
+                            />
                         </div>
                     ) : null
                 ))}

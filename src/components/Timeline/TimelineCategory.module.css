@@ -1,0 +1,29 @@
+.category {
+    margin-bottom: 2rem;
+}
+
+.categoryHeader {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.frameworks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.unsupportedSection {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #ccc;
+}
+
+.unsupportedHeader {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+} 
