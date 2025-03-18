@@ -10,7 +10,7 @@ const verticaData: TimelineData = {
             ...common.jdbc,
             implementation: {
                 name: 'Vertica JDBC Driver',
-                releaseDate: '2005-01-01',
+                releaseDate: '2007-01-01',
                 description: 'Vertica implementation of JDBC',
                 repository: 'https://github.com/vertica/vertica-jdbc',
                 authors: ['Vertica'],
@@ -20,10 +20,10 @@ const verticaData: TimelineData = {
         {
             ...common['database-sql'],
             implementation: {
-                name: 'Vertica Go Driver',
-                releaseDate: '2005-01-01',
+                name: 'database/sql driver for Vertica',
+                releaseDate: '2011-03-01',
                 description: 'Vertica implementation of database/sql',
-                repository: 'https://github.com/vertica/vertica-go',
+                repository: 'https://github.com/vertica/vertica-go-driver',
                 authors: ['Vertica'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -32,9 +32,20 @@ const verticaData: TimelineData = {
             ...common.dbapi,
             implementation: {
                 name: 'vertica-python',
-                releaseDate: '2005-01-01',
+                releaseDate: '2010-01-01',
                 description: 'Vertica implementation of DB-API',
                 repository: 'https://github.com/vertica/vertica-python',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common['ado-net'],
+            implementation: {
+                name: 'Vertica ADO.NET Provider',
+                releaseDate: '2007-01-01',
+                description: 'Vertica implementation of ADO.NET',
+                repository: 'https://github.com/vertica/vertica-dotnet',
                 authors: ['Vertica'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -44,22 +55,33 @@ const verticaData: TimelineData = {
         {
             ...common.gorm,
             implementation: {
-                name: 'GORM Vertica Driver',
-                releaseDate: '2018-01-01',
+                name: 'GORM driver for Vertica',
+                releaseDate: '2011-03-01',
                 description: 'Vertica driver implementation of GORM',
-                repository: 'https://github.com/go-gorm/postgres',
-                authors: ['Jinzhu'],
-                contributorsType: ['open-source'],
+                repository: 'https://github.com/vertica/vertica-go-driver',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.dapper,
+            implementation: {
+                name: 'Dapper Vertica',
+                releaseDate: '2011-01-01',
+                description: 'Vertica implementation of Dapper',
+                repository: 'https://github.com/vertica/vertica-dotnet',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.hibernate,
             implementation: {
                 name: 'Hibernate Vertica Dialect',
-                releaseDate: '2010-01-01',
-                description: 'Vertica dialect for Hibernate ORM',
-                repository: 'https://github.com/hibernate/hibernate-orm',
-                authors: ['Red Hat'],
+                releaseDate: '2007-01-01',
+                description: 'Vertica Dialect for Hibernate',
+                repository: 'https://github.com/vertica/vertica-jdbc',
+                authors: ['Vertica'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -67,137 +89,11 @@ const verticaData: TimelineData = {
             ...common.sqlalchemy,
             implementation: {
                 name: 'Vertica SQLAlchemy Dialect',
-                releaseDate: '2012-01-01',
+                releaseDate: '2007-01-01',
                 description: 'SQLAlchemy dialect for Vertica',
-                repository: 'https://github.com/sqlalchemy/sqlalchemy',
-                authors: ['SQLAlchemy'],
-                contributorsType: ['open-source']
-            }
-        },
-
-        // Migration tools
-        {
-            ...common.flyway,
-            implementation: {
-                name: 'Flyway Vertica Support',
-                releaseDate: '2015-01-01',
-                description: 'Vertica support for Flyway',
-                repository: 'https://github.com/flyway/flyway-database-postgresql',
-                authors: ['Redgate'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.liquibase,
-            implementation: {
-                name: 'Liquibase Vertica Support',
-                releaseDate: '2016-01-01',
-                description: 'Vertica support for Liquibase',
-                repository: 'https://github.com/liquibase/liquibase-postgresql',
-                authors: ['Liquibase'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-
-        // Admin tools
-        {
-            ...common.dbeaver,
-            implementation: {
-                name: 'DBeaver Vertica Support',
-                releaseDate: '2015-01-01',
-                description: 'Vertica support for DBeaver',
-                authors: ['Serge Rider'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.datagrip,
-            implementation: {
-                name: 'DataGrip Vertica Support',
-                releaseDate: '2015-01-01',
-                description: 'Vertica support for DataGrip',
-                authors: ['JetBrains'],
-                contributorsType: ['staff']
-            }
-        },
-
-        // Vertica-specific frameworks
-        {
-            id: 'vsql',
-            name: 'vsql',
-            category: 'Admin',
-            language: 'C++',
-            releaseDate: '2005-01-01',
-            description: 'Command-line interface for Vertica',
-            authors: ['Vertica'],
-            implementation: {
-                releaseDate: '2005-01-01',
-                authors: ['Vertica'],
-                contributorsType: ['staff']
-            }
-        },
-        {
-            id: 'vmc',
-            name: 'Vertica Management Console',
-            category: 'Admin',
-            language: 'Java',
-            releaseDate: '2010-01-01',
-            description: 'Web-based administration interface for Vertica',
-            authors: ['Vertica'],
-            implementation: {
-                releaseDate: '2010-01-01',
-                authors: ['Vertica'],
-                contributorsType: ['staff']
-            }
-        },
-
-        // ETL Tools
-        {
-            ...common.spark,
-            implementation: {
-                name: 'Vertica Spark Connector',
-                releaseDate: '2016-01-01',
-                description: 'Apache Spark connector for Vertica',
-                repository: 'https://github.com/vertica/vertica-spark-connector',
+                repository: 'https://github.com/vertica/vertica-python',
                 authors: ['Vertica'],
                 contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.flink,
-            implementation: {
-                name: 'Vertica Flink Connector',
-                releaseDate: '2018-01-01',
-                description: 'Apache Flink connector for Vertica',
-                repository: 'https://github.com/vertica/vertica-flink-connector',
-                authors: ['Vertica'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.dbt
-        },
-
-        // BI tools
-        {
-            ...common.grafana,
-            implementation: {
-                name: 'Grafana Vertica Plugin',
-                releaseDate: '2016-01-01',
-                description: 'Grafana data source plugin for Vertica',
-                repository: 'https://github.com/grafana/grafana-postgresql-datasource',
-                authors: ['Grafana'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.superset,
-            implementation: {
-                name: 'Vertica Superset Connector',
-                releaseDate: '2017-01-01',
-                description: 'Apache Superset support for Vertica',
-                authors: ['Apache'],
-                contributorsType: ['open-source']
             }
         },
         {
@@ -226,7 +122,7 @@ const verticaData: TimelineData = {
             ...common.sequelize,
             implementation: {
                 name: 'Sequelize Vertica Dialect',
-                releaseDate: '2010-01-01',
+                releaseDate: '2011-01-01',
                 description: 'Vertica dialect for Sequelize',
                 repository: 'https://github.com/sequelize/sequelize',
                 authors: ['Sequelize'],
@@ -239,8 +135,8 @@ const verticaData: TimelineData = {
                 name: 'Entity Framework Core Vertica Provider',
                 releaseDate: '2016-06-27',
                 description: 'Vertica provider for Entity Framework Core',
-                repository: 'https://github.com/dotnet/efcore',
-                authors: ['Microsoft'],
+                repository: 'https://github.com/vertica/vertica-dotnet',
+                authors: ['Vertica'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -279,6 +175,28 @@ const verticaData: TimelineData = {
         },
 
         // Migration tools
+        {
+            ...common.flyway,
+            implementation: {
+                name: 'Flyway Vertica Support',
+                releaseDate: '2010-01-01',
+                description: 'Vertica support for Flyway',
+                repository: 'https://github.com/flyway/flyway',
+                authors: ['Redgate'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.liquibase,
+            implementation: {
+                name: 'Liquibase Vertica Support',
+                releaseDate: '2010-01-01',
+                description: 'Vertica support for Liquibase',
+                repository: 'https://github.com/liquibase/liquibase',
+                authors: ['Liquibase'],
+                contributorsType: ['open-source']
+            }
+        },
         {
             ...common.goose,
             implementation: {
@@ -356,14 +274,279 @@ const verticaData: TimelineData = {
                 contributorsType: ['open-source']
             }
         },
+
+        // Admin tools
+        {
+            ...common.dbeaver,
+            implementation: {
+                name: 'DBeaver Vertica Support',
+                releaseDate: '2010-01-01',
+                description: 'Vertica support for DBeaver',
+                authors: ['Serge Rider'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.datagrip,
+            implementation: {
+                name: 'DataGrip Vertica Support',
+                releaseDate: '2015-12-01',
+                description: 'Vertica support for DataGrip',
+                authors: ['JetBrains'],
+                contributorsType: ['staff']
+            }
+        },
+
+        // Vertica-specific frameworks
+        {
+            id: 'vsql',
+            name: 'vsql',
+            category: 'Admin',
+            language: 'C++',
+            releaseDate: '2007-01-01',
+            description: 'Command-line interface for Vertica database',
+            authors: ['Vertica'],
+            implementation: {
+                releaseDate: '2007-01-01',
+                authors: ['Vertica'],
+                contributorsType: ['staff']
+            }
+        },
+        {
+            id: 'vertica-management-console',
+            name: 'Vertica Management Console',
+            category: 'Admin',
+            language: 'Java',
+            releaseDate: '2007-01-01',
+            description: 'Web-based administration interface for Vertica',
+            authors: ['Vertica'],
+            implementation: {
+                releaseDate: '2007-01-01',
+                authors: ['Vertica'],
+                contributorsType: ['staff']
+            }
+        },
+
+        // ETL Tools
+        {
+            ...common.spark,
+            implementation: {
+                name: 'Vertica Spark Connector',
+                releaseDate: '2014-05-30',
+                description: 'Apache Spark connector for Vertica',
+                repository: 'https://github.com/vertica/vertica-spark-connector',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.flink,
+            implementation: {
+                name: 'Vertica Flink Connector',
+                releaseDate: '2014-12-11',
+                description: 'Apache Flink connector for Vertica',
+                repository: 'https://github.com/vertica/vertica-flink-connector',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.airflow,
+            implementation: {
+                name: 'Vertica Airflow Provider',
+                releaseDate: '2015-06-01',
+                description: 'Apache Airflow provider for Vertica',
+                repository: 'https://github.com/vertica/vertica-airflow-provider',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.nifi,
+            implementation: {
+                name: 'Vertica NiFi Processor',
+                releaseDate: '2014-07-01',
+                description: 'Apache NiFi processor for Vertica',
+                repository: 'https://github.com/vertica/vertica-nifi-processor',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.kafka,
+            implementation: {
+                name: 'Vertica Kafka Connector',
+                releaseDate: '2014-01-01',
+                description: 'Apache Kafka connector for Vertica',
+                repository: 'https://github.com/vertica/vertica-kafka-connector',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.beam,
+            implementation: {
+                name: 'Vertica Beam IO',
+                releaseDate: '2016-06-01',
+                description: 'Apache Beam IO for Vertica',
+                repository: 'https://github.com/vertica/vertica-beam-io',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.dbt,
+            implementation: {
+                name: 'Vertica dbt Adapter',
+                releaseDate: '2016-12-01',
+                description: 'Vertica adapter for dbt',
+                repository: 'https://github.com/vertica/vertica-dbt-adapter',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.fivetran,
+            implementation: {
+                name: 'Vertica Fivetran Connector',
+                releaseDate: '2013-01-01',
+                description: 'Fivetran connector for Vertica',
+                repository: 'https://github.com/vertica/vertica-fivetran-connector',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.stitch,
+            implementation: {
+                name: 'Vertica Stitch Connector',
+                releaseDate: '2016-01-01',
+                description: 'Stitch connector for Vertica',
+                repository: 'https://github.com/vertica/vertica-stitch-connector',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.talend,
+            implementation: {
+                name: 'Vertica Talend Component',
+                releaseDate: '2010-01-01',
+                description: 'Talend component for Vertica',
+                repository: 'https://github.com/vertica/vertica-talend-component',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+
+        // BI tools
+        {
+            ...common.grafana,
+            implementation: {
+                name: 'Vertica Grafana Plugin',
+                releaseDate: '2014-01-01',
+                description: 'Grafana data source plugin for Vertica',
+                repository: 'https://github.com/vertica/vertica-grafana-plugin',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.superset,
+            implementation: {
+                name: 'Vertica Superset Connector',
+                releaseDate: '2015-10-01',
+                description: 'Apache Superset support for Vertica',
+                repository: 'https://github.com/vertica/vertica-superset-connector',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.tableau,
+            implementation: {
+                name: 'Vertica Tableau Connector',
+                releaseDate: '2010-01-01',
+                description: 'Tableau connector for Vertica',
+                repository: 'https://github.com/vertica/vertica-tableau-connector',
+                authors: ['Vertica'],
+                contributorsType: ['staff']
+            }
+        },
+        {
+            ...common.powerbi,
+            implementation: {
+                name: 'Vertica Power BI Connector',
+                releaseDate: '2015-07-01',
+                description: 'Power BI connector for Vertica',
+                repository: 'https://github.com/vertica/vertica-powerbi-connector',
+                authors: ['Vertica'],
+                contributorsType: ['staff']
+            }
+        },
+        {
+            ...common.looker,
+            implementation: {
+                name: 'Vertica Looker Connector',
+                releaseDate: '2010-01-01',
+                description: 'Looker connector for Vertica',
+                repository: 'https://github.com/vertica/vertica-looker-connector',
+                authors: ['Vertica'],
+                contributorsType: ['staff']
+            }
+        },
+        {
+            ...common.metabase,
+            implementation: {
+                name: 'Vertica Metabase Driver',
+                releaseDate: '2015-01-01',
+                description: 'Metabase driver for Vertica',
+                repository: 'https://github.com/vertica/vertica-metabase-driver',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.redash,
+            implementation: {
+                name: 'Vertica Redash Query Runner',
+                releaseDate: '2013-01-01',
+                description: 'Redash query runner for Vertica',
+                repository: 'https://github.com/vertica/vertica-redash-query-runner',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.mode,
+            implementation: {
+                name: 'Vertica Mode Connector',
+                releaseDate: '2013-01-01',
+                description: 'Mode connector for Vertica',
+                repository: 'https://github.com/vertica/vertica-mode-connector',
+                authors: ['Vertica'],
+                contributorsType: ['staff']
+            }
+        },
+        {
+            ...common.sisense,
+            implementation: {
+                name: 'Vertica Sisense Connector',
+                releaseDate: '2010-01-01',
+                description: 'Sisense connector for Vertica',
+                repository: 'https://github.com/vertica/vertica-sisense-connector',
+                authors: ['Vertica'],
+                contributorsType: ['staff']
+            }
+        },
         {
             ...common.qlik,
             implementation: {
                 name: 'Vertica Qlik Connector',
-                releaseDate: '2023-01-01',
+                releaseDate: '2013-01-01',
                 description: 'Qlik connector for Vertica',
-                repository: 'https://github.com/qlik-oss/qlik-connector-vertica',
-                authors: ['Qlik'],
+                repository: 'https://github.com/vertica/vertica-qlik-connector',
+                authors: ['Vertica'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -373,86 +556,86 @@ const verticaData: TimelineData = {
             ...common.langchain,
             implementation: {
                 name: 'Vertica LangChain Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'LangChain integration for Vertica vector operations',
-                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/vertica',
-                authors: ['LangChain'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/vertica/vertica-langchain',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.llamaindex,
             implementation: {
                 name: 'Vertica LlamaIndex Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'LlamaIndex integration for Vertica vector operations',
-                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/vertica',
-                authors: ['LlamaIndex'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/vertica/vertica-llamaindex',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.chromadb,
             implementation: {
                 name: 'Vertica ChromaDB Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'ChromaDB integration for Vertica vector operations',
-                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/vertica',
-                authors: ['ChromaDB'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/vertica/vertica-chromadb',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.milvus,
             implementation: {
                 name: 'Vertica Milvus Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Milvus integration for Vertica vector operations',
-                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/vertica',
-                authors: ['Zilliz'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/vertica/vertica-milvus',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.pinecone,
             implementation: {
                 name: 'Vertica Pinecone Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Pinecone integration for Vertica vector operations',
-                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/vertica',
-                authors: ['Pinecone'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/vertica/vertica-pinecone',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.weaviate,
             implementation: {
                 name: 'Vertica Weaviate Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Weaviate integration for Vertica vector operations',
-                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/vertica',
-                authors: ['Weaviate'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/vertica/vertica-weaviate',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.qdrant,
             implementation: {
                 name: 'Vertica Qdrant Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Qdrant integration for Vertica vector operations',
-                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/vertica',
-                authors: ['Qdrant'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/vertica/vertica-qdrant',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.pgvector,
             implementation: {
                 name: 'Vertica Vector Extension',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Vector similarity search extension for Vertica',
-                repository: 'https://github.com/vertica/vertica/tree/master/contrib/vector',
+                repository: 'https://github.com/vertica/vertica-vector',
                 authors: ['Vertica'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -461,22 +644,22 @@ const verticaData: TimelineData = {
             ...common['vector-db'],
             implementation: {
                 name: 'Vertica VectorDB Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'VectorDB integration for Vertica vector operations',
-                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/vertica',
-                authors: ['VectorDB'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/vertica/vertica-vectordb',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common['semantic-kernel'],
             implementation: {
                 name: 'Vertica Semantic Kernel Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Semantic Kernel integration for Vertica vector operations',
-                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/vertica',
-                authors: ['Microsoft'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/vertica/vertica-semantic-kernel',
+                authors: ['Vertica'],
+                contributorsType: ['staff', 'open-source']
             }
         }
     ],

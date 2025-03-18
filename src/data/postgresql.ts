@@ -33,7 +33,7 @@ const postgresqlData: TimelineData = {
             ...common.dbapi,
             implementation: {
                 name: 'psycopg2',
-                releaseDate: '1996-10-01',
+                releaseDate: '2001-01-01',
                 description: 'PostgreSQL implementation of DB-API',
                 repository: 'https://github.com/psycopg/psycopg2',
                 authors: ['Federico Di Gregorio'],
@@ -44,7 +44,7 @@ const postgresqlData: TimelineData = {
             ...common['ado-net'],
             implementation: {
                 name: 'Npgsql',
-                releaseDate: '2000-01-01',
+                releaseDate: '2002-01-01',
                 description: 'PostgreSQL implementation of ADO.NET',
                 repository: 'https://github.com/npgsql/npgsql',
                 authors: ['Npgsql Development Team'],
@@ -531,7 +531,7 @@ const postgresqlData: TimelineData = {
             ...common.qlik,
             implementation: {
                 name: 'PostgreSQL Qlik Connector',
-                releaseDate: '2023-01-01',
+                releaseDate: '2013-01-01',
                 description: 'Qlik connector for PostgreSQL',
                 repository: 'https://github.com/qlik-oss/qlik-connector-postgresql',
                 authors: ['Qlik'],
@@ -544,7 +544,7 @@ const postgresqlData: TimelineData = {
             ...common.langchain,
             implementation: {
                 name: 'PostgreSQL LangChain Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'LangChain integration for PostgreSQL with pgvector',
                 repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/postgres',
                 authors: ['LangChain'],
@@ -555,7 +555,7 @@ const postgresqlData: TimelineData = {
             ...common.llamaindex,
             implementation: {
                 name: 'PostgreSQL LlamaIndex Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'LlamaIndex integration for PostgreSQL with pgvector',
                 repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/postgres',
                 authors: ['LlamaIndex'],
@@ -566,7 +566,7 @@ const postgresqlData: TimelineData = {
             ...common.chromadb,
             implementation: {
                 name: 'PostgreSQL ChromaDB Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'ChromaDB integration for PostgreSQL with pgvector',
                 repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/postgres',
                 authors: ['ChromaDB'],
@@ -577,7 +577,7 @@ const postgresqlData: TimelineData = {
             ...common.milvus,
             implementation: {
                 name: 'PostgreSQL Milvus Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Milvus integration for PostgreSQL with pgvector',
                 repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/postgres',
                 authors: ['Zilliz'],
@@ -588,7 +588,7 @@ const postgresqlData: TimelineData = {
             ...common.pinecone,
             implementation: {
                 name: 'PostgreSQL Pinecone Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Pinecone integration for PostgreSQL with pgvector',
                 repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/postgres',
                 authors: ['Pinecone'],
@@ -599,7 +599,7 @@ const postgresqlData: TimelineData = {
             ...common.weaviate,
             implementation: {
                 name: 'PostgreSQL Weaviate Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Weaviate integration for PostgreSQL with pgvector',
                 repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/postgres',
                 authors: ['Weaviate'],
@@ -610,7 +610,7 @@ const postgresqlData: TimelineData = {
             ...common.qdrant,
             implementation: {
                 name: 'PostgreSQL Qdrant Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Qdrant integration for PostgreSQL with pgvector',
                 repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/postgres',
                 authors: ['Qdrant'],
@@ -632,7 +632,7 @@ const postgresqlData: TimelineData = {
             ...common['vector-db'],
             implementation: {
                 name: 'PostgreSQL VectorDB Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'VectorDB integration for PostgreSQL with pgvector',
                 repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/postgres',
                 authors: ['VectorDB'],
@@ -643,7 +643,7 @@ const postgresqlData: TimelineData = {
             ...common['semantic-kernel'],
             implementation: {
                 name: 'PostgreSQL Semantic Kernel Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Semantic Kernel integration for PostgreSQL with pgvector',
                 repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/postgres',
                 authors: ['Microsoft'],

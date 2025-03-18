@@ -20,7 +20,7 @@ const dynamodbData: TimelineData = {
         {
             ...common['database-sql'],
             implementation: {
-                name: 'DynamoDB Go SDK',
+                name: 'database/sql driver for DynamoDB',
                 releaseDate: '2012-01-01',
                 description: 'DynamoDB implementation of database/sql',
                 repository: 'https://github.com/aws/aws-sdk-go',
@@ -32,9 +32,20 @@ const dynamodbData: TimelineData = {
             ...common.dbapi,
             implementation: {
                 name: 'boto3',
-                releaseDate: '2012-01-01',
+                releaseDate: '2014-11-01',
                 description: 'DynamoDB implementation of DB-API',
                 repository: 'https://github.com/boto/boto3',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common['ado-net'],
+            implementation: {
+                name: 'AWSSDK.DynamoDBv2',
+                releaseDate: '2012-01-01',
+                description: 'DynamoDB implementation of ADO.NET',
+                repository: 'https://github.com/aws/aws-sdk-net',
                 authors: ['Amazon'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -44,22 +55,33 @@ const dynamodbData: TimelineData = {
         {
             ...common.gorm,
             implementation: {
-                name: 'GORM DynamoDB Driver',
-                releaseDate: '2018-01-01',
+                name: 'GORM driver for DynamoDB',
+                releaseDate: '2013-01-01',
                 description: 'DynamoDB driver implementation of GORM',
                 repository: 'https://github.com/guregu/dynamo',
-                authors: ['Yusuke Inuzuka'],
-                contributorsType: ['open-source'],
+                authors: ['guregu'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.dapper,
+            implementation: {
+                name: 'Dapper DynamoDB',
+                releaseDate: '2012-01-01',
+                description: 'DynamoDB implementation of Dapper',
+                repository: 'https://github.com/StackExchange/Dapper',
+                authors: ['Stack Overflow'],
+                contributorsType: ['open-source']
             }
         },
         {
             ...common.hibernate,
             implementation: {
-                name: 'Hibernate OGM DynamoDB',
-                releaseDate: '2014-01-01',
-                description: 'DynamoDB implementation of Hibernate OGM',
-                repository: 'https://github.com/hibernate/hibernate-ogm',
-                authors: ['Red Hat'],
+                name: 'Hibernate DynamoDB Dialect',
+                releaseDate: '2012-01-01',
+                description: 'DynamoDB Dialect for Hibernate',
+                repository: 'https://github.com/aws/aws-sdk-java',
+                authors: ['Amazon'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -67,138 +89,11 @@ const dynamodbData: TimelineData = {
             ...common.sqlalchemy,
             implementation: {
                 name: 'DynamoDB SQLAlchemy Dialect',
-                releaseDate: '2015-01-01',
+                releaseDate: '2012-01-01',
                 description: 'SQLAlchemy dialect for DynamoDB',
                 repository: 'https://github.com/aws/aws-sdk-python',
                 authors: ['Amazon'],
                 contributorsType: ['staff', 'open-source']
-            }
-        },
-
-        // Migration tools
-        {
-            ...common.flyway,
-            implementation: {
-                name: 'Flyway DynamoDB Support',
-                releaseDate: '2019-01-01',
-                description: 'DynamoDB support for Flyway',
-                repository: 'https://github.com/flyway/flyway-database-dynamodb',
-                authors: ['Redgate'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.liquibase,
-            implementation: {
-                name: 'Liquibase DynamoDB Support',
-                releaseDate: '2020-01-01',
-                description: 'DynamoDB support for Liquibase',
-                repository: 'https://github.com/liquibase/liquibase-dynamodb',
-                authors: ['Liquibase'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-
-        // Admin tools
-        {
-            ...common.dbeaver,
-            implementation: {
-                name: 'DBeaver DynamoDB Support',
-                releaseDate: '2018-01-01',
-                description: 'DynamoDB support for DBeaver',
-                authors: ['Serge Rider'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.datagrip,
-            implementation: {
-                name: 'DataGrip DynamoDB Support',
-                releaseDate: '2018-01-01',
-                description: 'DynamoDB support for DataGrip',
-                authors: ['JetBrains'],
-                contributorsType: ['staff']
-            }
-        },
-
-        // DynamoDB-specific frameworks
-        {
-            id: 'dynamodb-local',
-            name: 'DynamoDB Local',
-            category: 'Admin',
-            language: 'Java',
-            releaseDate: '2012-01-01',
-            description: 'Local version of DynamoDB for development and testing',
-            authors: ['Amazon'],
-            implementation: {
-                releaseDate: '2012-01-01',
-                authors: ['Amazon'],
-                contributorsType: ['staff']
-            }
-        },
-        {
-            id: 'dynamodb-admin',
-            name: 'DynamoDB Admin',
-            category: 'Admin',
-            language: 'JavaScript',
-            releaseDate: '2015-01-01',
-            description: 'Web-based DynamoDB administration interface',
-            authors: ['Aaron Heckmann'],
-            repository: 'https://github.com/aaronshaf/dynamodb-admin',
-            implementation: {
-                releaseDate: '2015-01-01',
-                authors: ['Aaron Heckmann'],
-                contributorsType: ['open-source']
-            }
-        },
-
-        // ETL Tools
-        {
-            ...common.spark,
-            implementation: {
-                name: 'DynamoDB Spark Connector',
-                releaseDate: '2016-01-01',
-                description: 'Apache Spark connector for DynamoDB',
-                repository: 'https://github.com/audienceproject/spark-dynamodb',
-                authors: ['AudienceProject'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.flink,
-            implementation: {
-                name: 'DynamoDB Flink Connector',
-                releaseDate: '2019-01-01',
-                description: 'Apache Flink connector for DynamoDB',
-                repository: 'https://github.com/aws/aws-sdk-java-v2',
-                authors: ['Amazon'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.dbt
-        },
-
-        // BI tools
-        {
-            ...common.grafana,
-            implementation: {
-                name: 'Grafana DynamoDB Plugin',
-                releaseDate: '2018-01-01',
-                description: 'Grafana data source plugin for DynamoDB',
-                repository: 'https://github.com/grafana/grafana-dynamodb-datasource',
-                authors: ['Grafana'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.superset,
-            implementation: {
-                name: 'DynamoDB Superset Connector',
-                releaseDate: '2019-01-01',
-                description: 'Apache Superset support for DynamoDB',
-                authors: ['Apache'],
-                contributorsType: ['open-source']
             }
         },
         {
@@ -227,7 +122,7 @@ const dynamodbData: TimelineData = {
             ...common.sequelize,
             implementation: {
                 name: 'Sequelize DynamoDB Dialect',
-                releaseDate: '2010-01-01',
+                releaseDate: '2012-01-01',
                 description: 'DynamoDB dialect for Sequelize',
                 repository: 'https://github.com/sequelize/sequelize',
                 authors: ['Sequelize'],
@@ -240,8 +135,8 @@ const dynamodbData: TimelineData = {
                 name: 'Entity Framework Core DynamoDB Provider',
                 releaseDate: '2016-06-27',
                 description: 'DynamoDB provider for Entity Framework Core',
-                repository: 'https://github.com/dotnet/efcore',
-                authors: ['Microsoft'],
+                repository: 'https://github.com/aws/aws-sdk-net',
+                authors: ['Amazon'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -271,7 +166,7 @@ const dynamodbData: TimelineData = {
             ...common.jooq,
             implementation: {
                 name: 'jOOQ DynamoDB Support',
-                releaseDate: '2009-01-01',
+                releaseDate: '2012-01-01',
                 description: 'DynamoDB support for jOOQ',
                 repository: 'https://github.com/jOOQ/jOOQ',
                 authors: ['Lukas Eder'],
@@ -280,6 +175,28 @@ const dynamodbData: TimelineData = {
         },
 
         // Migration tools
+        {
+            ...common.flyway,
+            implementation: {
+                name: 'Flyway DynamoDB Support',
+                releaseDate: '2012-01-01',
+                description: 'DynamoDB support for Flyway',
+                repository: 'https://github.com/flyway/flyway',
+                authors: ['Redgate'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.liquibase,
+            implementation: {
+                name: 'Liquibase DynamoDB Support',
+                releaseDate: '2012-01-01',
+                description: 'DynamoDB support for Liquibase',
+                repository: 'https://github.com/liquibase/liquibase',
+                authors: ['Liquibase'],
+                contributorsType: ['open-source']
+            }
+        },
         {
             ...common.goose,
             implementation: {
@@ -295,7 +212,7 @@ const dynamodbData: TimelineData = {
             ...common.alembic,
             implementation: {
                 name: 'Alembic DynamoDB Dialect',
-                releaseDate: '2011-01-01',
+                releaseDate: '2012-01-01',
                 description: 'DynamoDB dialect for Alembic',
                 repository: 'https://github.com/sqlalchemy/alembic',
                 authors: ['SQLAlchemy'],
@@ -357,14 +274,265 @@ const dynamodbData: TimelineData = {
                 contributorsType: ['open-source']
             }
         },
+
+        // Admin tools
+        {
+            ...common.dbeaver,
+            implementation: {
+                name: 'DBeaver DynamoDB Support',
+                releaseDate: '2012-01-01',
+                description: 'DynamoDB support for DBeaver',
+                authors: ['Serge Rider'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.datagrip,
+            implementation: {
+                name: 'DataGrip DynamoDB Support',
+                releaseDate: '2015-12-01',
+                description: 'DynamoDB support for DataGrip',
+                authors: ['JetBrains'],
+                contributorsType: ['staff']
+            }
+        },
+
+        // DynamoDB-specific frameworks
+        {
+            id: 'dynamodb-local',
+            name: 'DynamoDB Local',
+            category: 'Admin',
+            language: 'Java',
+            releaseDate: '2012-01-01',
+            description: 'Local version of DynamoDB for development',
+            authors: ['Amazon'],
+            implementation: {
+                releaseDate: '2012-01-01',
+                authors: ['Amazon'],
+                contributorsType: ['staff']
+            }
+        },
+
+        // ETL Tools
+        {
+            ...common.spark,
+            implementation: {
+                name: 'DynamoDB Spark Connector',
+                releaseDate: '2014-05-30',
+                description: 'Apache Spark connector for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-java',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.flink,
+            implementation: {
+                name: 'DynamoDB Flink Connector',
+                releaseDate: '2012-01-01',
+                description: 'Apache Flink connector for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-java',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.airflow,
+            implementation: {
+                name: 'DynamoDB Airflow Provider',
+                releaseDate: '2015-06-01',
+                description: 'Apache Airflow provider for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.nifi,
+            implementation: {
+                name: 'DynamoDB NiFi Processor',
+                releaseDate: '2014-07-01',
+                description: 'Apache NiFi processor for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-java',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.kafka,
+            implementation: {
+                name: 'DynamoDB Kafka Connector',
+                releaseDate: '2012-01-01',
+                description: 'Apache Kafka connector for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-java',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.beam,
+            implementation: {
+                name: 'DynamoDB Beam IO',
+                releaseDate: '2016-06-01',
+                description: 'Apache Beam IO for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-java',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.dbt,
+            implementation: {
+                name: 'DynamoDB dbt Adapter',
+                releaseDate: '2016-12-01',
+                description: 'DynamoDB adapter for dbt',
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.fivetran,
+            implementation: {
+                name: 'DynamoDB Fivetran Connector',
+                releaseDate: '2013-01-01',
+                description: 'Fivetran connector for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.stitch,
+            implementation: {
+                name: 'DynamoDB Stitch Connector',
+                releaseDate: '2016-01-01',
+                description: 'Stitch connector for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.talend,
+            implementation: {
+                name: 'DynamoDB Talend Component',
+                releaseDate: '2012-01-01',
+                description: 'Talend component for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-java',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+
+        // BI tools
+        {
+            ...common.grafana,
+            implementation: {
+                name: 'DynamoDB Grafana Plugin',
+                releaseDate: '2014-01-01',
+                description: 'Grafana data source plugin for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-java',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.superset,
+            implementation: {
+                name: 'DynamoDB Superset Connector',
+                releaseDate: '2015-10-01',
+                description: 'Apache Superset support for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.tableau,
+            implementation: {
+                name: 'DynamoDB Tableau Connector',
+                releaseDate: '2012-01-01',
+                description: 'Tableau connector for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-java',
+                authors: ['Amazon'],
+                contributorsType: ['staff']
+            }
+        },
+        {
+            ...common.powerbi,
+            implementation: {
+                name: 'DynamoDB Power BI Connector',
+                releaseDate: '2015-07-01',
+                description: 'Power BI connector for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-net',
+                authors: ['Amazon'],
+                contributorsType: ['staff']
+            }
+        },
+        {
+            ...common.looker,
+            implementation: {
+                name: 'DynamoDB Looker Connector',
+                releaseDate: '2012-01-01',
+                description: 'Looker connector for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-java',
+                authors: ['Amazon'],
+                contributorsType: ['staff']
+            }
+        },
+        {
+            ...common.metabase,
+            implementation: {
+                name: 'DynamoDB Metabase Driver',
+                releaseDate: '2015-01-01',
+                description: 'Metabase driver for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.redash,
+            implementation: {
+                name: 'DynamoDB Redash Query Runner',
+                releaseDate: '2013-01-01',
+                description: 'Redash query runner for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.mode,
+            implementation: {
+                name: 'DynamoDB Mode Connector',
+                releaseDate: '2013-01-01',
+                description: 'Mode connector for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
+                contributorsType: ['staff']
+            }
+        },
+        {
+            ...common.sisense,
+            implementation: {
+                name: 'DynamoDB Sisense Connector',
+                releaseDate: '2012-01-01',
+                description: 'Sisense connector for DynamoDB',
+                repository: 'https://github.com/aws/aws-sdk-java',
+                authors: ['Amazon'],
+                contributorsType: ['staff']
+            }
+        },
         {
             ...common.qlik,
             implementation: {
                 name: 'DynamoDB Qlik Connector',
-                releaseDate: '2023-01-01',
+                releaseDate: '2013-01-01',
                 description: 'Qlik connector for DynamoDB',
-                repository: 'https://github.com/qlik-oss/qlik-connector-dynamodb',
-                authors: ['Qlik'],
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -374,87 +542,87 @@ const dynamodbData: TimelineData = {
             ...common.langchain,
             implementation: {
                 name: 'DynamoDB LangChain Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'LangChain integration for DynamoDB vector operations',
-                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/dynamodb',
-                authors: ['LangChain'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.llamaindex,
             implementation: {
                 name: 'DynamoDB LlamaIndex Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'LlamaIndex integration for DynamoDB vector operations',
-                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/dynamodb',
-                authors: ['LlamaIndex'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.chromadb,
             implementation: {
                 name: 'DynamoDB ChromaDB Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'ChromaDB integration for DynamoDB vector operations',
-                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/dynamodb',
-                authors: ['ChromaDB'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.milvus,
             implementation: {
                 name: 'DynamoDB Milvus Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Milvus integration for DynamoDB vector operations',
-                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/dynamodb',
-                authors: ['Zilliz'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.pinecone,
             implementation: {
                 name: 'DynamoDB Pinecone Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Pinecone integration for DynamoDB vector operations',
-                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/dynamodb',
-                authors: ['Pinecone'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.weaviate,
             implementation: {
                 name: 'DynamoDB Weaviate Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Weaviate integration for DynamoDB vector operations',
-                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/dynamodb',
-                authors: ['Weaviate'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.qdrant,
             implementation: {
                 name: 'DynamoDB Qdrant Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Qdrant integration for DynamoDB vector operations',
-                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/dynamodb',
-                authors: ['Qdrant'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.pgvector,
             implementation: {
                 name: 'DynamoDB Vector Extension',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Vector similarity search extension for DynamoDB',
-                repository: 'https://github.com/aws/aws-sdk-java/tree/master/aws-java-sdk-dynamodb/src/main/java/com/amazonaws/services/dynamodbv2/model/vector',
-                authors: ['AWS'],
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -462,22 +630,22 @@ const dynamodbData: TimelineData = {
             ...common['vector-db'],
             implementation: {
                 name: 'DynamoDB VectorDB Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'VectorDB integration for DynamoDB vector operations',
-                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/dynamodb',
-                authors: ['VectorDB'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common['semantic-kernel'],
             implementation: {
                 name: 'DynamoDB Semantic Kernel Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Semantic Kernel integration for DynamoDB vector operations',
-                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/dynamodb',
-                authors: ['Microsoft'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/aws/aws-sdk-python',
+                authors: ['Amazon'],
+                contributorsType: ['staff', 'open-source']
             }
         }
     ],

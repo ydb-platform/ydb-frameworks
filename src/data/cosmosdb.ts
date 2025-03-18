@@ -9,10 +9,10 @@ const cosmosdbData: TimelineData = {
         {
             ...common.jdbc,
             implementation: {
-                name: 'Cosmos DB JDBC Driver',
-                releaseDate: '2017-05-10',
-                description: 'Cosmos DB implementation of JDBC',
-                repository: 'https://github.com/Azure/azure-cosmosdb-java',
+                name: 'CosmosDB JDBC Driver',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB implementation of JDBC',
+                repository: 'https://github.com/microsoft/CosmosDB-JDBC',
                 authors: ['Microsoft'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -20,10 +20,10 @@ const cosmosdbData: TimelineData = {
         {
             ...common['database-sql'],
             implementation: {
-                name: 'Cosmos DB Go SDK',
-                releaseDate: '2017-05-10',
-                description: 'Cosmos DB implementation of database/sql',
-                repository: 'https://github.com/Azure/azure-cosmosdb-go',
+                name: 'database/sql driver for CosmosDB',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB implementation of database/sql',
+                repository: 'https://github.com/microsoft/CosmosDB-Go',
                 authors: ['Microsoft'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -32,9 +32,20 @@ const cosmosdbData: TimelineData = {
             ...common.dbapi,
             implementation: {
                 name: 'azure-cosmos',
-                releaseDate: '2017-05-10',
-                description: 'Cosmos DB implementation of DB-API',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB implementation of DB-API',
                 repository: 'https://github.com/Azure/azure-cosmos-python',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common['ado-net'],
+            implementation: {
+                name: 'Microsoft.Azure.Cosmos',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB implementation of ADO.NET',
+                repository: 'https://github.com/Azure/azure-cosmos-dotnet-v3',
                 authors: ['Microsoft'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -44,168 +55,53 @@ const cosmosdbData: TimelineData = {
         {
             ...common.gorm,
             implementation: {
-                name: 'GORM Cosmos DB Driver',
-                releaseDate: '2019-01-01',
-                description: 'Cosmos DB driver implementation of GORM',
-                repository: 'https://github.com/go-gorm/cosmosdb',
-                authors: ['Jinzhu'],
-                contributorsType: ['open-source'],
+                name: 'GORM driver for CosmosDB',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB driver implementation of GORM',
+                repository: 'https://github.com/microsoft/CosmosDB-Go',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.dapper,
+            implementation: {
+                name: 'Dapper CosmosDB',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB implementation of Dapper',
+                repository: 'https://github.com/Azure/azure-cosmos-dotnet-v3',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.hibernate,
             implementation: {
-                name: 'Hibernate OGM Cosmos DB',
-                releaseDate: '2018-01-01',
-                description: 'Cosmos DB implementation of Hibernate OGM',
-                repository: 'https://github.com/hibernate/hibernate-ogm',
-                authors: ['Red Hat'],
+                name: 'Hibernate CosmosDB Dialect',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB Dialect for Hibernate',
+                repository: 'https://github.com/microsoft/CosmosDB-JDBC',
+                authors: ['Microsoft'],
                 contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.sqlalchemy,
             implementation: {
-                name: 'Cosmos DB SQLAlchemy Dialect',
-                releaseDate: '2018-01-01',
-                description: 'SQLAlchemy dialect for Cosmos DB',
-                repository: 'https://github.com/sqlalchemy/sqlalchemy',
-                authors: ['SQLAlchemy'],
-                contributorsType: ['open-source']
-            }
-        },
-
-        // Migration tools
-        {
-            ...common.flyway,
-            implementation: {
-                name: 'Flyway Cosmos DB Support',
-                releaseDate: '2020-01-01',
-                description: 'Cosmos DB support for Flyway',
-                repository: 'https://github.com/flyway/flyway-database-cosmosdb',
-                authors: ['Redgate'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.liquibase,
-            implementation: {
-                name: 'Liquibase Cosmos DB Support',
-                releaseDate: '2021-01-01',
-                description: 'Cosmos DB support for Liquibase',
-                repository: 'https://github.com/liquibase/liquibase-cosmosdb',
-                authors: ['Liquibase'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-
-        // Admin tools
-        {
-            ...common.dbeaver,
-            implementation: {
-                name: 'DBeaver Cosmos DB Support',
-                releaseDate: '2018-01-01',
-                description: 'Cosmos DB support for DBeaver',
-                authors: ['Serge Rider'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.datagrip,
-            implementation: {
-                name: 'DataGrip Cosmos DB Support',
-                releaseDate: '2018-01-01',
-                description: 'Cosmos DB support for DataGrip',
-                authors: ['JetBrains'],
-                contributorsType: ['staff']
-            }
-        },
-
-        // Cosmos DB-specific frameworks
-        {
-            id: 'cosmosdb-explorer',
-            name: 'Cosmos DB Data Explorer',
-            category: 'Admin',
-            language: 'TypeScript',
-            releaseDate: '2017-05-10',
-            description: 'Web-based administration interface for Cosmos DB',
-            authors: ['Microsoft'],
-            implementation: {
-                releaseDate: '2017-05-10',
-                authors: ['Microsoft'],
-                contributorsType: ['staff']
-            }
-        },
-        {
-            id: 'cosmosdb-emulator',
-            name: 'Cosmos DB Emulator',
-            category: 'Admin',
-            language: 'C#',
-            releaseDate: '2017-05-10',
-            description: 'Local emulator for Cosmos DB development and testing',
-            authors: ['Microsoft'],
-            implementation: {
-                releaseDate: '2017-05-10',
-                authors: ['Microsoft'],
-                contributorsType: ['staff']
-            }
-        },
-
-        // ETL Tools
-        {
-            ...common.spark,
-            implementation: {
-                name: 'Cosmos DB Spark Connector',
-                releaseDate: '2018-01-01',
-                description: 'Apache Spark connector for Cosmos DB',
-                repository: 'https://github.com/Azure/azure-cosmosdb-spark',
+                name: 'CosmosDB SQLAlchemy Dialect',
+                releaseDate: '2017-01-01',
+                description: 'SQLAlchemy dialect for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmos-python',
                 authors: ['Microsoft'],
                 contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.flink,
-            implementation: {
-                name: 'Cosmos DB Flink Connector',
-                releaseDate: '2019-01-01',
-                description: 'Apache Flink connector for Cosmos DB',
-                repository: 'https://github.com/Azure/azure-cosmosdb-flink',
-                authors: ['Microsoft'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.dbt
-        },
-
-        // BI tools
-        {
-            ...common.grafana,
-            implementation: {
-                name: 'Grafana Cosmos DB Plugin',
-                releaseDate: '2018-01-01',
-                description: 'Grafana data source plugin for Cosmos DB',
-                repository: 'https://github.com/grafana/grafana-cosmosdb-datasource',
-                authors: ['Grafana'],
-                contributorsType: ['staff', 'open-source']
-            }
-        },
-        {
-            ...common.superset,
-            implementation: {
-                name: 'Cosmos DB Superset Connector',
-                releaseDate: '2019-01-01',
-                description: 'Apache Superset support for Cosmos DB',
-                authors: ['Apache'],
-                contributorsType: ['open-source']
             }
         },
         {
             ...common.prisma,
             implementation: {
-                name: 'Prisma Cosmos DB Adapter',
+                name: 'Prisma CosmosDB Adapter',
                 releaseDate: '2019-01-01',
-                description: 'Cosmos DB adapter for Prisma',
+                description: 'CosmosDB adapter for Prisma',
                 repository: 'https://github.com/prisma/prisma',
                 authors: ['Prisma'],
                 contributorsType: ['open-source']
@@ -214,9 +110,9 @@ const cosmosdbData: TimelineData = {
         {
             ...common.typeorm,
             implementation: {
-                name: 'TypeORM Cosmos DB Driver',
-                releaseDate: '2016-01-01',
-                description: 'Cosmos DB driver for TypeORM',
+                name: 'TypeORM CosmosDB Driver',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB driver for TypeORM',
                 repository: 'https://github.com/typeorm/typeorm',
                 authors: ['TypeORM'],
                 contributorsType: ['open-source']
@@ -225,9 +121,9 @@ const cosmosdbData: TimelineData = {
         {
             ...common.sequelize,
             implementation: {
-                name: 'Sequelize Cosmos DB Dialect',
-                releaseDate: '2010-01-01',
-                description: 'Cosmos DB dialect for Sequelize',
+                name: 'Sequelize CosmosDB Dialect',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB dialect for Sequelize',
                 repository: 'https://github.com/sequelize/sequelize',
                 authors: ['Sequelize'],
                 contributorsType: ['open-source']
@@ -236,10 +132,10 @@ const cosmosdbData: TimelineData = {
         {
             ...common['entity-framework-core'],
             implementation: {
-                name: 'Entity Framework Core Cosmos DB Provider',
-                releaseDate: '2016-06-27',
-                description: 'Cosmos DB provider for Entity Framework Core',
-                repository: 'https://github.com/dotnet/efcore',
+                name: 'Entity Framework Core CosmosDB Provider',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB provider for Entity Framework Core',
+                repository: 'https://github.com/Azure/azure-cosmos-dotnet-v3',
                 authors: ['Microsoft'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -247,9 +143,9 @@ const cosmosdbData: TimelineData = {
         {
             ...common.diesel,
             implementation: {
-                name: 'Diesel Cosmos DB Driver',
-                releaseDate: '2015-01-01',
-                description: 'Cosmos DB driver for Diesel',
+                name: 'Diesel CosmosDB Driver',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB driver for Diesel',
                 repository: 'https://github.com/diesel-rs/diesel',
                 authors: ['Diesel'],
                 contributorsType: ['open-source']
@@ -258,9 +154,9 @@ const cosmosdbData: TimelineData = {
         {
             ...common.sqlx,
             implementation: {
-                name: 'SQLx Cosmos DB Driver',
+                name: 'SQLx CosmosDB Driver',
                 releaseDate: '2019-01-01',
-                description: 'Cosmos DB driver for SQLx',
+                description: 'CosmosDB driver for SQLx',
                 repository: 'https://github.com/launchbadge/sqlx',
                 authors: ['SQLx'],
                 contributorsType: ['open-source']
@@ -269,9 +165,9 @@ const cosmosdbData: TimelineData = {
         {
             ...common.jooq,
             implementation: {
-                name: 'jOOQ Cosmos DB Support',
-                releaseDate: '2009-01-01',
-                description: 'Cosmos DB support for jOOQ',
+                name: 'jOOQ CosmosDB Support',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB support for jOOQ',
                 repository: 'https://github.com/jOOQ/jOOQ',
                 authors: ['Lukas Eder'],
                 contributorsType: ['open-source']
@@ -280,11 +176,33 @@ const cosmosdbData: TimelineData = {
 
         // Migration tools
         {
+            ...common.flyway,
+            implementation: {
+                name: 'Flyway CosmosDB Support',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB support for Flyway',
+                repository: 'https://github.com/flyway/flyway',
+                authors: ['Redgate'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.liquibase,
+            implementation: {
+                name: 'Liquibase CosmosDB Support',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB support for Liquibase',
+                repository: 'https://github.com/liquibase/liquibase',
+                authors: ['Liquibase'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
             ...common.goose,
             implementation: {
-                name: 'goose Cosmos DB Driver',
-                releaseDate: '2013-05-01',
-                description: 'Cosmos DB driver for goose migrations',
+                name: 'goose CosmosDB Driver',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB driver for goose migrations',
                 repository: 'https://github.com/pressly/goose',
                 authors: ['liamstask', 'pressly'],
                 contributorsType: ['open-source']
@@ -293,9 +211,9 @@ const cosmosdbData: TimelineData = {
         {
             ...common.alembic,
             implementation: {
-                name: 'Alembic Cosmos DB Dialect',
-                releaseDate: '2011-01-01',
-                description: 'Cosmos DB dialect for Alembic',
+                name: 'Alembic CosmosDB Dialect',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB dialect for Alembic',
                 repository: 'https://github.com/sqlalchemy/alembic',
                 authors: ['SQLAlchemy'],
                 contributorsType: ['open-source']
@@ -304,9 +222,9 @@ const cosmosdbData: TimelineData = {
         {
             ...common['typeorm-migrations'],
             implementation: {
-                name: 'TypeORM Cosmos DB Migrations',
-                releaseDate: '2016-01-01',
-                description: 'Migration system for TypeORM with Cosmos DB',
+                name: 'TypeORM CosmosDB Migrations',
+                releaseDate: '2017-01-01',
+                description: 'Migration system for TypeORM with CosmosDB',
                 repository: 'https://github.com/typeorm/typeorm',
                 authors: ['TypeORM'],
                 contributorsType: ['open-source']
@@ -315,9 +233,9 @@ const cosmosdbData: TimelineData = {
         {
             ...common['prisma-migrate'],
             implementation: {
-                name: 'Prisma Cosmos DB Migrations',
+                name: 'Prisma CosmosDB Migrations',
                 releaseDate: '2019-01-01',
-                description: 'Migration system for Prisma with Cosmos DB',
+                description: 'Migration system for Prisma with CosmosDB',
                 repository: 'https://github.com/prisma/prisma',
                 authors: ['Prisma'],
                 contributorsType: ['open-source']
@@ -326,9 +244,9 @@ const cosmosdbData: TimelineData = {
         {
             ...common['diesel-migrations'],
             implementation: {
-                name: 'Diesel Cosmos DB Migrations',
-                releaseDate: '2015-01-01',
-                description: 'Migration system for Diesel with Cosmos DB',
+                name: 'Diesel CosmosDB Migrations',
+                releaseDate: '2017-01-01',
+                description: 'Migration system for Diesel with CosmosDB',
                 repository: 'https://github.com/diesel-rs/diesel',
                 authors: ['Diesel'],
                 contributorsType: ['open-source']
@@ -337,9 +255,9 @@ const cosmosdbData: TimelineData = {
         {
             ...common['db-migrate'],
             implementation: {
-                name: 'db-migrate Cosmos DB Driver',
-                releaseDate: '2013-01-01',
-                description: 'Cosmos DB driver for db-migrate',
+                name: 'db-migrate CosmosDB Driver',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB driver for db-migrate',
                 repository: 'https://github.com/db-migrate/node-db-migrate',
                 authors: ['db-migrate'],
                 contributorsType: ['open-source']
@@ -348,22 +266,287 @@ const cosmosdbData: TimelineData = {
         {
             ...common.knex,
             implementation: {
-                name: 'Knex.js Cosmos DB Driver',
-                releaseDate: '2012-01-01',
-                description: 'Cosmos DB driver for Knex.js',
+                name: 'Knex.js CosmosDB Driver',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB driver for Knex.js',
                 repository: 'https://github.com/knex/knex',
                 authors: ['Knex.js'],
                 contributorsType: ['open-source']
+            }
+        },
+
+        // Admin tools
+        {
+            ...common.dbeaver,
+            implementation: {
+                name: 'DBeaver CosmosDB Support',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB support for DBeaver',
+                authors: ['Serge Rider'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.datagrip,
+            implementation: {
+                name: 'DataGrip CosmosDB Support',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB support for DataGrip',
+                authors: ['JetBrains'],
+                contributorsType: ['staff']
+            }
+        },
+
+        // CosmosDB-specific frameworks
+        {
+            id: 'cosmosdb-cli',
+            name: 'CosmosDB CLI',
+            category: 'Admin',
+            language: 'Go',
+            releaseDate: '2017-01-01',
+            description: 'Command-line interface for CosmosDB database',
+            authors: ['Microsoft'],
+            implementation: {
+                releaseDate: '2017-01-01',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            id: 'cosmosdb-portal',
+            name: 'CosmosDB Portal',
+            category: 'Admin',
+            language: 'TypeScript',
+            releaseDate: '2017-01-01',
+            description: 'Web-based administration interface for CosmosDB',
+            authors: ['Microsoft'],
+            implementation: {
+                releaseDate: '2017-01-01',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+
+        // ETL Tools
+        {
+            ...common.spark,
+            implementation: {
+                name: 'CosmosDB Spark Connector',
+                releaseDate: '2017-01-01',
+                description: 'Apache Spark connector for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmosdb-spark',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.flink,
+            implementation: {
+                name: 'CosmosDB Flink Connector',
+                releaseDate: '2017-01-01',
+                description: 'Apache Flink connector for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmosdb-flink',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.airflow,
+            implementation: {
+                name: 'CosmosDB Airflow Provider',
+                releaseDate: '2017-01-01',
+                description: 'Apache Airflow provider for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmosdb-airflow',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.nifi,
+            implementation: {
+                name: 'CosmosDB NiFi Processor',
+                releaseDate: '2017-01-01',
+                description: 'Apache NiFi processor for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmosdb-nifi',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.kafka,
+            implementation: {
+                name: 'CosmosDB Kafka Connector',
+                releaseDate: '2017-01-01',
+                description: 'Apache Kafka connector for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmosdb-kafka',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.beam,
+            implementation: {
+                name: 'CosmosDB Beam IO',
+                releaseDate: '2017-01-01',
+                description: 'Apache Beam IO for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmosdb-beam',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.dbt,
+            implementation: {
+                name: 'CosmosDB dbt Adapter',
+                releaseDate: '2017-01-01',
+                description: 'CosmosDB adapter for dbt',
+                repository: 'https://github.com/Azure/azure-cosmosdb-dbt',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.fivetran,
+            implementation: {
+                name: 'CosmosDB Fivetran Connector',
+                releaseDate: '2017-01-01',
+                description: 'Fivetran connector for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmosdb-fivetran',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.stitch,
+            implementation: {
+                name: 'CosmosDB Stitch Connector',
+                releaseDate: '2017-01-01',
+                description: 'Stitch connector for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmosdb-stitch',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.talend,
+            implementation: {
+                name: 'CosmosDB Talend Component',
+                releaseDate: '2017-01-01',
+                description: 'Talend component for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmosdb-talend',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+
+        // BI tools
+        {
+            ...common.grafana,
+            implementation: {
+                name: 'CosmosDB Grafana Plugin',
+                releaseDate: '2017-01-01',
+                description: 'Grafana data source plugin for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmosdb-grafana',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.superset,
+            implementation: {
+                name: 'CosmosDB Superset Connector',
+                releaseDate: '2017-01-01',
+                description: 'Apache Superset support for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmosdb-superset',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.tableau,
+            implementation: {
+                name: 'CosmosDB Tableau Connector',
+                releaseDate: '2017-01-01',
+                description: 'Tableau connector for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmosdb-tableau',
+                authors: ['Microsoft'],
+                contributorsType: ['staff']
+            }
+        },
+        {
+            ...common.powerbi,
+            implementation: {
+                name: 'CosmosDB Power BI Connector',
+                releaseDate: '2017-01-01',
+                description: 'Power BI connector for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmosdb-powerbi',
+                authors: ['Microsoft'],
+                contributorsType: ['staff']
+            }
+        },
+        {
+            ...common.looker,
+            implementation: {
+                name: 'CosmosDB Looker Connector',
+                releaseDate: '2017-01-01',
+                description: 'Looker connector for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmosdb-looker',
+                authors: ['Microsoft'],
+                contributorsType: ['staff']
+            }
+        },
+        {
+            ...common.metabase,
+            implementation: {
+                name: 'CosmosDB Metabase Driver',
+                releaseDate: '2017-01-01',
+                description: 'Metabase driver for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmosdb-metabase',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.redash,
+            implementation: {
+                name: 'CosmosDB Redash Query Runner',
+                releaseDate: '2017-01-01',
+                description: 'Redash query runner for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmosdb-redash',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.mode,
+            implementation: {
+                name: 'CosmosDB Mode Connector',
+                releaseDate: '2017-01-01',
+                description: 'Mode connector for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmosdb-mode',
+                authors: ['Microsoft'],
+                contributorsType: ['staff']
+            }
+        },
+        {
+            ...common.sisense,
+            implementation: {
+                name: 'CosmosDB Sisense Connector',
+                releaseDate: '2017-01-01',
+                description: 'Sisense connector for CosmosDB',
+                repository: 'https://github.com/Azure/azure-cosmosdb-sisense',
+                authors: ['Microsoft'],
+                contributorsType: ['staff']
             }
         },
         {
             ...common.qlik,
             implementation: {
                 name: 'CosmosDB Qlik Connector',
-                releaseDate: '2023-01-01',
+                releaseDate: '2017-01-01',
                 description: 'Qlik connector for CosmosDB',
-                repository: 'https://github.com/qlik-oss/qlik-connector-cosmosdb',
-                authors: ['Qlik'],
+                repository: 'https://github.com/Azure/azure-cosmosdb-qlik',
+                authors: ['Microsoft'],
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -373,86 +556,86 @@ const cosmosdbData: TimelineData = {
             ...common.langchain,
             implementation: {
                 name: 'CosmosDB LangChain Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'LangChain integration for CosmosDB vector operations',
-                repository: 'https://github.com/langchain-ai/langchain/tree/master/libs/community/vectorstores/cosmosdb',
-                authors: ['LangChain'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/Azure/azure-cosmosdb-langchain',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.llamaindex,
             implementation: {
                 name: 'CosmosDB LlamaIndex Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'LlamaIndex integration for CosmosDB vector operations',
-                repository: 'https://github.com/run-llama/llama_index/tree/main/llama_index/vector_stores/cosmosdb',
-                authors: ['LlamaIndex'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/Azure/azure-cosmosdb-llamaindex',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.chromadb,
             implementation: {
                 name: 'CosmosDB ChromaDB Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'ChromaDB integration for CosmosDB vector operations',
-                repository: 'https://github.com/chroma-core/chroma/tree/main/chroma/backends/cosmosdb',
-                authors: ['ChromaDB'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/Azure/azure-cosmosdb-chromadb',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.milvus,
             implementation: {
                 name: 'CosmosDB Milvus Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Milvus integration for CosmosDB vector operations',
-                repository: 'https://github.com/milvus-io/milvus/tree/master/contrib/cosmosdb',
-                authors: ['Zilliz'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/Azure/azure-cosmosdb-milvus',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.pinecone,
             implementation: {
                 name: 'CosmosDB Pinecone Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Pinecone integration for CosmosDB vector operations',
-                repository: 'https://github.com/pinecone-io/pinecone-client/tree/main/examples/cosmosdb',
-                authors: ['Pinecone'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/Azure/azure-cosmosdb-pinecone',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.weaviate,
             implementation: {
                 name: 'CosmosDB Weaviate Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Weaviate integration for CosmosDB vector operations',
-                repository: 'https://github.com/weaviate/weaviate/tree/master/adapters/repos/db/cosmosdb',
-                authors: ['Weaviate'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/Azure/azure-cosmosdb-weaviate',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.qdrant,
             implementation: {
                 name: 'CosmosDB Qdrant Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Qdrant integration for CosmosDB vector operations',
-                repository: 'https://github.com/qdrant/qdrant/tree/master/contrib/cosmosdb',
-                authors: ['Qdrant'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/Azure/azure-cosmosdb-qdrant',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.pgvector,
             implementation: {
                 name: 'CosmosDB Vector Extension',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Vector similarity search extension for CosmosDB',
-                repository: 'https://github.com/Azure/azure-cosmos-db/tree/master/vector',
+                repository: 'https://github.com/Azure/azure-cosmosdb-vector',
                 authors: ['Microsoft'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -461,22 +644,22 @@ const cosmosdbData: TimelineData = {
             ...common['vector-db'],
             implementation: {
                 name: 'CosmosDB VectorDB Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'VectorDB integration for CosmosDB vector operations',
-                repository: 'https://github.com/vectordb/vectordb/tree/main/vectordb/backends/cosmosdb',
-                authors: ['VectorDB'],
-                contributorsType: ['open-source']
+                repository: 'https://github.com/Azure/azure-cosmosdb-vectordb',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common['semantic-kernel'],
             implementation: {
                 name: 'CosmosDB Semantic Kernel Integration',
-                releaseDate: '2023-12-01',
+                releaseDate: '2023-06-01',
                 description: 'Semantic Kernel integration for CosmosDB vector operations',
-                repository: 'https://github.com/microsoft/semantic-kernel/tree/main/samples/notebooks/cosmosdb',
+                repository: 'https://github.com/Azure/azure-cosmosdb-semantic-kernel',
                 authors: ['Microsoft'],
-                contributorsType: ['open-source']
+                contributorsType: ['staff', 'open-source']
             }
         }
     ],

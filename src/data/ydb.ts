@@ -423,7 +423,7 @@ const ydbData: TimelineData = {
             ...common.superset,
             implementation: {
                 name: 'YDB Superset Connector',
-                releaseDate: '2024-12-01',
+                releaseDate: '2023-12-01',
                 description: 'Apache Superset support for YDB over SQLAlchemy',
                 authors: ['Yandex'],
                 contributorsType: ['staff', 'open-source']
