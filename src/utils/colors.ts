@@ -24,6 +24,9 @@ export const languageColors: Record<ProgrammingLanguage, string> = {
     'XML': '#807219',
     'Dart': '#5ea584',
     'JSON': '#6F5D95',
+    'Erlang': '#B83998',
+    'Elixir': '#6B4893',
+    'Haskell': '#5d4f85',
 };
 
 /**

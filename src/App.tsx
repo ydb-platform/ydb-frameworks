@@ -13,7 +13,7 @@ import './styles/layout.css';
 
 const App: React.FC = () => {
     const { getQueryParam, setQueryParam } = useQueryParams();
-    const [selectedDb, setSelectedDb] = useState<Database>((getQueryParam('db') as Database) || 'postgresql');
+    const [selectedDb, setSelectedDb] = useState<Database>((getQueryParam('db') as Database) || 'ydb');
     const [selectedCategories, setSelectedCategories] = useState<FrameworkCategory[]>([]);
     const [selectedLanguages, setSelectedLanguages] = useState<ProgrammingLanguage[]>([]);
     const [selectedContributorsTypes, setSelectedContributorsTypes] = useState<ContributorsType[]>([]);
@@ -104,8 +104,8 @@ const App: React.FC = () => {
         // Проверка по типу контрибьюторов
         // Если типы контрибьюторов не указаны или список выбранных типов пуст, пропускаем фильтрацию
         let contributorMatch = true;
-        if (framework.contributorsType && selectedContributorsTypes.length > 0) {
-            contributorMatch = framework.contributorsType.some(type =>
+        if (framework.implementation?.contributorsType && selectedContributorsTypes.length > 0) {
+            contributorMatch = framework.implementation?.contributorsType.some(type =>
                 selectedContributorsTypes.includes(type)
             );
         }

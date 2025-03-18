@@ -25,19 +25,24 @@
 
 .frameworkLine {
     position: absolute;
-    height: 0.16em;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 2px;
-    cursor: pointer;
-    transition: height 0.2s ease, transform 0.2s ease;
+    height: 2px;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+}
+
+.frameworkLine.active {
+    background-color: var(--framework-color);
+}
+
+.frameworkLine.inactive {
+    border-top: 2px dashed var(--framework-color);
+    background-color: transparent;
 }
 
 .frameworkLine:hover {
     height: 0.5em;
     transform: translateY(-50%);
 }
-
 
 .releasePoint {
     left: 0;
@@ -69,7 +74,7 @@
 
 .arrowEnd {
     position: absolute;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -60%);
 }
 
 .releasePoint, .supportPoint, .endPoint {

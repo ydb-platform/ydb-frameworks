@@ -1,20 +1,6 @@
 // src/data/types.ts
 export type Database =
-    | 'postgresql'
-    | 'mysql'
-    | 'mongodb'
-    | 'ydb'
-    | 'cassandra'
-    | 'oracle'
-    | 'spanner'
-    | 'yugabyte'
-    | 'cockroach'
-    | 'tidb'
-    | 'cosmosdb'
-    | 'dynamodb'
-    | 'sqlite3'
-    | 'firebase'
-    | 'db2';
+    | 'ydb';
 
 export type FrameworkCategory =
     | 'ORM'
@@ -51,12 +37,16 @@ export type ProgrammingLanguage =
     | 'Dart'
     | 'SQL'
     | 'XML'
-    | 'JSON';
-
+    | 'JSON'
+    | 'Erlang'
+    | 'Elixir'
+    | 'Haskell';
+    
 export type ContributorsType =
     | 'open-source'
     | 'student'
-    | 'staff';
+    | 'staff'
+    | 'freelance';
 
 export interface Framework {
     id: string;
@@ -64,15 +54,21 @@ export interface Framework {
     category: FrameworkCategory;
     language: ProgrammingLanguage;
     releaseDate: string; // ISO date string
-    dbSupportDate?: string; // ISO date string, if different from releaseDate
-    endSupportDate?: string; // ISO date string, optional
     description: string;
     authors?: string[];
     version?: string;
     repository?: string;
     website?: string;
-    dbImplementationName?: string; // Название конкретной реализации для выбранной БД
-    contributorsType?: ContributorsType[]; // Новое поле - тип контрибьюторов
+    // Информация о реализации для конкретной БД
+    implementation?: {
+        name?: string; // Название конкретной реализации (например, "Hibernate YDB Dialect")
+        description?: string; // Описание реализации
+        releaseDate?: string; // ISO date string
+        repository?: string; // Репозиторий реализации
+        version?: string;
+        authors?: string[]; // Авторы реализации
+        contributorsType?: ContributorsType[]; // Тип контрибьюторов реализации
+    };
 }
 
 export interface Dependency {

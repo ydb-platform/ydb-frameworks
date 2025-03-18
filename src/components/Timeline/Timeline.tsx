@@ -48,6 +48,7 @@ const Timeline: React.FC<TimelineProps> = ({frameworks, dependencies, selectedDb
     const [tooltips, setTooltips] = useState<{
         framework: Framework;
         position: { x: number; y: number };
+        tooltipType: 'frameworkLine' | 'dbSupport' | 'endSupport';
     } | null>(null);
 
     // Добавляем состояние для выделенного фреймворка
@@ -132,13 +133,12 @@ const Timeline: React.FC<TimelineProps> = ({frameworks, dependencies, selectedDb
     }, [frameworksByCategory]);
 
     // Функция для отображения тултипа
-    const showTooltip = (framework: Framework, position: { x: number; y: number }) => {
-        setTooltips({framework, position});
-    };
-
-    // Функция для скрытия тултипа
-    const hideTooltip = () => {
-        setTooltips(null);
+    const showTooltip = (
+        framework: Framework,
+        position: { x: number; y: number },
+        tooltipType: 'frameworkLine' | 'dbSupport' | 'endSupport'
+    ) => {
+        setTooltips({ framework, position, tooltipType });
     };
 
     // Функция для обработки клика по фреймворку
@@ -213,7 +213,7 @@ const Timeline: React.FC<TimelineProps> = ({frameworks, dependencies, selectedDb
                                             width={timelineWidth}
                                             selectedDb={selectedDb}
                                             onTooltipShow={showTooltip}
-                                            onTooltipHide={hideTooltip}
+                                            onTooltipHide={() => setTooltips(null)}
                                             isHighlighted={
                                                 highlightedFramework === framework.id || 
                                                 (showDependencies && relatedFrameworks.has(framework.id))
@@ -263,6 +263,7 @@ const Timeline: React.FC<TimelineProps> = ({frameworks, dependencies, selectedDb
                         framework={tooltips.framework}
                         position={tooltips.position}
                         db={selectedDb}
+                        tooltipType={tooltips.tooltipType}
                     />
                 </div>
             )}

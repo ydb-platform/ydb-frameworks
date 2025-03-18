@@ -1,6 +1,6 @@
 // src/hooks/useTimelineData.ts
 import { useMemo } from 'react';
-import { Database, Framework, FrameworkCategory, ProgrammingLanguage, Dependency, ContributorsType } from '../data/types';
+import { Database, FrameworkCategory, ProgrammingLanguage, ContributorsType } from '../data/types';
 import databaseData from '../data/index';
 
 export const useTimelineData = (selectedDb: Database) => {
@@ -24,7 +24,7 @@ export const useTimelineData = (selectedDb: Database) => {
 
         // Extract unique contributor types from frameworks
         const contributorsTypes = Array.from(
-            new Set(data.frameworks.flatMap(f => f.contributorsType || []))
+            new Set(data.frameworks.flatMap(f => f.implementation?.contributorsType || []))
         ) as ContributorsType[];
 
         // List of available databases

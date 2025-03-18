@@ -8,25 +8,29 @@ interface TimelineTooltipProps {
     framework: Framework;
     position: { x: number; y: number };
     db: Database;
+    tooltipType?: 'frameworkLine' | 'dbSupport' | 'endSupport';
 }
 
-const TimelineTooltip: React.FC<TimelineTooltipProps> = ({framework, position, db}) => {
+const TimelineTooltip: React.FC<TimelineTooltipProps> = ({framework, position, db, tooltipType}) => {
     const frameworkReleaseDate = parseDate(framework.releaseDate);
-    const dbSupportDate = framework.dbSupportDate ? parseDate(framework.dbSupportDate) : frameworkReleaseDate;
-    const endSupportDate = framework.endSupportDate ? parseDate(framework.endSupportDate) : null;
+    const dbSupportDate = framework.implementation?.releaseDate ? parseDate(framework.implementation?.releaseDate) : frameworkReleaseDate;
 
-    // Смещаем подсказку вниз и вправо от курсора, чтобы она не перекрывала элемент
+    // Смещаем подсказку вниз и вправо от курсора
     const tooltipStyle = {
-        top: `${position.y + 20}px`, // Смещаем ниже курсора
-        left: `${position.x + 15}px`, // Смещаем правее курсора
-        boxShadow: '0 3px 14px rgba(0, 0, 0, 0.25)', // Усиливаем тень для лучшего выделения
+        top: `${position.y + 20}px`,
+        left: `${position.x + 15}px`,
+        boxShadow: '0 3px 14px rgba(0, 0, 0, 0.25)',
         backgroundColor: 'var(--tooltip-bg)',
-        backdropFilter: 'blur(2px)', // Добавляем эффект размытия фона (работает не во всех браузерах)
+        backdropFilter: 'blur(2px)',
     };
+
+    // Определяем, показывать ли информацию о базовом фреймворке или о реализации для БД
+    const showimplementation = framework.implementation && framework.implementation?.releaseDate && tooltipType === 'dbSupport';
+    const dbImpl = framework.implementation;
 
     return (
         <div className={styles.tooltip} style={tooltipStyle}>
-            <h3>{framework.name}</h3>
+            <h3>{showimplementation && dbImpl ? dbImpl.name : framework.name}</h3>
 
             <div className={styles.tooltipDetails}>
                 <div className={styles.tooltipRow}>
@@ -39,47 +43,52 @@ const TimelineTooltip: React.FC<TimelineTooltipProps> = ({framework, position, d
                     <span>{framework.language}</span>
                 </div>
 
-                <div className={styles.tooltipRow}>
-                    <span className={styles.tooltipLabel}>Initial Release:</span>
-                    <span>{formatDate(frameworkReleaseDate)}</span>
-                </div>
+                {!showimplementation && (
+                    <div className={styles.tooltipRow}>
+                        <span className={styles.tooltipLabel}>Initial Release:</span>
+                        <span>{formatDate(frameworkReleaseDate)}</span>
+                    </div>
+                )}
 
-                {framework.dbSupportDate && (
+                {showimplementation && framework.implementation?.releaseDate && (
                     <div className={styles.tooltipRow}>
                         <span className={styles.tooltipLabel}>{db} Support:</span>
                         <span>{formatDate(dbSupportDate)}</span>
                     </div>
                 )}
 
-                {framework.dbImplementationName && (
+                {showimplementation && dbImpl?.authors && dbImpl.authors.length > 0 && (
                     <div className={styles.tooltipRow}>
-                        <span className={styles.tooltipLabel}>Implementation:</span>
-                        <span>{framework.dbImplementationName}</span>
+                        <span className={styles.tooltipLabel}>Authors:</span>
+                        <span>{dbImpl.authors.join(', ')}</span>
                     </div>
                 )}
 
-                {framework.version && (
-                    <div className={styles.tooltipRow}>
-                        <span className={styles.tooltipLabel}>Version:</span>
-                        <span>{framework.version}</span>
-                    </div>
-                )}
-
-                {endSupportDate && (
-                    <div className={styles.tooltipRow}>
-                        <span className={styles.tooltipLabel}>End of Support:</span>
-                        <span>{formatDate(endSupportDate)}</span>
-                    </div>
-                )}
-
-                {framework.authors && framework.authors.length > 0 && (
+                {!showimplementation && framework.authors && framework.authors.length > 0 && (
                     <div className={styles.tooltipRow}>
                         <span className={styles.tooltipLabel}>Authors:</span>
                         <span>{framework.authors.join(', ')}</span>
                     </div>
                 )}
 
-                {framework.repository && (
+                {showimplementation && dbImpl?.repository && (
+                    <div className={styles.tooltipRow}>
+                        <span className={styles.tooltipLabel}>Repository:</span>
+                        <span>
+                            <a 
+                                href={dbImpl.repository} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className={styles.tooltipLink}
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                {dbImpl.repository.replace(/^https?:\/\/(www\.)?/, '')}
+                            </a>
+                        </span>
+                    </div>
+                )}
+
+                {!showimplementation && framework.repository && (
                     <div className={styles.tooltipRow}>
                         <span className={styles.tooltipLabel}>Repository:</span>
                         <span>
@@ -96,11 +105,36 @@ const TimelineTooltip: React.FC<TimelineTooltipProps> = ({framework, position, d
                     </div>
                 )}
 
-                {framework.contributorsType && framework.contributorsType.length > 0 && (
+                {showimplementation && dbImpl?.contributorsType && dbImpl.contributorsType.length > 0 && (
                     <div className={styles.tooltipRow}>
                         <span className={styles.tooltipLabel}>Contributors:</span>
                         <span>
-                          {framework.contributorsType.map(type => {
+                          {dbImpl.contributorsType.map(type => {
+                              let label = '';
+                              switch (type) {
+                                  case 'open-source':
+                                      label = 'Open Source';
+                                      break;
+                                  case 'student':
+                                      label = 'Students';
+                                      break;
+                                  case 'staff':
+                                      label = 'Staff';
+                                      break;
+                                  default:
+                                      label = type;
+                              }
+                              return label;
+                          }).join(', ')}
+                        </span>
+                    </div>
+                )}
+
+                {!showimplementation && framework.implementation?.contributorsType && framework.implementation?.contributorsType.length > 0 && (
+                    <div className={styles.tooltipRow}>
+                        <span className={styles.tooltipLabel}>Contributors:</span>
+                        <span>
+                          {framework.implementation?.contributorsType?.map(type => {
                               let label = '';
                               switch (type) {
                                   case 'open-source':
@@ -122,7 +156,7 @@ const TimelineTooltip: React.FC<TimelineTooltipProps> = ({framework, position, d
                 )}
 
                 <div className={styles.tooltipDescription}>
-                    {framework.description}
+                    {showimplementation && dbImpl ? dbImpl.description : framework.description}
                 </div>
             </div>
         </div>

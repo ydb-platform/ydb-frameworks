@@ -2,7 +2,7 @@
 import React from 'react';
 import { Framework, Database } from '../../data/types';
 import { getPositionForDate, parseDate } from '../../utils/dateUtils';
-import { languageColors, getColorWithOpacity } from '../../utils/colors';
+import { languageColors } from '../../utils/colors';
 import styles from './TimelineFramework.module.css';
 
 interface TimelineFrameworkProps {
@@ -11,73 +11,70 @@ interface TimelineFrameworkProps {
     endDate: Date;
     width: number;
     selectedDb: Database;
-    onTooltipShow: (framework: Framework, position: { x: number; y: number }) => void;
+    onTooltipShow: (framework: Framework, position: { x: number; y: number }, tooltipType: 'frameworkLine' | 'dbSupport' | 'endSupport') => void;
     onTooltipHide: () => void;
     isHighlighted?: boolean;
     onClick?: (frameworkId: string) => void;
 }
 
 const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
-                                                                 framework,
-                                                                 startDate,
-                                                                 endDate,
-                                                                 width,
-                                                                 selectedDb,
-                                                                 onTooltipShow,
-                                                                 onTooltipHide,
-                                                                 isHighlighted = false,
-                                                                 onClick
-                                                             }) => {
-    const now = new Date();
+    framework,
+    startDate,
+    endDate,
+    width,
+    onTooltipShow,
+    onTooltipHide,
+    isHighlighted = false,
+    onClick
+}) => {
     const frameworkReleaseDate = parseDate(framework.releaseDate);
-    const dbSupportDate = framework.dbSupportDate ? parseDate(framework.dbSupportDate) : frameworkReleaseDate;
-    const endSupportDate = framework.endSupportDate ? parseDate(framework.endSupportDate) : now;
+    
+    // Если есть implementation и есть releaseDate - используем его, иначе используем дату релиза фреймворка
+    const dbSupportDate = framework.implementation?.releaseDate 
+        ? parseDate(framework.implementation.releaseDate) 
+        : frameworkReleaseDate;
 
     const releasePosition = getPositionForDate(frameworkReleaseDate, startDate, endDate, width);
     const dbSupportPosition = getPositionForDate(dbSupportDate, startDate, endDate, width);
-    const endSupportPosition = getPositionForDate(endSupportDate, startDate, endDate, width);
-    const nowPosition = getPositionForDate(now, startDate, endDate, width);
+    
+    // Используем endDate вместо now для расчета конца линии
+    const endPosition = getPositionForDate(endDate, startDate, endDate, width);
 
     // Оценка ширины стрелочки (примерно 15px)
     const arrowWidth = 15;
 
-    // Рассчитываем скорректированную позицию для конца цветной линии,
-    // учитывая ширину стрелочки "продолжается в будущее"
-    const adjustedNowPosition = nowPosition - arrowWidth;
+    // Рассчитываем скорректированную позицию для конца цветной линии
+    const adjustedEndPosition = endPosition - arrowWidth;
 
-    const isDbSpecific = !framework.dbSupportDate; // Если нет dbSupportDate, то фреймворк специфичен для выбранной БД
+    const hasimplementation = !!framework.implementation;
+    const hasDbSupportDate = !!framework.implementation?.releaseDate;
 
-    const handleMouseEnter = (event: React.MouseEvent) => {
+    const handleMouseEnter = (event: React.MouseEvent, tooltipType: 'frameworkLine' | 'dbSupport' | 'endSupport') => {
         onTooltipShow(framework, {
             x: event.clientX,
             y: event.clientY
-        });
+        }, tooltipType);
     };
 
     const handleMouseLeave = () => {
         onTooltipHide();
     };
 
-    const handleMouseMove = (event: React.MouseEvent) => {
+    const handleMouseMove = (event: React.MouseEvent, tooltipType: 'frameworkLine' | 'dbSupport' | 'endSupport') => {
         onTooltipShow(framework, {
             x: event.clientX,
             y: event.clientY
-        });
+        }, tooltipType);
     };
 
     const color = languageColors[framework.language];
-
-    // Определяем, продолжается ли поддержка в настоящее время
-    const isOngoing = !framework.endSupportDate;
 
     // Определяем классы для элементов на основе статуса подсветки и наличия обработчика клика
     const frameworkLabelClass = `${styles.frameworkLabel} ${isHighlighted ? styles.highlighted : ''} ${onClick ? styles.clickable : ''}`;
     const frameworkRowClass = `${styles.frameworkRow} ${isHighlighted ? styles.highlightedLabel : ''} ${onClick ? styles.clickable : ''}`;
     const frameworkLineClass = `${styles.frameworkLine} ${isHighlighted ? styles.highlightedLine : ''}`;
-    const releasePointClass = `${styles.releasePoint} releasePoint ${isHighlighted ? styles.highlightedPoint : ''}`;
     const supportPointClass = `${styles.supportPoint} supportPoint ${isHighlighted ? styles.highlightedPoint : ''}`;
     const endPointClass = `${styles.endPoint} endPoint ${isHighlighted ? styles.highlightedPoint : ''}`;
-    const arrowEndClass = `${styles.arrowEnd} ${isHighlighted ? styles.highlightedArrow : ''}`;
 
     // Обработчик клика по фреймворку
     const handleClick = () => {
@@ -96,80 +93,69 @@ const TimelineFramework: React.FC<TimelineFrameworkProps> = ({
                 {framework.name}
             </div>
             <div className={styles.frameworkTimeline} style={{ width: `${width}px` }}>
-                {/* Gray line for framework existence before DB support */}
-                {!isDbSpecific && (
+                {/* Пунктирная линия до момента поддержки */}
+                {hasimplementation && hasDbSupportDate && (
                     <div
                         className={frameworkLineClass}
                         style={{
                             left: `${releasePosition}px`,
                             width: `${dbSupportPosition - releasePosition}px`,
-                            border: '2px dashed var(--gray-line)'
+                            borderTop: `2px dashed ${color}`,
+                            backgroundColor: 'transparent'
                         }}
-                        onMouseEnter={handleMouseEnter}
+                        onMouseEnter={(e) => handleMouseEnter(e, 'frameworkLine')}
                         onMouseLeave={handleMouseLeave}
-                        onMouseMove={handleMouseMove}
+                        onMouseMove={(e) => handleMouseMove(e, 'frameworkLine')}
                         data-tooltip-type="frameworkLine"
-                    >
-                        <div
-                            className={releasePointClass}
-                            style={{ backgroundColor: getColorWithOpacity(color, 0.5) }}
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
-                            onMouseMove={handleMouseMove}
-                            data-tooltip-type="release"
-                        ></div>
-                    </div>
+                    />
                 )}
 
-                {/* Colored line for active DB support */}
+                {/* Цветная линия после момента поддержки или пунктирная, если нет поддержки */}
                 <div
                     className={frameworkLineClass}
                     style={{
-                        left: `${isDbSpecific ? releasePosition : dbSupportPosition}px`,
-                        width: isOngoing
-                            ? `${adjustedNowPosition - (isDbSpecific ? releasePosition : dbSupportPosition)}px` // До позиции now - ширина стрелки
-                            : `${endSupportPosition - (isDbSpecific ? releasePosition : dbSupportPosition)}px`, // До конца поддержки
-                        backgroundColor: color
+                        left: hasimplementation && hasDbSupportDate ? `${dbSupportPosition}px` : `${releasePosition}px`,
+                        width: hasimplementation && hasDbSupportDate 
+                            ? `${adjustedEndPosition - dbSupportPosition}px`
+                            : `${adjustedEndPosition - releasePosition}px`,
+                        backgroundColor: hasimplementation && hasDbSupportDate ? color : 'transparent',
+                        borderTop: (!hasimplementation || !hasDbSupportDate) ? `2px dashed ${color}` : 'none'
                     }}
-                    onMouseEnter={handleMouseEnter}
+                    onMouseEnter={(e) => handleMouseEnter(e, 'dbSupport')}
                     onMouseLeave={handleMouseLeave}
-                    onMouseMove={handleMouseMove}
-                    data-tooltip-type="frameworkLine"
+                    onMouseMove={(e) => handleMouseMove(e, 'dbSupport')}
+                    data-tooltip-type="dbSupport"
                 >
-                    {/* Точка поддержки выбранной БД */}
-                    <div
-                        className={supportPointClass}
-                        style={{
-                            backgroundColor: color,
-                            left: '0px'
-                        }}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                        onMouseMove={handleMouseMove}
-                        data-tooltip-type="dbSupport"
-                    ></div>
+                    {/* Точка начала поддержки */}
+                    {hasimplementation && hasDbSupportDate && (
+                        <div
+                            className={supportPointClass}
+                            style={{
+                                backgroundColor: color,
+                                left: '0px',
+                                display: 'block'
+                            }}
+                            onMouseEnter={(e) => handleMouseEnter(e, 'dbSupport')}
+                            onMouseLeave={handleMouseLeave}
+                            onMouseMove={(e) => handleMouseMove(e, 'dbSupport')}
+                            data-tooltip-type="dbSupport"
+                        />
+                    )}
 
-                    {/* Support end point or arrow for ongoing support */}
-                    {!isOngoing ? (
+                    {/* Точка конца или стрелка для продолжающейся поддержки */}
+                    {hasimplementation && hasDbSupportDate && (
                         <div
                             className={endPointClass}
                             style={{
                                 right: '0px',
-                                backgroundColor: color
+                                backgroundColor: color,
+                                display: 'block'
                             }}
-                            onMouseEnter={handleMouseEnter}
+                            onMouseEnter={(e) => handleMouseEnter(e, 'endSupport')}
                             onMouseLeave={handleMouseLeave}
-                            onMouseMove={handleMouseMove}
+                            onMouseMove={(e) => handleMouseMove(e, 'endSupport')}
                             data-tooltip-type="endSupport"
-                        ></div>
-                    ) : (
-                        <div
-                            className={arrowEndClass}
-                            style={{
-                                right: '-15px',
-                                color: color
-                            }}
-                        >»</div>
+                        />
                     )}
                 </div>
             </div>

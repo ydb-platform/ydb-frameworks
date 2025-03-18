@@ -20,14 +20,16 @@ const ContributorsFilter: React.FC<ContributorsFilterProps> = ({
     const typeLabels: Record<ContributorsType, string> = {
         'open-source': 'Open Source Contributors',
         'student': 'Student Contributors',
-        'staff': 'Staff Contributors'
+        'staff': 'Staff Contributors',
+        'freelance': 'Freelance Contributors'
     };
 
     // Словарь с цветами для типов
     const typeColors: Record<ContributorsType, string> = {
         'open-source': '#4CAF50', // Зеленый
         'student': '#2196F3',    // Синий
-        'staff': '#FF9800'       // Оранжевый
+        'staff': '#FF9800',       // Оранжевый
+        'freelance': '#FFEB3B'    // Желтый
     };
 
     // Проверяем, выбраны ли все типы
