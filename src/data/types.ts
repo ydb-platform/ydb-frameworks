@@ -3,19 +3,19 @@ export type Database =
     | 'ydb';
 
 export type FrameworkCategory =
-    | 'ORM'
-    | 'Migration'
+    | 'Standard API'
     | 'Driver'
-    | 'Standard'  // Категория для стандартов API
+    | 'Migration'
+    | 'ORM'
+    | 'Admin'
     | 'ETL'
     | 'BI'
+    | 'Logging'
     | 'Visualization'
-    | 'Admin'
     | 'Query Builder'
     | 'Connection Pool'
     | 'Server-side feature'
     | 'Apps with abstract storage'
-    | 'Logging'
     | 'Message broker';
 
 export type ProgrammingLanguage =

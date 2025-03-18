@@ -10,7 +10,7 @@ const ydbData: TimelineData = {
         {
             id: 'jdbc',
             name: 'JDBC',
-            category: 'Standard',
+            category: 'Standard API',
             language: 'Java',
             releaseDate: '1997-02-19',
             description: 'Java Database Connectivity API',
@@ -27,7 +27,7 @@ const ydbData: TimelineData = {
         {
             id: 'database-sql',
             name: 'database/sql',
-            category: 'Standard',
+            category: 'Standard API',
             language: 'Go',
             releaseDate: '2011-03-01',
             description: 'Go standard database interface',
@@ -44,7 +44,7 @@ const ydbData: TimelineData = {
         {
             id: 'dbapi',
             name: 'DB-API',
-            category: 'Standard',
+            category: 'Standard API',
             language: 'Python',
             releaseDate: '1996-10-01',
             description: 'Python Database API Specification (PEP 249)',
@@ -61,7 +61,7 @@ const ydbData: TimelineData = {
         {
             id: 'ado-net',
             name: 'ADO.NET',
-            category: 'Standard',
+            category: 'Standard API',
             language: 'C#',
             releaseDate: '2000-01-01',
             description: 'Microsoft ADO.NET data provider',
@@ -87,6 +87,7 @@ const ydbData: TimelineData = {
             repository: 'https://github.com/ydb-platform/ydb-cpp-sdk',
             authors: ['Yandex'],
             implementation: {
+                releaseDate: '2018-11-15',
                 contributorsType: ['staff', 'open-source'],
             }
         },
@@ -100,6 +101,7 @@ const ydbData: TimelineData = {
             authors: ['Yandex'],
             repository: 'https://github.com/ydb-platform/ydb-go-sdk',
             implementation: {
+                releaseDate: '2018-12-01',
                 contributorsType: ['staff', 'open-source'],
             }
         },
@@ -113,6 +115,7 @@ const ydbData: TimelineData = {
             authors: ['Yandex'],
             repository: 'https://github.com/ydb-platform/ydb-python-sdk',
             implementation: {
+                releaseDate: '2019-02-01',
                 contributorsType: ['staff', 'open-source'],
             }
         },
@@ -126,6 +129,7 @@ const ydbData: TimelineData = {
             authors: ['Yandex'],
             repository: 'https://github.com/ydb-platform/ydb-java-sdk',
             implementation: {
+                releaseDate: '2019-03-15',
                 contributorsType: ['staff', 'open-source'],
             }
         },
@@ -139,6 +143,7 @@ const ydbData: TimelineData = {
             authors: ['Yandex'],
             repository: 'https://github.com/ydb-platform/ydb-rust-sdk',
             implementation: {
+                releaseDate: '2021-11-01',
                 contributorsType: ['staff', 'student', 'open-source'],
             }
         },
@@ -152,6 +157,7 @@ const ydbData: TimelineData = {
             authors: ['Yandex'],
             repository: 'https://github.com/ydb-platform/ydb-nodejs-sdk',
             implementation: {
+                releaseDate: '2020-09-01',
                 contributorsType: ['staff', 'open-source'],
             }
         },
@@ -165,6 +171,7 @@ const ydbData: TimelineData = {
             authors: ['Yandex'],
             repository: 'https://github.com/ydb-platform/ydb-dotnet-sdk',
             implementation: {
+                releaseDate: '2022-07-01',
                 contributorsType: ['staff', 'open-source'],
             }
         },
@@ -178,6 +185,7 @@ const ydbData: TimelineData = {
             authors: ['Yandex'],
             repository: 'https://github.com/ydb-platform/ydb-php-sdk',
             implementation: {
+                releaseDate: '2022-02-01',
                 contributorsType: ['freelance', 'open-source'],
             }
         },
@@ -193,12 +201,12 @@ const ydbData: TimelineData = {
             authors: ['Redgate'],
             repository: 'https://github.com/flyway/flyway',
             implementation: {
-                name: 'Flyway YDB Support',
-                releaseDate: '2023-08-01',
-                description: 'YDB support in Flyway migrations',
-                repository: 'https://github.com/ydb-platform/ydb-jdbc-driver',
+                name: 'Flyway YDB Dialect',
+                releaseDate: '2023-09-01',
+                description: 'YDB Dialect for Flyway',
+                repository: 'https://github.com/ydb-platform/ydb-java-dialects',
                 authors: ['Yandex'],
-                contributorsType: ['staff']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
@@ -211,10 +219,10 @@ const ydbData: TimelineData = {
             authors: ['Liquibase'],
             repository: 'https://github.com/liquibase/liquibase',
             implementation: {
-                name: 'Liquibase YDB Extension',
+                name: 'Liquibase YDB Dialect',
                 releaseDate: '2023-09-01',
-                description: 'Liquibase extension for YDB schema migrations',
-                repository: 'https://github.com/ydb-platform/liquibase-ydb',
+                description: 'YDB Dialect for Liquibase',
+                repository: 'https://github.com/ydb-platform/ydb-java-dialects',
                 authors: ['Yandex'],
                 contributorsType: ['staff', 'open-source']
             }
@@ -286,7 +294,15 @@ const ydbData: TimelineData = {
             releaseDate: '2011-01-01',
             description: 'A simple object mapper for .NET',
             authors: ['Stack Overflow'],
-            repository: 'https://github.com/StackExchange/Dapper'
+            repository: 'https://github.com/StackExchange/Dapper',
+            implementation: {
+                name: 'Dapper YDB',
+                releaseDate: '2023-01-01',
+                description: 'YDB implementation of Dapper',
+                repository: 'https://github.com/ydb-platform/ydb-dotnet-sdk',
+                authors: ['Yandex'],
+                contributorsType: ['staff'],
+            }
         },
         {
             id: 'yoj',
@@ -330,6 +346,24 @@ const ydbData: TimelineData = {
                 contributorsType: ['staff', 'open-source']
             }
         },
+        {
+            id: 'hibernate',
+            name: 'Hibernate',
+            category: 'ORM',
+            language: 'Java',
+            releaseDate: '2001-12-01',
+            description: 'Object-relational mapping (ORM) tool for the Java programming language',
+            authors: ['Gavin King', 'Red Hat'],
+            repository: 'https://github.com/hibernate/hibernate-orm',
+            implementation: {
+                name: 'Hibernate YDB Dialect',
+                releaseDate: '2023-09-01',
+                description: 'YDB Dialect for Hibernate ORM',
+                repository: 'https://github.com/ydb-platform/ydb-java-dialects',
+                authors: ['Yandex'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
 
         // Admin tools
         {
@@ -342,12 +376,7 @@ const ydbData: TimelineData = {
             authors: ['Serge Rider'],
             repository: 'https://github.com/dbeaver/dbeaver',
             implementation: {
-                name: 'DBeaver YDB Support',
-                releaseDate: '2020-06-15',
-                description: 'YDB support in DBeaver',
-                repository: 'https://github.com/dbeaver/dbeaver',
-                authors: ['Yandex'],
-                contributorsType: ['staff', 'open-source']
+                releaseDate: '2020-04-01',
             }
         },
         {
@@ -360,12 +389,7 @@ const ydbData: TimelineData = {
             authors: ['JetBrains'],
             repository: 'https://github.com/JetBrains/intellij-community',
             implementation: {
-                name: 'DataGrip YDB Support',
-                description: 'YDB support in JetBrains DataGrip',
-                repository: 'https://github.com/ydb-platform/ydb-jdbc-driver',
-                releaseDate: '2022-04-01',
-                authors: ['JetBrains', 'Yandex'],
-                contributorsType: ['staff', 'open-source']
+                releaseDate: '2020-04-01',
             }
         },
         {
@@ -377,6 +401,7 @@ const ydbData: TimelineData = {
             description: 'Command-line interface for YDB database',
             authors: ['Yandex'],
             implementation: {
+                releaseDate: '2019-08-01',
                 contributorsType: ['staff', 'open-source']
             }
         },
@@ -389,6 +414,7 @@ const ydbData: TimelineData = {
             description: 'Web-based administration interface for YDB',
             authors: ['Yandex'],
             implementation: {
+                releaseDate: '2019-10-01',
                 contributorsType: ['staff', 'open-source']
             }
         },

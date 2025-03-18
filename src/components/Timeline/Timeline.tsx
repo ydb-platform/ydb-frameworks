@@ -11,7 +11,7 @@ import styles from './Timeline.module.css';
 // Определяем порядок категорий сверху вниз
 const categoryOrder: FrameworkCategory[] = [
     'Server-side feature',
-    'Standard',
+    'Standard API',
     'Driver',
     'ORM',
     'Migration',
