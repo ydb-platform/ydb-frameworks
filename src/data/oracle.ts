@@ -1,197 +1,140 @@
 import { TimelineData } from './types';
+import { common } from './common';
 
 const oracleData: TimelineData = {
     database: 'oracle',
     displayName: 'Oracle',
     frameworks: [
-        // Server-side features
-        // Стандарты API
+        // Standard APIs
         {
-            id: 'jdbc',
-            name: 'JDBC Oracle',
-            category: 'Standard API',
-            language: 'Java',
-            releaseDate: '1997-02-19',
-            description: 'Oracle JDBC Driver',
-            authors: ['Oracle'],
+            ...common.jdbc,
             implementation: {
-                name: 'Oracle JDBC Driver',
+                name: 'JDBC Oracle',
                 releaseDate: '1997-02-19',
-                description: 'Official JDBC driver for Oracle',
-                repository: 'https://github.com/oracle/db-sample-schemas',
+                description: 'Oracle implementation of JDBC',
+                repository: 'https://github.com/oracle/oracle-db-examples',
+                authors: ['Oracle'],
+                contributorsType: ['staff']
+            }
+        },
+        {
+            ...common['database-sql'],
+            implementation: {
+                name: 'database/sql driver for Oracle',
+                releaseDate: '2011-03-01',
+                description: 'Oracle implementation of database/sql',
+                repository: 'https://github.com/godror/godror',
+                authors: ['Tamás Gulácsi'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.dbapi,
+            implementation: {
+                name: 'cx_Oracle',
+                releaseDate: '1996-10-01',
+                description: 'Oracle implementation of DB-API',
+                repository: 'https://github.com/oracle/python-cx_Oracle',
                 authors: ['Oracle'],
                 contributorsType: ['staff', 'open-source']
             }
         },
         {
-            id: 'database-sql',
-            name: 'database/sql Oracle',
-            category: 'Standard API',
-            language: 'Go',
-            releaseDate: '2011-03-01',
-            description: 'Go Oracle driver for database/sql',
-            authors: ['Go Team'],
+            ...common['ado-net'],
             implementation: {
-                name: 'go-ora',
-                releaseDate: '2011-03-01',
-                description: 'Oracle driver for Go database/sql',
-                repository: 'https://github.com/sijms/go-ora',
-                authors: ['Sijms'],
-                contributorsType: ['open-source'],
-            }
-        },
-        {
-            id: 'dbapi',
-            name: 'DB-API Oracle',
-            category: 'Standard API',
-            language: 'Python',
-            releaseDate: '1996-10-01',
-            description: 'cx_Oracle - DB-API driver for Oracle',
-            authors: ['Oracle'],
-            implementation: {
-                name: 'cx_Oracle',
-                releaseDate: '2011-01-01',
-                description: 'DB-API driver for Oracle',
-                repository: 'https://github.com/oracle/python-cx_Oracle',
-                authors: ['Oracle'],
-                contributorsType: ['staff', 'open-source'],
-            }
-        },
-        {
-            id: 'ado-net',
-            name: 'ADO.NET Oracle',
-            category: 'Standard API',
-            language: 'C#',
-            releaseDate: '2000-01-01',
-            description: 'Oracle Data Provider for .NET',
-            authors: ['Oracle'],
-            implementation: {
-                name: 'Oracle Data Provider',
+                name: 'Oracle.ManagedDataAccess',
                 releaseDate: '2000-01-01',
-                description: 'Official ADO.NET driver for Oracle',
+                description: 'Oracle implementation of ADO.NET',
                 repository: 'https://github.com/oracle/dotnet-db-samples',
                 authors: ['Oracle'],
-                contributorsType: ['staff', 'open-source'],
+                contributorsType: ['staff']
             }
         },
 
-        // ORM
+        // ORMs
         {
-            id: 'gorm',
-            name: 'GORM Oracle',
-            category: 'ORM',
-            language: 'Go',
-            releaseDate: '2013-01-01',
-            description: 'GORM Oracle driver',
-            authors: ['Jinzhu Zhang'],
-            repository: 'https://github.com/go-gorm/oracle',
+            ...common.gorm,
             implementation: {
-                name: 'GORM Oracle driver',
+                name: 'GORM driver for Oracle',
                 releaseDate: '2013-01-01',
-                description: 'Oracle driver for GORM',
+                description: 'Oracle driver implementation of GORM',
                 repository: 'https://github.com/go-gorm/oracle',
                 authors: ['Jinzhu Zhang'],
-                contributorsType: ['open-source'],
-            }
-        },
-        {
-            id: 'dapper',
-            name: 'Dapper Oracle',
-            category: 'ORM',
-            language: 'C#',
-            releaseDate: '2011-01-01',
-            description: 'Dapper with Oracle support',
-            authors: ['Stack Overflow'],
-            repository: 'https://github.com/StackExchange/Dapper',
-            implementation: {
-                name: 'Dapper Oracle',
-                releaseDate: '2011-01-01',
-                description: 'Oracle support for Dapper',
-                authors: ['Stack Overflow'],
-                contributorsType: ['open-source'],
-            }
-        },
-        {
-            id: 'hibernate',
-            name: 'Hibernate Oracle',
-            category: 'ORM',
-            language: 'Java',
-            releaseDate: '2001-12-01',
-            description: 'Hibernate Oracle dialect',
-            authors: ['Red Hat'],
-            repository: 'https://github.com/hibernate/hibernate-orm',
-            implementation: {
-                name: 'Hibernate Oracle Dialect',
-                releaseDate: '2001-12-01',
-                description: 'Oracle dialect for Hibernate ORM',
-                authors: ['Red Hat'],
                 contributorsType: ['open-source']
             }
         },
         {
-            id: 'sqlalchemy',
-            name: 'SQLAlchemy Oracle',
-            category: 'ORM',
-            language: 'Python',
-            releaseDate: '2006-02-01',
-            description: 'SQLAlchemy Oracle dialect',
-            authors: ['Michael Bayer'],
-            repository: 'https://github.com/sqlalchemy/sqlalchemy',
+            ...common.dapper,
             implementation: {
-                name: 'SQLAlchemy Oracle Dialect',
+                name: 'Dapper Oracle',
+                releaseDate: '2011-01-01',
+                description: 'Oracle implementation of Dapper',
+                repository: 'https://github.com/StackExchange/Dapper',
+                authors: ['Stack Overflow'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.hibernate,
+            implementation: {
+                name: 'Hibernate Oracle Dialect',
+                releaseDate: '2001-12-01',
+                description: 'Oracle Dialect for Hibernate ORM',
+                repository: 'https://github.com/hibernate/hibernate-orm',
+                authors: ['Hibernate Team'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.sqlalchemy,
+            implementation: {
+                name: 'Oracle SQLAlchemy Dialect',
                 releaseDate: '2006-02-01',
-                description: 'Oracle dialect for SQLAlchemy',
-                authors: ['Michael Bayer'],
+                description: 'SQLAlchemy dialect for Oracle',
+                repository: 'https://github.com/sqlalchemy/sqlalchemy',
+                authors: ['SQLAlchemy Team'],
                 contributorsType: ['open-source']
             }
         },
 
         // Migration tools
         {
-            id: 'flyway',
-            name: 'Flyway Oracle',
-            category: 'Migration',
-            language: 'Java',
-            releaseDate: '2010-06-01',
-            description: 'Flyway Oracle dialect',
-            authors: ['Redgate'],
-            repository: 'https://github.com/flyway/flyway',
+            ...common.flyway,
             implementation: {
-                name: 'Flyway Oracle Dialect',
+                name: 'Flyway Oracle Support',
                 releaseDate: '2010-06-01',
-                description: 'Oracle dialect for Flyway',
+                description: 'Oracle support for Flyway',
+                repository: 'https://github.com/flyway/flyway',
                 authors: ['Redgate'],
-                contributorsType: ['staff', 'open-source']
+                contributorsType: ['open-source']
             }
         },
         {
-            id: 'liquibase',
-            name: 'Liquibase Oracle',
-            category: 'Migration',
-            language: 'Java',
-            releaseDate: '2006-12-01',
-            description: 'Liquibase Oracle dialect',
-            authors: ['Liquibase'],
-            repository: 'https://github.com/liquibase/liquibase',
+            ...common.liquibase,
             implementation: {
-                name: 'Liquibase Oracle Dialect',
+                name: 'Liquibase Oracle Support',
                 releaseDate: '2006-12-01',
-                description: 'Oracle dialect for Liquibase',
+                description: 'Oracle support for Liquibase',
+                repository: 'https://github.com/liquibase/liquibase',
                 authors: ['Liquibase'],
-                contributorsType: ['staff', 'open-source']
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.goose,
+            implementation: {
+                name: 'goose Oracle Driver',
+                releaseDate: '2013-05-01',
+                description: 'Oracle driver for goose migrations',
+                repository: 'https://github.com/pressly/goose',
+                authors: ['liamstask', 'pressly'],
+                contributorsType: ['open-source']
             }
         },
 
         // Admin tools
         {
-            id: 'dbeaver',
-            name: 'DBeaver Oracle',
-            category: 'Admin',
-            language: 'Java',
-            releaseDate: '2010-06-01',
-            description: 'DBeaver Oracle support',
-            authors: ['Serge Rider'],
-            repository: 'https://github.com/dbeaver/dbeaver',
+            ...common.dbeaver,
             implementation: {
                 name: 'DBeaver Oracle Support',
                 releaseDate: '2010-06-01',
@@ -201,14 +144,7 @@ const oracleData: TimelineData = {
             }
         },
         {
-            id: 'datagrip',
-            name: 'DataGrip Oracle',
-            category: 'Admin',
-            language: 'Java',
-            releaseDate: '2015-12-01',
-            description: 'DataGrip Oracle support',
-            authors: ['JetBrains'],
-            repository: 'https://github.com/JetBrains/intellij-community',
+            ...common.datagrip,
             implementation: {
                 name: 'DataGrip Oracle Support',
                 releaseDate: '2015-12-01',
@@ -218,74 +154,91 @@ const oracleData: TimelineData = {
             }
         },
 
+        // Oracle-specific frameworks
+        {
+            id: 'sqlplus',
+            name: 'SQL*Plus',
+            category: 'Admin',
+            language: 'C',
+            releaseDate: '1979-01-01',
+            description: 'Command-line interface for Oracle Database',
+            authors: ['Oracle'],
+            implementation: {
+                releaseDate: '1979-01-01',
+                authors: ['Oracle'],
+                contributorsType: ['staff']
+            }
+        },
+        {
+            id: 'sqldeveloper',
+            name: 'SQL Developer',
+            category: 'Admin',
+            language: 'Java',
+            releaseDate: '2006-01-01',
+            description: 'Free integrated development environment that simplifies the development and management of Oracle Database',
+            authors: ['Oracle'],
+            implementation: {
+                releaseDate: '2006-01-01',
+                authors: ['Oracle'],
+                contributorsType: ['staff']
+            }
+        },
+
         // ETL Tools
         {
-            id: 'spark',
-            name: 'Apache Spark Oracle',
-            category: 'ETL',
-            language: 'Scala',
-            releaseDate: '2014-05-30',
-            description: 'Apache Spark Oracle connector',
-            authors: ['Apache Software Foundation'],
-            repository: 'https://github.com/apache/spark',
+            ...common.spark,
             implementation: {
-                name: 'Spark Oracle Connector',
+                name: 'Oracle Spark Connector',
                 releaseDate: '2014-05-30',
-                description: 'Oracle connector for Apache Spark',
+                description: 'Apache Spark connector for Oracle',
+                repository: 'https://github.com/apache/spark',
                 authors: ['Apache Software Foundation'],
                 contributorsType: ['open-source']
             }
         },
         {
-            id: 'flink',
-            name: 'Apache Flink Oracle',
-            category: 'ETL',
-            language: 'Java',
-            releaseDate: '2011-01-01',
-            description: 'Apache Flink Oracle connector',
-            authors: ['Apache Software Foundation'],
-            repository: 'https://github.com/apache/flink',
+            ...common.flink,
             implementation: {
-                name: 'Flink Oracle Connector',
+                name: 'Oracle Flink Connector',
                 releaseDate: '2011-01-01',
-                description: 'Oracle connector for Apache Flink',
+                description: 'Apache Flink connector for Oracle',
+                repository: 'https://github.com/apache/flink',
                 authors: ['Apache Software Foundation'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.dbt,
+            implementation: {
+                name: 'Oracle dbt Adapter',
+                releaseDate: '2016-12-01',
+                description: 'Oracle adapter for dbt',
+                repository: 'https://github.com/dbt-labs/dbt-core',
+                authors: ['dbt Labs'],
                 contributorsType: ['open-source']
             }
         },
 
         // BI tools
         {
-            id: 'grafana',
-            name: 'Grafana Oracle',
-            category: 'BI',
-            language: 'TypeScript',
-            releaseDate: '2014-01-01',
-            description: 'Grafana Oracle data source',
-            authors: ['Grafana Labs'],
-            repository: 'https://github.com/grafana/grafana',
+            ...common.grafana,
             implementation: {
-                name: 'Grafana Oracle Data Source',
+                name: 'Oracle Grafana Plugin',
                 releaseDate: '2014-01-01',
-                description: 'Oracle data source for Grafana',
+                description: 'Grafana data source plugin for Oracle',
+                repository: 'https://github.com/grafana/grafana',
                 authors: ['Grafana Labs'],
                 contributorsType: ['open-source']
             }
         },
         {
-            id: 'superset',
-            name: 'Apache Superset Oracle',
-            category: 'BI',
-            language: 'Python',
-            releaseDate: '2015-10-01',
-            description: 'Apache Superset Oracle support',
-            authors: ['Airbnb', 'Apache Software Foundation'],
-            repository: 'https://github.com/apache/superset',
+            ...common.superset,
             implementation: {
-                name: 'Superset Oracle Support',
+                name: 'Oracle Superset Connector',
                 releaseDate: '2015-10-01',
-                description: 'Oracle support for Apache Superset',
-                authors: ['Apache Software Foundation'],
+                description: 'Apache Superset support for Oracle',
+                repository: 'https://github.com/apache/superset',
+                authors: ['Airbnb', 'Apache Software Foundation'],
                 contributorsType: ['open-source']
             }
         }
