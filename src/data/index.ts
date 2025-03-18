@@ -17,6 +17,7 @@ import yugabytedbData from './yugabytedb';
 import cockroachdbData from './cockroachdb';
 import redisData from './redis';
 import cassandraData from './cassandra';
+import tarantoolData from './tarantool';
 
 export * from './types';
 
@@ -38,7 +39,8 @@ export const databases = {
     yugabytedb: yugabytedbData,
     cockroachdb: cockroachdbData,
     redis: redisData,
-    cassandra: cassandraData
+    cassandra: cassandraData,
+    tarantool: tarantoolData
 };
 
 export {
@@ -59,5 +61,6 @@ export {
     yugabytedbData,
     cockroachdbData,
     redisData,
-    cassandraData
+    cassandraData,
+    tarantoolData
 };

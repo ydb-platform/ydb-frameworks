@@ -17,7 +17,8 @@ export type Database =
     | 'yugabytedb'
     | 'cockroachdb'
     | 'redis'
-    | 'cassandra';
+    | 'cassandra'
+    | 'tarantool';
 
 export type FrameworkCategory = 
     | 'Server-side feature'
@@ -59,7 +60,8 @@ export type ProgrammingLanguage =
     | 'Dart'
     | 'JSON'
     | 'XML'
-    | 'Clojure';
+    | 'Clojure'
+    | 'Lua';
 
 export type ContributorType = 
     | 'staff'
