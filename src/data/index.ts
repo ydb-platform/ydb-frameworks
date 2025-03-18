@@ -15,6 +15,7 @@ import spannerData from './spanner';
 import sqlite3Data from './sqlite3';
 import yugabytedbData from './yugabytedb';
 import cockroachdbData from './cockroachdb';
+import redisData from './redis';
 
 export * from './types';
 
@@ -34,7 +35,8 @@ export const databases = {
     spanner: spannerData,
     sqlite3: sqlite3Data,
     yugabytedb: yugabytedbData,
-    cockroachdb: cockroachdbData
+    cockroachdb: cockroachdbData,
+    redis: redisData,
 };
 
 export {

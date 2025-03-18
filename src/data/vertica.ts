@@ -199,6 +199,162 @@ const verticaData: TimelineData = {
                 authors: ['Apache'],
                 contributorsType: ['open-source']
             }
+        },
+        {
+            ...common.prisma,
+            implementation: {
+                name: 'Prisma Vertica Adapter',
+                releaseDate: '2019-01-01',
+                description: 'Vertica adapter for Prisma',
+                repository: 'https://github.com/prisma/prisma',
+                authors: ['Prisma'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.typeorm,
+            implementation: {
+                name: 'TypeORM Vertica Driver',
+                releaseDate: '2016-01-01',
+                description: 'Vertica driver for TypeORM',
+                repository: 'https://github.com/typeorm/typeorm',
+                authors: ['TypeORM'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.sequelize,
+            implementation: {
+                name: 'Sequelize Vertica Dialect',
+                releaseDate: '2010-01-01',
+                description: 'Vertica dialect for Sequelize',
+                repository: 'https://github.com/sequelize/sequelize',
+                authors: ['Sequelize'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['entity-framework-core'],
+            implementation: {
+                name: 'Entity Framework Core Vertica Provider',
+                releaseDate: '2016-06-27',
+                description: 'Vertica provider for Entity Framework Core',
+                repository: 'https://github.com/dotnet/efcore',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.diesel,
+            implementation: {
+                name: 'Diesel Vertica Driver',
+                releaseDate: '2015-01-01',
+                description: 'Vertica driver for Diesel',
+                repository: 'https://github.com/diesel-rs/diesel',
+                authors: ['Diesel'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.sqlx,
+            implementation: {
+                name: 'SQLx Vertica Driver',
+                releaseDate: '2019-01-01',
+                description: 'Vertica driver for SQLx',
+                repository: 'https://github.com/launchbadge/sqlx',
+                authors: ['SQLx'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.jooq,
+            implementation: {
+                name: 'jOOQ Vertica Support',
+                releaseDate: '2009-01-01',
+                description: 'Vertica support for jOOQ',
+                repository: 'https://github.com/jOOQ/jOOQ',
+                authors: ['Lukas Eder'],
+                contributorsType: ['open-source']
+            }
+        },
+
+        // Migration tools
+        {
+            ...common.goose,
+            implementation: {
+                name: 'goose Vertica Driver',
+                releaseDate: '2013-05-01',
+                description: 'Vertica driver for goose migrations',
+                repository: 'https://github.com/pressly/goose',
+                authors: ['liamstask', 'pressly'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.alembic,
+            implementation: {
+                name: 'Alembic Vertica Dialect',
+                releaseDate: '2011-01-01',
+                description: 'Vertica dialect for Alembic',
+                repository: 'https://github.com/sqlalchemy/alembic',
+                authors: ['SQLAlchemy'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['typeorm-migrations'],
+            implementation: {
+                name: 'TypeORM Vertica Migrations',
+                releaseDate: '2016-01-01',
+                description: 'Migration system for TypeORM with Vertica',
+                repository: 'https://github.com/typeorm/typeorm',
+                authors: ['TypeORM'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['prisma-migrate'],
+            implementation: {
+                name: 'Prisma Vertica Migrations',
+                releaseDate: '2019-01-01',
+                description: 'Migration system for Prisma with Vertica',
+                repository: 'https://github.com/prisma/prisma',
+                authors: ['Prisma'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['diesel-migrations'],
+            implementation: {
+                name: 'Diesel Vertica Migrations',
+                releaseDate: '2015-01-01',
+                description: 'Migration system for Diesel with Vertica',
+                repository: 'https://github.com/diesel-rs/diesel',
+                authors: ['Diesel'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['db-migrate'],
+            implementation: {
+                name: 'db-migrate Vertica Driver',
+                releaseDate: '2013-01-01',
+                description: 'Vertica driver for db-migrate',
+                repository: 'https://github.com/db-migrate/node-db-migrate',
+                authors: ['db-migrate'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.knex,
+            implementation: {
+                name: 'Knex.js Vertica Driver',
+                releaseDate: '2012-01-01',
+                description: 'Vertica driver for Knex.js',
+                repository: 'https://github.com/knex/knex',
+                authors: ['Knex.js'],
+                contributorsType: ['open-source']
+            }
         }
     ],
     dependencies: []

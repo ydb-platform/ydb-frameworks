@@ -15,7 +15,8 @@ export type Database =
     | 'spanner'
     | 'sqlite3'
     | 'yugabytedb'
-    | 'cockroachdb';
+    | 'cockroachdb'
+    | 'redis';
 
 export type FrameworkCategory = 
     | 'Server-side feature'
@@ -55,29 +56,9 @@ export type ProgrammingLanguage =
     | 'YAML'
     | 'Dart'
     | 'JSON'
-    | 'Erlang'
-    | 'Elixir'
-    | 'Haskell'
-    | 'Kotlin'
-    | 'Swift'
-    | 'SQL'
-    | 'YAML'
-    | 'Dart'
     | 'XML'
-    | 'Ruby'
-    | 'PHP'
-    | 'Scala'
-    | 'Erlang'
-    | 'Elixir'
-    | 'Haskell'
-    | 'Kotlin'
-    | 'Swift'
-    | 'SQL'
-    | 'YAML'
-    | 'Dart'
-    | 'XML'
-    
-    ;
+    | 'Clojure';
+
 export type ContributorType = 
     | 'staff'
     | 'student'

@@ -97,6 +97,83 @@ const mssqlData: TimelineData = {
                 contributorsType: ['open-source']
             }
         },
+        {
+            ...common.prisma,
+            implementation: {
+                name: 'Prisma SQL Server Adapter',
+                releaseDate: '2019-01-01',
+                description: 'SQL Server adapter for Prisma',
+                repository: 'https://github.com/prisma/prisma',
+                authors: ['Prisma'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.typeorm,
+            implementation: {
+                name: 'TypeORM SQL Server Driver',
+                releaseDate: '2016-01-01',
+                description: 'SQL Server driver for TypeORM',
+                repository: 'https://github.com/typeorm/typeorm',
+                authors: ['TypeORM'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.sequelize,
+            implementation: {
+                name: 'Sequelize SQL Server Dialect',
+                releaseDate: '2010-01-01',
+                description: 'SQL Server dialect for Sequelize',
+                repository: 'https://github.com/sequelize/sequelize',
+                authors: ['Sequelize'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['entity-framework-core'],
+            implementation: {
+                name: 'Entity Framework Core SQL Server Provider',
+                releaseDate: '2016-06-27',
+                description: 'SQL Server provider for Entity Framework Core',
+                repository: 'https://github.com/dotnet/efcore',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.diesel,
+            implementation: {
+                name: 'Diesel SQL Server Driver',
+                releaseDate: '2015-01-01',
+                description: 'SQL Server driver for Diesel',
+                repository: 'https://github.com/diesel-rs/diesel',
+                authors: ['Diesel'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.sqlx,
+            implementation: {
+                name: 'SQLx SQL Server Driver',
+                releaseDate: '2019-01-01',
+                description: 'SQL Server driver for SQLx',
+                repository: 'https://github.com/launchbadge/sqlx',
+                authors: ['SQLx'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.jooq,
+            implementation: {
+                name: 'jOOQ SQL Server Support',
+                releaseDate: '2009-01-01',
+                description: 'SQL Server support for jOOQ',
+                repository: 'https://github.com/jOOQ/jOOQ',
+                authors: ['Lukas Eder'],
+                contributorsType: ['open-source']
+            }
+        },
 
         // Migration tools
         {
@@ -129,6 +206,72 @@ const mssqlData: TimelineData = {
                 description: 'SQL Server driver for goose migrations',
                 repository: 'https://github.com/pressly/goose',
                 authors: ['liamstask', 'pressly'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.alembic,
+            implementation: {
+                name: 'Alembic SQL Server Dialect',
+                releaseDate: '2011-01-01',
+                description: 'SQL Server dialect for Alembic',
+                repository: 'https://github.com/sqlalchemy/alembic',
+                authors: ['SQLAlchemy'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['typeorm-migrations'],
+            implementation: {
+                name: 'TypeORM SQL Server Migrations',
+                releaseDate: '2016-01-01',
+                description: 'Migration system for TypeORM with SQL Server',
+                repository: 'https://github.com/typeorm/typeorm',
+                authors: ['TypeORM'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['prisma-migrate'],
+            implementation: {
+                name: 'Prisma SQL Server Migrations',
+                releaseDate: '2019-01-01',
+                description: 'Migration system for Prisma with SQL Server',
+                repository: 'https://github.com/prisma/prisma',
+                authors: ['Prisma'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['diesel-migrations'],
+            implementation: {
+                name: 'Diesel SQL Server Migrations',
+                releaseDate: '2015-01-01',
+                description: 'Migration system for Diesel with SQL Server',
+                repository: 'https://github.com/diesel-rs/diesel',
+                authors: ['Diesel'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['db-migrate'],
+            implementation: {
+                name: 'db-migrate SQL Server Driver',
+                releaseDate: '2013-01-01',
+                description: 'SQL Server driver for db-migrate',
+                repository: 'https://github.com/db-migrate/node-db-migrate',
+                authors: ['db-migrate'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.knex,
+            implementation: {
+                name: 'Knex.js SQL Server Driver',
+                releaseDate: '2012-01-01',
+                description: 'SQL Server driver for Knex.js',
+                repository: 'https://github.com/knex/knex',
+                authors: ['Knex.js'],
                 contributorsType: ['open-source']
             }
         },

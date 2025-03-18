@@ -200,6 +200,162 @@ const dynamodbData: TimelineData = {
                 authors: ['Apache'],
                 contributorsType: ['open-source']
             }
+        },
+        {
+            ...common.prisma,
+            implementation: {
+                name: 'Prisma DynamoDB Adapter',
+                releaseDate: '2019-01-01',
+                description: 'DynamoDB adapter for Prisma',
+                repository: 'https://github.com/prisma/prisma',
+                authors: ['Prisma'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.typeorm,
+            implementation: {
+                name: 'TypeORM DynamoDB Driver',
+                releaseDate: '2016-01-01',
+                description: 'DynamoDB driver for TypeORM',
+                repository: 'https://github.com/typeorm/typeorm',
+                authors: ['TypeORM'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.sequelize,
+            implementation: {
+                name: 'Sequelize DynamoDB Dialect',
+                releaseDate: '2010-01-01',
+                description: 'DynamoDB dialect for Sequelize',
+                repository: 'https://github.com/sequelize/sequelize',
+                authors: ['Sequelize'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['entity-framework-core'],
+            implementation: {
+                name: 'Entity Framework Core DynamoDB Provider',
+                releaseDate: '2016-06-27',
+                description: 'DynamoDB provider for Entity Framework Core',
+                repository: 'https://github.com/dotnet/efcore',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
+            }
+        },
+        {
+            ...common.diesel,
+            implementation: {
+                name: 'Diesel DynamoDB Driver',
+                releaseDate: '2015-01-01',
+                description: 'DynamoDB driver for Diesel',
+                repository: 'https://github.com/diesel-rs/diesel',
+                authors: ['Diesel'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.sqlx,
+            implementation: {
+                name: 'SQLx DynamoDB Driver',
+                releaseDate: '2019-01-01',
+                description: 'DynamoDB driver for SQLx',
+                repository: 'https://github.com/launchbadge/sqlx',
+                authors: ['SQLx'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.jooq,
+            implementation: {
+                name: 'jOOQ DynamoDB Support',
+                releaseDate: '2009-01-01',
+                description: 'DynamoDB support for jOOQ',
+                repository: 'https://github.com/jOOQ/jOOQ',
+                authors: ['Lukas Eder'],
+                contributorsType: ['open-source']
+            }
+        },
+
+        // Migration tools
+        {
+            ...common.goose,
+            implementation: {
+                name: 'goose DynamoDB Driver',
+                releaseDate: '2013-05-01',
+                description: 'DynamoDB driver for goose migrations',
+                repository: 'https://github.com/pressly/goose',
+                authors: ['liamstask', 'pressly'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.alembic,
+            implementation: {
+                name: 'Alembic DynamoDB Dialect',
+                releaseDate: '2011-01-01',
+                description: 'DynamoDB dialect for Alembic',
+                repository: 'https://github.com/sqlalchemy/alembic',
+                authors: ['SQLAlchemy'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['typeorm-migrations'],
+            implementation: {
+                name: 'TypeORM DynamoDB Migrations',
+                releaseDate: '2016-01-01',
+                description: 'Migration system for TypeORM with DynamoDB',
+                repository: 'https://github.com/typeorm/typeorm',
+                authors: ['TypeORM'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['prisma-migrate'],
+            implementation: {
+                name: 'Prisma DynamoDB Migrations',
+                releaseDate: '2019-01-01',
+                description: 'Migration system for Prisma with DynamoDB',
+                repository: 'https://github.com/prisma/prisma',
+                authors: ['Prisma'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['diesel-migrations'],
+            implementation: {
+                name: 'Diesel DynamoDB Migrations',
+                releaseDate: '2015-01-01',
+                description: 'Migration system for Diesel with DynamoDB',
+                repository: 'https://github.com/diesel-rs/diesel',
+                authors: ['Diesel'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common['db-migrate'],
+            implementation: {
+                name: 'db-migrate DynamoDB Driver',
+                releaseDate: '2013-01-01',
+                description: 'DynamoDB driver for db-migrate',
+                repository: 'https://github.com/db-migrate/node-db-migrate',
+                authors: ['db-migrate'],
+                contributorsType: ['open-source']
+            }
+        },
+        {
+            ...common.knex,
+            implementation: {
+                name: 'Knex.js DynamoDB Driver',
+                releaseDate: '2012-01-01',
+                description: 'DynamoDB driver for Knex.js',
+                repository: 'https://github.com/knex/knex',
+                authors: ['Knex.js'],
+                contributorsType: ['open-source']
+            }
         }
     ],
     dependencies: []

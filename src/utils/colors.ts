@@ -27,6 +27,7 @@ export const languageColors: Record<ProgrammingLanguage, string> = {
     'Erlang': '#B83998',
     'Elixir': '#6B4893',
     'Haskell': '#5d4f85',
+    'Clojure': '#5d4f85',
 };
 
 /**

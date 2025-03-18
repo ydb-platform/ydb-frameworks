@@ -1,54 +1,42 @@
-// src/data/postgresql.ts
 import { TimelineData } from './types';
 import { common } from './common';
 
-const postgresqlData: TimelineData = {
-    database: 'postgresql',
-    displayName: 'PostgreSQL',
+const redisData: TimelineData = {
+    database: 'redis',
+    displayName: 'Redis',
     frameworks: [
         // Standard APIs
         {
             ...common.jdbc,
             implementation: {
-                name: 'JDBC PostgreSQL',
-                releaseDate: '1997-02-19',
-                description: 'PostgreSQL implementation of JDBC',
-                repository: 'https://github.com/pgjdbc/pgjdbc',
-                authors: ['PostgreSQL Global Development Group'],
-                contributorsType: ['open-source']
+                name: 'Redis JDBC Driver',
+                releaseDate: '2016-01-01',
+                description: 'Redis implementation of JDBC',
+                repository: 'https://github.com/redis/jedis',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common['database-sql'],
             implementation: {
-                name: 'database/sql driver for PostgreSQL',
-                releaseDate: '2011-03-01',
-                description: 'PostgreSQL implementation of database/sql',
-                repository: 'https://github.com/lib/pq',
-                authors: ['lib/pq contributors'],
-                contributorsType: ['open-source']
+                name: 'Redis Go Driver',
+                releaseDate: '2016-01-01',
+                description: 'Redis implementation of database/sql',
+                repository: 'https://github.com/redis/go-redis',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.dbapi,
             implementation: {
-                name: 'psycopg2',
-                releaseDate: '1996-10-01',
-                description: 'PostgreSQL implementation of DB-API',
-                repository: 'https://github.com/psycopg/psycopg2',
-                authors: ['Federico Di Gregorio'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common['ado-net'],
-            implementation: {
-                name: 'Npgsql',
-                releaseDate: '2000-01-01',
-                description: 'PostgreSQL implementation of ADO.NET',
-                repository: 'https://github.com/npgsql/npgsql',
-                authors: ['Npgsql Development Team'],
-                contributorsType: ['open-source']
+                name: 'redis-py',
+                releaseDate: '2010-01-01',
+                description: 'Redis implementation of DB-API',
+                repository: 'https://github.com/redis/redis-py',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
 
@@ -56,53 +44,42 @@ const postgresqlData: TimelineData = {
         {
             ...common.gorm,
             implementation: {
-                name: 'GORM driver for PostgreSQL',
-                releaseDate: '2013-01-01',
-                description: 'PostgreSQL driver implementation of GORM',
-                repository: 'https://github.com/go-gorm/postgres',
-                authors: ['Jinzhu Zhang'],
-                contributorsType: ['open-source']
-            }
-        },
-        {
-            ...common.dapper,
-            implementation: {
-                name: 'Dapper PostgreSQL',
-                releaseDate: '2011-01-01',
-                description: 'PostgreSQL implementation of Dapper',
-                repository: 'https://github.com/StackExchange/Dapper',
-                authors: ['Stack Overflow'],
-                contributorsType: ['open-source']
+                name: 'GORM Redis Driver',
+                releaseDate: '2016-01-01',
+                description: 'Redis driver implementation of GORM',
+                repository: 'https://github.com/go-gorm/redis',
+                authors: ['Jinzhu'],
+                contributorsType: ['open-source'],
             }
         },
         {
             ...common.hibernate,
             implementation: {
-                name: 'Hibernate PostgreSQL Dialect',
-                releaseDate: '2001-12-01',
-                description: 'PostgreSQL Dialect for Hibernate ORM',
-                repository: 'https://github.com/hibernate/hibernate-orm',
-                authors: ['Hibernate Team'],
-                contributorsType: ['open-source']
+                name: 'Hibernate OGM Redis',
+                releaseDate: '2011-01-01',
+                description: 'Redis implementation of Hibernate OGM',
+                repository: 'https://github.com/hibernate/hibernate-ogm',
+                authors: ['Red Hat'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.sqlalchemy,
             implementation: {
-                name: 'PostgreSQL SQLAlchemy Dialect',
-                releaseDate: '2006-02-01',
-                description: 'SQLAlchemy dialect for PostgreSQL',
-                repository: 'https://github.com/sqlalchemy/sqlalchemy',
-                authors: ['SQLAlchemy Team'],
-                contributorsType: ['open-source']
+                name: 'Redis SQLAlchemy Dialect',
+                releaseDate: '2012-01-01',
+                description: 'SQLAlchemy dialect for Redis',
+                repository: 'https://github.com/redis/redis-sqlalchemy',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.prisma,
             implementation: {
-                name: 'Prisma PostgreSQL Adapter',
+                name: 'Prisma Redis Adapter',
                 releaseDate: '2019-01-01',
-                description: 'PostgreSQL adapter for Prisma',
+                description: 'Redis adapter for Prisma',
                 repository: 'https://github.com/prisma/prisma',
                 authors: ['Prisma'],
                 contributorsType: ['open-source']
@@ -111,9 +88,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.typeorm,
             implementation: {
-                name: 'TypeORM PostgreSQL Driver',
+                name: 'TypeORM Redis Driver',
                 releaseDate: '2016-01-01',
-                description: 'PostgreSQL driver for TypeORM',
+                description: 'Redis driver for TypeORM',
                 repository: 'https://github.com/typeorm/typeorm',
                 authors: ['TypeORM'],
                 contributorsType: ['open-source']
@@ -122,9 +99,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.sequelize,
             implementation: {
-                name: 'Sequelize PostgreSQL Dialect',
+                name: 'Sequelize Redis Dialect',
                 releaseDate: '2010-01-01',
-                description: 'PostgreSQL dialect for Sequelize',
+                description: 'Redis dialect for Sequelize',
                 repository: 'https://github.com/sequelize/sequelize',
                 authors: ['Sequelize'],
                 contributorsType: ['open-source']
@@ -133,20 +110,20 @@ const postgresqlData: TimelineData = {
         {
             ...common['entity-framework-core'],
             implementation: {
-                name: 'Entity Framework Core PostgreSQL Provider',
+                name: 'Entity Framework Core Redis Provider',
                 releaseDate: '2016-06-27',
-                description: 'PostgreSQL provider for Entity Framework Core',
-                repository: 'https://github.com/npgsql/efcore.pg',
-                authors: ['Npgsql Development Team'],
-                contributorsType: ['open-source']
+                description: 'Redis provider for Entity Framework Core',
+                repository: 'https://github.com/dotnet/efcore',
+                authors: ['Microsoft'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.diesel,
             implementation: {
-                name: 'Diesel PostgreSQL Driver',
+                name: 'Diesel Redis Driver',
                 releaseDate: '2015-01-01',
-                description: 'PostgreSQL driver for Diesel',
+                description: 'Redis driver for Diesel',
                 repository: 'https://github.com/diesel-rs/diesel',
                 authors: ['Diesel'],
                 contributorsType: ['open-source']
@@ -155,9 +132,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.sqlx,
             implementation: {
-                name: 'SQLx PostgreSQL Driver',
+                name: 'SQLx Redis Driver',
                 releaseDate: '2019-01-01',
-                description: 'PostgreSQL driver for SQLx',
+                description: 'Redis driver for SQLx',
                 repository: 'https://github.com/launchbadge/sqlx',
                 authors: ['SQLx'],
                 contributorsType: ['open-source']
@@ -166,9 +143,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.jooq,
             implementation: {
-                name: 'jOOQ PostgreSQL Support',
+                name: 'jOOQ Redis Support',
                 releaseDate: '2009-01-01',
-                description: 'PostgreSQL support for jOOQ',
+                description: 'Redis support for jOOQ',
                 repository: 'https://github.com/jOOQ/jOOQ',
                 authors: ['Lukas Eder'],
                 contributorsType: ['open-source']
@@ -179,31 +156,31 @@ const postgresqlData: TimelineData = {
         {
             ...common.flyway,
             implementation: {
-                name: 'Flyway PostgreSQL Support',
-                releaseDate: '2010-06-01',
-                description: 'PostgreSQL support for Flyway',
-                repository: 'https://github.com/flyway/flyway',
+                name: 'Flyway Redis Support',
+                releaseDate: '2018-01-01',
+                description: 'Redis support for Flyway',
+                repository: 'https://github.com/flyway/flyway-database-redis',
                 authors: ['Redgate'],
-                contributorsType: ['open-source']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.liquibase,
             implementation: {
-                name: 'Liquibase PostgreSQL Support',
-                releaseDate: '2006-12-01',
-                description: 'PostgreSQL support for Liquibase',
-                repository: 'https://github.com/liquibase/liquibase',
+                name: 'Liquibase Redis Support',
+                releaseDate: '2019-01-01',
+                description: 'Redis support for Liquibase',
+                repository: 'https://github.com/liquibase/liquibase-redis',
                 authors: ['Liquibase'],
-                contributorsType: ['open-source']
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.goose,
             implementation: {
-                name: 'goose PostgreSQL Driver',
+                name: 'goose Redis Driver',
                 releaseDate: '2013-05-01',
-                description: 'PostgreSQL driver for goose migrations',
+                description: 'Redis driver for goose migrations',
                 repository: 'https://github.com/pressly/goose',
                 authors: ['liamstask', 'pressly'],
                 contributorsType: ['open-source']
@@ -212,9 +189,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.alembic,
             implementation: {
-                name: 'Alembic PostgreSQL Dialect',
+                name: 'Alembic Redis Dialect',
                 releaseDate: '2011-01-01',
-                description: 'PostgreSQL dialect for Alembic',
+                description: 'Redis dialect for Alembic',
                 repository: 'https://github.com/sqlalchemy/alembic',
                 authors: ['SQLAlchemy'],
                 contributorsType: ['open-source']
@@ -223,9 +200,9 @@ const postgresqlData: TimelineData = {
         {
             ...common['typeorm-migrations'],
             implementation: {
-                name: 'TypeORM PostgreSQL Migrations',
+                name: 'TypeORM Redis Migrations',
                 releaseDate: '2016-01-01',
-                description: 'Migration system for TypeORM with PostgreSQL',
+                description: 'Migration system for TypeORM with Redis',
                 repository: 'https://github.com/typeorm/typeorm',
                 authors: ['TypeORM'],
                 contributorsType: ['open-source']
@@ -234,9 +211,9 @@ const postgresqlData: TimelineData = {
         {
             ...common['prisma-migrate'],
             implementation: {
-                name: 'Prisma PostgreSQL Migrations',
+                name: 'Prisma Redis Migrations',
                 releaseDate: '2019-01-01',
-                description: 'Migration system for Prisma with PostgreSQL',
+                description: 'Migration system for Prisma with Redis',
                 repository: 'https://github.com/prisma/prisma',
                 authors: ['Prisma'],
                 contributorsType: ['open-source']
@@ -245,9 +222,9 @@ const postgresqlData: TimelineData = {
         {
             ...common['diesel-migrations'],
             implementation: {
-                name: 'Diesel PostgreSQL Migrations',
+                name: 'Diesel Redis Migrations',
                 releaseDate: '2015-01-01',
-                description: 'Migration system for Diesel with PostgreSQL',
+                description: 'Migration system for Diesel with Redis',
                 repository: 'https://github.com/diesel-rs/diesel',
                 authors: ['Diesel'],
                 contributorsType: ['open-source']
@@ -256,9 +233,9 @@ const postgresqlData: TimelineData = {
         {
             ...common['db-migrate'],
             implementation: {
-                name: 'db-migrate PostgreSQL Driver',
+                name: 'db-migrate Redis Driver',
                 releaseDate: '2013-01-01',
-                description: 'PostgreSQL driver for db-migrate',
+                description: 'Redis driver for db-migrate',
                 repository: 'https://github.com/db-migrate/node-db-migrate',
                 authors: ['db-migrate'],
                 contributorsType: ['open-source']
@@ -267,9 +244,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.knex,
             implementation: {
-                name: 'Knex.js PostgreSQL Driver',
+                name: 'Knex.js Redis Driver',
                 releaseDate: '2012-01-01',
-                description: 'PostgreSQL driver for Knex.js',
+                description: 'Redis driver for Knex.js',
                 repository: 'https://github.com/knex/knex',
                 authors: ['Knex.js'],
                 contributorsType: ['open-source']
@@ -280,9 +257,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.dbeaver,
             implementation: {
-                name: 'DBeaver PostgreSQL Support',
-                releaseDate: '2010-06-01',
-                description: 'PostgreSQL support for DBeaver',
+                name: 'DBeaver Redis Support',
+                releaseDate: '2016-01-01',
+                description: 'Redis support for DBeaver',
                 authors: ['Serge Rider'],
                 contributorsType: ['open-source']
             }
@@ -290,28 +267,41 @@ const postgresqlData: TimelineData = {
         {
             ...common.datagrip,
             implementation: {
-                name: 'DataGrip PostgreSQL Support',
-                releaseDate: '2015-12-01',
-                description: 'PostgreSQL support for DataGrip',
+                name: 'DataGrip Redis Support',
+                releaseDate: '2016-01-01',
+                description: 'Redis support for DataGrip',
                 authors: ['JetBrains'],
                 contributorsType: ['staff']
             }
         },
 
-        // PostgreSQL-specific frameworks
+        // Redis-specific frameworks
         {
-            id: 'pgadmin',
-            name: 'pgAdmin',
+            id: 'redis-cli',
+            name: 'Redis CLI',
             category: 'Admin',
-            language: 'Python',
-            releaseDate: '2004-01-01',
-            description: 'Comprehensive PostgreSQL database management tool',
-            authors: ['pgAdmin Development Team'],
-            repository: 'https://github.com/pgadmin-org/pgadmin4',
+            language: 'C',
+            releaseDate: '2009-01-01',
+            description: 'Command-line interface for Redis',
+            authors: ['Redis'],
             implementation: {
-                releaseDate: '2004-01-01',
-                authors: ['pgAdmin Development Team'],
-                contributorsType: ['open-source']
+                releaseDate: '2009-01-01',
+                authors: ['Redis'],
+                contributorsType: ['staff']
+            }
+        },
+        {
+            id: 'redis-insight',
+            name: 'RedisInsight',
+            category: 'Admin',
+            language: 'JavaScript',
+            releaseDate: '2019-01-01',
+            description: 'GUI for Redis',
+            authors: ['Redis'],
+            implementation: {
+                releaseDate: '2019-01-01',
+                authors: ['Redis'],
+                contributorsType: ['staff']
             }
         },
 
@@ -319,31 +309,31 @@ const postgresqlData: TimelineData = {
         {
             ...common.spark,
             implementation: {
-                name: 'PostgreSQL Spark Connector',
-                releaseDate: '2014-05-30',
-                description: 'Apache Spark connector for PostgreSQL',
-                repository: 'https://github.com/apache/spark',
-                authors: ['Apache Software Foundation'],
-                contributorsType: ['open-source']
+                name: 'Redis Spark Connector',
+                releaseDate: '2015-01-01',
+                description: 'Apache Spark connector for Redis',
+                repository: 'https://github.com/redis/redis-spark',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.flink,
             implementation: {
-                name: 'PostgreSQL Flink Connector',
-                releaseDate: '2011-01-01',
-                description: 'Apache Flink connector for PostgreSQL',
-                repository: 'https://github.com/apache/flink',
-                authors: ['Apache Software Foundation'],
-                contributorsType: ['open-source']
+                name: 'Redis Flink Connector',
+                releaseDate: '2018-01-01',
+                description: 'Apache Flink connector for Redis',
+                repository: 'https://github.com/redis/redis-flink',
+                authors: ['Redis'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.airflow,
             implementation: {
-                name: 'PostgreSQL Airflow Provider',
+                name: 'Redis Airflow Provider',
                 releaseDate: '2015-06-01',
-                description: 'Apache Airflow provider for PostgreSQL',
+                description: 'Apache Airflow provider for Redis',
                 repository: 'https://github.com/apache/airflow',
                 authors: ['Apache'],
                 contributorsType: ['open-source']
@@ -352,9 +342,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.nifi,
             implementation: {
-                name: 'PostgreSQL NiFi Processor',
+                name: 'Redis NiFi Processor',
                 releaseDate: '2014-07-01',
-                description: 'Apache NiFi processor for PostgreSQL',
+                description: 'Apache NiFi processor for Redis',
                 repository: 'https://github.com/apache/nifi',
                 authors: ['Apache'],
                 contributorsType: ['open-source']
@@ -363,9 +353,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.kafka,
             implementation: {
-                name: 'PostgreSQL Kafka Connector',
+                name: 'Redis Kafka Connector',
                 releaseDate: '2011-01-01',
-                description: 'Apache Kafka connector for PostgreSQL',
+                description: 'Apache Kafka connector for Redis',
                 repository: 'https://github.com/apache/kafka',
                 authors: ['Apache'],
                 contributorsType: ['open-source']
@@ -374,9 +364,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.beam,
             implementation: {
-                name: 'PostgreSQL Beam IO',
+                name: 'Redis Beam IO',
                 releaseDate: '2016-06-01',
-                description: 'Apache Beam IO for PostgreSQL',
+                description: 'Apache Beam IO for Redis',
                 repository: 'https://github.com/apache/beam',
                 authors: ['Apache'],
                 contributorsType: ['open-source']
@@ -385,9 +375,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.dbt,
             implementation: {
-                name: 'PostgreSQL dbt Adapter',
+                name: 'Redis dbt Adapter',
                 releaseDate: '2016-12-01',
-                description: 'PostgreSQL adapter for dbt',
+                description: 'Redis adapter for dbt',
                 repository: 'https://github.com/dbt-labs/dbt-core',
                 authors: ['dbt Labs'],
                 contributorsType: ['open-source']
@@ -396,9 +386,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.fivetran,
             implementation: {
-                name: 'PostgreSQL Fivetran Connector',
+                name: 'Redis Fivetran Connector',
                 releaseDate: '2013-01-01',
-                description: 'Fivetran connector for PostgreSQL',
+                description: 'Fivetran connector for Redis',
                 repository: 'https://github.com/fivetran',
                 authors: ['Fivetran'],
                 contributorsType: ['open-source']
@@ -407,9 +397,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.stitch,
             implementation: {
-                name: 'PostgreSQL Stitch Connector',
+                name: 'Redis Stitch Connector',
                 releaseDate: '2016-01-01',
-                description: 'Stitch connector for PostgreSQL',
+                description: 'Stitch connector for Redis',
                 repository: 'https://github.com/stitchdata',
                 authors: ['Talend'],
                 contributorsType: ['open-source']
@@ -418,9 +408,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.talend,
             implementation: {
-                name: 'PostgreSQL Talend Component',
+                name: 'Redis Talend Component',
                 releaseDate: '2005-01-01',
-                description: 'Talend component for PostgreSQL',
+                description: 'Talend component for Redis',
                 repository: 'https://github.com/Talend',
                 authors: ['Talend'],
                 contributorsType: ['open-source']
@@ -431,31 +421,30 @@ const postgresqlData: TimelineData = {
         {
             ...common.grafana,
             implementation: {
-                name: 'PostgreSQL Grafana Plugin',
-                releaseDate: '2014-01-01',
-                description: 'Grafana data source plugin for PostgreSQL',
-                repository: 'https://github.com/grafana/grafana',
-                authors: ['Grafana Labs'],
-                contributorsType: ['open-source']
+                name: 'Grafana Redis Plugin',
+                releaseDate: '2016-01-01',
+                description: 'Grafana data source plugin for Redis',
+                repository: 'https://github.com/grafana/grafana-redis-datasource',
+                authors: ['Grafana'],
+                contributorsType: ['staff', 'open-source']
             }
         },
         {
             ...common.superset,
             implementation: {
-                name: 'PostgreSQL Superset Connector',
-                releaseDate: '2015-10-01',
-                description: 'Apache Superset support for PostgreSQL',
-                repository: 'https://github.com/apache/superset',
-                authors: ['Airbnb', 'Apache Software Foundation'],
+                name: 'Redis Superset Connector',
+                releaseDate: '2017-01-01',
+                description: 'Apache Superset support for Redis',
+                authors: ['Apache'],
                 contributorsType: ['open-source']
             }
         },
         {
             ...common.tableau,
             implementation: {
-                name: 'PostgreSQL Tableau Connector',
+                name: 'Redis Tableau Connector',
                 releaseDate: '2003-01-01',
-                description: 'Tableau connector for PostgreSQL',
+                description: 'Tableau connector for Redis',
                 repository: 'https://github.com/tableau',
                 authors: ['Salesforce'],
                 contributorsType: ['staff']
@@ -464,9 +453,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.powerbi,
             implementation: {
-                name: 'PostgreSQL Power BI Connector',
+                name: 'Redis Power BI Connector',
                 releaseDate: '2015-07-01',
-                description: 'Power BI connector for PostgreSQL',
+                description: 'Power BI connector for Redis',
                 repository: 'https://github.com/microsoft/PowerBI-Icons',
                 authors: ['Microsoft'],
                 contributorsType: ['staff']
@@ -475,9 +464,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.looker,
             implementation: {
-                name: 'PostgreSQL Looker Connector',
+                name: 'Redis Looker Connector',
                 releaseDate: '2012-01-01',
-                description: 'Looker connector for PostgreSQL',
+                description: 'Looker connector for Redis',
                 repository: 'https://github.com/looker',
                 authors: ['Google'],
                 contributorsType: ['staff']
@@ -486,9 +475,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.metabase,
             implementation: {
-                name: 'PostgreSQL Metabase Driver',
+                name: 'Redis Metabase Driver',
                 releaseDate: '2015-01-01',
-                description: 'Metabase driver for PostgreSQL',
+                description: 'Metabase driver for Redis',
                 repository: 'https://github.com/metabase/metabase',
                 authors: ['Metabase'],
                 contributorsType: ['open-source']
@@ -497,9 +486,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.redash,
             implementation: {
-                name: 'PostgreSQL Redash Query Runner',
+                name: 'Redis Redash Query Runner',
                 releaseDate: '2013-01-01',
-                description: 'Redash query runner for PostgreSQL',
+                description: 'Redash query runner for Redis',
                 repository: 'https://github.com/getredash/redash',
                 authors: ['Redash'],
                 contributorsType: ['open-source']
@@ -508,9 +497,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.mode,
             implementation: {
-                name: 'PostgreSQL Mode Connector',
+                name: 'Redis Mode Connector',
                 releaseDate: '2013-01-01',
-                description: 'Mode connector for PostgreSQL',
+                description: 'Mode connector for Redis',
                 repository: 'https://github.com/mode',
                 authors: ['Mode'],
                 contributorsType: ['staff']
@@ -519,9 +508,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.sisense,
             implementation: {
-                name: 'PostgreSQL Sisense Connector',
+                name: 'Redis Sisense Connector',
                 releaseDate: '2004-01-01',
-                description: 'Sisense connector for PostgreSQL',
+                description: 'Sisense connector for Redis',
                 repository: 'https://github.com/sisense',
                 authors: ['Sisense'],
                 contributorsType: ['staff']
@@ -530,9 +519,9 @@ const postgresqlData: TimelineData = {
         {
             ...common.qlik,
             implementation: {
-                name: 'PostgreSQL Qlik Connector',
+                name: 'Redis Qlik Connector',
                 releaseDate: '1993-01-01',
-                description: 'Qlik connector for PostgreSQL',
+                description: 'Qlik connector for Redis',
                 repository: 'https://github.com/qlik-oss',
                 authors: ['Qlik'],
                 contributorsType: ['staff']
@@ -542,4 +531,4 @@ const postgresqlData: TimelineData = {
     dependencies: []
 };
 
-export default postgresqlData;
+export default redisData; 
