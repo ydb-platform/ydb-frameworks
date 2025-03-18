@@ -1,4 +1,4 @@
-[![Pages](https://ydb-platform.github.io/ydb-frameworks)
+[![pages-build-deployment](https://github.com/ydb-platform/ydb-frameworks/actions/workflows/pages/pages-build-deployment/badge.svg)](https://ydb-platform.github.io/ydb-frameworks)
 
 # Database Frameworks Timeline
 
