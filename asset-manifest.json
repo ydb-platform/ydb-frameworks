@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ydb-frameworks/static/css/main.bc6dffc5.css",
-    "main.js": "/ydb-frameworks/static/js/main.b363fc20.js",
+    "main.js": "/ydb-frameworks/static/js/main.aa5615aa.js",
     "index.html": "/ydb-frameworks/index.html",
     "main.bc6dffc5.css.map": "/ydb-frameworks/static/css/main.bc6dffc5.css.map",
-    "main.b363fc20.js.map": "/ydb-frameworks/static/js/main.b363fc20.js.map"
+    "main.aa5615aa.js.map": "/ydb-frameworks/static/js/main.aa5615aa.js.map"
   },
   "entrypoints": [
     "static/css/main.bc6dffc5.css",
-    "static/js/main.b363fc20.js"
+    "static/js/main.aa5615aa.js"
   ]
 }
