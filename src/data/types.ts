@@ -16,7 +16,8 @@ export type Database =
     | 'sqlite3'
     | 'yugabytedb'
     | 'cockroachdb'
-    | 'redis';
+    | 'redis'
+    | 'cassandra';
 
 export type FrameworkCategory = 
     | 'Server-side feature'
