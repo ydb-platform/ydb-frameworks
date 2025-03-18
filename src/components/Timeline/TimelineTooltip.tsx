@@ -15,10 +15,27 @@ const TimelineTooltip: React.FC<TimelineTooltipProps> = ({framework, position, d
     const frameworkReleaseDate = parseDate(framework.releaseDate);
     const dbSupportDate = framework.implementation?.releaseDate ? parseDate(framework.implementation?.releaseDate) : frameworkReleaseDate;
 
-    // Смещаем подсказку вниз и вправо от курсора
+    // Определяем, в какой части экрана находится курсор
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+    const isRightHalf = position.x > screenWidth / 2;
+    const isBottomHalf = position.y > screenHeight / 2;
+    
+    // Оценка размеров тултипа
+    const tooltipWidth = 300;
+    const tooltipHeight = 200; // Примерная высота
+    // Отступы от курсора
+    const cursorOffsetX = 15;
+    const cursorOffsetY = 20;
+    
+    // Рассчитываем позицию тултипа
     const tooltipStyle = {
-        top: `${position.y + 20}px`,
-        left: `${position.x + 15}px`,
+        top: isBottomHalf 
+            ? `${position.y - tooltipHeight - cursorOffsetY}px` // Над курсором
+            : `${position.y + cursorOffsetY}px`, // Под курсором
+        left: isRightHalf 
+            ? `${position.x - tooltipWidth - cursorOffsetX}px` // Слева от курсора
+            : `${position.x + cursorOffsetX}px`, // Справа от курсора
         boxShadow: '0 3px 14px rgba(0, 0, 0, 0.25)',
         backgroundColor: 'var(--tooltip-bg)',
         backdropFilter: 'blur(2px)',
