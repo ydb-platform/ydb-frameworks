@@ -3,6 +3,14 @@ import { createPortal } from 'react-dom';
 import { languageColors, categoryColors, getStatusCategory } from '../data/products';
 import './ProductCard.css';
 
+// Convert hex color to rgba with given alpha
+const hexToRgba = (hex, alpha) => {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
+
 const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0, above: false });
@@ -10,7 +18,7 @@ const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) =>
   const tooltipRef = useRef(null);
   
   const language = product["Язык программирования"];
-  const colors = languageColors[language] || { bg: "#666", text: "#fff" };
+  const colors = languageColors[language] || { bg: "#666666", text: "#ffffff" };
   const statusArray = Array.isArray(product["Статус"]) ? product["Статус"] : [product["Статус"]];
   const statusCategory = getStatusCategory(statusArray);
   const quality = product.quality ?? 50;
@@ -20,6 +28,7 @@ const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) =>
   
   // Quality affects background opacity (0 = very transparent, 100 = fully opaque)
   const bgOpacity = 0.3 + (quality / 100) * 0.7;
+  const bgColorWithOpacity = hexToRgba(colors.bg, bgOpacity);
   
   const getBorderStyle = () => {
     switch (statusCategory) {
@@ -87,8 +96,7 @@ const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) =>
         style={{
           width: '100%',
           height: '100%',
-          backgroundColor: colors.bg,
-          opacity: bgOpacity,
+          backgroundColor: bgColorWithOpacity,
           border: getBorderStyle(),
           borderColor: 'rgba(255,255,255,0.4)',
           cursor: hasRepo ? 'pointer' : 'default'
@@ -101,8 +109,7 @@ const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) =>
           className="product-name" 
           style={{ 
             color: colors.text, 
-            fontSize: `${fontSize}px`,
-            opacity: 1 / bgOpacity 
+            fontSize: `${fontSize}px`
           }}
         >
           {product["Продукт"]}
