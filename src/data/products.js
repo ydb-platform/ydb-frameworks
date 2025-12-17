@@ -1,5 +1,17 @@
 export const products = [
   {
+    "Продукт": "docker image local-ydb",
+    "Статус": ["Принимаем PR", "Фиксим баги", "Заносим свежие фичи", "Production ready"],
+    "Ответственный": "Я Владислав Поляков (polrk)",
+    "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
+    "Язык программирования": "Python",
+    "categories": ["CI/CD"],
+    "attention": 4,
+    "impact": 10,
+    "quality": 85,
+    "repository": "https://github.com/ydb-platform/ydb"
+  },
+  {
     "Продукт": "ydb-go-sdk",
     "Статус": ["Принимаем PR", "Фиксим баги", "Заносим свежие фичи", "Production ready"],
     "Ответственный": "Константин Прокопенко (zkpo)",
