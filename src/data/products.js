@@ -384,7 +384,7 @@ export const products = [
     "repository": "https://github.com/ydb-platform/ydb"
   },
   {
-    "Продукт": "YDB FDW extention",
+    "Продукт": "YDB FDW extention for PostgreSQL",
     "Статус": ["В разработке"],
     "Ответственный": "Тимофей Кулин (rekby)",
     "Кто еще может помочь": ["Иван Шиляев (spotivan)", "Булат Гаязов (brgayazov)"],
