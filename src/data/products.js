@@ -6,9 +6,9 @@ export const products = [
     "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)", "Тимофей Кулин (rekby)"],
     "Язык программирования": "Go",
     "categories": ["Native SDK"],
-    "attention": 9,
+    "attention": 8,
     "impact": 10,
-    "quality": 50,
+    "quality": 95,
     "repository": "https://github.com/ydb-platform/ydb-go-sdk"
   },
   {
@@ -19,8 +19,8 @@ export const products = [
     "Язык программирования": "Go",
     "categories": ["Standard API"],
     "attention": 8,
-    "impact": 9,
-    "quality": 50,
+    "impact": 6,
+    "quality": 85,
     "repository": "https://github.com/ydb-platform/ydb-go-sdk"
   },
   {
@@ -30,9 +30,9 @@ export const products = [
     "Кто еще может помочь": [],
     "Язык программирования": "Go",
     "categories": ["IaaS"],
-    "attention": 7,
-    "impact": 8,
-    "quality": 50,
+    "attention": 3,
+    "impact": 4,
+    "quality": 75,
     "repository": "https://github.com/ydb-platform/terraform-provider-ydb"
   },
   {
@@ -43,8 +43,8 @@ export const products = [
     "Язык программирования": "Go",
     "categories": ["ORM"],
     "attention": 3,
-    "impact": 5,
-    "quality": 50,
+    "impact": 2,
+    "quality": 25,
     "repository": "https://github.com/ydb-platform/gorm-driver"
   },
   {
@@ -54,9 +54,9 @@ export const products = [
     "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
     "Язык программирования": "Go",
     "categories": ["ORM"],
-    "attention": 3,
-    "impact": 4,
-    "quality": 50,
+    "attention": 4,
+    "impact": 1,
+    "quality": 10,
     "repository": "https://github.com/ydb-platform/xorm"
   },
   {
@@ -68,7 +68,7 @@ export const products = [
     "categories": ["Migration"],
     "attention": 2,
     "impact": 6,
-    "quality": 50,
+    "quality": 95,
     "repository": "https://github.com/ydb-platform/ydb-go-sdk"
   },
   {
@@ -79,7 +79,7 @@ export const products = [
     "Язык программирования": "Go",
     "categories": ["BI", "Observability"],
     "attention": 6,
-    "impact": 7,
+    "impact": 3,
     "quality": 50,
     "repository": "https://github.com/ydb-platform/ydb-grafana-datasource-plugin"
   },
@@ -91,8 +91,8 @@ export const products = [
     "Язык программирования": "Go",
     "categories": ["Code Generation"],
     "attention": 5,
-    "impact": 6,
-    "quality": 50,
+    "impact": 2,
+    "quality": 40,
     "repository": ""
   },
   {
@@ -102,9 +102,9 @@ export const products = [
     "Кто еще может помочь": ["Константин Прокопенко (zkpo)"],
     "Язык программирования": "Go",
     "categories": ["Data Ingestion", "Observability"],
-    "attention": 2,
-    "impact": 6,
-    "quality": 50,
+    "attention": 1,
+    "impact": 4,
+    "quality": 95,
     "repository": "https://github.com/ydb-platform/fluent-bit-ydb"
   },
   {
@@ -126,9 +126,9 @@ export const products = [
     "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)", "Тимофей Кулин (rekby)"],
     "Язык программирования": "Go",
     "categories": ["Application", "Serverless"],
-    "attention": 8,
-    "impact": 9,
-    "quality": 50,
+    "attention": 6,
+    "impact": 5,
+    "quality": 95,
     "repository": ""
   },
   {
@@ -139,8 +139,8 @@ export const products = [
     "Язык программирования": "Go",
     "categories": ["Application", "Serverless"],
     "attention": 8,
-    "impact": 8,
-    "quality": 50,
+    "impact": 5,
+    "quality": 85,
     "repository": ""
   },
   {
@@ -151,8 +151,8 @@ export const products = [
     "Язык программирования": "C/C++",
     "categories": ["Native SDK"],
     "attention": 9,
-    "impact": 9,
-    "quality": 50,
+    "impact": 10,
+    "quality": 75,
     "repository": "https://github.com/ydb-platform/ydb-cpp-sdk"
   },
   {
@@ -162,9 +162,9 @@ export const products = [
     "Кто еще может помочь": [],
     "Язык программирования": "C/C++",
     "categories": ["Standard API"],
-    "attention": 5,
-    "impact": 5,
-    "quality": 50,
+    "attention": 4,
+    "impact": 7,
+    "quality": 25,
     "repository": ""
   },
   {
@@ -174,9 +174,9 @@ export const products = [
     "Кто еще может помочь": ["Тимофей Кулин (rekby)"],
     "Язык программирования": "Python",
     "categories": ["Native SDK"],
-    "attention": 9,
+    "attention": 8,
     "impact": 10,
-    "quality": 50,
+    "quality": 85,
     "repository": "https://github.com/ydb-platform/ydb-python-sdk"
   },
   {
@@ -186,9 +186,9 @@ export const products = [
     "Кто еще может помочь": ["Тимофей Кулин (rekby)"],
     "Язык программирования": "Python",
     "categories": ["Native SDK", "Federation"],
-    "attention": 4,
-    "impact": 7,
-    "quality": 50,
+    "attention": 3,
+    "impact": 4,
+    "quality": 85,
     "repository": "https://github.com/ydb-platform/ydb-python-sdk"
   },
   {
@@ -198,9 +198,9 @@ export const products = [
     "Кто еще может помочь": ["Тимофей Кулин (rekby)"],
     "Язык программирования": "Go",
     "categories": ["Native SDK", "Federation"],
-    "attention": 4,
-    "impact": 7,
-    "quality": 50,
+    "attention": 2,
+    "impact": 4,
+    "quality": 85,
     "repository": "https://github.com/ydb-platform/ydb-go-sdk"
   },
   {
@@ -211,8 +211,8 @@ export const products = [
     "Язык программирования": "Python",
     "categories": ["Console", "Data Ingestion"],
     "attention": 3,
-    "impact": 6,
-    "quality": 50,
+    "impact": 4,
+    "quality": 25,
     "repository": ""
   },
   {
@@ -222,9 +222,9 @@ export const products = [
     "Кто еще может помочь": [],
     "Язык программирования": "Python",
     "categories": ["Vector Store", "AI/ML"],
-    "attention": 4,
-    "impact": 5,
-    "quality": 50,
+    "attention": 2,
+    "impact": 7,
+    "quality": 85,
     "repository": "https://github.com/ydb-platform/ydb-langchain"
   },
   {
@@ -236,7 +236,7 @@ export const products = [
     "categories": ["ETL", "Workflow"],
     "attention": 2,
     "impact": 4,
-    "quality": 50,
+    "quality": 90,
     "repository": "https://github.com/ydb-platform/ydb-airflow-provider"
   },
   {
@@ -246,9 +246,9 @@ export const products = [
     "Кто еще может помочь": [],
     "Язык программирования": "Python",
     "categories": ["ORM", "Standard API"],
-    "attention": 8,
-    "impact": 9,
-    "quality": 50,
+    "attention": 3,
+    "impact": 6,
+    "quality": 70,
     "repository": "https://github.com/ydb-platform/ydb-sqlalchemy"
   },
   {
@@ -258,8 +258,8 @@ export const products = [
     "Кто еще может помочь": [],
     "Язык программирования": "Python",
     "categories": ["ELT", "Analytics"],
-    "attention": 5,
-    "impact": 5,
+    "attention": 4,
+    "impact": 3,
     "quality": 50,
     "repository": "https://github.com/ydb-platform/ydb-dbt-adapter"
   },
@@ -270,9 +270,9 @@ export const products = [
     "Кто еще может помочь": [],
     "Язык программирования": "Python",
     "categories": ["Standard API"],
-    "attention": 7,
+    "attention": 2,
     "impact": 8,
-    "quality": 50,
+    "quality": 90,
     "repository": "https://github.com/ydb-platform/ydb-python-sdk"
   },
   {
@@ -282,9 +282,9 @@ export const products = [
     "Кто еще может помочь": [],
     "Язык программирования": "Python",
     "categories": ["ORM"],
-    "attention": 2,
-    "impact": 4,
-    "quality": 50,
+    "attention": 1,
+    "impact": 2,
+    "quality": 60,
     "repository": "https://github.com/ydb-platform/ydb-django"
   },
   {
@@ -296,7 +296,7 @@ export const products = [
     "categories": ["Native SDK"],
     "attention": 9,
     "impact": 10,
-    "quality": 50,
+    "quality": 90,
     "repository": "https://github.com/ydb-platform/ydb-java-sdk"
   },
   {
@@ -308,7 +308,7 @@ export const products = [
     "categories": ["Standard API"],
     "attention": 8,
     "impact": 9,
-    "quality": 50,
+    "quality": 90,
     "repository": "https://github.com/ydb-platform/ydb-jdbc-driver"
   },
   {
@@ -319,8 +319,8 @@ export const products = [
     "Язык программирования": "Java",
     "categories": ["ETL", "Data Ingestion"],
     "attention": 4,
-    "impact": 5,
-    "quality": 50,
+    "impact": 3,
+    "quality": 60,
     "repository": "https://github.com/ydb-platform/ydb-importer"
   },
   {
@@ -331,8 +331,8 @@ export const products = [
     "Язык программирования": "Java",
     "categories": ["ETL", "Analytics"],
     "attention": 5,
-    "impact": 5,
-    "quality": 50,
+    "impact": 4,
+    "quality": 65,
     "repository": "https://github.com/ydb-platform/ydb-spark-connector"
   },
   {
@@ -342,9 +342,9 @@ export const products = [
     "Кто еще может помочь": [],
     "Язык программирования": "Js/Ts",
     "categories": ["Native SDK"],
-    "attention": 7,
-    "impact": 6,
-    "quality": 50,
+    "attention": 4,
+    "impact": 4,
+    "quality": 65,
     "repository": "https://github.com/ydb-platform/ydb-nodejs-sdk"
   },
   {
@@ -354,9 +354,9 @@ export const products = [
     "Кто еще может помочь": ["Булат Гаязов (brgayazov)"],
     "Язык программирования": "C/C++",
     "categories": ["Console", "Admin"],
-    "attention": 8,
+    "attention": 10,
     "impact": 10,
-    "quality": 50,
+    "quality": 75,
     "repository": "https://github.com/ydb-platform/ydb"
   },
   {
@@ -366,9 +366,9 @@ export const products = [
     "Кто еще может помочь": ["Иван Шиляев (spotivan)", "Булат Гаязов (brgayazov)"],
     "Язык программирования": "C/C++",
     "categories": ["Standard API", "Integration"],
-    "attention": 7,
-    "impact": 8,
-    "quality": 50,
+    "attention": 10,
+    "impact": 10,
+    "quality": 25,
     "repository": "https://github.com/ydb-platform/ydb-postgres-fdw"
   },
   {
@@ -379,8 +379,8 @@ export const products = [
     "Язык программирования": "C#",
     "categories": ["Native SDK"],
     "attention": 8,
-    "impact": 8,
-    "quality": 50,
+    "impact": 6,
+    "quality": 70,
     "repository": "https://github.com/ydb-platform/ydb-dotnet-sdk"
   },
   {
@@ -390,9 +390,9 @@ export const products = [
     "Кто еще может помочь": [],
     "Язык программирования": "C#",
     "categories": ["Standard API"],
-    "attention": 5,
+    "attention": 9,
     "impact": 6,
-    "quality": 50,
+    "quality": 80,
     "repository": "https://github.com/ydb-platform/ydb-dotnet-sdk"
   },
   {
@@ -402,9 +402,9 @@ export const products = [
     "Кто еще может помочь": [],
     "Язык программирования": "C#",
     "categories": ["ORM"],
-    "attention": 5,
+    "attention": 9,
     "impact": 6,
-    "quality": 50,
+    "quality": 80,
     "repository": "https://github.com/ydb-platform/ydb-dotnet-sdk"
   },
   {
@@ -414,9 +414,9 @@ export const products = [
     "Кто еще может помочь": [],
     "Язык программирования": "C#",
     "categories": ["ORM"],
-    "attention": 5,
-    "impact": 5,
-    "quality": 50,
+    "attention": 3,
+    "impact": 6,
+    "quality": 80,
     "repository": ""
   },
   {
@@ -426,9 +426,9 @@ export const products = [
     "Кто еще может помочь": ["Александр Горшенин (alexandr268)"],
     "Язык программирования": "Java",
     "categories": ["ORM"],
-    "attention": 4,
+    "attention": 2,
     "impact": 7,
-    "quality": 50,
+    "quality": 90,
     "repository": "https://github.com/ydb-platform/ydb-java-dialects"
   },
   {
@@ -438,9 +438,9 @@ export const products = [
     "Кто еще может помочь": ["Александр Горшенин (alexandr268)"],
     "Язык программирования": "Java",
     "categories": ["ORM", "Code Generation"],
-    "attention": 4,
-    "impact": 5,
-    "quality": 50,
+    "attention": 2,
+    "impact": 7,
+    "quality": 90,
     "repository": "https://github.com/ydb-platform/ydb-java-dialects"
   },
   {
@@ -451,8 +451,8 @@ export const products = [
     "Язык программирования": "Java",
     "categories": ["Migration"],
     "attention": 2,
-    "impact": 6,
-    "quality": 50,
+    "impact": 7,
+    "quality": 90,
     "repository": "https://github.com/ydb-platform/ydb-java-dialects"
   },
   {
@@ -463,8 +463,8 @@ export const products = [
     "Язык программирования": "Java",
     "categories": ["Migration"],
     "attention": 2,
-    "impact": 6,
-    "quality": 50,
+    "impact": 7,
+    "quality": 90,
     "repository": "https://github.com/ydb-platform/ydb-java-dialects"
   },
   {
@@ -476,7 +476,7 @@ export const products = [
     "categories": ["ETL", "Data Ingestion"],
     "attention": 4,
     "impact": 6,
-    "quality": 50,
+    "quality": 85,
     "repository": ""
   },
   {
@@ -487,7 +487,7 @@ export const products = [
     "Язык программирования": "PHP",
     "categories": ["Native SDK"],
     "attention": 1,
-    "impact": 3,
+    "impact": 1,
     "quality": 50,
     "repository": "https://github.com/ydb-platform/ydb-php-sdk"
   },
@@ -512,7 +512,7 @@ export const products = [
     "categories": ["ORM"],
     "attention": 2,
     "impact": 6,
-    "quality": 50,
+    "quality": 90,
     "repository": "https://github.com/ydb-platform/ydb-dotnet-sdk"
   },
   {
@@ -522,9 +522,9 @@ export const products = [
     "Кто еще может помочь": [],
     "Язык программирования": "Python",
     "categories": ["Migration"],
-    "attention": 7,
-    "impact": 8,
-    "quality": 50,
+    "attention": 4,
+    "impact": 4,
+    "quality": 25,
     "repository": "https://github.com/ydb-platform/ydb-sqlalchemy"
   },
   {
@@ -536,7 +536,7 @@ export const products = [
     "categories": ["BI", "Analytics"],
     "attention": 2,
     "impact": 4,
-    "quality": 50,
+    "quality": 90,
     "repository": ""
   },
   {
@@ -548,7 +548,7 @@ export const products = [
     "categories": ["Data Ingestion", "Observability"],
     "attention": 2,
     "impact": 4,
-    "quality": 50,
+    "quality": 90,
     "repository": ""
   },
   {
@@ -559,7 +559,7 @@ export const products = [
     "Язык программирования": "Rust",
     "categories": ["Native SDK"],
     "attention": 2,
-    "impact": 4,
+    "impact": 2,
     "quality": 50,
     "repository": "https://github.com/ydb-platform/ydb-rs-sdk"
   },
@@ -571,8 +571,8 @@ export const products = [
     "Язык программирования": "Go",
     "categories": ["Library", "Observability"],
     "attention": 1,
-    "impact": 5,
-    "quality": 50,
+    "impact": 1,
+    "quality": 99,
     "repository": "https://github.com/ydb-platform/ydb-go-sdk-zap"
   },
   {
@@ -583,8 +583,8 @@ export const products = [
     "Язык программирования": "Go",
     "categories": ["Library", "Observability"],
     "attention": 1,
-    "impact": 3,
-    "quality": 50,
+    "impact": 1,
+    "quality": 99,
     "repository": "https://github.com/ydb-platform/ydb-go-sdk-logrus"
   },
   {
@@ -595,8 +595,8 @@ export const products = [
     "Язык программирования": "Go",
     "categories": ["Library", "Observability"],
     "attention": 1,
-    "impact": 3,
-    "quality": 50,
+    "impact": 1,
+    "quality": 99,
     "repository": "https://github.com/ydb-platform/ydb-go-sdk-zerolog"
   },
   {
@@ -606,9 +606,9 @@ export const products = [
     "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
     "Язык программирования": "Go",
     "categories": ["Library", "Observability"],
-    "attention": 2,
-    "impact": 4,
-    "quality": 50,
+    "attention": 1,
+    "impact": 1,
+    "quality": 99,
     "repository": "https://github.com/ydb-platform/ydb-go-sdk-otel"
   },
   {
@@ -619,8 +619,8 @@ export const products = [
     "Язык программирования": "Go",
     "categories": ["Library", "Observability"],
     "attention": 1,
-    "impact": 3,
-    "quality": 50,
+    "impact": 1,
+    "quality": 99,
     "repository": "https://github.com/ydb-platform/ydb-go-sdk-opentracing"
   },
   {
@@ -631,8 +631,8 @@ export const products = [
     "Язык программирования": "Go",
     "categories": ["Library", "Observability"],
     "attention": 1,
-    "impact": 3,
-    "quality": 50,
+    "impact": 1,
+    "quality": 99,
     "repository": "https://github.com/ydb-platform/ydb-go-sdk-slog"
   },
   {
@@ -642,9 +642,9 @@ export const products = [
     "Кто еще может помочь": ["Александр Горшенин (alexandr268)"],
     "Язык программирования": "Java",
     "categories": ["ORM", "Standard API"],
-    "attention": 7,
-    "impact": 8,
-    "quality": 50,
+    "attention": 8,
+    "impact": 9,
+    "quality": 90,
     "repository": "https://github.com/ydb-platform/ydb-java-dialects"
   },
   {
@@ -654,9 +654,9 @@ export const products = [
     "Кто еще может помочь": ["Кирилл Курдюков (kurdyukov-kir)"],
     "Язык программирования": "Java",
     "categories": ["ORM"],
-    "attention": 4,
-    "impact": 7,
-    "quality": 50,
+    "attention": 3,
+    "impact": 2,
+    "quality": 70,
     "repository": "https://github.com/ydb-platform/yoj-project"
   },
   {
@@ -666,9 +666,9 @@ export const products = [
     "Кто еще может помочь": ["Николай Перфилов (pnv1)", "Кирилл Курдюков (kurdyukov-kir)"],
     "Язык программирования": "Java",
     "categories": ["Native SDK", "Federation"],
-    "attention": 4,
-    "impact": 7,
-    "quality": 50,
+    "attention": 3,
+    "impact": 4,
+    "quality": 65,
     "repository": "https://github.com/ydb-platform/ydb-java-sdk"
   },
   {
@@ -678,8 +678,8 @@ export const products = [
     "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
     "Язык программирования": "C/C++",
     "categories": ["Library", "Integration"],
-    "attention": 7,
-    "impact": 8,
+    "attention": 4,
+    "impact": 6,
     "quality": 50,
     "repository": "https://github.com/userver-framework/userver"
   },
@@ -700,12 +700,12 @@ export const products = [
 // Solid colors for programming languages (no gradients)
 export const languageColors = {
   "Go": { bg: "#00ADD8", text: "#ffffff" },
-  "Python": { bg: "#3776AB", text: "#ffffff" },
-  "Java": { bg: "#ED8B00", text: "#ffffff" },
-  "C/C++": { bg: "#00599C", text: "#ffffff" },
-  "C#": { bg: "#512BD4", text: "#ffffff" },
-  "Js/Ts": { bg: "#F7DF1E", text: "#000000" },
-  "Rust": { bg: "#CE422B", text: "#ffffff" },
+  "Python": { bg: "#398800", text: "#110f00" },
+  "Java": { bg: "#df4300", text: "#ffffff" },
+  "C/C++": { bg: "#a2d5f8", text: "#001e72" },
+  "C#": { bg: "#d9ceff", text: "#5c00b4" },
+  "Js/Ts": { bg: "#fff592", text: "#000000" },
+  "Rust": { bg: "#CE422B", text: "#440000" },
   "PHP": { bg: "#777BB4", text: "#ffffff" }
 };
 
