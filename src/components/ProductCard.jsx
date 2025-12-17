@@ -33,7 +33,7 @@ const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) =>
   const getBorderStyle = () => {
     switch (statusCategory) {
       case 'production': return '1px solid ' + colors.text;
-      case 'development': return '2px dashed';
+      case 'development': return '1.5px dashed red';
       default: return '2px dotted';
     }
   };

@@ -48,7 +48,7 @@
 }
 
 .treemap-item.highlighted .product-card {
-  border-width: 3px !important;
+  border-width: 1.5px !important;
   font-weight: 600;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }

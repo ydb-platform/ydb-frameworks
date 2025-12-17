@@ -22,8 +22,8 @@
 }
 
 .product-card.card-highlighted {
-  border-width: 3px !important;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+  border-width: 1.5px !important;
+  box-shadow: 0 1.5px 12px rgba(0, 0, 0, 0.4);
 }
 
 .product-card.card-highlighted .product-name {
