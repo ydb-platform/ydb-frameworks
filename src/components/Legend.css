@@ -14,17 +14,16 @@
 }
 
 .legend-section.languages {
-  flex-shrink: 0;
+  padding-right: 6px;
+  border-right: 1px solid var(--border-color);
 }
 
 .legend-section.categories {
-  padding-left: 6px;
-  border-left: 1px solid var(--border-color);
+  padding-right: 6px;
+  border-right: 1px solid var(--border-color);
 }
 
 .legend-section.persons {
-  padding-left: 6px;
-  border-left: 1px solid var(--border-color);
 }
 
 .legend-lang-btn {
