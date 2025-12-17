@@ -231,6 +231,7 @@ const TreeMapView = ({ products, highlightLanguage, highlightPerson, highlightCa
               className="language-label"
               style={{ 
                 backgroundColor: languageColors[langLayout.language]?.bg || '#666',
+                border: '1px solid ' + (languageColors[langLayout.language]?.text || '#fff'),
                 color: languageColors[langLayout.language]?.text || '#fff'
               }}
             >
