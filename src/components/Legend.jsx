@@ -9,6 +9,9 @@ const Legend = ({
 }) => {
   const categories = getCategories();
   
+  // Check if staff parameter is in query string
+  const showPersons = new URLSearchParams(window.location.search).has('staff');
+  
   // Get unique responsible persons
   const responsiblePersons = [...new Set(products.filter(p => p["Ответственный"]).map(p => p["Ответственный"]))].sort();
   
@@ -81,20 +84,22 @@ const Legend = ({
         ))}
       </div>
       
-      <div className="legend-section persons">
-        {responsiblePersons.map(person => (
-          <button
-            key={person}
-            className={`legend-person-btn ${highlightPerson === person ? 'active' : ''}`}
-            style={{
-              opacity: hasActiveHighlight && highlightPerson !== person ? 0.4 : 1
-            }}
-            onClick={() => handlePersonClick(person)}
-          >
-            {getShortName(person)}
-          </button>
-        ))}
-      </div>
+      {showPersons && (
+        <div className="legend-section persons">
+          {responsiblePersons.map(person => (
+            <button
+              key={person}
+              className={`legend-person-btn ${highlightPerson === person ? 'active' : ''}`}
+              style={{
+                opacity: hasActiveHighlight && highlightPerson !== person ? 0.4 : 1
+              }}
+              onClick={() => handlePersonClick(person)}
+            >
+              {getShortName(person)}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
