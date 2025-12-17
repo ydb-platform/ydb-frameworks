@@ -5,8 +5,9 @@ import './ProductCard.css';
 
 const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
+  const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0, above: false });
   const cardRef = useRef(null);
+  const tooltipRef = useRef(null);
   
   const language = product["Язык программирования"];
   const colors = languageColors[language] || { bg: "#666", text: "#fff" };
@@ -39,17 +40,38 @@ const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) =>
   useEffect(() => {
     if (isHovered && cardRef.current) {
       const rect = cardRef.current.getBoundingClientRect();
+      const viewportWidth = window.innerWidth;
       const viewportHeight = window.innerHeight;
+      
+      // Estimate tooltip dimensions (will be refined after render)
+      const tooltipHeight = tooltipRef.current?.offsetHeight || 180;
+      const tooltipWidth = tooltipRef.current?.offsetWidth || 280;
       
       let x = rect.left + rect.width / 2;
       let y = rect.bottom + 8;
+      let above = false;
       
-      // Adjust if tooltip would go off screen
-      if (y + 200 > viewportHeight) {
-        y = rect.top - 8;
+      // Check if tooltip would go below viewport
+      if (y + tooltipHeight > viewportHeight) {
+        y = rect.top - tooltipHeight - 8;
+        above = true;
       }
       
-      setTooltipPos({ x, y });
+      // Ensure tooltip doesn't go above viewport
+      if (y < 8) {
+        y = 8;
+        above = false;
+      }
+      
+      // Ensure tooltip doesn't go off left/right edges
+      const halfWidth = tooltipWidth / 2;
+      if (x - halfWidth < 8) {
+        x = halfWidth + 8;
+      } else if (x + halfWidth > viewportWidth - 8) {
+        x = viewportWidth - halfWidth - 8;
+      }
+      
+      setTooltipPos({ x, y, above });
     }
   }, [isHovered]);
   
@@ -96,7 +118,8 @@ const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) =>
       
       {isHovered && createPortal(
         <div 
-          className="product-tooltip-portal"
+          ref={tooltipRef}
+          className={`product-tooltip-portal ${tooltipPos.above ? 'above' : 'below'}`}
           style={{
             left: tooltipPos.x,
             top: tooltipPos.y,

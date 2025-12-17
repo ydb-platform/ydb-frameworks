@@ -91,11 +91,11 @@
   max-width: 320px;
   z-index: 10000;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-  animation: tooltipFadeIn 0.1s ease-out;
   pointer-events: none;
 }
 
-.product-tooltip-portal::before {
+/* Arrow for tooltip below card (pointing up) */
+.product-tooltip-portal.below::before {
   content: '';
   position: absolute;
   top: -5px;
@@ -106,10 +106,43 @@
   border-bottom: 5px solid var(--tooltip-border, rgba(255, 255, 255, 0.1));
 }
 
-@keyframes tooltipFadeIn {
+/* Arrow for tooltip above card (pointing down) */
+.product-tooltip-portal.above::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  top: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--tooltip-border, rgba(255, 255, 255, 0.1));
+  border-bottom: none;
+}
+
+.product-tooltip-portal.below {
+  animation: tooltipFadeInBelow 0.1s ease-out;
+}
+
+.product-tooltip-portal.above {
+  animation: tooltipFadeInAbove 0.1s ease-out;
+}
+
+@keyframes tooltipFadeInBelow {
   from {
     opacity: 0;
     transform: translateX(-50%) translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes tooltipFadeInAbove {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(3px);
   }
   to {
     opacity: 1;
