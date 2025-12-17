@@ -3,6 +3,7 @@ import { products, getStatusCategory } from './data/products';
 import { ThemeProvider } from './context/ThemeContext';
 import TreeMapView from './components/TreeMapView';
 import Legend from './components/Legend';
+import YdbIcon from './components/YdbIcon';
 import './App.css';
 
 function AppContent() {
@@ -36,7 +37,7 @@ function AppContent() {
       <header className="app-header">
         <div className="logo-block">
           <div className="logo">
-            <div className="logo-icon">YDB</div>
+            <YdbIcon size={28} className="logo-icon" />
             <div className="logo-text">
               <h1>AppTeam</h1>
               <p>{products.length} продуктов</p>
