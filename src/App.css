@@ -44,11 +44,6 @@
   cursor: pointer;
   transition: all 0.15s ease;
   width: 3.5em;
-  height: 1.2em;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .legend-status-btn.production {

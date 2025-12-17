@@ -84,7 +84,7 @@ const Legend = ({
       });
     }
     
-    return shuffleArray(items);
+    return shuffleArray(items, window.outerHeight+window.outerWidth);
   }, [categories, showPersons, responsiblePersons]);
 
   const renderItem = (item) => {

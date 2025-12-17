@@ -50,3 +50,4 @@ const YdbIcon = ({ size = 28, className = '' }) => {
 
 export default YdbIcon;
 
+
