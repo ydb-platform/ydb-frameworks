@@ -1,5 +1,21 @@
+import { useMemo } from 'react';
 import { languageColors, categoryColors, getCategories, products } from '../data/products';
 import './Legend.css';
+
+// Seeded random for consistent shuffle
+const seededRandom = (seed) => {
+  const x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+};
+
+const shuffleArray = (array, seed = 42) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(seededRandom(seed + i) * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
 
 const Legend = ({ 
   highlightLanguage, setHighlightLanguage, 
@@ -47,59 +63,87 @@ const Legend = ({
 
   const hasActiveHighlight = highlightLanguage || highlightPerson || highlightCategory || highlightStatus;
 
+  // Create all items and shuffle them
+  const allItems = useMemo(() => {
+    const items = [];
+    
+    // Add languages
+    Object.entries(languageColors).forEach(([lang, colors]) => {
+      items.push({ type: 'language', key: `lang-${lang}`, lang, colors });
+    });
+    
+    // Add categories
+    categories.forEach(category => {
+      items.push({ type: 'category', key: `cat-${category}`, category });
+    });
+    
+    // Add persons if enabled
+    if (showPersons) {
+      responsiblePersons.forEach(person => {
+        items.push({ type: 'person', key: `person-${person}`, person });
+      });
+    }
+    
+    return shuffleArray(items);
+  }, [categories, showPersons, responsiblePersons]);
+
+  const renderItem = (item) => {
+    if (item.type === 'language') {
+      return (
+        <button
+          key={item.key}
+          className={`legend-lang-btn ${highlightLanguage === item.lang ? 'active' : ''}`}
+          style={{ 
+            backgroundColor: item.colors.bg, 
+            color: item.colors.text,
+            opacity: hasActiveHighlight && highlightLanguage !== item.lang ? 0.4 : 1
+          }}
+          onClick={() => handleLanguageClick(item.lang)}
+        >
+          {item.lang}
+        </button>
+      );
+    }
+    
+    if (item.type === 'category') {
+      return (
+        <button
+          key={item.key}
+          className={`legend-category-btn ${highlightCategory === item.category ? 'active' : ''}`}
+          style={{
+            borderColor: categoryColors[item.category] || '#888',
+            color: highlightCategory === item.category ? '#fff' : 'var(--text-color)',
+            backgroundColor: highlightCategory === item.category ? (categoryColors[item.category] || '#888') : 'transparent',
+            opacity: hasActiveHighlight && highlightCategory !== item.category ? 0.4 : 1
+          }}
+          onClick={() => handleCategoryClick(item.category)}
+        >
+          {item.category}
+        </button>
+      );
+    }
+    
+    if (item.type === 'person') {
+      return (
+        <button
+          key={item.key}
+          className={`legend-person-btn ${highlightPerson === item.person ? 'active' : ''}`}
+          style={{
+            opacity: hasActiveHighlight && highlightPerson !== item.person ? 0.4 : 1
+          }}
+          onClick={() => handlePersonClick(item.person)}
+        >
+          {getShortName(item.person)}
+        </button>
+      );
+    }
+    
+    return null;
+  };
+
   return (
     <div className="legend">
-      <div className="legend-section languages">
-        {Object.entries(languageColors).map(([lang, colors]) => (
-          <button
-            key={lang}
-            className={`legend-lang-btn ${highlightLanguage === lang ? 'active' : ''}`}
-            style={{ 
-              backgroundColor: colors.bg, 
-              color: colors.text,
-              opacity: hasActiveHighlight && highlightLanguage !== lang ? 0.4 : 1
-            }}
-            onClick={() => handleLanguageClick(lang)}
-          >
-            {lang}
-          </button>
-        ))}
-      </div>
-      
-      <div className="legend-section categories">
-        {categories.map(category => (
-          <button
-            key={category}
-            className={`legend-category-btn ${highlightCategory === category ? 'active' : ''}`}
-            style={{
-              borderColor: categoryColors[category] || '#888',
-              color: highlightCategory === category ? '#fff' : 'var(--text-color)',
-              backgroundColor: highlightCategory === category ? (categoryColors[category] || '#888') : 'transparent',
-              opacity: hasActiveHighlight && highlightCategory !== category ? 0.4 : 1
-            }}
-            onClick={() => handleCategoryClick(category)}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
-      
-      {showPersons && (
-        <div className="legend-section persons">
-          {responsiblePersons.map(person => (
-            <button
-              key={person}
-              className={`legend-person-btn ${highlightPerson === person ? 'active' : ''}`}
-              style={{
-                opacity: hasActiveHighlight && highlightPerson !== person ? 0.4 : 1
-              }}
-              onClick={() => handlePersonClick(person)}
-            >
-              {getShortName(person)}
-            </button>
-          ))}
-        </div>
-      )}
+      {allItems.map(renderItem)}
     </div>
   );
 };

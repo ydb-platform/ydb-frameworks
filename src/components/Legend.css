@@ -1,33 +1,19 @@
 .legend {
   display: flex;
-  gap: 6px;
-  align-items: flex-start;
+  gap: 3px;
   flex: 1;
   min-width: 0;
-}
-
-.legend-section {
-  display: flex;
-  gap: 3px;
-  align-items: center;
   flex-wrap: wrap;
 }
 
-.legend-section > button {
-  font-size: 1.4em;
-}
-
-.legend-section.languages {
-  padding-right: 6px;
-  border-right: 1px solid var(--border-color);
-}
-
-.legend-section.categories {
-  padding-right: 6px;
-  border-right: 1px solid var(--border-color);
-}
-
-.legend-section.persons {
+.legend > button {
+  font-size: 1.0em;
+  text-align: center;
+  height: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
 }
 
 .legend-lang-btn {
@@ -72,11 +58,11 @@
 
 .legend-person-btn {
   padding: 2px 5px;
+  background-color: rgba(0,0,0,0.15);
   border: 1px solid var(--border-color);
   border-radius: 3px;
   font-weight: 500;
   cursor: pointer;
-  background: var(--card-bg);
   color: var(--text-color);
   transition: all 0.15s ease;
 }
