@@ -703,10 +703,10 @@ export const languageColors = {
   "Python": { bg: "#398800", text: "#110f00" },
   "Java": { bg: "#df4300", text: "#ffffff" },
   "C/C++": { bg: "#a2d5f8", text: "#001e72" },
-  "C#": { bg: "#d9ceff", text: "#5c00b4" },
-  "Js/Ts": { bg: "#fff592", text: "#000000" },
-  "Rust": { bg: "#CE422B", text: "#440000" },
-  "PHP": { bg: "#777BB4", text: "#ffffff" }
+  "C#": { bg: "#9b7eff", text: "#5c00b4" },
+  "Js/Ts": { bg: "#ffef55", text: "#000000" },
+  "Rust": { bg: "#f37c6c", text: "#440000" },
+  "PHP": { bg: "#f800ff", text: "#ffffff" }
 };
 
 // Category colors
