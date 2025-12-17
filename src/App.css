@@ -17,11 +17,51 @@
   backdrop-filter: blur(20px);
 }
 
+.logo-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
 .logo {
   display: flex;
   align-items: center;
   gap: 6px;
-  flex-shrink: 0;
+}
+
+.status-buttons {
+  display: flex;
+  gap: 3px;
+}
+
+.legend-status-btn {
+  padding: 2px 6px;
+  border: none;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.legend-status-btn.production {
+  background: #10B981;
+  color: white;
+}
+
+.legend-status-btn.development {
+  background: #F59E0B;
+  color: white;
+}
+
+.legend-status-btn:hover {
+  transform: scale(1.05);
+}
+
+.legend-status-btn.active {
+  outline: 2px solid var(--text-color);
+  outline-offset: 1px;
 }
 
 .logo-icon {

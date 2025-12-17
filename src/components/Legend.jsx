@@ -1,5 +1,4 @@
-import { languageColors, categoryColors, getCategories, products, getStatusCategory } from '../data/products';
-import { useTheme } from '../context/ThemeContext';
+import { languageColors, categoryColors, getCategories, products } from '../data/products';
 import './Legend.css';
 
 const Legend = ({ 
@@ -8,17 +7,10 @@ const Legend = ({
   highlightCategory, setHighlightCategory,
   highlightStatus, setHighlightStatus
 }) => {
-  const { theme, setTheme } = useTheme();
   const categories = getCategories();
   
   // Get unique responsible persons
   const responsiblePersons = [...new Set(products.filter(p => p["Ответственный"]).map(p => p["Ответственный"]))].sort();
-  
-  // Count products by status
-  const statusCounts = { production: 0, development: 0 };
-  products.forEach(p => {
-    statusCounts[getStatusCategory(p["Статус"])]++;
-  });
   
   // Get short name from full name
   const getShortName = (fullName) => {
@@ -50,34 +42,10 @@ const Legend = ({
     setHighlightCategory(highlightCategory === category ? null : category);
   };
 
-  const handleStatusClick = (status) => {
-    clearAll();
-    setHighlightStatus(highlightStatus === status ? null : status);
-  };
-
   const hasActiveHighlight = highlightLanguage || highlightPerson || highlightCategory || highlightStatus;
 
   return (
     <div className="legend">
-      <div className="legend-section status">
-        <button
-          className={`legend-status-btn production ${highlightStatus === 'production' ? 'active' : ''}`}
-          style={{ opacity: hasActiveHighlight && highlightStatus !== 'production' ? 0.4 : 1 }}
-          onClick={() => handleStatusClick('production')}
-          title="Production ready"
-        >
-          ✓ {statusCounts.production}
-        </button>
-        <button
-          className={`legend-status-btn development ${highlightStatus === 'development' ? 'active' : ''}`}
-          style={{ opacity: hasActiveHighlight && highlightStatus !== 'development' ? 0.4 : 1 }}
-          onClick={() => handleStatusClick('development')}
-          title="В разработке"
-        >
-          ⚙ {statusCounts.development}
-        </button>
-      </div>
-
       <div className="legend-section languages">
         {Object.entries(languageColors).map(([lang, colors]) => (
           <button
@@ -126,24 +94,6 @@ const Legend = ({
             {getShortName(person)}
           </button>
         ))}
-      </div>
-      
-      <div className="legend-section theme">
-        <button 
-          className={theme === 'light' ? 'active' : ''} 
-          onClick={() => setTheme('light')}
-          title="Светлая тема"
-        >☀️</button>
-        <button 
-          className={theme === 'dark' ? 'active' : ''} 
-          onClick={() => setTheme('dark')}
-          title="Тёмная тема"
-        >🌙</button>
-        <button 
-          className={theme === 'system' ? 'active' : ''} 
-          onClick={() => setTheme('system')}
-          title="Системная тема"
-        >💻</button>
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 .legend {
   display: flex;
-  gap: 8px;
-  align-items: center;
-  flex-wrap: wrap;
+  gap: 6px;
+  align-items: flex-start;
   flex: 1;
+  min-width: 0;
 }
 
 .legend-section {
@@ -13,58 +13,18 @@
   flex-wrap: wrap;
 }
 
-.legend-section.status {
-  flex-shrink: 0;
-}
-
 .legend-section.languages {
   flex-shrink: 0;
 }
 
 .legend-section.categories {
-  padding-left: 8px;
+  padding-left: 6px;
   border-left: 1px solid var(--border-color);
 }
 
 .legend-section.persons {
-  padding-left: 8px;
+  padding-left: 6px;
   border-left: 1px solid var(--border-color);
-}
-
-.legend-section.theme {
-  padding-left: 8px;
-  border-left: 1px solid var(--border-color);
-  flex-shrink: 0;
-  margin-left: auto;
-}
-
-.legend-status-btn {
-  padding: 2px 6px;
-  border: none;
-  border-radius: 3px;
-  font-size: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.legend-status-btn.production {
-  background: #10B981;
-  color: white;
-}
-
-.legend-status-btn.development {
-  background: #F59E0B;
-  color: white;
-}
-
-.legend-status-btn:hover {
-  transform: scale(1.05);
-}
-
-.legend-status-btn.active {
-  outline: 2px solid var(--text-color);
-  outline-offset: 1px;
 }
 
 .legend-lang-btn {
@@ -129,24 +89,5 @@
 .legend-person-btn.active {
   background: var(--accent-color);
   color: white;
-  border-color: var(--accent-color);
-}
-
-.legend-section.theme button {
-  padding: 2px 5px;
-  border: 1px solid var(--border-color);
-  border-radius: 3px;
-  background: var(--card-bg);
-  cursor: pointer;
-  font-size: 10px;
-  transition: all 0.15s ease;
-}
-
-.legend-section.theme button:hover {
-  background: var(--hover-bg);
-}
-
-.legend-section.theme button.active {
-  background: var(--accent-color);
   border-color: var(--accent-color);
 }
