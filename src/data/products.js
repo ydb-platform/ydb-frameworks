@@ -324,14 +324,14 @@ export const products = [
     "repository": "https://github.com/ydb-platform/ydb-java-sdk"
   },
   {
-    "Продукт": "JDBC",
+    "Продукт": "JDBC Driver",
     "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
     "Ответственный": "Александр Горшенин (alexandr268)",
     "Кто еще может помочь": ["Кирилл Курдюков (kurdyukov-kir)"],
     "Язык программирования": "Java",
     "categories": ["Standard API"],
-    "attention": 8,
-    "impact": 9,
+    "attention": 9,
+    "impact": 10,
     "quality": 90,
     "repository": "https://github.com/ydb-platform/ydb-jdbc-driver"
   },
@@ -342,7 +342,7 @@ export const products = [
     "Кто еще может помочь": ["Кирилл Курдюков (kurdyukov-kir)"],
     "Язык программирования": "Java",
     "categories": ["ETL", "Data Ingestion"],
-    "attention": 4,
+    "attention": 2,
     "impact": 3,
     "quality": 60,
     "repository": "https://github.com/ydb-platform/ydb-importer"
@@ -354,7 +354,7 @@ export const products = [
     "Кто еще может помочь": [],
     "Язык программирования": "Java",
     "categories": ["ETL", "Analytics"],
-    "attention": 5,
+    "attention": 6,
     "impact": 4,
     "quality": 65,
     "repository": "https://github.com/ydb-platform/ydb-spark-connector"
@@ -444,19 +444,19 @@ export const products = [
     "repository": ""
   },
   {
-    "Продукт": "hibernate dialect",
+    "Продукт": "Hibernate 5/6 dialects",
     "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
     "Ответственный": "Кирилл Курдюков (kurdyukov-kir)",
     "Кто еще может помочь": ["Александр Горшенин (alexandr268)"],
     "Язык программирования": "Java",
     "categories": ["ORM"],
-    "attention": 2,
-    "impact": 7,
+    "attention": 7,
+    "impact": 10,
     "quality": 90,
     "repository": "https://github.com/ydb-platform/ydb-java-dialects"
   },
   {
-    "Продукт": "jooq dialect",
+    "Продукт": "JOOQ dialect",
     "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
     "Ответственный": "Кирилл Курдюков (kurdyukov-kir)",
     "Кто еще может помочь": ["Александр Горшенин (alexandr268)"],
@@ -487,7 +487,7 @@ export const products = [
     "Язык программирования": "Java",
     "categories": ["Migration"],
     "attention": 2,
-    "impact": 7,
+    "impact": 5,
     "quality": 90,
     "repository": "https://github.com/ydb-platform/ydb-java-dialects"
   },
@@ -666,7 +666,7 @@ export const products = [
     "Кто еще может помочь": ["Александр Горшенин (alexandr268)"],
     "Язык программирования": "Java",
     "categories": ["ORM", "Standard API"],
-    "attention": 8,
+    "attention": 7,
     "impact": 9,
     "quality": 90,
     "repository": "https://github.com/ydb-platform/ydb-java-dialects"
@@ -678,13 +678,13 @@ export const products = [
     "Кто еще может помочь": ["Кирилл Курдюков (kurdyukov-kir)"],
     "Язык программирования": "Java",
     "categories": ["ORM"],
-    "attention": 3,
+    "attention": 2,
     "impact": 2,
     "quality": 70,
     "repository": "https://github.com/ydb-platform/yoj-project"
   },
   {
-    "Продукт": "federated ydb-java-sdk",
+    "Продукт": "Federated ydb-java-sdk",
     "Статус": ["Production ready", "Фиксим баги", "Принимаем PR", "Заносим свежие фичи"],
     "Ответственный": "Александр Горшенин (alexandr268)",
     "Кто еще может помочь": ["Николай Перфилов (pnv1)", "Кирилл Курдюков (kurdyukov-kir)"],
@@ -708,16 +708,16 @@ export const products = [
     "repository": "https://github.com/userver-framework/userver"
   },
   {
-    "Продукт": "apache NiFi",
+    "Продукт": "Apache NiFi",
     "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
     "Ответственный": "Александр Горшенин (alexandr268)",
     "Кто еще может помочь": ["Кирилл Курдюков (kurdyukov-kir)"],
     "Язык программирования": "Java",
     "categories": ["ETL", "Data Ingestion"],
-    "attention": 3,
+    "attention": 2,
     "impact": 4,
     "quality": 50,
-    "repository": "https://github.com/ydb-platform/ydb-nifi-processor"
+    "repository": "https://github.com/ydb-platform/ydb-jdbc-driver"
   }
 ];
 
