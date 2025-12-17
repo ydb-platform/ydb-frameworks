@@ -1,0 +1,177 @@
+.product-card {
+  position: relative;
+  border-radius: 4px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.product-card.clickable {
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  opacity: 1 !important;
+}
+
+.product-card.card-highlighted {
+  border-width: 3px !important;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+}
+
+.product-card.card-highlighted .product-name {
+  font-weight: 700;
+}
+
+.product-card.status-production {
+  border-style: solid !important;
+}
+
+.product-card.status-development {
+  border-style: dashed !important;
+}
+
+.product-name {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 8px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.1;
+  word-break: break-word;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  padding: 0 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6px;
+  font-weight: bold;
+}
+
+.status-indicator.production {
+  background: #10B981;
+  color: white;
+}
+
+.status-indicator.development {
+  background: #F59E0B;
+  color: white;
+}
+
+/* Portal tooltip - always on top */
+.product-tooltip-portal {
+  position: fixed;
+  transform: translateX(-50%);
+  background: var(--tooltip-bg, linear-gradient(145deg, #1e293b 0%, #0f172a 100%));
+  border: 1px solid var(--tooltip-border, rgba(255, 255, 255, 0.1));
+  border-radius: 8px;
+  padding: 8px 12px;
+  min-width: 240px;
+  max-width: 320px;
+  z-index: 10000;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  animation: tooltipFadeIn 0.1s ease-out;
+  pointer-events: none;
+}
+
+.product-tooltip-portal::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid var(--tooltip-border, rgba(255, 255, 255, 0.1));
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.product-tooltip-portal h4 {
+  margin: 0 0 6px 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary, #f1f5f9);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  padding-bottom: 5px;
+}
+
+.tooltip-row {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 4px;
+  font-size: 9px;
+  line-height: 1.3;
+}
+
+.tooltip-row:last-child {
+  margin-bottom: 0;
+}
+
+.tooltip-label {
+  color: var(--text-secondary, #94a3b8);
+  font-weight: 500;
+  min-width: 70px;
+  flex-shrink: 0;
+}
+
+.tooltip-value {
+  color: var(--text-primary, #e2e8f0);
+  word-break: break-word;
+}
+
+.tooltip-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.tooltip-category-tag {
+  padding: 1px 4px;
+  border: 1px solid;
+  border-radius: 2px;
+  font-size: 7px;
+  font-weight: 500;
+  color: var(--text-primary, #e2e8f0);
+}
+
+.tooltip-hint {
+  margin-top: 6px;
+  padding-top: 5px;
+  border-top: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  font-size: 8px;
+  color: var(--text-secondary, #94a3b8);
+  text-align: center;
+  font-style: italic;
+}

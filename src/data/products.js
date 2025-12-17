@@ -1,0 +1,792 @@
+export const products = [
+  {
+    "Продукт": "ydb-go-sdk",
+    "Статус": ["Принимаем PR", "Фиксим баги", "Заносим свежие фичи", "Production ready"],
+    "Ответственный": "Константин Прокопенко (zkpo)",
+    "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)", "Тимофей Кулин (rekby)"],
+    "Язык программирования": "Go",
+    "categories": ["Native SDK"],
+    "attention": 9,
+    "impact": 10,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk"
+  },
+  {
+    "Продукт": "database/sql",
+    "Статус": ["Принимаем PR", "Фиксим баги", "Заносим свежие фичи", "Production ready"],
+    "Ответственный": "Константин Прокопенко (zkpo)",
+    "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
+    "Язык программирования": "Go",
+    "categories": ["Standard API"],
+    "attention": 8,
+    "impact": 9,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk"
+  },
+  {
+    "Продукт": "ydb terraform provider",
+    "Статус": ["Принимаем PR", "Фиксим баги", "Заносим свежие фичи", "Production ready"],
+    "Ответственный": "Константин Прокопенко (zkpo)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Go",
+    "categories": ["IaaS"],
+    "attention": 7,
+    "impact": 8,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/terraform-provider-ydb"
+  },
+  {
+    "Продукт": "GORM",
+    "Статус": ["В разработке", "Принимаем PR", "Фиксим баги"],
+    "Ответственный": "Константин Прокопенко (zkpo)",
+    "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
+    "Язык программирования": "Go",
+    "categories": ["ORM"],
+    "attention": 3,
+    "impact": 5,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/gorm-driver"
+  },
+  {
+    "Продукт": "XORM",
+    "Статус": ["В разработке", "Принимаем PR", "Фиксим баги"],
+    "Ответственный": "Константин Прокопенко (zkpo)",
+    "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
+    "Язык программирования": "Go",
+    "categories": ["ORM"],
+    "attention": 3,
+    "impact": 4,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/xorm"
+  },
+  {
+    "Продукт": "goose",
+    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Алексей Мясников (asmyasnikov)",
+    "Кто еще может помочь": ["Константин Прокопенко (zkpo)"],
+    "Язык программирования": "Go",
+    "categories": ["Migration"],
+    "attention": 2,
+    "impact": 6,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk"
+  },
+  {
+    "Продукт": "Grafana over YDB",
+    "Статус": ["В разработке"],
+    "Ответственный": "Константин Прокопенко (zkpo)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Go",
+    "categories": ["BI", "Observability"],
+    "attention": 6,
+    "impact": 7,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-grafana-datasource-plugin"
+  },
+  {
+    "Продукт": "SQLC",
+    "Статус": ["В разработке"],
+    "Ответственный": "Константин Прокопенко (zkpo)",
+    "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
+    "Язык программирования": "Go",
+    "categories": ["Code Generation"],
+    "attention": 5,
+    "impact": 6,
+    "quality": 50,
+    "repository": ""
+  },
+  {
+    "Продукт": "fluentbit",
+    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Алексей Мясников (asmyasnikov)",
+    "Кто еще может помочь": ["Константин Прокопенко (zkpo)"],
+    "Язык программирования": "Go",
+    "categories": ["Data Ingestion", "Observability"],
+    "attention": 2,
+    "impact": 6,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/fluent-bit-ydb"
+  },
+  {
+    "Продукт": "jaeger ydb store",
+    "Статус": ["Принимаем PR", "Фиксим баги"],
+    "Ответственный": "",
+    "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)", "Константин Прокопенко (zkpo)"],
+    "Язык программирования": "Go",
+    "categories": ["Observability", "Data Ingestion"],
+    "attention": 2,
+    "impact": 5,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/jaeger-ydb-store"
+  },
+  {
+    "Продукт": "serverless ydb proxy",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги"],
+    "Ответственный": "Евгений Прокофьев (prkkofev)",
+    "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)", "Тимофей Кулин (rekby)"],
+    "Язык программирования": "Go",
+    "categories": ["Application", "Serverless"],
+    "attention": 8,
+    "impact": 9,
+    "quality": 50,
+    "repository": ""
+  },
+  {
+    "Продукт": "serverless docapi proxy",
+    "Статус": ["Production ready", "Фиксим баги", "Заносим свежие фичи"],
+    "Ответственный": "Евгений Прокофьев (prkkofev)",
+    "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)", "Тимофей Кулин (rekby)"],
+    "Язык программирования": "Go",
+    "categories": ["Application", "Serverless"],
+    "attention": 8,
+    "impact": 8,
+    "quality": 50,
+    "repository": ""
+  },
+  {
+    "Продукт": "ydb-cpp-sdk",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Булат Гаязов (brgayazov)",
+    "Кто еще может помочь": ["Николай Перфилов (pnv1)"],
+    "Язык программирования": "C/C++",
+    "categories": ["Native SDK"],
+    "attention": 9,
+    "impact": 9,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-cpp-sdk"
+  },
+  {
+    "Продукт": "ODBC",
+    "Статус": ["В разработке"],
+    "Ответственный": "Булат Гаязов (brgayazov)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "C/C++",
+    "categories": ["Standard API"],
+    "attention": 5,
+    "impact": 5,
+    "quality": 50,
+    "repository": ""
+  },
+  {
+    "Продукт": "ydb-python-sdk",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Олег Овчарук (ovcharuk)",
+    "Кто еще может помочь": ["Тимофей Кулин (rekby)"],
+    "Язык программирования": "Python",
+    "categories": ["Native SDK"],
+    "attention": 9,
+    "impact": 10,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-python-sdk"
+  },
+  {
+    "Продукт": "federated ydb-python-sdk",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги"],
+    "Ответственный": "Олег Овчарук (ovcharuk)",
+    "Кто еще может помочь": ["Тимофей Кулин (rekby)"],
+    "Язык программирования": "Python",
+    "categories": ["Native SDK", "Federation"],
+    "attention": 4,
+    "impact": 7,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-python-sdk"
+  },
+  {
+    "Продукт": "federated ydb-go-sdk",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги"],
+    "Ответственный": "Константин Прокопенко (zkpo)",
+    "Кто еще может помочь": ["Тимофей Кулин (rekby)"],
+    "Язык программирования": "Go",
+    "categories": ["Native SDK", "Federation"],
+    "attention": 4,
+    "impact": 7,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk"
+  },
+  {
+    "Продукт": "logbroker cli",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Олег Овчарук (ovcharuk)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Python",
+    "categories": ["Console", "Data Ingestion"],
+    "attention": 3,
+    "impact": 6,
+    "quality": 50,
+    "repository": ""
+  },
+  {
+    "Продукт": "langchain-ydb",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Олег Овчарук (ovcharuk)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Python",
+    "categories": ["Vector Store", "AI/ML"],
+    "attention": 4,
+    "impact": 5,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-langchain"
+  },
+  {
+    "Продукт": "apache airflow",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Олег Овчарук (ovcharuk)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Python",
+    "categories": ["ETL", "Workflow"],
+    "attention": 2,
+    "impact": 4,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-airflow-provider"
+  },
+  {
+    "Продукт": "sqlalchemy",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Олег Овчарук (ovcharuk)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Python",
+    "categories": ["ORM", "Standard API"],
+    "attention": 8,
+    "impact": 9,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-sqlalchemy"
+  },
+  {
+    "Продукт": "dbt",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Олег Овчарук (ovcharuk)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Python",
+    "categories": ["ELT", "Analytics"],
+    "attention": 5,
+    "impact": 5,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-dbt-adapter"
+  },
+  {
+    "Продукт": "DBAPI",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Олег Овчарук (ovcharuk)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Python",
+    "categories": ["Standard API"],
+    "attention": 7,
+    "impact": 8,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-python-sdk"
+  },
+  {
+    "Продукт": "django orm",
+    "Статус": ["Production ready", "Принимаем PR", "Фиксим баги"],
+    "Ответственный": "Олег Овчарук (ovcharuk)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Python",
+    "categories": ["ORM"],
+    "attention": 2,
+    "impact": 4,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-django"
+  },
+  {
+    "Продукт": "ydb-java-sdk",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Александр Горшенин (alexandr268)",
+    "Кто еще может помочь": ["Николай Перфилов (pnv1)", "Кирилл Курдюков (kurdyukov-kir)"],
+    "Язык программирования": "Java",
+    "categories": ["Native SDK"],
+    "attention": 9,
+    "impact": 10,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-java-sdk"
+  },
+  {
+    "Продукт": "JDBC",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Александр Горшенин (alexandr268)",
+    "Кто еще может помочь": ["Кирилл Курдюков (kurdyukov-kir)"],
+    "Язык программирования": "Java",
+    "categories": ["Standard API"],
+    "attention": 8,
+    "impact": 9,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-jdbc-driver"
+  },
+  {
+    "Продукт": "ydb-importer",
+    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR", "Заносим свежие фичи"],
+    "Ответственный": "Александр Горшенин (alexandr268)",
+    "Кто еще может помочь": ["Максим Зиналь (mzinal)", "Кирилл Курдюков (kurdyukov-kir)"],
+    "Язык программирования": "Java",
+    "categories": ["ETL", "Data Ingestion"],
+    "attention": 4,
+    "impact": 5,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-importer"
+  },
+  {
+    "Продукт": "YDB Spark Connector",
+    "Статус": ["Production ready", "Принимаем PR", "Фиксим баги", "Заносим свежие фичи"],
+    "Ответственный": "Александр Горшенин (alexandr268)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Java",
+    "categories": ["ETL", "Analytics"],
+    "attention": 5,
+    "impact": 5,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-spark-connector"
+  },
+  {
+    "Продукт": "ydb-js-sdk",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Я Владислав Поляков (polrk)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Js/Ts",
+    "categories": ["Native SDK"],
+    "attention": 7,
+    "impact": 6,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-nodejs-sdk"
+  },
+  {
+    "Продукт": "ydb cli",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Николай Перфилов (pnv1)",
+    "Кто еще может помочь": ["Булат Гаязов (brgayazov)"],
+    "Язык программирования": "C/C++",
+    "categories": ["Console", "Admin"],
+    "attention": 8,
+    "impact": 10,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb"
+  },
+  {
+    "Продукт": "YDB FDW extention",
+    "Статус": ["В разработке"],
+    "Ответственный": "Тимофей Кулин (rekby)",
+    "Кто еще может помочь": ["Иван Шиляев (spotivan)", "Булат Гаязов (brgayazov)"],
+    "Язык программирования": "C/C++",
+    "categories": ["Standard API", "Integration"],
+    "attention": 7,
+    "impact": 8,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-postgres-fdw"
+  },
+  {
+    "Продукт": "ydb-dotnet-sdk",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Кирилл Курдюков (kurdyukov-kir)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "C#",
+    "categories": ["Native SDK"],
+    "attention": 8,
+    "impact": 8,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-dotnet-sdk"
+  },
+  {
+    "Продукт": "ADO.Net",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Кирилл Курдюков (kurdyukov-kir)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "C#",
+    "categories": ["Standard API"],
+    "attention": 5,
+    "impact": 6,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-dotnet-sdk"
+  },
+  {
+    "Продукт": "EntityFramework",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Кирилл Курдюков (kurdyukov-kir)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "C#",
+    "categories": ["ORM"],
+    "attention": 5,
+    "impact": 6,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-dotnet-sdk"
+  },
+  {
+    "Продукт": "linq2db",
+    "Статус": ["В разработке"],
+    "Ответственный": "Кирилл Курдюков (kurdyukov-kir)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "C#",
+    "categories": ["ORM"],
+    "attention": 5,
+    "impact": 5,
+    "quality": 50,
+    "repository": ""
+  },
+  {
+    "Продукт": "hibernate dialect",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Кирилл Курдюков (kurdyukov-kir)",
+    "Кто еще может помочь": ["Александр Горшенин (alexandr268)"],
+    "Язык программирования": "Java",
+    "categories": ["ORM"],
+    "attention": 4,
+    "impact": 7,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-java-dialects"
+  },
+  {
+    "Продукт": "jooq dialect",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Кирилл Курдюков (kurdyukov-kir)",
+    "Кто еще может помочь": ["Александр Горшенин (alexandr268)"],
+    "Язык программирования": "Java",
+    "categories": ["ORM", "Code Generation"],
+    "attention": 4,
+    "impact": 5,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-java-dialects"
+  },
+  {
+    "Продукт": "liquibase",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Кирилл Курдюков (kurdyukov-kir)",
+    "Кто еще может помочь": ["Александр Горшенин (alexandr268)"],
+    "Язык программирования": "Java",
+    "categories": ["Migration"],
+    "attention": 2,
+    "impact": 6,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-java-dialects"
+  },
+  {
+    "Продукт": "FlyWay",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Кирилл Курдюков (kurdyukov-kir)",
+    "Кто еще может помочь": ["Александр Горшенин (alexandr268)"],
+    "Язык программирования": "Java",
+    "categories": ["Migration"],
+    "attention": 2,
+    "impact": 6,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-java-dialects"
+  },
+  {
+    "Продукт": "ydb materializer",
+    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Максим Зиналь (mzinal)",
+    "Кто еще может помочь": ["Кирилл Курдюков (kurdyukov-kir)", "Александр Горшенин (alexandr268)"],
+    "Язык программирования": "Java",
+    "categories": ["ETL", "Data Ingestion"],
+    "attention": 4,
+    "impact": 6,
+    "quality": 50,
+    "repository": ""
+  },
+  {
+    "Продукт": "ydb-php-sdk",
+    "Статус": ["Production ready", "Принимаем PR"],
+    "Ответственный": "",
+    "Кто еще может помочь": ["Тимофей Кулин (rekby)"],
+    "Язык программирования": "PHP",
+    "categories": ["Native SDK"],
+    "attention": 1,
+    "impact": 3,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-php-sdk"
+  },
+  {
+    "Продукт": "golang-migrate",
+    "Статус": ["В разработке"],
+    "Ответственный": "Алексей Мясников (asmyasnikov)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Go",
+    "categories": ["Migration"],
+    "attention": 3,
+    "impact": 5,
+    "quality": 50,
+    "repository": ""
+  },
+  {
+    "Продукт": "Dapper",
+    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Кирилл Курдюков (kurdyukov-kir)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "C#",
+    "categories": ["ORM"],
+    "attention": 2,
+    "impact": 6,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-dotnet-sdk"
+  },
+  {
+    "Продукт": "alembic",
+    "Статус": ["В разработке"],
+    "Ответственный": "Олег Овчарук (ovcharuk)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Python",
+    "categories": ["Migration"],
+    "attention": 7,
+    "impact": 8,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-sqlalchemy"
+  },
+  {
+    "Продукт": "Apache SuperSet",
+    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Олег Овчарук (ovcharuk)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Python",
+    "categories": ["BI", "Analytics"],
+    "attention": 2,
+    "impact": 4,
+    "quality": 50,
+    "repository": ""
+  },
+  {
+    "Продукт": "logstash",
+    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Александр Горшенин (alexandr268)",
+    "Кто еще может помочь": ["Кирилл Курдюков (kurdyukov-kir)"],
+    "Язык программирования": "Java",
+    "categories": ["Data Ingestion", "Observability"],
+    "attention": 2,
+    "impact": 4,
+    "quality": 50,
+    "repository": ""
+  },
+  {
+    "Продукт": "ydb-rust-sdk",
+    "Статус": ["Production ready", "Принимаем PR", "Фиксим баги"],
+    "Ответственный": "Тимофей Кулин (rekby)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Rust",
+    "categories": ["Native SDK"],
+    "attention": 2,
+    "impact": 4,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-rs-sdk"
+  },
+  {
+    "Продукт": "ydb-go-sdk-zap",
+    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Константин Прокопенко (zkpo)",
+    "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
+    "Язык программирования": "Go",
+    "categories": ["Library", "Observability"],
+    "attention": 1,
+    "impact": 5,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk-zap"
+  },
+  {
+    "Продукт": "ydb-go-sdk-logrus",
+    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Константин Прокопенко (zkpo)",
+    "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
+    "Язык программирования": "Go",
+    "categories": ["Library", "Observability"],
+    "attention": 1,
+    "impact": 3,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk-logrus"
+  },
+  {
+    "Продукт": "ydb-go-sdk-zerolog",
+    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Константин Прокопенко (zkpo)",
+    "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
+    "Язык программирования": "Go",
+    "categories": ["Library", "Observability"],
+    "attention": 1,
+    "impact": 3,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk-zerolog"
+  },
+  {
+    "Продукт": "ydb-go-sdk-otel",
+    "Статус": ["В разработке", "Фиксим баги", "Production ready", "Принимаем PR"],
+    "Ответственный": "Константин Прокопенко (zkpo)",
+    "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
+    "Язык программирования": "Go",
+    "categories": ["Library", "Observability"],
+    "attention": 2,
+    "impact": 4,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk-otel"
+  },
+  {
+    "Продукт": "ydb-go-sdk-opentracing",
+    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Константин Прокопенко (zkpo)",
+    "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
+    "Язык программирования": "Go",
+    "categories": ["Library", "Observability"],
+    "attention": 1,
+    "impact": 3,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk-opentracing"
+  },
+  {
+    "Продукт": "ydb-go-sdk-slog",
+    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Константин Прокопенко (zkpo)",
+    "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
+    "Язык программирования": "Go",
+    "categories": ["Library", "Observability"],
+    "attention": 1,
+    "impact": 3,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk-slog"
+  },
+  {
+    "Продукт": "Spring Data JDBC",
+    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR", "Заносим свежие фичи"],
+    "Ответственный": "Кирилл Курдюков (kurdyukov-kir)",
+    "Кто еще может помочь": ["Александр Горшенин (alexandr268)"],
+    "Язык программирования": "Java",
+    "categories": ["ORM", "Standard API"],
+    "attention": 7,
+    "impact": 8,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-java-dialects"
+  },
+  {
+    "Продукт": "YOJ",
+    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Александр Горшенин (alexandr268)",
+    "Кто еще может помочь": ["Кирилл Курдюков (kurdyukov-kir)"],
+    "Язык программирования": "Java",
+    "categories": ["ORM"],
+    "attention": 4,
+    "impact": 7,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/yoj-project"
+  },
+  {
+    "Продукт": "federated ydb-java-sdk",
+    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR", "Заносим свежие фичи"],
+    "Ответственный": "Александр Горшенин (alexandr268)",
+    "Кто еще может помочь": ["Николай Перфилов (pnv1)", "Кирилл Курдюков (kurdyukov-kir)"],
+    "Язык программирования": "Java",
+    "categories": ["Native SDK", "Federation"],
+    "attention": 4,
+    "impact": 7,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-java-sdk"
+  },
+  {
+    "Продукт": "userver ydb component",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Булат Гаязов (brgayazov)",
+    "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
+    "Язык программирования": "C/C++",
+    "categories": ["Library", "Integration"],
+    "attention": 7,
+    "impact": 8,
+    "quality": 50,
+    "repository": "https://github.com/userver-framework/userver"
+  },
+  {
+    "Продукт": "apache NiFi",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Александр Горшенин (alexandr268)",
+    "Кто еще может помочь": ["Кирилл Курдюков (kurdyukov-kir)", "Максим Зиналь (mzinal)"],
+    "Язык программирования": "Java",
+    "categories": ["ETL", "Data Ingestion"],
+    "attention": 3,
+    "impact": 4,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-nifi-processor"
+  }
+];
+
+// Solid colors for programming languages (no gradients)
+export const languageColors = {
+  "Go": { bg: "#00ADD8", text: "#ffffff" },
+  "Python": { bg: "#3776AB", text: "#ffffff" },
+  "Java": { bg: "#ED8B00", text: "#ffffff" },
+  "C/C++": { bg: "#00599C", text: "#ffffff" },
+  "C#": { bg: "#512BD4", text: "#ffffff" },
+  "Js/Ts": { bg: "#F7DF1E", text: "#000000" },
+  "Rust": { bg: "#CE422B", text: "#ffffff" },
+  "PHP": { bg: "#777BB4", text: "#ffffff" }
+};
+
+// Category colors
+export const categoryColors = {
+  "Native SDK": "#10B981",
+  "Standard API": "#6366F1",
+  "ORM": "#EC4899",
+  "Migration": "#F59E0B",
+  "ETL": "#8B5CF6",
+  "ELT": "#A855F7",
+  "BI": "#14B8A6",
+  "Analytics": "#06B6D4",
+  "Vector Store": "#84CC16",
+  "AI/ML": "#22C55E",
+  "Data Ingestion": "#EF4444",
+  "Observability": "#F97316",
+  "Console": "#64748B",
+  "Admin": "#475569",
+  "IaaS": "#0EA5E9",
+  "Application": "#3B82F6",
+  "Serverless": "#7C3AED",
+  "Library": "#78716C",
+  "Integration": "#0D9488",
+  "Federation": "#D946EF",
+  "Code Generation": "#FACC15",
+  "Workflow": "#FB923C"
+};
+
+// Status categories
+export const getStatusCategory = (status) => {
+  const statusArray = Array.isArray(status) ? status : [status];
+  if (statusArray.some(s => s.includes("Production ready"))) return "production";
+  return "development";
+};
+
+// Get unique owners (including helpers)
+export const getOwners = () => {
+  const owners = new Set();
+  products.forEach(p => {
+    if (p["Ответственный"]) {
+      owners.add(p["Ответственный"]);
+    }
+    const helpers = p["Кто еще может помочь"] || [];
+    helpers.forEach(h => owners.add(h));
+  });
+  return Array.from(owners).sort();
+};
+
+// Get unique languages
+export const getLanguages = () => {
+  const langs = new Set();
+  products.forEach(p => {
+    if (p["Язык программирования"]) {
+      langs.add(p["Язык программирования"]);
+    }
+  });
+  return Array.from(langs).sort();
+};
+
+// Get unique categories
+export const getCategories = () => {
+  const cats = new Set();
+  products.forEach(p => {
+    const categories = p.categories || [];
+    categories.forEach(c => cats.add(c));
+  });
+  return Array.from(cats).sort();
+};
+
+// Check if person is involved with product
+export const isPersonInvolved = (product, person) => {
+  if (!person) return true;
+  if (product["Ответственный"] === person) return true;
+  const helpers = product["Кто еще может помочь"] || [];
+  return helpers.includes(person);
+};
+
+// Check if product has category
+export const hasCategory = (product, category) => {
+  if (!category) return true;
+  const categories = product.categories || [];
+  return categories.includes(category);
+};

@@ -1,0 +1,152 @@
+.legend {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.legend-section {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.legend-section.status {
+  flex-shrink: 0;
+}
+
+.legend-section.languages {
+  flex-shrink: 0;
+}
+
+.legend-section.categories {
+  padding-left: 8px;
+  border-left: 1px solid var(--border-color);
+}
+
+.legend-section.persons {
+  padding-left: 8px;
+  border-left: 1px solid var(--border-color);
+}
+
+.legend-section.theme {
+  padding-left: 8px;
+  border-left: 1px solid var(--border-color);
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.legend-status-btn {
+  padding: 2px 6px;
+  border: none;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.legend-status-btn.production {
+  background: #10B981;
+  color: white;
+}
+
+.legend-status-btn.development {
+  background: #F59E0B;
+  color: white;
+}
+
+.legend-status-btn:hover {
+  transform: scale(1.05);
+}
+
+.legend-status-btn.active {
+  outline: 2px solid var(--text-color);
+  outline-offset: 1px;
+}
+
+.legend-lang-btn {
+  padding: 2px 5px;
+  border: none;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
+.legend-lang-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.legend-lang-btn.active {
+  outline: 2px solid var(--text-color);
+  outline-offset: 1px;
+}
+
+.legend-category-btn {
+  padding: 2px 5px;
+  border: 1px solid;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 500;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.15s ease;
+}
+
+.legend-category-btn:hover {
+  transform: scale(1.05);
+}
+
+.legend-category-btn.active {
+  outline: 1px solid var(--text-color);
+  outline-offset: 1px;
+}
+
+.legend-person-btn {
+  padding: 2px 5px;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--card-bg);
+  color: var(--text-color);
+  transition: all 0.15s ease;
+}
+
+.legend-person-btn:hover {
+  background: var(--hover-bg);
+  transform: scale(1.05);
+}
+
+.legend-person-btn.active {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+.legend-section.theme button {
+  padding: 2px 5px;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  background: var(--card-bg);
+  cursor: pointer;
+  font-size: 10px;
+  transition: all 0.15s ease;
+}
+
+.legend-section.theme button:hover {
+  background: var(--hover-bg);
+}
+
+.legend-section.theme button.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}

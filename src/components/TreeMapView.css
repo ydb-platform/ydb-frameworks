@@ -1,0 +1,54 @@
+.treemap-container {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.treemap-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.language-cluster {
+  position: absolute;
+  border: 1px solid;
+  border-radius: 3px;
+  overflow: hidden;
+  background: var(--card-bg);
+}
+
+.language-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1px 6px;
+  font-size: 9px;
+  font-weight: 600;
+  border-bottom-right-radius: 3px;
+  z-index: 5;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.treemap-item {
+  transition: opacity 0.15s ease;
+}
+
+.treemap-item.dimmed {
+  opacity: 0.2;
+}
+
+.treemap-item.highlighted {
+  z-index: 10;
+}
+
+.treemap-item.highlighted .product-card {
+  border-width: 3px !important;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
