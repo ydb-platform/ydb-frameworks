@@ -206,3 +206,25 @@
   text-align: center;
   font-style: italic;
 }
+
+
+.product-card.status-development {
+  border-color: rgb(245, 11, 11); 
+  border-width: 2px;
+  background-image: radial-gradient(
+    circle, rgba(245, 11, 11, 0.4) 1px, transparent 1px
+  );
+  background-size: 6px 6px;
+}
+
+.product-card.status-development::after {
+  content: 'WIP';
+  position: absolute;
+  top: 6px; right: -18px;
+  transform: rotate(45deg);
+  background: #F59E0B;
+  color: #000;
+  font-size: 0.75em;
+  padding: 1px 20px;
+  font-weight: bold;
+}

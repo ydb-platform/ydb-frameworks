@@ -32,8 +32,8 @@ const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) =>
   
   const getBorderStyle = () => {
     switch (statusCategory) {
-      case 'production': return '1px solid';
-      case 'development': return '1px dashed';
+      case 'production': return '1px solid ' + colors.text;
+      case 'development': return '2px dashed';
       default: return '2px dotted';
     }
   };
@@ -98,7 +98,6 @@ const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) =>
           height: '100%',
           backgroundColor: bgColorWithOpacity,
           border: getBorderStyle(),
-          borderColor: colors.text,
           cursor: hasRepo ? 'pointer' : 'default'
         }}
         onClick={handleClick}
