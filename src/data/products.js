@@ -9,7 +9,7 @@ export const products = [
     "attention": 4,
     "impact": 10,
     "quality": 85,
-    "repository": "https://github.com/ydb-platform/ydb"
+    "repository": "https://hub.docker.com/r/ydbplatform/local-ydb"
   },
   {
     "Продукт": "SLO",
