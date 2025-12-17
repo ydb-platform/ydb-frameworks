@@ -13,6 +13,10 @@
   flex-wrap: wrap;
 }
 
+.legend-section > button {
+  font-size: 1.4em;
+}
+
 .legend-section.languages {
   padding-right: 6px;
   border-right: 1px solid var(--border-color);
@@ -30,7 +34,6 @@
   padding: 2px 5px;
   border: none;
   border-radius: 3px;
-  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.15s ease;
@@ -52,7 +55,6 @@
   padding: 2px 5px;
   border: 1px solid;
   border-radius: 3px;
-  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   background: transparent;
@@ -72,7 +74,6 @@
   padding: 2px 5px;
   border: 1px solid var(--border-color);
   border-radius: 3px;
-  font-size: 15px;
   font-weight: 500;
   cursor: pointer;
   background: var(--card-bg);

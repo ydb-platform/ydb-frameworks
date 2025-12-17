@@ -40,7 +40,6 @@ function AppContent() {
             <YdbIcon size={28} className="logo-icon" />
             <div className="logo-text">
               <h1>AppTeam</h1>
-              <p>{products.length} продуктов</p>
             </div>
           </div>
           <div className="status-buttons">
