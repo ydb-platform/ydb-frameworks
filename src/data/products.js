@@ -285,7 +285,7 @@ export const products = [
     "attention": 4,
     "impact": 3,
     "quality": 50,
-    "repository": "https://github.com/ydb-platform/ydb-dbt-adapter"
+    "repository": "https://github.com/ydb-platform/dbt-ydb"
   },
   {
     "Продукт": "DBAPI",
@@ -541,7 +541,7 @@ export const products = [
   },
   {
     "Продукт": "alembic",
-    "Статус": ["В разработке"],
+    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR"],
     "Ответственный": "Олег Овчарук (ovcharuk)",
     "Кто еще может помочь": [],
     "Язык программирования": "Python",
