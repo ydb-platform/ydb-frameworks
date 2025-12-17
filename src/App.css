@@ -46,13 +46,11 @@
 }
 
 .legend-status-btn.production {
-  background: #10B981;
-  color: white;
+  color: #10B981;
 }
 
 .legend-status-btn.development {
-  background: #F59E0B;
-  color: white;
+  color: #F59E0B;
 }
 
 .legend-status-btn:hover {
