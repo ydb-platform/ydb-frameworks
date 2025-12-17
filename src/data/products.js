@@ -12,6 +12,18 @@ export const products = [
     "repository": "https://github.com/ydb-platform/ydb"
   },
   {
+    "Продукт": "SLO",
+    "Статус": ["Принимаем PR", "Фиксим баги", "Заносим свежие фичи", "Production ready"],
+    "Ответственный": "Я Владислав Поляков (polrk)",
+    "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
+    "Язык программирования": "JS/TS",
+    "categories": ["CI/CD"],
+    "attention": 4,
+    "impact": 10,
+    "quality": 65,
+    "repository": "https://github.com/ydb-platform/ydb-slo-action"
+  },
+  {
     "Продукт": "ydb-go-sdk",
     "Статус": ["Принимаем PR", "Фиксим баги", "Заносим свежие фичи", "Production ready"],
     "Ответственный": "Константин Прокопенко (zkpo)",
