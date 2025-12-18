@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { languageColors, categoryColors, getCategories, products } from '../data/products';
+import { languageColors, categoryColors, getCategories, getFilteredProducts } from '../data/products';
 import './Legend.css';
 
 // Seeded random for consistent shuffle
@@ -28,8 +28,11 @@ const Legend = ({
   // Check if staff parameter is in query string
   const showPersons = new URLSearchParams(window.location.search).has('staff');
   
-  // Get unique responsible persons
-  const responsiblePersons = [...new Set(products.filter(p => p["Ответственный"]).map(p => p["Ответственный"]))].sort();
+  // Get filtered products (excluding student projects unless ?students is in URL)
+  const filteredProducts = useMemo(() => getFilteredProducts(), []);
+  
+  // Get unique responsible persons from filtered products
+  const responsiblePersons = [...new Set(filteredProducts.filter(p => p["Ответственный"]).map(p => p["Ответственный"]))].sort();
   
   // Get short name from full name
   const getShortName = (fullName) => {

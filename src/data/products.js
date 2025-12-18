@@ -1,5 +1,17 @@
 export const products = [
   {
+    "Продукт": "HashiCorp Vault over YDB",
+    "Статус": ["В разработке"],
+    "Ответственный": "Константин Прокопенко (zkpo)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Go",
+    "categories": ["Secrets Management", "Secrets", "IAM", "PAM", "Authentication", "Authorization", "KMS", "Application", "Студенческий проект"],
+    "attention": 2,
+    "impact": 4,
+    "quality": 25,
+    "repository": "https://github.com/ydb-platform/hashicorp-vault/tree/ydb-backend"
+  },
+  {
     "Продукт": "docker image local-ydb",
     "Статус": ["Принимаем PR", "Фиксим баги", "Заносим свежие фичи", "Production ready"],
     "Ответственный": "Я Владислав Поляков (polrk)",
@@ -791,10 +803,30 @@ export const getLanguages = () => {
   return Array.from(langs).sort();
 };
 
-// Get unique categories
+// Check if product is a student project
+export const isStudentProject = (product) => {
+  const categories = product.categories || [];
+  return categories.includes("Студенческий проект");
+};
+
+// Check if students query parameter is present
+export const showStudentProjects = () => {
+  return new URLSearchParams(window.location.search).has('students');
+};
+
+// Get filtered products (excluding student projects unless ?students is in URL)
+export const getFilteredProducts = () => {
+  if (showStudentProjects()) {
+    return products;
+  }
+  return products.filter(p => !isStudentProject(p));
+};
+
+// Get unique categories from filtered products
 export const getCategories = () => {
+  const filteredProducts = getFilteredProducts();
   const cats = new Set();
-  products.forEach(p => {
+  filteredProducts.forEach(p => {
     const categories = p.categories || [];
     categories.forEach(c => cats.add(c));
   });
