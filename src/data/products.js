@@ -1,5 +1,29 @@
 export const products = [
   {
+    "Продукт": "Ariga/Atlas",
+    "Статус": ["В разработке"],
+    "Ответственный": "Константин Прокопенко (zkpo)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Go",
+    "categories": ["Migration", "Library", "Студенческий проект"],
+    "attention": 2,
+    "impact": 4,
+    "quality": 25,
+    "repository": "https://github.com/ydb-platform/ariga-atlas/tree/ydb-develop"
+  },
+  {
+    "Продукт": "Ent. An entity framework for Go",
+    "Статус": ["В разработке"],
+    "Ответственный": "Константин Прокопенко (zkpo)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Go",
+    "categories": ["ORM", "Library", "Студенческий проект"],
+    "attention": 2,
+    "impact": 4,
+    "quality": 25,
+    "repository": "https://github.com/ydb-platform/ent/tree/ydb-develop"
+  },
+  {
     "Продукт": "HashiCorp Vault over YDB",
     "Статус": ["В разработке"],
     "Ответственный": "Константин Прокопенко (zkpo)",
