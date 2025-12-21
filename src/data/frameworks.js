@@ -864,7 +864,7 @@ export const languageColors = {
   "Go": { bg: "#00ADD8", text: "#003e6b" },
   "Python": { bg: "#398800", text: "#110f00" },
   "Java": { bg: "#ffa77c", text: "#920000" },
-  "C/C++": { bg: "#a2d5f8", text: "#001e72" },
+  "C/C++": { bg: "#90ffe1", text: "#001e72" },
   "C#": { bg: "#9b7eff", text: "#5c00b4" },
   "Js/Ts": { bg: "#ffef55", text: "#000000" },
   "Rust": { bg: "#f37c6c", text: "#440000" },
