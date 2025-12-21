@@ -1,5 +1,31 @@
 export const frameworks = [
   {
+    "Продукт": "YDB MCP",
+    "Статус": ["В разработке"],
+    "Ответственный": "Олег Овчарук (ovcharuk)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Python",
+    "categories": ["AI/ML", "Application", "Студенческий проект"],
+    "description": "Model Context Protocol server for YDB. It allows to work with YDB databases from any LLM that supports MCP. This integration enables AI-powered database operations and natural language interactions with your YDB instances.",
+    "attention": 2,
+    "impact": 4,
+    "quality": 85,
+    "repository": "https://github.com/ydb-platform/ydb-mcp"
+  },
+  {
+    "Продукт": "django-ydb-backend",
+    "Статус": ["В разработке"],
+    "Ответственный": "Олег Овчарук (ovcharuk)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Python",
+    "categories": ["ORM", "Library", "Студенческий проект"],
+    "description": "Django YDB Backend Overview This is a Django database backend for YDB, a distributed SQL database system. The backend allows Django applications to use YDB as their primary database while maintaining compatibility with Django's ORM layer.",
+    "attention": 2,
+    "impact": 4,
+    "quality": 25,
+    "repository": "https://github.com/ydb-platform/django-ydb-backend"
+  },
+  {
     "Продукт": "SQLGlot",
     "Статус": ["В разработке"],
     "Ответственный": "Олег Овчарук (ovcharuk)",
@@ -374,7 +400,7 @@ export const frameworks = [
     "attention": 2,
     "impact": 8,
     "quality": 90,
-    "repository": "https://github.com/ydb-platform/ydb-python-sdk"
+    "repository": "https://github.com/ydb-platform/ydb-python-dbapi"
   },
   {
     "Продукт": "django orm",
