@@ -1,4 +1,4 @@
-.product-card {
+.framework-card {
   position: relative;
   border-radius: 4px;
   padding: 2px;
@@ -11,34 +11,34 @@
   box-sizing: border-box;
 }
 
-.product-card.clickable {
+.framework-card.clickable {
   cursor: pointer;
 }
 
-.product-card:hover {
+.framework-card:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   z-index: 100;
 }
 
-.product-card.card-highlighted {
+.framework-card.card-highlighted {
   border-width: 1.5px !important;
   box-shadow: 0 1.5px 12px rgba(0, 0, 0, 0.4);
 }
 
-.product-card.card-highlighted .product-name {
+.framework-card.card-highlighted .framework-name {
   font-weight: 700;
 }
 
-.product-card.status-production {
+.framework-card.status-production {
   border-style: solid !important;
 }
 
-.product-card.status-development {
+.framework-card.status-development {
   border-style: dashed !important;
 }
 
-.product-name {
+.framework-name {
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
   font-size: 8px;
   font-weight: 500;
@@ -78,7 +78,7 @@
 }
 
 /* Portal tooltip - always on top */
-.product-tooltip-portal {
+.framework-tooltip-portal {
   position: fixed;
   transform: translateX(-50%);
   background: var(--tooltip-bg, linear-gradient(145deg, #1e293b 0%, #0f172a 100%));
@@ -93,7 +93,7 @@
 }
 
 /* Arrow for tooltip below card (pointing up) */
-.product-tooltip-portal.below::before {
+.framework-tooltip-portal.below::before {
   content: '';
   position: absolute;
   top: -5px;
@@ -105,7 +105,7 @@
 }
 
 /* Arrow for tooltip above card (pointing down) */
-.product-tooltip-portal.above::before {
+.framework-tooltip-portal.above::before {
   content: '';
   position: absolute;
   bottom: -5px;
@@ -118,11 +118,11 @@
   border-bottom: none;
 }
 
-.product-tooltip-portal.below {
+.framework-tooltip-portal.below {
   animation: tooltipFadeInBelow 0.1s ease-out;
 }
 
-.product-tooltip-portal.above {
+.framework-tooltip-portal.above {
   animation: tooltipFadeInAbove 0.1s ease-out;
 }
 
@@ -148,7 +148,7 @@
   }
 }
 
-.product-tooltip-portal h4 {
+.framework-tooltip-portal h4 {
   margin: 0 0 6px 0;
   font-size: 12px;
   font-weight: 700;
@@ -249,7 +249,7 @@
 }
 
 
-.product-card.status-development {
+.framework-card.status-development {
   border-color: rgb(245, 11, 11); 
   border-width: 2px;
   background-image: radial-gradient(
@@ -258,7 +258,7 @@
   background-size: 6px 6px;
 }
 
-.product-card.status-development::after {
+.framework-card.status-development::after {
   content: 'WIP';
   position: absolute;
   top: 6px; right: -18px;

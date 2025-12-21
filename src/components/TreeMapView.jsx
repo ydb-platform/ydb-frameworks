@@ -1,6 +1,6 @@
 import { useMemo, useRef, useEffect, useState } from 'react';
-import ProductCard from './ProductCard';
-import { languageColors, hasCategory, getStatusCategory } from '../data/products';
+import FrameworkCard from './FrameworkCard';
+import { languageColors, hasCategory, getStatusCategory } from '../data/frameworks';
 import './TreeMapView.css';
 
 // Squarified Treemap algorithm - fills all available space
@@ -91,7 +91,7 @@ const squarify = (items, x, y, width, height) => {
   return results;
 };
 
-const TreeMapView = ({ products, highlightLanguage, highlightPerson, highlightCategory, highlightStatus }) => {
+const TreeMapView = ({ frameworks, highlightLanguage, highlightPerson, highlightCategory, highlightStatus }) => {
   const containerRef = useRef(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   
@@ -111,7 +111,7 @@ const TreeMapView = ({ products, highlightLanguage, highlightPerson, highlightCa
     return () => window.removeEventListener('resize', updateSize);
   }, []);
   
-  // Group products by language and calculate layout
+  // Group frameworks by language and calculate layout
   const { languageLayouts } = useMemo(() => {
     if (dimensions.width === 0 || dimensions.height === 0) {
       return { languageLayouts: [] };
@@ -121,20 +121,20 @@ const TreeMapView = ({ products, highlightLanguage, highlightPerson, highlightCa
     
     // Group by language
     const byLanguage = {};
-    products.forEach(product => {
-      const lang = product["Язык программирования"];
+    frameworks.forEach(framework => {
+      const lang = framework["Язык программирования"];
       if (!byLanguage[lang]) byLanguage[lang] = [];
-      byLanguage[lang].push(product);
+      byLanguage[lang].push(framework);
     });
     
     // Calculate total area per language (area = attention * impact)
-    const languageData = Object.entries(byLanguage).map(([lang, prods]) => {
-      const totalArea = prods.reduce((sum, p) => {
-        const attention = p.attention || 5;
-        const impact = p.impact || 5;
+    const languageData = Object.entries(byLanguage).map(([lang, fws]) => {
+      const totalArea = fws.reduce((sum, f) => {
+        const attention = f.attention || 5;
+        const impact = f.impact || 5;
         return sum + attention * impact;
       }, 0);
-      return { language: lang, products: prods, value: totalArea };
+      return { language: lang, frameworks: fws, value: totalArea };
     });
     
     // Sort by area descending
@@ -143,24 +143,24 @@ const TreeMapView = ({ products, highlightLanguage, highlightPerson, highlightCa
     // Use squarified treemap for language clusters - fill entire space
     const languageRects = squarify(languageData, 0, 0, dimensions.width, dimensions.height);
     
-    // Now layout products within each language cluster
+    // Now layout frameworks within each language cluster
     const layouts = languageRects.map(langRect => {
       const innerPadding = 1;
       const innerWidth = langRect.w - innerPadding * 2;
       const innerHeight = langRect.h - innerPadding * 2;
       
-      // Create product items with values (area = attention * impact)
-      const productItems = langRect.products.map(product => ({
-        product,
-        value: (product.attention || 5) * (product.impact || 5)
+      // Create framework items with values (area = attention * impact)
+      const frameworkItems = langRect.frameworks.map(framework => ({
+        framework,
+        value: (framework.attention || 5) * (framework.impact || 5)
       }));
       
       // Sort by value descending
-      productItems.sort((a, b) => b.value - a.value);
+      frameworkItems.sort((a, b) => b.value - a.value);
       
-      // Use squarified treemap for products
-      const productRects = squarify(
-        productItems, 
+      // Use squarified treemap for frameworks
+      const frameworkRects = squarify(
+        frameworkItems, 
         langRect.x + innerPadding, 
         langRect.y + innerPadding, 
         innerWidth, 
@@ -173,37 +173,37 @@ const TreeMapView = ({ products, highlightLanguage, highlightPerson, highlightCa
         y: langRect.y,
         w: langRect.w,
         h: langRect.h,
-        products: productRects.map(pr => ({
-          ...pr,
-          x: pr.x + gap / 2,
-          y: pr.y + gap / 2,
-          w: Math.max(pr.w - gap, 1),
-          h: Math.max(pr.h - gap, 1)
+        frameworks: frameworkRects.map(fr => ({
+          ...fr,
+          x: fr.x + gap / 2,
+          y: fr.y + gap / 2,
+          w: Math.max(fr.w - gap, 1),
+          h: Math.max(fr.h - gap, 1)
         }))
       };
     });
     
     return { languageLayouts: layouts };
-  }, [products, dimensions]);
+  }, [frameworks, dimensions]);
   
-  const isHighlighted = (product) => {
+  const isHighlighted = (framework) => {
     if (!highlightLanguage && !highlightPerson && !highlightCategory && !highlightStatus) return true;
     
-    if (highlightLanguage && product["Язык программирования"] === highlightLanguage) {
+    if (highlightLanguage && framework["Язык программирования"] === highlightLanguage) {
       return true;
     }
     
     if (highlightPerson) {
-      if (product["Ответственный"] === highlightPerson) return true;
-      const helpers = product["Кто еще может помочь"] || [];
+      if (framework["Ответственный"] === highlightPerson) return true;
+      const helpers = framework["Кто еще может помочь"] || [];
       if (helpers.includes(highlightPerson)) return true;
     }
     
-    if (highlightCategory && hasCategory(product, highlightCategory)) {
+    if (highlightCategory && hasCategory(framework, highlightCategory)) {
       return true;
     }
     
-    if (highlightStatus && getStatusCategory(product["Статус"]) === highlightStatus) {
+    if (highlightStatus && getStatusCategory(framework["Статус"]) === highlightStatus) {
       return true;
     }
     
@@ -238,11 +238,11 @@ const TreeMapView = ({ products, highlightLanguage, highlightPerson, highlightCa
               {langLayout.language}
             </div>
             
-            {langLayout.products.map(item => {
-              const highlighted = isHighlighted(item.product);
+            {langLayout.frameworks.map(item => {
+              const highlighted = isHighlighted(item.framework);
               return (
                 <div
-                  key={item.product["Продукт"]}
+                  key={item.framework["Продукт"]}
                   className={`treemap-item ${hasHighlight && !highlighted ? 'dimmed' : ''} ${hasHighlight && highlighted ? 'highlighted' : ''}`}
                   style={{
                     position: 'absolute',
@@ -252,8 +252,8 @@ const TreeMapView = ({ products, highlightLanguage, highlightPerson, highlightCa
                     height: item.h
                   }}
                 >
-                  <ProductCard 
-                    product={item.product} 
+                  <FrameworkCard 
+                    framework={item.framework} 
                     width={item.w} 
                     height={item.h}
                     isHighlighted={highlighted}

@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { languageColors, categoryColors, getCategories, getFilteredProducts } from '../data/products';
+import { languageColors, categoryColors, getCategories, getFilteredFrameworks } from '../data/frameworks';
 import './Legend.css';
 
 // Get short name from full name
@@ -20,11 +20,9 @@ const getItemDisplayName = (item) => {
 
 // Case-insensitive sort
 const sortItems = (array) => {
-  const sorted = [...array].sort((a, b) => 
+  return [...array].sort((a, b) => 
     getItemDisplayName(a).toLowerCase().localeCompare(getItemDisplayName(b).toLowerCase())
   );
-  console.log('Sorted legend items:', sorted.map(item => getItemDisplayName(item)));
-  return sorted;
 };
 
 const Legend = ({ 
@@ -38,11 +36,11 @@ const Legend = ({
   // Check if staff parameter is in query string
   const showPersons = new URLSearchParams(window.location.search).has('staff');
   
-  // Get filtered products (excluding student projects unless ?students is in URL)
-  const filteredProducts = useMemo(() => getFilteredProducts(), []);
+  // Get filtered frameworks (excluding student projects unless ?students is in URL)
+  const filteredFrameworks = useMemo(() => getFilteredFrameworks(), []);
   
-  // Get unique responsible persons from filtered products
-  const responsiblePersons = [...new Set(filteredProducts.filter(p => p["Ответственный"]).map(p => p["Ответственный"]))].sort();
+  // Get unique responsible persons from filtered frameworks
+  const responsiblePersons = [...new Set(filteredFrameworks.filter(f => f["Ответственный"]).map(f => f["Ответственный"]))].sort();
   
 
   const clearAll = () => {

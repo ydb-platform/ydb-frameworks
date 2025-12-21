@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { getFilteredProducts, getStatusCategory } from './data/products';
+import { getFilteredFrameworks, getStatusCategory } from './data/frameworks';
 import { ThemeProvider } from './context/ThemeContext';
 import TreeMapView from './components/TreeMapView';
 import Legend from './components/Legend';
@@ -12,13 +12,13 @@ function AppContent() {
   const [highlightCategory, setHighlightCategory] = useState(null);
   const [highlightStatus, setHighlightStatus] = useState(null);
   
-  // Get filtered products (excluding student projects unless ?students is in URL)
-  const filteredProducts = useMemo(() => getFilteredProducts(), []);
+  // Get filtered frameworks (excluding student projects unless ?students is in URL)
+  const filteredFrameworks = useMemo(() => getFilteredFrameworks(), []);
   
-  // Count products by status
+  // Count frameworks by status
   const statusCounts = { production: 0, development: 0 };
-  filteredProducts.forEach(p => {
-    statusCounts[getStatusCategory(p["Статус"])]++;
+  filteredFrameworks.forEach(f => {
+    statusCounts[getStatusCategory(f["Статус"])]++;
   });
 
   const hasActiveHighlight = highlightLanguage || highlightPerson || highlightCategory || highlightStatus;
@@ -47,7 +47,7 @@ function AppContent() {
           </div>
           <div className="status-buttons">
             <a 
-              href="https://github.com/ydb-platform/ydb-frameworks/blob/main/src/data/products.js" 
+              href="https://github.com/ydb-platform/ydb-frameworks/blob/main/src/data/frameworks.js" 
               target="_blank" 
               rel="noopener noreferrer"
               className="edit-link"
@@ -87,7 +87,7 @@ function AppContent() {
       
       <main className="app-main">
         <TreeMapView 
-          products={filteredProducts} 
+          frameworks={filteredFrameworks} 
           highlightLanguage={highlightLanguage}
           highlightPerson={highlightPerson}
           highlightCategory={highlightCategory}

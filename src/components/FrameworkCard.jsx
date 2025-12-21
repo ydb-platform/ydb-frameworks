@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { languageColors, categoryColors, getStatusCategory } from '../data/products';
-import './ProductCard.css';
+import { languageColors, categoryColors, getStatusCategory } from '../data/frameworks';
+import './FrameworkCard.css';
 
 // Convert hex color to rgba with given alpha
 const hexToRgba = (hex, alpha) => {
@@ -11,20 +11,20 @@ const hexToRgba = (hex, alpha) => {
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 };
 
-const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) => {
+const FrameworkCard = ({ framework, width, height, isHighlighted, hasHighlight }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0, above: false });
   const cardRef = useRef(null);
   const tooltipRef = useRef(null);
   
-  const language = product["Язык программирования"];
+  const language = framework["Язык программирования"];
   const colors = languageColors[language] || { bg: "#666666", text: "#ffffff" };
-  const statusArray = Array.isArray(product["Статус"]) ? product["Статус"] : [product["Статус"]];
+  const statusArray = Array.isArray(framework["Статус"]) ? framework["Статус"] : [framework["Статус"]];
   const statusCategory = getStatusCategory(statusArray);
-  const quality = product.quality ?? 50;
-  const helpers = product["Кто еще может помочь"] || [];
-  const categories = product.categories || [];
-  const hasRepo = product.repository && product.repository.length > 0;
+  const quality = framework.quality ?? 50;
+  const helpers = framework["Кто еще может помочь"] || [];
+  const categories = framework.categories || [];
+  const hasRepo = framework.repository && framework.repository.length > 0;
   
   // Quality affects background opacity (0 = very transparent, 100 = fully opaque)
   const bgOpacity = 0.3 + (quality / 100) * 0.7;
@@ -41,7 +41,7 @@ const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) =>
   // Handle click to open repository
   const handleClick = () => {
     if (hasRepo) {
-      window.open(product.repository, '_blank', 'noopener,noreferrer');
+      window.open(framework.repository, '_blank', 'noopener,noreferrer');
     }
   };
   
@@ -92,7 +92,7 @@ const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) =>
     <>
       <div 
         ref={cardRef}
-        className={`product-card status-${statusCategory} ${hasHighlight && isHighlighted ? 'card-highlighted' : ''} ${hasRepo ? 'clickable' : ''}`}
+        className={`framework-card status-${statusCategory} ${hasHighlight && isHighlighted ? 'card-highlighted' : ''} ${hasRepo ? 'clickable' : ''}`}
         style={{
           width: '100%',
           height: '100%',
@@ -105,13 +105,13 @@ const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) =>
         onMouseLeave={() => setIsHovered(false)}
       >
         <div 
-          className="product-name" 
+          className="framework-name" 
           style={{ 
             color: colors.text, 
             fontSize: `${fontSize}px`
           }}
         >
-          {product["Продукт"]}
+          {framework["Продукт"]}
         </div>
         
         {showStatusIndicator && (
@@ -125,15 +125,15 @@ const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) =>
       {isHovered && createPortal(
         <div 
           ref={tooltipRef}
-          className={`product-tooltip-portal ${tooltipPos.above ? 'above' : 'below'}`}
+          className={`framework-tooltip-portal ${tooltipPos.above ? 'above' : 'below'}`}
           style={{
             left: tooltipPos.x,
             top: tooltipPos.y,
           }}
         >
-          <h4>{product["Продукт"]}</h4>
-          {product.description && (
-            <div className="tooltip-description">{product.description}</div>
+          <h4>{framework["Продукт"]}</h4>
+          {framework.description && (
+            <div className="tooltip-description">{framework.description}</div>
           )}
           <div className="tooltip-row">
             <span className="tooltip-label">Язык:</span>
@@ -159,12 +159,12 @@ const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) =>
             <div className="tooltip-metric" title="Востребованность">
               <span className="metric-icon">📈</span>
               <span className="metric-label">Востребованность:</span>
-              <span className="metric-value">{product.impact ?? 0}/10</span>
+              <span className="metric-value">{framework.impact ?? 0}/10</span>
             </div>
             <div className="tooltip-metric" title="Требует внимания">
               <span className="metric-icon">⚠️</span>
               <span className="metric-label">Требует внимания:</span>
-              <span className="metric-value">{product.attention ?? 0}/10</span>
+              <span className="metric-value">{framework.attention ?? 0}/10</span>
             </div>
             <div className="tooltip-metric" title="Завершенность разработки">
               <span className="metric-icon">✅</span>
@@ -174,7 +174,7 @@ const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) =>
           </div>
           <div className="tooltip-row">
             <span className="tooltip-label">Ответственный:</span>
-            <span className="tooltip-value">{product["Ответственный"] || "Не назначен"}</span>
+            <span className="tooltip-value">{framework["Ответственный"] || "Не назначен"}</span>
           </div>
           {helpers.length > 0 && (
             <div className="tooltip-row">
@@ -198,4 +198,4 @@ const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) =>
   );
 };
 
-export default ProductCard;
+export default FrameworkCard;

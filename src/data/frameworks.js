@@ -1,4 +1,4 @@
-export const products = [
+export const frameworks = [
   {
     "Продукт": "Ariga/Atlas",
     "Статус": ["В разработке"],
@@ -460,7 +460,7 @@ export const products = [
     "Ответственный": "Тимофей Кулин (rekby)",
     "Кто еще может помочь": ["Иван Шиляев (spotivan)", "Булат Гаязов (brgayazov)"],
     "Язык программирования": "C/C++",
-    "categories": ["Standard API", "Integration", "Library"],
+    "categories": ["Standard API", "PostgreSQL", "Library"],
     "description": "PostgreSQL Foreign Data Wrapper for querying YDB tables from PostgreSQL",
     "attention": 10,
     "impact": 10,
@@ -798,7 +798,7 @@ export const products = [
     "Ответственный": "Булат Гаязов (brgayazov)",
     "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
     "Язык программирования": "C/C++",
-    "categories": ["Library", "Integration"],
+    "categories": ["Library"],
     "description": "YDB component for userver C++ framework",
     "attention": 4,
     "impact": 6,
@@ -853,8 +853,8 @@ export const categoryColors = {
   "Application": "#3B82F6",
   "Serverless": "#7C3AED",
   "Library": "#78716C",
-  "Integration": "#0D9488",
   "Federation": "#D946EF",
+  "PostgreSQL": "#3B82F6",
   "Code Generation": "#FACC15",
   "Workflow": "#FB923C"
 };
@@ -869,11 +869,11 @@ export const getStatusCategory = (status) => {
 // Get unique owners (including helpers)
 export const getOwners = () => {
   const owners = new Set();
-  products.forEach(p => {
-    if (p["Ответственный"]) {
-      owners.add(p["Ответственный"]);
+  frameworks.forEach(f => {
+    if (f["Ответственный"]) {
+      owners.add(f["Ответственный"]);
     }
-    const helpers = p["Кто еще может помочь"] || [];
+    const helpers = f["Кто еще может помочь"] || [];
     helpers.forEach(h => owners.add(h));
   });
   return Array.from(owners).sort();
@@ -882,17 +882,17 @@ export const getOwners = () => {
 // Get unique languages
 export const getLanguages = () => {
   const langs = new Set();
-  products.forEach(p => {
-    if (p["Язык программирования"]) {
-      langs.add(p["Язык программирования"]);
+  frameworks.forEach(f => {
+    if (f["Язык программирования"]) {
+      langs.add(f["Язык программирования"]);
     }
   });
   return Array.from(langs).sort();
 };
 
-// Check if product is a student project
-export const isStudentProject = (product) => {
-  const categories = product.categories || [];
+// Check if framework is a student project
+export const isStudentProject = (framework) => {
+  const categories = framework.categories || [];
   return categories.includes("Студенческий проект");
 };
 
@@ -901,36 +901,36 @@ export const showStudentProjects = () => {
   return new URLSearchParams(window.location.search).has('students');
 };
 
-// Get filtered products (excluding student projects unless ?students is in URL)
-export const getFilteredProducts = () => {
+// Get filtered frameworks (excluding student projects unless ?students is in URL)
+export const getFilteredFrameworks = () => {
   if (showStudentProjects()) {
-    return products;
+    return frameworks;
   }
-  return products.filter(p => !isStudentProject(p));
+  return frameworks.filter(f => !isStudentProject(f));
 };
 
-// Get unique categories from filtered products
+// Get unique categories from filtered frameworks
 export const getCategories = () => {
-  const filteredProducts = getFilteredProducts();
+  const filteredFrameworks = getFilteredFrameworks();
   const cats = new Set();
-  filteredProducts.forEach(p => {
-    const categories = p.categories || [];
+  filteredFrameworks.forEach(f => {
+    const categories = f.categories || [];
     categories.forEach(c => cats.add(c));
   });
   return Array.from(cats).sort();
 };
 
-// Check if person is involved with product
-export const isPersonInvolved = (product, person) => {
+// Check if person is involved with framework
+export const isPersonInvolved = (framework, person) => {
   if (!person) return true;
-  if (product["Ответственный"] === person) return true;
-  const helpers = product["Кто еще может помочь"] || [];
+  if (framework["Ответственный"] === person) return true;
+  const helpers = framework["Кто еще может помочь"] || [];
   return helpers.includes(person);
 };
 
-// Check if product has category
-export const hasCategory = (product, category) => {
+// Check if framework has category
+export const hasCategory = (framework, category) => {
   if (!category) return true;
-  const categories = product.categories || [];
+  const categories = framework.categories || [];
   return categories.includes(category);
 };
