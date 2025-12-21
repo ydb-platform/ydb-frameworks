@@ -869,7 +869,7 @@ export const languageColors = {
   "Js/Ts": { bg: "#ffef55", text: "#000000" },
   "Rust": { bg: "#f37c6c", text: "#440000" },
   "PHP": { bg: "#fb91ff", text: "#8e00c0" },  
-  "Docker": { bg: "#00ADD8", text: "#003e6b" }
+  "Docker": { bg: "#ff00ba", text: "#003e6b" }
 };
 
 // Category colors
