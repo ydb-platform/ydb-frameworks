@@ -2,19 +2,29 @@ import { useMemo } from 'react';
 import { languageColors, categoryColors, getCategories, getFilteredProducts } from '../data/products';
 import './Legend.css';
 
-// Seeded random for consistent shuffle
-const seededRandom = (seed) => {
-  const x = Math.sin(seed) * 10000;
-  return x - Math.floor(x);
+// Get short name from full name
+const getShortName = (fullName) => {
+  if (!fullName) return "?";
+  const match = fullName.match(/\(([^)]+)\)/);
+  if (match) return match[1];
+  return fullName.split(' ')[0];
 };
 
-const shuffleArray = (array, seed = 42) => {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(seededRandom(seed + i) * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
+// Get display name for sorting (uses short name for persons)
+const getItemDisplayName = (item) => {
+  if (item.type === 'language') return item.lang;
+  if (item.type === 'category') return item.category;
+  if (item.type === 'person') return getShortName(item.person);
+  return '';
+};
+
+// Case-insensitive sort
+const sortItems = (array) => {
+  const sorted = [...array].sort((a, b) => 
+    getItemDisplayName(a).toLowerCase().localeCompare(getItemDisplayName(b).toLowerCase())
+  );
+  console.log('Sorted legend items:', sorted.map(item => getItemDisplayName(item)));
+  return sorted;
 };
 
 const Legend = ({ 
@@ -34,13 +44,6 @@ const Legend = ({
   // Get unique responsible persons from filtered products
   const responsiblePersons = [...new Set(filteredProducts.filter(p => p["Ответственный"]).map(p => p["Ответственный"]))].sort();
   
-  // Get short name from full name
-  const getShortName = (fullName) => {
-    if (!fullName) return "?";
-    const match = fullName.match(/\(([^)]+)\)/);
-    if (match) return match[1];
-    return fullName.split(' ')[0];
-  };
 
   const clearAll = () => {
     setHighlightLanguage(null);
@@ -87,7 +90,7 @@ const Legend = ({
       });
     }
     
-    return shuffleArray(items, window.outerHeight+window.outerWidth);
+    return sortItems(items);
   }, [categories, showPersons, responsiblePersons]);
 
   const renderItem = (item) => {
