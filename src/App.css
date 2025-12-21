@@ -20,7 +20,6 @@
 .logo-block {
   display: flex;
   flex-direction: column;
-  gap: 4px;
   flex-shrink: 0;
 }
 
@@ -33,6 +32,7 @@
 .status-buttons {
   display: flex;
   gap: 3px;
+  align-items: center;
 }
 
 .legend-status-btn {
@@ -43,7 +43,8 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.15s ease;
-  width: 3.5em;
+  flex: 1;
+  text-align: center;
 }
 
 .legend-status-btn.production {
@@ -68,17 +69,33 @@
 }
 
 .logo-icon {
-  width: 28px;
-  height: 28px;
   flex-shrink: 0;
 }
 
 .logo-text h1 {
   margin: 0;
-  font-size: 1.2em;
+  font-size: 1.0em;
   font-weight: 700;
   color: var(--text-primary);
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.edit-link {
+  font-size: 1.0em;
+  text-decoration: none;
+  opacity: 0.5;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.edit-link:hover {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .app-main {

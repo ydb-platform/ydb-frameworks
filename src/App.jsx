@@ -40,12 +40,21 @@ function AppContent() {
       <header className="app-header">
         <div className="logo-block">
           <div className="logo">
-            <YdbIcon size={28} className="logo-icon" />
+            <YdbIcon size={50} className="logo-icon" />
             <div className="logo-text">
-              <h1>AppTeam</h1>
+              <h1>YDB<br/>client<br/>frameworks</h1>
             </div>
           </div>
           <div className="status-buttons">
+            <a 
+              href="https://github.com/ydb-platform/ydb-frameworks/blob/main/src/data/products.js" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="edit-link"
+              title="Редактировать данные"
+            >
+              ✏️
+            </a>
             <button
               className={`legend-status-btn production ${highlightStatus === 'production' ? 'active' : ''}`}
               style={{ opacity: hasActiveHighlight && highlightStatus !== 'production' ? 0.4 : 1 }}

@@ -48,7 +48,7 @@ export const products = [
     "repository": "https://hub.docker.com/r/ydbplatform/local-ydb"
   },
   {
-    "Продукт": "SLO",
+    "Продукт": "Chaos testing framework (GitHub SLO Action)",
     "Статус": ["Принимаем PR", "Фиксим баги", "Заносим свежие фичи", "Production ready"],
     "Ответственный": "Я Владислав Поляков (polrk)",
     "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
