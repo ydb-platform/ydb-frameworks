@@ -132,6 +132,9 @@ const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) =>
           }}
         >
           <h4>{product["Продукт"]}</h4>
+          {product.description && (
+            <div className="tooltip-description">{product.description}</div>
+          )}
           <div className="tooltip-row">
             <span className="tooltip-label">Язык:</span>
             <span className="tooltip-value">{language}</span>
@@ -152,6 +155,23 @@ const ProductCard = ({ product, width, height, isHighlighted, hasHighlight }) =>
               </span>
             </div>
           )}
+          <div className="tooltip-metrics">
+            <div className="tooltip-metric" title="Востребованность">
+              <span className="metric-icon">📈</span>
+              <span className="metric-label">Востребованность:</span>
+              <span className="metric-value">{product.impact ?? 0}/10</span>
+            </div>
+            <div className="tooltip-metric" title="Требует внимания">
+              <span className="metric-icon">⚠️</span>
+              <span className="metric-label">Требует внимания:</span>
+              <span className="metric-value">{product.attention ?? 0}/10</span>
+            </div>
+            <div className="tooltip-metric" title="Завершенность разработки">
+              <span className="metric-icon">✅</span>
+              <span className="metric-label">Завершенность:</span>
+              <span className="metric-value">{quality}%</span>
+            </div>
+          </div>
           <div className="tooltip-row">
             <span className="tooltip-label">Ответственный:</span>
             <span className="tooltip-value">{product["Ответственный"] || "Не назначен"}</span>

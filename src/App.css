@@ -85,7 +85,6 @@
 .edit-link {
   font-size: 1.0em;
   text-decoration: none;
-  opacity: 0.5;
   transition: opacity 0.15s ease, transform 0.15s ease;
   display: flex;
   align-items: center;
@@ -94,8 +93,7 @@
 }
 
 .edit-link:hover {
-  opacity: 1;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 .app-main {

@@ -158,6 +158,47 @@
   padding-bottom: 5px;
 }
 
+.tooltip-description {
+  font-size: 9px;
+  color: var(--text-secondary, #94a3b8);
+  margin-bottom: 8px;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.tooltip-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 8px 0;
+  padding: 6px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.tooltip-metric {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 9px;
+}
+
+.tooltip-metric .metric-icon {
+  font-size: 10px;
+  width: 14px;
+}
+
+.tooltip-metric .metric-label {
+  color: var(--text-secondary, #94a3b8);
+  flex: 1;
+}
+
+.tooltip-metric .metric-value {
+  color: var(--text-primary, #e2e8f0);
+  font-weight: 600;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
 .tooltip-row {
   display: flex;
   gap: 5px;
