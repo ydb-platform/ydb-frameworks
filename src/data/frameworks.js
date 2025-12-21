@@ -5,7 +5,7 @@ export const frameworks = [
     "Ответственный": "Олег Овчарук (ovcharuk)",
     "Кто еще может помочь": [],
     "Язык программирования": "Python",
-    "categories": ["AI/ML", "Application", "Студенческий проект"],
+    "categories": ["AI/ML", "Application"],
     "description": "Model Context Protocol server for YDB. It allows to work with YDB databases from any LLM that supports MCP. This integration enables AI-powered database operations and natural language interactions with your YDB instances.",
     "attention": 2,
     "impact": 4,
