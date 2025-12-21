@@ -1,5 +1,18 @@
 export const frameworks = [
   {
+    "Продукт": "SQLGlot",
+    "Статус": ["В разработке"],
+    "Ответственный": "Олег Овчарук (ovcharuk)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Python",
+    "categories": ["Migration", "Application", "Code Generation", "Студенческий проект"],
+    "description": "SQLGlot is a no-dependency SQL parser, transpiler, optimizer, and engine. It can be used to format SQL or translate between 31 different dialects.",
+    "attention": 2,
+    "impact": 4,
+    "quality": 25,
+    "repository": "https://github.com/ydb-platform/sqlglot/tree/ydb_dialect"
+  },
+  {
     "Продукт": "Ariga/Atlas",
     "Статус": ["В разработке"],
     "Ответственный": "Константин Прокопенко (zkpo)",
