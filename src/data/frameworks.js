@@ -269,7 +269,7 @@ export const frameworks = [
     "description": "Native C++ SDK for YDB with full feature support and high performance",
     "attention": 9,
     "impact": 10,
-    "quality": 75,
+    "quality": 90,
     "repository": "https://github.com/ydb-platform/ydb-cpp-sdk"
   },
   {
@@ -490,7 +490,7 @@ export const frameworks = [
     "description": "Official YDB command-line interface for database administration and queries",
     "attention": 10,
     "impact": 10,
-    "quality": 75,
+    "quality": 85,
     "repository": "https://github.com/ydb-platform/ydb"
   },
   {
