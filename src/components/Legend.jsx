@@ -2,19 +2,11 @@ import { useMemo } from 'react';
 import { languageColors, categoryColors, getCategories, getFilteredFrameworks, isAppTeamMember } from '../data/frameworks';
 import './Legend.css';
 
-// Get short name from full name
-const getShortName = (fullName) => {
-  if (!fullName) return "?";
-  const match = fullName.match(/\(([^)]+)\)/);
-  if (match) return match[1];
-  return fullName.split(' ')[0];
-};
-
-// Get display name for sorting (uses short name for persons)
+// Get display name for sorting
 const getItemDisplayName = (item) => {
   if (item.type === 'language') return item.lang;
   if (item.type === 'category') return item.category;
-  if (item.type === 'person') return getShortName(item.person);
+  if (item.type === 'person') return item.person || '';
   return '';
 };
 
@@ -39,8 +31,18 @@ const Legend = ({
   // Get filtered frameworks (excluding student projects unless ?students is in URL)
   const filteredFrameworks = useMemo(() => getFilteredFrameworks(), []);
   
-  // Get unique responsible persons from filtered frameworks
-  const responsiblePersons = [...new Set(filteredFrameworks.filter(f => f["Ответственный"]).map(f => f["Ответственный"]))].sort();
+  // Get unique persons from filtered frameworks (both responsible and helpers)
+  const allPersons = useMemo(() => {
+    const persons = new Set();
+    filteredFrameworks.forEach(f => {
+      if (f["Ответственный"]) {
+        persons.add(f["Ответственный"]);
+      }
+      const helpers = f["Кто еще может помочь"] || [];
+      helpers.forEach(h => persons.add(h));
+    });
+    return [...persons].sort();
+  }, [filteredFrameworks]);
   
 
   const clearAll = () => {
@@ -86,13 +88,13 @@ const Legend = ({
     
     // Add persons if enabled
     if (showPersons) {
-      responsiblePersons.forEach(person => {
+      allPersons.forEach(person => {
         items.push({ type: 'person', key: `person-${person}`, person });
       });
     }
     
     return sortItems(items);
-  }, [categories, showPersons, responsiblePersons]);
+  }, [categories, showPersons, allPersons]);
 
   const renderItem = (item) => {
     if (item.type === 'language') {
@@ -151,16 +153,20 @@ const Legend = ({
       const isHighlightedByAppTeam = isAppTeamActive && isPersonAppTeamMember;
       const isActive = highlightPerson === item.person || isHighlightedByAppTeam;
       
+      // When AppTeam is selected, show all persons (AppTeam members highlighted, others visible but not highlighted)
+      // Only dim persons when a specific person or non-AppTeam filter is active
+      const shouldDim = hasActiveHighlight && !isActive && !isAppTeamActive;
+      
       return (
         <button
           key={item.key}
-          className={`legend-person-btn ${isActive ? 'active' : ''}`}
+          className={`legend-person-btn ${isActive ? 'active' : ''} ${isAppTeamActive && !isPersonAppTeamMember ? 'non-appteam' : ''}`}
           style={{
-            opacity: hasActiveHighlight && !isActive ? 0.4 : 1
+            opacity: shouldDim ? 0.4 : 1
           }}
           onClick={() => handlePersonClick(item.person)}
         >
-          {getShortName(item.person)}
+          {item.person}
         </button>
       );
     }
