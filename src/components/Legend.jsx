@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { languageColors, categoryColors, getCategories, getFilteredFrameworks } from '../data/frameworks';
+import { languageColors, categoryColors, getCategories, getFilteredFrameworks, isAppTeamMember } from '../data/frameworks';
 import './Legend.css';
 
 // Get short name from full name
@@ -66,6 +66,9 @@ const Legend = ({
   };
 
   const hasActiveHighlight = highlightLanguage || highlightPerson || highlightCategory || highlightStatus;
+  
+  // Check if AppTeam category is active (to highlight all AppTeam members)
+  const isAppTeamActive = highlightCategory === 'AppTeam';
 
   // Create all items and shuffle them
   const allItems = useMemo(() => {
@@ -110,6 +113,22 @@ const Legend = ({
     }
     
     if (item.type === 'category') {
+      // Special styling for AppTeam - render like person button
+      if (item.category === 'AppTeam') {
+        return (
+          <button
+            key={item.key}
+            className={`legend-person-btn legend-appteam-btn ${highlightCategory === 'AppTeam' ? 'active' : ''}`}
+            style={{
+              opacity: hasActiveHighlight && highlightCategory !== 'AppTeam' ? 0.4 : 1
+            }}
+            onClick={() => handleCategoryClick(item.category)}
+          >
+            {item.category}
+          </button>
+        );
+      }
+      
       return (
         <button
           key={item.key}
@@ -128,12 +147,16 @@ const Legend = ({
     }
     
     if (item.type === 'person') {
+      const isPersonAppTeamMember = isAppTeamMember(item.person);
+      const isHighlightedByAppTeam = isAppTeamActive && isPersonAppTeamMember;
+      const isActive = highlightPerson === item.person || isHighlightedByAppTeam;
+      
       return (
         <button
           key={item.key}
-          className={`legend-person-btn ${highlightPerson === item.person ? 'active' : ''}`}
+          className={`legend-person-btn ${isActive ? 'active' : ''}`}
           style={{
-            opacity: hasActiveHighlight && highlightPerson !== item.person ? 0.4 : 1
+            opacity: hasActiveHighlight && !isActive ? 0.4 : 1
           }}
           onClick={() => handlePersonClick(item.person)}
         >

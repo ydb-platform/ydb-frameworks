@@ -76,3 +76,9 @@
   color: white;
   border-color: var(--accent-color);
 }
+
+/* AppTeam button - styled like person but with emphasis */
+.legend-appteam-btn {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
