@@ -856,6 +856,58 @@ export const frameworks = [
     "impact": 4,
     "quality": 50,
     "repository": "https://github.com/ydb-platform/ydb-jdbc-driver"
+  },
+  {
+    "Продукт": "ydbcp",
+    "Статус": ["В разработке", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Go",
+    "categories": ["Admin", "Application", "AppTeam"],
+    "description": "YDB Control Plane - management and orchestration service for YDB clusters",
+    "attention": 5,
+    "impact": 6,
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydbcp"
+  },
+  {
+    "Продукт": "ydb-go-genproto",
+    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Константин Прокопенко (zkpo)",
+    "Кто еще может помочь": ["Алексей Мясников (asmyasnikov)"],
+    "Язык программирования": "Go",
+    "categories": ["Library", "Code Generation", "AppTeam"],
+    "description": "Generated Go code from YDB API protobuf definitions",
+    "attention": 2,
+    "impact": 8,
+    "quality": 90,
+    "repository": "https://github.com/ydb-platform/ydb-go-genproto"
+  },
+  {
+    "Продукт": "ydb-api-protos",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "Алексей Мясников (asmyasnikov)",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Protobuf",
+    "categories": ["Library", "AppTeam"],
+    "description": "YDB API protocol buffer definitions for all supported languages",
+    "attention": 3,
+    "impact": 10,
+    "quality": 95,
+    "repository": "https://github.com/ydb-platform/ydb-api-protos"
+  },
+  {
+    "Продукт": "ydb-ansible",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Python",
+    "categories": ["IaaS", "Admin", "Application", "AppTeam"],
+    "description": "Ansible playbooks for YDB cluster deployment and maintenance",
+    "attention": 5,
+    "impact": 7,
+    "quality": 70,
+    "repository": "https://github.com/ydb-platform/ydb-ansible"
   }
 ];
 
@@ -869,7 +921,8 @@ export const languageColors = {
   "Js/Ts": { bg: "#ffef55", text: "#000000" },
   "Rust": { bg: "#f37c6c", text: "#440000" },
   "PHP": { bg: "#fb91ff", text: "#8e00c0" },  
-  "Docker": { bg: "#ff00ba", text: "#003e6b" }
+  "Docker": { bg: "#ff00ba", text: "#003e6b" },
+  "Protobuf": { bg: "#b0b0b0", text: "#373737" }
 };
 
 // Category colors
