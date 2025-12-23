@@ -11,12 +11,20 @@ const hexToRgba = (hex, alpha) => {
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 };
 
+// Check if persons should be shown (persons=1 or persons=true in URL)
+const shouldShowPersons = () => {
+  const params = new URLSearchParams(window.location.search);
+  const value = params.get('persons');
+  return value === '1' || value === 'true';
+};
+
 const FrameworkCard = ({ framework, width, height, isHighlighted, hasHighlight }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0, above: false });
   const cardRef = useRef(null);
   const tooltipRef = useRef(null);
   
+  const showPersons = shouldShowPersons();
   const language = framework["Язык программирования"];
   const colors = languageColors[language] || { bg: "#666666", text: "#ffffff" };
   const statusArray = Array.isArray(framework["Статус"]) ? framework["Статус"] : [framework["Статус"]];
@@ -172,11 +180,13 @@ const FrameworkCard = ({ framework, width, height, isHighlighted, hasHighlight }
               <span className="metric-value">{quality}%</span>
             </div>
           </div>
-          <div className="tooltip-row">
-            <span className="tooltip-label">Ответственный:</span>
-            <span className="tooltip-value">{framework["Ответственный"] || "Не назначен"}</span>
-          </div>
-          {helpers.length > 0 && (
+          {showPersons && (
+            <div className="tooltip-row">
+              <span className="tooltip-label">Ответственный:</span>
+              <span className="tooltip-value">{framework["Ответственный"] || "Не назначен"}</span>
+            </div>
+          )}
+          {showPersons && helpers.length > 0 && (
             <div className="tooltip-row">
               <span className="tooltip-label">Помощники:</span>
               <span className="tooltip-value">{helpers.join(', ')}</span>

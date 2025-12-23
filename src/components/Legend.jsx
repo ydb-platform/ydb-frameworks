@@ -25,10 +25,14 @@ const Legend = ({
 }) => {
   const categories = getCategories();
   
-  // Check if staff parameter is in query string
-  const showPersons = new URLSearchParams(window.location.search).has('staff');
+  // Check if persons parameter is enabled (persons=1 or persons=true)
+  const showPersons = (() => {
+    const params = new URLSearchParams(window.location.search);
+    const value = params.get('persons');
+    return value === '1' || value === 'true';
+  })();
   
-  // Get filtered frameworks (excluding student projects unless ?students is in URL)
+  // Get all frameworks
   const filteredFrameworks = useMemo(() => getFilteredFrameworks(), []);
   
   // Get unique persons from filtered frameworks (both responsible and helpers)

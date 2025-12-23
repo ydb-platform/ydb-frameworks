@@ -17,7 +17,7 @@ const getHighlightFromURL = () => {
   };
 };
 
-// Update URL with highlight params (preserving other params like staff, students)
+// Update URL with highlight params (preserving other params like persons)
 const updateURL = (language, person, category, status) => {
   const params = new URLSearchParams(window.location.search);
   
@@ -53,7 +53,7 @@ function AppContent() {
     updateURL(highlightLanguage, highlightPerson, highlightCategory, highlightStatus);
   }, [highlightLanguage, highlightPerson, highlightCategory, highlightStatus]);
   
-  // Get filtered frameworks (excluding student projects unless ?students is in URL)
+  // Get all frameworks
   const filteredFrameworks = useMemo(() => getFilteredFrameworks(), []);
   
   // Count frameworks by status

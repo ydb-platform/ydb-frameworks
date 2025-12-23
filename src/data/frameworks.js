@@ -1009,17 +1009,9 @@ export const isStudentProject = (framework) => {
   return categories.includes("Студенческий проект");
 };
 
-// Check if students query parameter is present
-export const showStudentProjects = () => {
-  return new URLSearchParams(window.location.search).has('students');
-};
-
-// Get filtered frameworks (excluding student projects unless ?students is in URL)
+// Get all frameworks
 export const getFilteredFrameworks = () => {
-  if (showStudentProjects()) {
-    return frameworks;
-  }
-  return frameworks.filter(f => !isStudentProject(f));
+  return frameworks;
 };
 
 // Get unique categories from filtered frameworks
