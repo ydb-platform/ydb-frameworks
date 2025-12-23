@@ -672,7 +672,7 @@ export const frameworks = [
     "description": "Alembic database migration tool for SQLAlchemy with YDB support",
     "attention": 4,
     "impact": 4,
-    "quality": 25,
+    "quality": 65,
     "repository": "https://github.com/ydb-platform/ydb-sqlalchemy"
   },
   {
