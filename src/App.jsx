@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { getFilteredFrameworks, getStatusCategory } from './data/frameworks';
 import { ThemeProvider } from './context/ThemeContext';
 import TreeMapView from './components/TreeMapView';
@@ -6,11 +6,52 @@ import Legend from './components/Legend';
 import YdbIcon from './components/YdbIcon';
 import './App.css';
 
+// Read highlight params from URL
+const getHighlightFromURL = () => {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    language: params.get('lang'),
+    person: params.get('person'),
+    category: params.get('category'),
+    status: params.get('status'),
+  };
+};
+
+// Update URL with highlight params (preserving other params like staff, students)
+const updateURL = (language, person, category, status) => {
+  const params = new URLSearchParams(window.location.search);
+  
+  // Remove highlight params first
+  params.delete('lang');
+  params.delete('person');
+  params.delete('category');
+  params.delete('status');
+  
+  // Add active highlight param
+  if (language) params.set('lang', language);
+  if (person) params.set('person', person);
+  if (category) params.set('category', category);
+  if (status) params.set('status', status);
+  
+  const newURL = params.toString() 
+    ? `${window.location.pathname}?${params.toString()}`
+    : window.location.pathname;
+  
+  window.history.replaceState({}, '', newURL);
+};
+
 function AppContent() {
-  const [highlightLanguage, setHighlightLanguage] = useState(null);
-  const [highlightPerson, setHighlightPerson] = useState(null);
-  const [highlightCategory, setHighlightCategory] = useState(null);
-  const [highlightStatus, setHighlightStatus] = useState(null);
+  // Initialize state from URL
+  const initialHighlight = getHighlightFromURL();
+  const [highlightLanguage, setHighlightLanguage] = useState(initialHighlight.language);
+  const [highlightPerson, setHighlightPerson] = useState(initialHighlight.person);
+  const [highlightCategory, setHighlightCategory] = useState(initialHighlight.category);
+  const [highlightStatus, setHighlightStatus] = useState(initialHighlight.status);
+  
+  // Update URL when highlights change
+  useEffect(() => {
+    updateURL(highlightLanguage, highlightPerson, highlightCategory, highlightStatus);
+  }, [highlightLanguage, highlightPerson, highlightCategory, highlightStatus]);
   
   // Get filtered frameworks (excluding student projects unless ?students is in URL)
   const filteredFrameworks = useMemo(() => getFilteredFrameworks(), []);
