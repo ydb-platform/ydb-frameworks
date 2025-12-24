@@ -89,9 +89,49 @@
   opacity: 0.7;
 }
 
+/* Mobile select styles */
+.legend-mobile {
+  width: 100%;
+  padding: 0;
+}
+
+.legend-select {
+  width: 100%;
+  text-align: center;
+  padding: 6px 10px;
+  font-size: 0.9em;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--panel-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+}
+
+.legend-select:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 1px;
+}
+
+.legend-select optgroup {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.legend-select option {
+  padding: 4px 8px;
+  font-weight: 400;
+}
+
 /* Mobile responsive styles */
 @media (max-width: 768px) {
-  .legend {
+  .legend:not(.legend-mobile) {
     max-height: 80px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -115,7 +155,7 @@
 
 /* Small mobile (portrait) */
 @media (max-width: 480px) {
-  .legend {
+  .legend:not(.legend-mobile) {
     max-height: 70px;
   }
   
@@ -124,6 +164,11 @@
     height: 1.4em;
     min-width: 35px;
     padding: 1px 3px;
+  }
+  
+  .legend-select {
+    font-size: 0.85em;
+    padding: 5px 8px;
   }
 }
 

@@ -18,12 +18,19 @@ const shouldShowPersons = () => {
   return value === '1' || value === 'true';
 };
 
+// Check if device is mobile (touch device)
+const isMobileDevice = () => {
+  return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+};
+
 const FrameworkCard = ({ framework, width, height, isHighlighted, hasHighlight }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobileTooltipVisible, setIsMobileTooltipVisible] = useState(false);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0, above: false });
   const cardRef = useRef(null);
   const tooltipRef = useRef(null);
   
+  const isMobile = isMobileDevice();
   const showPersons = shouldShowPersons();
   const language = framework["Язык программирования"];
   const colors = languageColors[language] || { bg: "#666666", text: "#ffffff" };
@@ -46,16 +53,42 @@ const FrameworkCard = ({ framework, width, height, isHighlighted, hasHighlight }
     }
   };
   
-  // Handle click to open repository
-  const handleClick = () => {
-    if (hasRepo) {
+  // Handle click - on mobile: toggle tooltip, on desktop: open repository
+  const handleClick = (e) => {
+    if (isMobile) {
+      e.preventDefault();
+      setIsMobileTooltipVisible(prev => !prev);
+    } else if (hasRepo) {
       window.open(framework.repository, '_blank', 'noopener,noreferrer');
     }
   };
   
+  // Close mobile tooltip when clicking outside
+  useEffect(() => {
+    if (!isMobile || !isMobileTooltipVisible) return;
+    
+    const handleClickOutside = (e) => {
+      if (cardRef.current && !cardRef.current.contains(e.target) &&
+          tooltipRef.current && !tooltipRef.current.contains(e.target)) {
+        setIsMobileTooltipVisible(false);
+      }
+    };
+    
+    document.addEventListener('touchstart', handleClickOutside);
+    document.addEventListener('click', handleClickOutside);
+    
+    return () => {
+      document.removeEventListener('touchstart', handleClickOutside);
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isMobile, isMobileTooltipVisible]);
+  
+  // Determine if tooltip should be visible
+  const showTooltip = isMobile ? isMobileTooltipVisible : isHovered;
+  
   // Calculate tooltip position
   useEffect(() => {
-    if (isHovered && cardRef.current) {
+    if (showTooltip && cardRef.current) {
       const rect = cardRef.current.getBoundingClientRect();
       const viewportWidth = window.innerWidth;
       const viewportHeight = window.innerHeight;
@@ -90,7 +123,7 @@ const FrameworkCard = ({ framework, width, height, isHighlighted, hasHighlight }
       
       setTooltipPos({ x, y, above });
     }
-  }, [isHovered]);
+  }, [showTooltip]);
   
   // Calculate font size based on card dimensions
   const fontSize = Math.max(7, Math.min(11, Math.min(width / 10, height / 4)));
@@ -130,7 +163,7 @@ const FrameworkCard = ({ framework, width, height, isHighlighted, hasHighlight }
         )}
       </div>
       
-      {isHovered && createPortal(
+      {showTooltip && createPortal(
         <div 
           ref={tooltipRef}
           className={`framework-tooltip-portal ${tooltipPos.above ? 'above' : 'below'}`}
@@ -196,7 +229,7 @@ const FrameworkCard = ({ framework, width, height, isHighlighted, hasHighlight }
             <span className="tooltip-label">Статус:</span>
             <span className="tooltip-value">{statusArray.join(', ')}</span>
           </div>
-          {hasRepo && (
+          {hasRepo && !isMobile && (
             <div className="tooltip-hint">
               👆 Кликните, чтобы открыть репозиторий
             </div>

@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { languageColors, categoryColors, getCategories, getFilteredFrameworks, isAppTeamMember } from '../data/frameworks';
 import './Legend.css';
 
@@ -17,6 +17,30 @@ const sortItems = (array) => {
   );
 };
 
+// Hook to detect mobile portrait mode
+const useIsMobilePortrait = () => {
+  const [isMobilePortrait, setIsMobilePortrait] = useState(false);
+  
+  useEffect(() => {
+    const checkMobilePortrait = () => {
+      const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+      const isMobile = window.innerWidth <= 768;
+      setIsMobilePortrait(isMobile && isPortrait);
+    };
+    
+    checkMobilePortrait();
+    window.addEventListener('resize', checkMobilePortrait);
+    window.addEventListener('orientationchange', checkMobilePortrait);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobilePortrait);
+      window.removeEventListener('orientationchange', checkMobilePortrait);
+    };
+  }, []);
+  
+  return isMobilePortrait;
+};
+
 const Legend = ({ 
   highlightLanguage, setHighlightLanguage, 
   highlightPerson, setHighlightPerson,
@@ -24,6 +48,7 @@ const Legend = ({
   highlightStatus, setHighlightStatus
 }) => {
   const categories = getCategories();
+  const isMobilePortrait = useIsMobilePortrait();
   
   // Check if persons parameter is enabled (persons=1 or persons=true)
   const showPersons = (() => {
@@ -99,6 +124,30 @@ const Legend = ({
     
     return sortItems(items);
   }, [categories, showPersons, allPersons]);
+
+  // Get current selected value for mobile select
+  const currentSelectValue = useMemo(() => {
+    if (highlightLanguage) return `lang-${highlightLanguage}`;
+    if (highlightCategory) return `cat-${highlightCategory}`;
+    if (highlightPerson) return `person-${highlightPerson}`;
+    return '';
+  }, [highlightLanguage, highlightCategory, highlightPerson]);
+
+  // Handle select change
+  const handleSelectChange = (e) => {
+    const value = e.target.value;
+    clearAll();
+    
+    if (!value) return;
+    
+    if (value.startsWith('lang-')) {
+      setHighlightLanguage(value.replace('lang-', ''));
+    } else if (value.startsWith('cat-')) {
+      setHighlightCategory(value.replace('cat-', ''));
+    } else if (value.startsWith('person-')) {
+      setHighlightPerson(value.replace('person-', ''));
+    }
+  };
 
   const renderItem = (item) => {
     if (item.type === 'language') {
@@ -178,6 +227,44 @@ const Legend = ({
     return null;
   };
 
+  // Mobile portrait: render select
+  if (isMobilePortrait) {
+    // Group items by type for optgroups
+    const languages = allItems.filter(item => item.type === 'language');
+    const categoriesItems = allItems.filter(item => item.type === 'category');
+    const persons = allItems.filter(item => item.type === 'person');
+    
+    return (
+      <div className="legend legend-mobile">
+        <select 
+          className="legend-select"
+          value={currentSelectValue}
+          onChange={handleSelectChange}
+        >
+          <option value="">— Фильтр —</option>
+          <optgroup label="Языки">
+            {languages.map(item => (
+              <option key={item.key} value={item.key}>{item.lang}</option>
+            ))}
+          </optgroup>
+          <optgroup label="Категории">
+            {categoriesItems.map(item => (
+              <option key={item.key} value={item.key}>{item.category}</option>
+            ))}
+          </optgroup>
+          {showPersons && persons.length > 0 && (
+            <optgroup label="Разработчики">
+              {persons.map(item => (
+                <option key={item.key} value={item.key}>{item.person}</option>
+              ))}
+            </optgroup>
+          )}
+        </select>
+      </div>
+    );
+  }
+
+  // Desktop/landscape: render buttons
   return (
     <div className="legend">
       {allItems.map(renderItem)}
