@@ -92,7 +92,7 @@
 /* Mobile responsive styles */
 @media (max-width: 768px) {
   .legend {
-    max-height: 120px;
+    max-height: 80px;
     overflow-y: auto;
     overflow-x: hidden;
     padding: 2px;
@@ -100,29 +100,30 @@
   }
   
   .legend > button {
-    font-size: 0.8em;
-    height: 1.8em;
-    min-width: 45px;
-    padding: 3px 6px;
+    font-size: 0.7em;
+    height: 1.5em;
+    min-width: 40px;
+    padding: 2px 4px;
   }
   
   .legend-lang-btn,
   .legend-category-btn,
   .legend-person-btn {
-    padding: 3px 6px;
+    padding: 2px 4px;
   }
 }
 
 /* Small mobile (portrait) */
 @media (max-width: 480px) {
   .legend {
-    max-height: 100px;
+    max-height: 70px;
   }
   
   .legend > button {
-    font-size: 0.75em;
-    height: 1.7em;
-    min-width: 40px;
+    font-size: 0.65em;
+    height: 1.4em;
+    min-width: 35px;
+    padding: 1px 3px;
   }
 }
 

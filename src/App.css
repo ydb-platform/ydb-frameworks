@@ -108,8 +108,8 @@
 @media (max-width: 768px) {
   .app-header {
     flex-direction: column;
-    padding: 6px;
-    gap: 6px;
+    padding: 4px;
+    gap: 4px;
   }
   
   .logo-block {
@@ -121,35 +121,31 @@
   
   .logo {
     gap: 4px;
+    flex: 0 0 auto;
   }
   
   .logo-icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .logo {
-    flex: auto;
-    width: 100%;
+    width: 28px;
+    height: 28px;
   }
 
   .logo-text {
-    flex: auto;
+    flex: 1;
   }
   
   .logo-text h1 {
-    font-size: 1.35em;
-    width: 100%;
-    text-align: center;
+    font-size: 0.85em;
+    text-align: left;
   }
   
   .status-buttons {
-    gap: 4px;
+    gap: 3px;
+    flex-shrink: 0;
   }
   
   .legend-status-btn {
-    padding: 4px 8px;
-    font-size: 0.85em;
+    padding: 2px 6px;
+    font-size: 0.8em;
   }
   
   .status-buttons a {
@@ -164,28 +160,52 @@
 /* Small mobile (portrait) */
 @media (max-width: 480px) {
   .app-header {
-    padding: 4px;
+    padding: 3px;
+    gap: 3px;
   }
   
   .logo-icon {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
   
   .logo-text h1 {
-    font-size: 1.35em;
+    font-size: 0.75em;
   }
   
   .legend-status-btn {
-    padding: 3px 6px;
-    font-size: 0.8em;
+    padding: 2px 4px;
+    font-size: 0.75em;
   }
 }
 
-/* Portrait mobile only - single line logo */
+/* Portrait mobile only - single line logo, centered */
 @media (max-width: 768px) and (orientation: portrait) {
+  .logo-block {
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .logo {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .logo-text {
+    width: 100%;
+  }
+  
+  .logo-text h1 {
+    text-align: center;
+  }
+  
   .logo-text h1 br {
     display: none;
+  }
+  
+  .status-buttons {
+    width: 100%;
+    justify-content: center;
   }
 }
 
