@@ -1,5 +1,6 @@
 .app {
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height - accounts for mobile browser UI */
   display: flex;
   flex-direction: column;
   overflow: hidden;
