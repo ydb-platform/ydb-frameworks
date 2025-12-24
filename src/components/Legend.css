@@ -88,3 +88,55 @@
   border-style: dashed;
   opacity: 0.7;
 }
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .legend {
+    max-height: 120px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2px;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .legend > button {
+    font-size: 0.8em;
+    height: 1.8em;
+    min-width: 45px;
+    padding: 3px 6px;
+  }
+  
+  .legend-lang-btn,
+  .legend-category-btn,
+  .legend-person-btn {
+    padding: 3px 6px;
+  }
+}
+
+/* Small mobile (portrait) */
+@media (max-width: 480px) {
+  .legend {
+    max-height: 100px;
+  }
+  
+  .legend > button {
+    font-size: 0.75em;
+    height: 1.7em;
+    min-width: 40px;
+  }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .legend {
+    max-height: 60px;
+    flex: 1;
+  }
+  
+  .legend > button {
+    font-size: 0.7em;
+    height: 1.5em;
+    min-width: 35px;
+    padding: 2px 4px;
+  }
+}

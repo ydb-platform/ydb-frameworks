@@ -83,7 +83,7 @@ function AppContent() {
           <div className="logo">
             <YdbIcon size={50} className="logo-icon" />
             <div className="logo-text">
-              <h1>YDB<br/>client<br/>frameworks</h1>
+              <h1>YDB<br/> client<br/> frameworks</h1>
             </div>
           </div>
           <div className="status-buttons">

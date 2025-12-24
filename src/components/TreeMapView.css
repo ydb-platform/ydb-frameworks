@@ -51,3 +51,31 @@
   font-weight: 600;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .language-cluster {
+    border-radius: 2px;
+  }
+  
+  .language-label {
+    padding: 1px 4px;
+    font-size: 7px;
+    border-bottom-right-radius: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-label {
+    padding: 0px 3px;
+    font-size: 6px;
+  }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .language-label {
+    padding: 0px 3px;
+    font-size: 6px;
+  }
+}

@@ -96,3 +96,33 @@ body {
   background: rgba(99, 102, 241, 0.4);
   color: var(--text-primary);
 }
+
+/* Mobile improvements */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  /* Prevent zoom on double tap */
+  * {
+    touch-action: manipulation;
+  }
+  
+  /* Better scrolling on iOS */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  html {
+    font-size: 12px;
+  }
+}

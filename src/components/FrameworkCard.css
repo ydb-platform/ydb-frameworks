@@ -50,6 +50,7 @@
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
@@ -268,4 +269,138 @@
   font-size: 0.75em;
   padding: 1px 20px;
   font-weight: bold;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .framework-card {
+    border-radius: 3px;
+    padding: 1px;
+  }
+  
+  .framework-card:hover {
+    transform: none;
+  }
+  
+  .framework-name {
+    font-size: 6px;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+  
+  .status-indicator {
+    width: 8px;
+    height: 8px;
+    font-size: 5px;
+  }
+  
+  .framework-tooltip-portal {
+    min-width: 200px;
+    max-width: 280px;
+    padding: 6px 10px;
+  }
+  
+  .framework-tooltip-portal h4 {
+    font-size: 11px;
+    margin-bottom: 4px;
+    padding-bottom: 4px;
+  }
+  
+  .tooltip-description {
+    font-size: 8px;
+    margin-bottom: 6px;
+  }
+  
+  .tooltip-metrics {
+    padding: 4px;
+    margin: 6px 0;
+  }
+  
+  .tooltip-metric {
+    font-size: 8px;
+  }
+  
+  .tooltip-row {
+    font-size: 8px;
+  }
+  
+  .tooltip-label {
+    min-width: 60px;
+  }
+  
+  .tooltip-category-tag {
+    font-size: 6px;
+    padding: 1px 3px;
+  }
+  
+  .framework-card.status-development::after {
+    font-size: 0.6em;
+    top: 4px;
+    right: -20px;
+    padding: 1px 18px;
+  }
+}
+
+/* Small mobile (portrait) */
+@media (max-width: 480px) {
+  .framework-name {
+    font-size: 5px;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+  
+  .status-indicator {
+    width: 6px;
+    height: 6px;
+    font-size: 4px;
+  }
+  
+  .framework-tooltip-portal {
+    min-width: 180px;
+    max-width: 260px;
+  }
+  
+  .framework-card.status-development::after {
+    font-size: 0.5em;
+    top: 3px;
+    right: -22px;
+  }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .framework-name {
+    font-size: 5px;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+  
+  .status-indicator {
+    width: 6px;
+    height: 6px;
+    font-size: 4px;
+  }
+  
+  .framework-tooltip-portal {
+    min-width: 200px;
+    max-width: 300px;
+  }
+  
+  .framework-card.status-development::after {
+    font-size: 0.55em;
+    top: 3px;
+    right: -20px;
+  }
+}
+
+/* Touch devices - disable hover effects */
+@media (hover: none) and (pointer: coarse) {
+  .framework-card:hover {
+    transform: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  }
+  
+  .framework-card:active {
+    transform: scale(0.98);
+  }
 }
