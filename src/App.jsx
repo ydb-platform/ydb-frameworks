@@ -25,21 +25,6 @@ const isPlayerEnabled = () => {
   return playerParam === 'true' || playerParam === '1';
 };
 
-// Get the earliest date from all frameworks' timelines
-const getEarliestDate = (frameworks) => {
-  let minDate = new Date();
-  
-  frameworks.forEach(f => {
-    if (f.timeline && f.timeline.length > 0) {
-      const date = new Date(f.timeline[0].date);
-      if (date < minDate) minDate = date;
-    }
-  });
-
-  // Set to first of month
-  return new Date(minDate.getFullYear(), minDate.getMonth(), 1);
-};
-
 // Update URL with highlight params (preserving other params like persons)
 const updateURL = (language, person, category, status) => {
   const params = new URLSearchParams(window.location.search);
@@ -74,12 +59,7 @@ function AppContent() {
   // Player mode state
   const playerEnabled = useMemo(() => isPlayerEnabled(), []);
   const allFrameworks = useMemo(() => getFilteredFrameworks(), []);
-  const [currentDate, setCurrentDate] = useState(() => {
-    if (playerEnabled) {
-      return getEarliestDate(allFrameworks);
-    }
-    return new Date();
-  });
+  const [currentDate, setCurrentDate] = useState(() => new Date());
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(1);
   
