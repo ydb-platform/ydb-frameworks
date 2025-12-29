@@ -10,7 +10,11 @@ export const frameworks = [
     "attention": 2,
     "impact": 4,
     "quality": 85,
-    "repository": "https://github.com/ydb-platform/ydb-mcp"
+    "repository": "https://github.com/ydb-platform/ydb-mcp",
+    "timeline": [
+      { "date": "2024-12-01", "status": "В разработке", "description": "Initial development", "quality": 50 },
+      { "date": "2025-01-15", "status": "Production ready", "description": "First stable release", "quality": 85 }
+    ]
   },
   {
     "Продукт": "django-ydb-backend",
@@ -23,7 +27,11 @@ export const frameworks = [
     "attention": 2,
     "impact": 4,
     "quality": 25,
-    "repository": "https://github.com/ydb-platform/django-ydb-backend"
+    "repository": "https://github.com/ydb-platform/django-ydb-backend",
+    "timeline": [
+      { "date": "2024-06-01", "status": "В разработке", "description": "Initial development started", "quality": 10 },
+      { "date": "2024-12-01", "status": "В разработке", "description": "Student project development", "quality": 25 }
+    ]
   },
   {
     "Продукт": "SQLGlot",
@@ -36,7 +44,10 @@ export const frameworks = [
     "attention": 2,
     "impact": 4,
     "quality": 25,
-    "repository": "https://github.com/ydb-platform/sqlglot/tree/ydb_dialect"
+    "repository": "https://github.com/ydb-platform/sqlglot/tree/ydb_dialect",
+    "timeline": [
+      { "date": "2024-09-01", "status": "В разработке", "description": "YDB dialect development started", "quality": 25 }
+    ]
   },
   {
     "Продукт": "Ariga/Atlas",
@@ -49,7 +60,10 @@ export const frameworks = [
     "attention": 2,
     "impact": 4,
     "quality": 25,
-    "repository": "https://github.com/ydb-platform/ariga-atlas/tree/ydb-develop"
+    "repository": "https://github.com/ydb-platform/ariga-atlas/tree/ydb-develop",
+    "timeline": [
+      { "date": "2024-09-01", "status": "В разработке", "description": "YDB driver development started", "quality": 25 }
+    ]
   },
   {
     "Продукт": "Ent. An entity framework for Go",
@@ -62,7 +76,10 @@ export const frameworks = [
     "attention": 2,
     "impact": 4,
     "quality": 25,
-    "repository": "https://github.com/ydb-platform/ent/tree/ydb-develop"
+    "repository": "https://github.com/ydb-platform/ent/tree/ydb-develop",
+    "timeline": [
+      { "date": "2024-09-01", "status": "В разработке", "description": "YDB driver development started", "quality": 25 }
+    ]
   },
   {
     "Продукт": "HashiCorp Vault over YDB",
@@ -75,7 +92,10 @@ export const frameworks = [
     "attention": 2,
     "impact": 4,
     "quality": 25,
-    "repository": "https://github.com/ydb-platform/hashicorp-vault/tree/ydb-backend"
+    "repository": "https://github.com/ydb-platform/hashicorp-vault/tree/ydb-backend",
+    "timeline": [
+      { "date": "2024-09-01", "status": "В разработке", "description": "YDB backend development started", "quality": 25 }
+    ]
   },
   {
     "Продукт": "docker image local-ydb",
@@ -88,7 +108,11 @@ export const frameworks = [
     "attention": 4,
     "impact": 10,
     "quality": 85,
-    "repository": "https://hub.docker.com/r/ydbplatform/local-ydb"
+    "repository": "https://hub.docker.com/r/ydbplatform/local-ydb",
+    "timeline": [
+      { "date": "2022-04-19", "status": "Production ready", "description": "Initial release with YDB OpenSource", "quality": 70 },
+      { "date": "2024-01-01", "status": "Production ready", "description": "Stable multi-architecture support", "quality": 85 }
+    ]
   },
   {
     "Продукт": "Chaos testing framework (GitHub SLO Action)",
@@ -101,7 +125,11 @@ export const frameworks = [
     "attention": 4,
     "impact": 10,
     "quality": 65,
-    "repository": "https://github.com/ydb-platform/ydb-slo-action"
+    "repository": "https://github.com/ydb-platform/ydb-slo-action",
+    "timeline": [
+      { "date": "2023-06-01", "status": "В разработке", "description": "Initial development", "quality": 30 },
+      { "date": "2024-01-01", "status": "Production ready", "description": "First stable release", "quality": 65 }
+    ]
   },
   {
     "Продукт": "ydb-go-sdk",
@@ -114,7 +142,13 @@ export const frameworks = [
     "attention": 8,
     "impact": 10,
     "quality": 95,
-    "repository": "https://github.com/ydb-platform/ydb-go-sdk"
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk",
+    "timeline": [
+      { "date": "2019-04-17", "status": "В разработке", "description": "First commit", "quality": 20 },
+      { "date": "2020-01-01", "status": "Production ready", "description": "First stable release v1", "quality": 60 },
+      { "date": "2022-04-19", "status": "Production ready", "description": "OpenSource release, v3 major rewrite", "quality": 80 },
+      { "date": "2024-01-01", "status": "Production ready", "description": "Mature SDK with full feature support", "quality": 95 }
+    ]
   },
   {
     "Продукт": "database/sql",
@@ -127,7 +161,13 @@ export const frameworks = [
     "attention": 8,
     "impact": 6,
     "quality": 85,
-    "repository": "https://github.com/ydb-platform/ydb-go-sdk"
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk",
+    "timeline": [
+      { "date": "2019-07-17", "status": "В разработке", "description": "Initial database/sql support", "quality": 30 },
+      { "date": "2020-06-01", "status": "Production ready", "description": "Stable database/sql driver", "quality": 60 },
+      { "date": "2022-04-19", "status": "Production ready", "description": "OpenSource release", "quality": 75 },
+      { "date": "2024-01-01", "status": "Production ready", "description": "Full standard compliance", "quality": 85 }
+    ]
   },
   {
     "Продукт": "ydb terraform provider",
@@ -140,7 +180,12 @@ export const frameworks = [
     "attention": 3,
     "impact": 4,
     "quality": 75,
-    "repository": "https://github.com/ydb-platform/terraform-provider-ydb"
+    "repository": "https://github.com/ydb-platform/terraform-provider-ydb",
+    "timeline": [
+      { "date": "2021-06-01", "status": "В разработке", "description": "Initial development", "quality": 30 },
+      { "date": "2022-04-19", "status": "Production ready", "description": "OpenSource release", "quality": 60 },
+      { "date": "2024-01-01", "status": "Production ready", "description": "Stable provider", "quality": 75 }
+    ]
   },
   {
     "Продукт": "GORM",
@@ -153,7 +198,10 @@ export const frameworks = [
     "attention": 3,
     "impact": 2,
     "quality": 25,
-    "repository": "https://github.com/ydb-platform/gorm-driver"
+    "repository": "https://github.com/ydb-platform/gorm-driver",
+    "timeline": [
+      { "date": "2023-10-03", "status": "В разработке", "description": "Initial YDB GORM driver", "quality": 25 }
+    ]
   },
   {
     "Продукт": "XORM",
@@ -166,7 +214,10 @@ export const frameworks = [
     "attention": 4,
     "impact": 1,
     "quality": 10,
-    "repository": "https://github.com/ydb-platform/xorm"
+    "repository": "https://github.com/ydb-platform/xorm",
+    "timeline": [
+      { "date": "2024-06-01", "status": "В разработке", "description": "YDB driver development started", "quality": 10 }
+    ]
   },
   {
     "Продукт": "goose",
@@ -179,7 +230,10 @@ export const frameworks = [
     "attention": 2,
     "impact": 6,
     "quality": 95,
-    "repository": "https://github.com/ydb-platform/ydb-go-sdk"
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk",
+    "timeline": [
+      { "date": "2023-11-12", "status": "Production ready", "description": "YDB support merged to upstream goose", "quality": 95 }
+    ]
   },
   {
     "Продукт": "Grafana over YDB",
@@ -192,7 +246,11 @@ export const frameworks = [
     "attention": 6,
     "impact": 3,
     "quality": 50,
-    "repository": "https://github.com/ydb-platform/ydb-grafana-datasource-plugin"
+    "repository": "https://github.com/ydb-platform/ydb-grafana-datasource-plugin",
+    "timeline": [
+      { "date": "2021-06-01", "status": "В разработке", "description": "Initial plugin development", "quality": 30 },
+      { "date": "2024-01-01", "status": "В разработке", "description": "Plugin improvements", "quality": 50 }
+    ]
   },
   {
     "Продукт": "SQLC",
@@ -205,7 +263,10 @@ export const frameworks = [
     "attention": 5,
     "impact": 2,
     "quality": 40,
-    "repository": ""
+    "repository": "",
+    "timeline": [
+      { "date": "2024-06-01", "status": "В разработке", "description": "YDB support development started", "quality": 40 }
+    ]
   },
   {
     "Продукт": "fluentbit",
@@ -218,7 +279,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 4,
     "quality": 95,
-    "repository": "https://github.com/ydb-platform/fluent-bit-ydb"
+    "repository": "https://github.com/ydb-platform/fluent-bit-ydb",
+    "timeline": [
+      { "date": "2023-09-18", "status": "Production ready", "description": "YDB output plugin released", "quality": 95 }
+    ]
   },
   {
     "Продукт": "jaeger ydb store",
@@ -231,7 +295,11 @@ export const frameworks = [
     "attention": 2,
     "impact": 5,
     "quality": 50,
-    "repository": "https://github.com/ydb-platform/jaeger-ydb-store"
+    "repository": "https://github.com/ydb-platform/jaeger-ydb-store",
+    "timeline": [
+      { "date": "2020-01-01", "status": "В разработке", "description": "Initial development", "quality": 30 },
+      { "date": "2022-01-01", "status": "Production ready", "description": "Stable release", "quality": 50 }
+    ]
   },
   {
     "Продукт": "serverless ydb proxy",
@@ -244,7 +312,12 @@ export const frameworks = [
     "attention": 6,
     "impact": 5,
     "quality": 95,
-    "repository": ""
+    "repository": "",
+    "timeline": [
+      { "date": "2020-06-01", "status": "В разработке", "description": "Initial development", "quality": 50 },
+      { "date": "2021-01-01", "status": "Production ready", "description": "Production deployment", "quality": 80 },
+      { "date": "2024-01-01", "status": "Production ready", "description": "Stable service", "quality": 95 }
+    ]
   },
   {
     "Продукт": "serverless docapi proxy",
@@ -257,7 +330,12 @@ export const frameworks = [
     "attention": 8,
     "impact": 5,
     "quality": 85,
-    "repository": ""
+    "repository": "",
+    "timeline": [
+      { "date": "2020-06-01", "status": "В разработке", "description": "Initial development", "quality": 40 },
+      { "date": "2021-01-01", "status": "Production ready", "description": "Production deployment", "quality": 70 },
+      { "date": "2024-01-01", "status": "Production ready", "description": "Stable service", "quality": 85 }
+    ]
   },
   {
     "Продукт": "ydb-cpp-sdk",
@@ -270,7 +348,13 @@ export const frameworks = [
     "attention": 9,
     "impact": 10,
     "quality": 90,
-    "repository": "https://github.com/ydb-platform/ydb-cpp-sdk"
+    "repository": "https://github.com/ydb-platform/ydb-cpp-sdk",
+    "timeline": [
+      { "date": "2016-04-06", "status": "В разработке", "description": "Initial C++ SDK development", "quality": 30 },
+      { "date": "2018-01-01", "status": "Production ready", "description": "Internal production use", "quality": 70 },
+      { "date": "2022-04-19", "status": "Production ready", "description": "OpenSource release", "quality": 80 },
+      { "date": "2024-01-01", "status": "Production ready", "description": "Standalone SDK extracted from YDB", "quality": 90 }
+    ]
   },
   {
     "Продукт": "ODBC",
@@ -283,7 +367,10 @@ export const frameworks = [
     "attention": 4,
     "impact": 7,
     "quality": 25,
-    "repository": ""
+    "repository": "",
+    "timeline": [
+      { "date": "2024-09-01", "status": "В разработке", "description": "ODBC driver development started", "quality": 25 }
+    ]
   },
   {
     "Продукт": "ydb-python-sdk",
@@ -296,7 +383,13 @@ export const frameworks = [
     "attention": 8,
     "impact": 10,
     "quality": 85,
-    "repository": "https://github.com/ydb-platform/ydb-python-sdk"
+    "repository": "https://github.com/ydb-platform/ydb-python-sdk",
+    "timeline": [
+      { "date": "2017-05-18", "status": "В разработке", "description": "Initial Python SDK development", "quality": 30 },
+      { "date": "2019-01-01", "status": "Production ready", "description": "First stable release", "quality": 60 },
+      { "date": "2022-04-19", "status": "Production ready", "description": "OpenSource release", "quality": 75 },
+      { "date": "2024-01-01", "status": "Production ready", "description": "Async support and improvements", "quality": 85 }
+    ]
   },
   {
     "Продукт": "federated ydb-python-sdk",
@@ -309,7 +402,11 @@ export const frameworks = [
     "attention": 3,
     "impact": 4,
     "quality": 85,
-    "repository": "https://github.com/ydb-platform/ydb-python-sdk"
+    "repository": "https://github.com/ydb-platform/ydb-python-sdk",
+    "timeline": [
+      { "date": "2023-12-22", "status": "В разработке", "description": "Federation support development", "quality": 50 },
+      { "date": "2024-06-01", "status": "Production ready", "description": "Federation support released", "quality": 85 }
+    ]
   },
   {
     "Продукт": "federated ydb-go-sdk",
@@ -322,7 +419,11 @@ export const frameworks = [
     "attention": 2,
     "impact": 4,
     "quality": 85,
-    "repository": "https://github.com/ydb-platform/ydb-go-sdk"
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk",
+    "timeline": [
+      { "date": "2023-12-22", "status": "В разработке", "description": "Federation support development", "quality": 50 },
+      { "date": "2024-06-01", "status": "Production ready", "description": "Federation support released", "quality": 85 }
+    ]
   },
   {
     "Продукт": "logbroker cli",
@@ -335,7 +436,10 @@ export const frameworks = [
     "attention": 3,
     "impact": 4,
     "quality": 25,
-    "repository": ""
+    "repository": "",
+    "timeline": [
+      { "date": "2023-01-01", "status": "Production ready", "description": "CLI tool for topics management", "quality": 25 }
+    ]
   },
   {
     "Продукт": "langchain-ydb",
@@ -348,7 +452,11 @@ export const frameworks = [
     "attention": 2,
     "impact": 7,
     "quality": 85,
-    "repository": "https://github.com/ydb-platform/ydb-langchain"
+    "repository": "https://github.com/ydb-platform/ydb-langchain",
+    "timeline": [
+      { "date": "2024-08-01", "status": "В разработке", "description": "LangChain integration development", "quality": 50 },
+      { "date": "2024-12-01", "status": "Production ready", "description": "Vector store support released", "quality": 85 }
+    ]
   },
   {
     "Продукт": "apache airflow",
@@ -361,7 +469,10 @@ export const frameworks = [
     "attention": 2,
     "impact": 4,
     "quality": 90,
-    "repository": "https://github.com/ydb-platform/ydb-airflow-provider"
+    "repository": "https://github.com/ydb-platform/ydb-airflow-provider",
+    "timeline": [
+      { "date": "2024-06-27", "status": "Production ready", "description": "YDB Airflow provider released", "quality": 90 }
+    ]
   },
   {
     "Продукт": "sqlalchemy",
@@ -374,7 +485,25 @@ export const frameworks = [
     "attention": 3,
     "impact": 6,
     "quality": 70,
-    "repository": "https://github.com/ydb-platform/ydb-sqlalchemy"
+    "repository": "https://github.com/ydb-platform/ydb-sqlalchemy",
+    "timeline": [
+      {
+        "date": "2017-02-15",
+        "description": "YQL dialect support in SQLAlchemy",
+        "status": "Production ready",
+        "authors": ["blinkov"],
+        "quality": 25,
+        "attention": 3,
+      },
+      {
+        "date": "2023-09-01",
+        "description": "Initial YDB support in SQLAlchemy",
+        "status": "Production ready",
+        "authors": ["ovcharuk"],
+        "quality": 50,
+        "attention": 5,
+      },
+    ]
   },
   {
     "Продукт": "dbt",
@@ -387,7 +516,11 @@ export const frameworks = [
     "attention": 4,
     "impact": 3,
     "quality": 50,
-    "repository": "https://github.com/ydb-platform/dbt-ydb"
+    "repository": "https://github.com/ydb-platform/dbt-ydb",
+    "timeline": [
+      { "date": "2024-03-01", "status": "В разработке", "description": "dbt adapter development", "quality": 30 },
+      { "date": "2024-09-01", "status": "Production ready", "description": "First stable release", "quality": 50 }
+    ]
   },
   {
     "Продукт": "DBAPI",
@@ -400,7 +533,25 @@ export const frameworks = [
     "attention": 2,
     "impact": 8,
     "quality": 90,
-    "repository": "https://github.com/ydb-platform/ydb-python-dbapi"
+    "repository": "https://github.com/ydb-platform/ydb-python-dbapi",
+    "timeline": [
+      {
+        "date": "2019-05-20",
+        "description": "Initial YDB support in DBAPI",
+        "status": "В разработке",
+        "authors": ["blinkov"],
+        "quality": 25,
+        "attention": 5,
+      },
+      {
+        "date": "2023-09-01",
+        "description": "YDB implementation of DB-API",
+        "status": "Production ready",
+        "authors": ["ovcharuk"],
+        "quality": 50,
+        "attention": 5,
+      }
+    ]
   },
   {
     "Продукт": "django orm",
@@ -413,7 +564,11 @@ export const frameworks = [
     "attention": 1,
     "impact": 2,
     "quality": 60,
-    "repository": "https://github.com/ydb-platform/ydb-django"
+    "repository": "https://github.com/ydb-platform/ydb-django",
+    "timeline": [
+      { "date": "2024-01-01", "status": "В разработке", "description": "Django backend development", "quality": 30 },
+      { "date": "2024-09-01", "status": "Production ready", "description": "Basic Django support", "quality": 60 }
+    ]
   },
   {
     "Продукт": "ydb-java-sdk",
@@ -426,7 +581,13 @@ export const frameworks = [
     "attention": 9,
     "impact": 10,
     "quality": 90,
-    "repository": "https://github.com/ydb-platform/ydb-java-sdk"
+    "repository": "https://github.com/ydb-platform/ydb-java-sdk",
+    "timeline": [
+      { "date": "2018-05-05", "status": "В разработке", "description": "Initial Java SDK development", "quality": 30 },
+      { "date": "2019-01-01", "status": "Production ready", "description": "First stable release", "quality": 60 },
+      { "date": "2022-04-19", "status": "Production ready", "description": "OpenSource release", "quality": 80 },
+      { "date": "2024-01-01", "status": "Production ready", "description": "Mature SDK", "quality": 90 }
+    ]
   },
   {
     "Продукт": "JDBC Driver",
@@ -439,7 +600,12 @@ export const frameworks = [
     "attention": 9,
     "impact": 10,
     "quality": 90,
-    "repository": "https://github.com/ydb-platform/ydb-jdbc-driver"
+    "repository": "https://github.com/ydb-platform/ydb-jdbc-driver",
+    "timeline": [
+      { "date": "2021-05-18", "status": "В разработке", "description": "Initial JDBC driver", "quality": 40 },
+      { "date": "2022-04-19", "status": "Production ready", "description": "OpenSource release", "quality": 70 },
+      { "date": "2024-01-01", "status": "Production ready", "description": "Full JDBC compliance", "quality": 90 }
+    ]
   },
   {
     "Продукт": "ydb-importer",
@@ -452,7 +618,11 @@ export const frameworks = [
     "attention": 2,
     "impact": 3,
     "quality": 60,
-    "repository": "https://github.com/ydb-platform/ydb-importer"
+    "repository": "https://github.com/ydb-platform/ydb-importer",
+    "timeline": [
+      { "date": "2023-06-01", "status": "В разработке", "description": "Initial development", "quality": 30 },
+      { "date": "2024-01-01", "status": "Production ready", "description": "First stable release", "quality": 60 }
+    ]
   },
   {
     "Продукт": "YDB Spark Connector",
@@ -465,7 +635,11 @@ export const frameworks = [
     "attention": 6,
     "impact": 4,
     "quality": 65,
-    "repository": "https://github.com/ydb-platform/ydb-spark-connector"
+    "repository": "https://github.com/ydb-platform/ydb-spark-connector",
+    "timeline": [
+      { "date": "2023-06-01", "status": "В разработке", "description": "Spark connector development", "quality": 30 },
+      { "date": "2024-06-01", "status": "Production ready", "description": "First stable release", "quality": 65 }
+    ]
   },
   {
     "Продукт": "ydb-js-sdk",
@@ -478,7 +652,13 @@ export const frameworks = [
     "attention": 4,
     "impact": 4,
     "quality": 65,
-    "repository": "https://github.com/ydb-platform/ydb-nodejs-sdk"
+    "repository": "https://github.com/ydb-platform/ydb-nodejs-sdk",
+    "timeline": [
+      { "date": "2019-10-03", "status": "В разработке", "description": "Initial Node.js SDK development", "quality": 30 },
+      { "date": "2020-06-01", "status": "Production ready", "description": "First stable release", "quality": 50 },
+      { "date": "2022-04-19", "status": "Production ready", "description": "OpenSource release", "quality": 60 },
+      { "date": "2024-01-01", "status": "Production ready", "description": "TypeScript improvements", "quality": 65 }
+    ]
   },
   {
     "Продукт": "ydb cli",
@@ -491,7 +671,12 @@ export const frameworks = [
     "attention": 10,
     "impact": 10,
     "quality": 85,
-    "repository": "https://github.com/ydb-platform/ydb"
+    "repository": "https://github.com/ydb-platform/ydb",
+    "timeline": [
+      { "date": "2018-01-01", "status": "В разработке", "description": "YDB CLI development", "quality": 50 },
+      { "date": "2022-04-19", "status": "Production ready", "description": "OpenSource release with YDB", "quality": 75 },
+      { "date": "2024-01-01", "status": "Production ready", "description": "Full-featured CLI", "quality": 85 }
+    ]
   },
   {
     "Продукт": "YDB FDW extention for PostgreSQL",
@@ -504,7 +689,10 @@ export const frameworks = [
     "attention": 10,
     "impact": 10,
     "quality": 25,
-    "repository": "https://github.com/ydb-platform/ydb-postgres-fdw"
+    "repository": "https://github.com/ydb-platform/ydb-postgres-fdw",
+    "timeline": [
+      { "date": "2024-09-01", "status": "В разработке", "description": "FDW development started", "quality": 25 }
+    ]
   },
   {
     "Продукт": "ydb-dotnet-sdk",
@@ -517,7 +705,12 @@ export const frameworks = [
     "attention": 8,
     "impact": 6,
     "quality": 70,
-    "repository": "https://github.com/ydb-platform/ydb-dotnet-sdk"
+    "repository": "https://github.com/ydb-platform/ydb-dotnet-sdk",
+    "timeline": [
+      { "date": "2023-08-15", "status": "В разработке", "description": "Initial .NET SDK development", "quality": 40 },
+      { "date": "2024-01-01", "status": "Production ready", "description": "First stable release", "quality": 60 },
+      { "date": "2024-09-01", "status": "Production ready", "description": "Mature SDK", "quality": 70 }
+    ]
   },
   {
     "Продукт": "ADO.Net",
@@ -530,7 +723,10 @@ export const frameworks = [
     "attention": 9,
     "impact": 6,
     "quality": 80,
-    "repository": "https://github.com/ydb-platform/ydb-dotnet-sdk"
+    "repository": "https://github.com/ydb-platform/ydb-dotnet-sdk",
+    "timeline": [
+      { "date": "2024-08-16", "status": "Production ready", "description": "ADO.NET provider released", "quality": 80 }
+    ]
   },
   {
     "Продукт": "EntityFramework",
@@ -543,7 +739,11 @@ export const frameworks = [
     "attention": 9,
     "impact": 6,
     "quality": 80,
-    "repository": "https://github.com/ydb-platform/ydb-dotnet-sdk"
+    "repository": "https://github.com/ydb-platform/ydb-dotnet-sdk",
+    "timeline": [
+      { "date": "2024-01-01", "status": "В разработке", "description": "EF Core provider development", "quality": 40 },
+      { "date": "2024-09-01", "status": "Production ready", "description": "EF Core provider released", "quality": 80 }
+    ]
   },
   {
     "Продукт": "linq2db",
@@ -556,7 +756,11 @@ export const frameworks = [
     "attention": 3,
     "impact": 6,
     "quality": 80,
-    "repository": ""
+    "repository": "",
+    "timeline": [
+      { "date": "2024-06-01", "status": "В разработке", "description": "LINQ2DB provider development", "quality": 50 },
+      { "date": "2024-12-01", "status": "Production ready", "description": "LINQ2DB provider released", "quality": 80 }
+    ]
   },
   {
     "Продукт": "Hibernate 5/6 dialects",
@@ -569,7 +773,10 @@ export const frameworks = [
     "attention": 7,
     "impact": 10,
     "quality": 90,
-    "repository": "https://github.com/ydb-platform/ydb-java-dialects"
+    "repository": "https://github.com/ydb-platform/ydb-java-dialects",
+    "timeline": [
+      { "date": "2024-01-15", "status": "Production ready", "description": "Hibernate YDB dialect released", "quality": 90 }
+    ]
   },
   {
     "Продукт": "JOOQ dialect",
@@ -582,7 +789,10 @@ export const frameworks = [
     "attention": 2,
     "impact": 7,
     "quality": 90,
-    "repository": "https://github.com/ydb-platform/ydb-java-dialects"
+    "repository": "https://github.com/ydb-platform/ydb-java-dialects",
+    "timeline": [
+      { "date": "2024-02-13", "status": "Production ready", "description": "jOOQ YDB dialect released", "quality": 90 }
+    ]
   },
   {
     "Продукт": "liquibase",
@@ -595,7 +805,10 @@ export const frameworks = [
     "attention": 2,
     "impact": 7,
     "quality": 90,
-    "repository": "https://github.com/ydb-platform/ydb-java-dialects"
+    "repository": "https://github.com/ydb-platform/ydb-java-dialects",
+    "timeline": [
+      { "date": "2024-02-14", "status": "Production ready", "description": "Liquibase YDB extension released", "quality": 90 }
+    ]
   },
   {
     "Продукт": "FlyWay",
@@ -608,7 +821,10 @@ export const frameworks = [
     "attention": 2,
     "impact": 5,
     "quality": 90,
-    "repository": "https://github.com/ydb-platform/ydb-java-dialects"
+    "repository": "https://github.com/ydb-platform/ydb-java-dialects",
+    "timeline": [
+      { "date": "2024-04-10", "status": "Production ready", "description": "Flyway YDB extension released", "quality": 90 }
+    ]
   },
   {
     "Продукт": "ydb materializer",
@@ -621,7 +837,11 @@ export const frameworks = [
     "attention": 4,
     "impact": 6,
     "quality": 85,
-    "repository": ""
+    "repository": "",
+    "timeline": [
+      { "date": "2023-06-01", "status": "В разработке", "description": "Materializer development", "quality": 50 },
+      { "date": "2024-06-01", "status": "Production ready", "description": "Stable release", "quality": 85 }
+    ]
   },
   {
     "Продукт": "ydb-php-sdk",
@@ -634,7 +854,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 1,
     "quality": 50,
-    "repository": "https://github.com/ydb-platform/ydb-php-sdk"
+    "repository": "https://github.com/ydb-platform/ydb-php-sdk",
+    "timeline": [
+      { "date": "2021-04-01", "status": "Production ready", "description": "PHP SDK released", "quality": 50 }
+    ]
   },
   {
     "Продукт": "golang-migrate",
@@ -647,7 +870,10 @@ export const frameworks = [
     "attention": 3,
     "impact": 5,
     "quality": 50,
-    "repository": ""
+    "repository": "",
+    "timeline": [
+      { "date": "2024-01-01", "status": "В разработке", "description": "YDB driver for golang-migrate in review", "quality": 50 }
+    ]
   },
   {
     "Продукт": "Dapper",
@@ -660,7 +886,10 @@ export const frameworks = [
     "attention": 2,
     "impact": 6,
     "quality": 90,
-    "repository": "https://github.com/ydb-platform/ydb-dotnet-sdk"
+    "repository": "https://github.com/ydb-platform/ydb-dotnet-sdk",
+    "timeline": [
+      { "date": "2024-09-11", "status": "Production ready", "description": "Dapper YDB support released", "quality": 90 }
+    ]
   },
   {
     "Продукт": "alembic",
@@ -673,7 +902,10 @@ export const frameworks = [
     "attention": 4,
     "impact": 4,
     "quality": 65,
-    "repository": "https://github.com/ydb-platform/ydb-sqlalchemy"
+    "repository": "https://github.com/ydb-platform/ydb-sqlalchemy",
+    "timeline": [
+      { "date": "2024-11-13", "status": "Production ready", "description": "Alembic YDB support released", "quality": 65 }
+    ]
   },
   {
     "Продукт": "Apache SuperSet",
@@ -686,7 +918,11 @@ export const frameworks = [
     "attention": 2,
     "impact": 4,
     "quality": 90,
-    "repository": ""
+    "repository": "",
+    "timeline": [
+      { "date": "2024-06-01", "status": "В разработке", "description": "SuperSet YDB integration", "quality": 50 },
+      { "date": "2025-02-05", "status": "Production ready", "description": "SuperSet YDB support released", "quality": 90 }
+    ]
   },
   {
     "Продукт": "logstash",
@@ -699,7 +935,10 @@ export const frameworks = [
     "attention": 2,
     "impact": 4,
     "quality": 90,
-    "repository": ""
+    "repository": "",
+    "timeline": [
+      { "date": "2024-03-26", "status": "Production ready", "description": "Logstash YDB output plugin released", "quality": 90 }
+    ]
   },
   {
     "Продукт": "ydb-rust-sdk",
@@ -712,7 +951,11 @@ export const frameworks = [
     "attention": 2,
     "impact": 2,
     "quality": 50,
-    "repository": "https://github.com/ydb-platform/ydb-rs-sdk"
+    "repository": "https://github.com/ydb-platform/ydb-rs-sdk",
+    "timeline": [
+      { "date": "2022-05-22", "status": "В разработке", "description": "Initial Rust SDK development", "quality": 30 },
+      { "date": "2023-06-01", "status": "Production ready", "description": "First stable release", "quality": 50 }
+    ]
   },
   {
     "Продукт": "ydb-go-sdk-zap",
@@ -725,7 +968,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 1,
     "quality": 99,
-    "repository": "https://github.com/ydb-platform/ydb-go-sdk-zap"
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk-zap",
+    "timeline": [
+      { "date": "2022-06-01", "status": "Production ready", "description": "Zap integration released", "quality": 99 }
+    ]
   },
   {
     "Продукт": "ydb-go-sdk-logrus",
@@ -738,7 +984,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 1,
     "quality": 99,
-    "repository": "https://github.com/ydb-platform/ydb-go-sdk-logrus"
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk-logrus",
+    "timeline": [
+      { "date": "2022-06-01", "status": "Production ready", "description": "Logrus integration released", "quality": 99 }
+    ]
   },
   {
     "Продукт": "ydb-go-sdk-zerolog",
@@ -751,7 +1000,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 1,
     "quality": 99,
-    "repository": "https://github.com/ydb-platform/ydb-go-sdk-zerolog"
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk-zerolog",
+    "timeline": [
+      { "date": "2022-06-01", "status": "Production ready", "description": "Zerolog integration released", "quality": 99 }
+    ]
   },
   {
     "Продукт": "ydb-go-sdk-otel",
@@ -764,7 +1016,11 @@ export const frameworks = [
     "attention": 1,
     "impact": 1,
     "quality": 99,
-    "repository": "https://github.com/ydb-platform/ydb-go-sdk-otel"
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk-otel",
+    "timeline": [
+      { "date": "2023-01-01", "status": "В разработке", "description": "OpenTelemetry integration development", "quality": 70 },
+      { "date": "2024-01-01", "status": "Production ready", "description": "Stable OTEL integration", "quality": 99 }
+    ]
   },
   {
     "Продукт": "ydb-go-sdk-opentracing",
@@ -777,7 +1033,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 1,
     "quality": 99,
-    "repository": "https://github.com/ydb-platform/ydb-go-sdk-opentracing"
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk-opentracing",
+    "timeline": [
+      { "date": "2022-06-01", "status": "Production ready", "description": "OpenTracing integration released", "quality": 99 }
+    ]
   },
   {
     "Продукт": "ydb-go-sdk-slog",
@@ -790,7 +1049,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 1,
     "quality": 99,
-    "repository": "https://github.com/ydb-platform/ydb-go-sdk-slog"
+    "repository": "https://github.com/ydb-platform/ydb-go-sdk-slog",
+    "timeline": [
+      { "date": "2023-09-01", "status": "Production ready", "description": "Slog integration released with Go 1.21", "quality": 99 }
+    ]
   },
   {
     "Продукт": "Spring Data JDBC",
@@ -803,7 +1065,10 @@ export const frameworks = [
     "attention": 7,
     "impact": 9,
     "quality": 90,
-    "repository": "https://github.com/ydb-platform/ydb-java-dialects"
+    "repository": "https://github.com/ydb-platform/ydb-java-dialects",
+    "timeline": [
+      { "date": "2024-08-27", "status": "Production ready", "description": "Spring Data JDBC YDB dialect released", "quality": 90 }
+    ]
   },
   {
     "Продукт": "YOJ",
@@ -816,7 +1081,10 @@ export const frameworks = [
     "attention": 2,
     "impact": 2,
     "quality": 70,
-    "repository": "https://github.com/ydb-platform/yoj-project"
+    "repository": "https://github.com/ydb-platform/yoj-project",
+    "timeline": [
+      { "date": "2023-12-17", "status": "Production ready", "description": "YOJ project open-sourced", "quality": 70 }
+    ]
   },
   {
     "Продукт": "Federated ydb-java-sdk",
@@ -829,7 +1097,11 @@ export const frameworks = [
     "attention": 3,
     "impact": 4,
     "quality": 65,
-    "repository": "https://github.com/ydb-platform/ydb-java-sdk"
+    "repository": "https://github.com/ydb-platform/ydb-java-sdk",
+    "timeline": [
+      { "date": "2023-12-22", "status": "В разработке", "description": "Federation support development", "quality": 40 },
+      { "date": "2024-06-01", "status": "Production ready", "description": "Federation support released", "quality": 65 }
+    ]
   },
   {
     "Продукт": "userver ydb component",
@@ -842,7 +1114,11 @@ export const frameworks = [
     "attention": 4,
     "impact": 6,
     "quality": 50,
-    "repository": "https://github.com/userver-framework/userver"
+    "repository": "https://github.com/userver-framework/userver",
+    "timeline": [
+      { "date": "2023-01-01", "status": "В разработке", "description": "userver YDB component development", "quality": 30 },
+      { "date": "2024-01-01", "status": "Production ready", "description": "Stable userver integration", "quality": 50 }
+    ]
   },
   {
     "Продукт": "Apache NiFi",
@@ -855,7 +1131,10 @@ export const frameworks = [
     "attention": 2,
     "impact": 4,
     "quality": 50,
-    "repository": "https://github.com/ydb-platform/ydb-jdbc-driver"
+    "repository": "https://github.com/ydb-platform/ydb-jdbc-driver",
+    "timeline": [
+      { "date": "2024-06-01", "status": "Production ready", "description": "NiFi YDB processor via JDBC", "quality": 50 }
+    ]
   },
   {
     "Продукт": "ydbcp",
@@ -868,7 +1147,11 @@ export const frameworks = [
     "attention": 9,
     "impact": 6,
     "quality": 70,
-    "repository": "https://github.com/ydb-platform/ydbcp"
+    "repository": "https://github.com/ydb-platform/ydbcp",
+    "timeline": [
+      { "date": "2024-01-01", "status": "В разработке", "description": "YDB Control Plane development", "quality": 50 },
+      { "date": "2024-09-01", "status": "В разработке", "description": "Active development", "quality": 70 }
+    ]
   },
   {
     "Продукт": "ydb-go-genproto",
@@ -881,7 +1164,10 @@ export const frameworks = [
     "attention": 2,
     "impact": 8,
     "quality": 90,
-    "repository": "https://github.com/ydb-platform/ydb-go-genproto"
+    "repository": "https://github.com/ydb-platform/ydb-go-genproto",
+    "timeline": [
+      { "date": "2019-04-17", "status": "Production ready", "description": "Initial Go protobuf generation", "quality": 90 }
+    ]
   },
   {
     "Продукт": "ydb-api-protos",
@@ -894,7 +1180,11 @@ export const frameworks = [
     "attention": 2,
     "impact": 10,
     "quality": 95,
-    "repository": "https://github.com/ydb-platform/ydb-api-protos"
+    "repository": "https://github.com/ydb-platform/ydb-api-protos",
+    "timeline": [
+      { "date": "2018-01-01", "status": "Production ready", "description": "YDB API protobuf definitions", "quality": 80 },
+      { "date": "2022-04-19", "status": "Production ready", "description": "OpenSource release", "quality": 95 }
+    ]
   },
   {
     "Продукт": "ydb-ansible",
@@ -907,7 +1197,11 @@ export const frameworks = [
     "attention": 5,
     "impact": 7,
     "quality": 70,
-    "repository": "https://github.com/ydb-platform/ydb-ansible"
+    "repository": "https://github.com/ydb-platform/ydb-ansible",
+    "timeline": [
+      { "date": "2023-06-01", "status": "В разработке", "description": "Ansible playbooks development", "quality": 50 },
+      { "date": "2024-01-01", "status": "Production ready", "description": "Stable Ansible playbooks", "quality": 70 }
+    ]
   },
   {
     "Продукт": "Apache Kafka (librdkafka)",
@@ -920,7 +1214,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 10,
     "quality": 100,
-    "repository": "https://github.com/confluentinc/librdkafka"
+    "repository": "https://github.com/confluentinc/librdkafka",
+    "timeline": [
+      { "date": "2024-07-31", "status": "Production ready", "description": "YDB Kafka API compatibility (YDB 24.1)", "quality": 100 }
+    ]
   },
   {
     "Продукт": "kafka-python",
@@ -933,7 +1230,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 10,
     "quality": 100,
-    "repository": "https://github.com/dpkp/kafka-python"
+    "repository": "https://github.com/dpkp/kafka-python",
+    "timeline": [
+      { "date": "2024-07-31", "status": "Production ready", "description": "YDB Kafka API compatibility (YDB 24.1)", "quality": 100 }
+    ]
   },
   {
     "Продукт": "confluent-kafka-python",
@@ -946,7 +1246,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 10,
     "quality": 100,
-    "repository": "https://github.com/confluentinc/confluent-kafka-python"
+    "repository": "https://github.com/confluentinc/confluent-kafka-python",
+    "timeline": [
+      { "date": "2024-07-31", "status": "Production ready", "description": "YDB Kafka API compatibility (YDB 24.1)", "quality": 100 }
+    ]
   },
   {
     "Продукт": "franz-go",
@@ -959,7 +1262,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 10,
     "quality": 100,
-    "repository": "https://github.com/twmb/franz-go"
+    "repository": "https://github.com/twmb/franz-go",
+    "timeline": [
+      { "date": "2024-07-31", "status": "Production ready", "description": "YDB Kafka API compatibility (YDB 24.1)", "quality": 100 }
+    ]
   },
   {
     "Продукт": "sarama",
@@ -972,7 +1278,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 10,
     "quality": 100,
-    "repository": "https://github.com/IBM/sarama"
+    "repository": "https://github.com/IBM/sarama",
+    "timeline": [
+      { "date": "2024-07-31", "status": "Production ready", "description": "YDB Kafka API compatibility (YDB 24.1)", "quality": 100 }
+    ]
   },
   {
     "Продукт": "KafkaJS",
@@ -985,7 +1294,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 10,
     "quality": 100,
-    "repository": "https://github.com/tulios/kafkajs"
+    "repository": "https://github.com/tulios/kafkajs",
+    "timeline": [
+      { "date": "2024-07-31", "status": "Production ready", "description": "YDB Kafka API compatibility (YDB 24.1)", "quality": 100 }
+    ]
   },
   {
     "Продукт": "Spring Kafka",
@@ -998,7 +1310,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 10,
     "quality": 100,
-    "repository": "https://github.com/spring-projects/spring-kafka"
+    "repository": "https://github.com/spring-projects/spring-kafka",
+    "timeline": [
+      { "date": "2024-07-31", "status": "Production ready", "description": "YDB Kafka API compatibility (YDB 24.1)", "quality": 100 }
+    ]
   },
   {
     "Продукт": "Apache Kafka Java Client",
@@ -1011,7 +1326,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 10,
     "quality": 100,
-    "repository": "https://github.com/apache/kafka"
+    "repository": "https://github.com/apache/kafka",
+    "timeline": [
+      { "date": "2024-07-31", "status": "Production ready", "description": "YDB Kafka API compatibility (YDB 24.1)", "quality": 100 }
+    ]
   },
   {
     "Продукт": "rdkafka-dotnet (Confluent.Kafka)",
@@ -1024,7 +1342,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 10,
     "quality": 100,
-    "repository": "https://github.com/confluentinc/confluent-kafka-dotnet"
+    "repository": "https://github.com/confluentinc/confluent-kafka-dotnet",
+    "timeline": [
+      { "date": "2024-07-31", "status": "Production ready", "description": "YDB Kafka API compatibility (YDB 24.1)", "quality": 100 }
+    ]
   },
   {
     "Продукт": "rust-rdkafka",
@@ -1037,7 +1358,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 10,
     "quality": 100,
-    "repository": "https://github.com/fede1024/rust-rdkafka"
+    "repository": "https://github.com/fede1024/rust-rdkafka",
+    "timeline": [
+      { "date": "2024-07-31", "status": "Production ready", "description": "YDB Kafka API compatibility (YDB 24.1)", "quality": 100 }
+    ]
   },
   {
     "Продукт": "php-rdkafka",
@@ -1050,7 +1374,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 10,
     "quality": 100,
-    "repository": "https://github.com/arnaud-lb/php-rdkafka"
+    "repository": "https://github.com/arnaud-lb/php-rdkafka",
+    "timeline": [
+      { "date": "2024-07-31", "status": "Production ready", "description": "YDB Kafka API compatibility (YDB 24.1)", "quality": 100 }
+    ]
   },
   {
     "Продукт": "Kafka UI",
@@ -1063,7 +1390,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 10,
     "quality": 100,
-    "repository": "https://github.com/provectus/kafka-ui"
+    "repository": "https://github.com/provectus/kafka-ui",
+    "timeline": [
+      { "date": "2024-07-31", "status": "Production ready", "description": "YDB Kafka API compatibility (YDB 24.1)", "quality": 100 }
+    ]
   },
   {
     "Продукт": "Kafdrop",
@@ -1076,7 +1406,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 10,
     "quality": 100,
-    "repository": "https://github.com/obsidiandynamics/kafdrop"
+    "repository": "https://github.com/obsidiandynamics/kafdrop",
+    "timeline": [
+      { "date": "2024-07-31", "status": "Production ready", "description": "YDB Kafka API compatibility (YDB 24.1)", "quality": 100 }
+    ]
   },
   {
     "Продукт": "AKHQ (Kafka HQ)",
@@ -1089,7 +1422,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 10,
     "quality": 100,
-    "repository": "https://github.com/tchiotludo/akhq"
+    "repository": "https://github.com/tchiotludo/akhq",
+    "timeline": [
+      { "date": "2024-07-31", "status": "Production ready", "description": "YDB Kafka API compatibility (YDB 24.1)", "quality": 100 }
+    ]
   },
   {
     "Продукт": "kcat (kafkacat)",
@@ -1102,7 +1438,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 10,
     "quality": 100,
-    "repository": "https://github.com/edenhill/kcat"
+    "repository": "https://github.com/edenhill/kcat",
+    "timeline": [
+      { "date": "2024-07-31", "status": "Production ready", "description": "YDB Kafka API compatibility (YDB 24.1)", "quality": 100 }
+    ]
   },
   {
     "Продукт": "Debezium",
@@ -1115,7 +1454,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 10,
     "quality": 100,
-    "repository": "https://github.com/debezium/debezium"
+    "repository": "https://github.com/debezium/debezium",
+    "timeline": [
+      { "date": "2024-07-31", "status": "Production ready", "description": "YDB Kafka API compatibility (YDB 24.1)", "quality": 100 }
+    ]
   },
   {
     "Продукт": "Kafka Connect",
@@ -1128,7 +1470,10 @@ export const frameworks = [
     "attention": 1,
     "impact": 10,
     "quality": 100,
-    "repository": "https://kafka.apache.org/documentation/#connect"
+    "repository": "https://kafka.apache.org/documentation/#connect",
+    "timeline": [
+      { "date": "2024-07-31", "status": "Production ready", "description": "YDB Kafka API compatibility (YDB 24.1)", "quality": 100 }
+    ]
   }
 ];
 

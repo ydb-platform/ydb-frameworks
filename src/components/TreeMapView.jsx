@@ -91,7 +91,7 @@ const squarify = (items, x, y, width, height) => {
   return results;
 };
 
-const TreeMapView = ({ frameworks, highlightLanguage, highlightPerson, highlightCategory, highlightStatus }) => {
+const TreeMapView = ({ frameworks, highlightLanguage, highlightPerson, highlightCategory, highlightStatus, newFrameworkIds = new Set() }) => {
   const containerRef = useRef(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   
@@ -258,6 +258,7 @@ const TreeMapView = ({ frameworks, highlightLanguage, highlightPerson, highlight
                     height={item.h}
                     isHighlighted={highlighted}
                     hasHighlight={hasHighlight}
+                    isNew={newFrameworkIds.has(item.framework["Продукт"]) || item.framework._isNew}
                   />
                 </div>
               );

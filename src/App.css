@@ -8,14 +8,19 @@
 }
 
 .app-header {
-  padding: 4px 10px;
   border-bottom: 1px solid var(--border-color);
   background: var(--panel-bg);
   display: flex;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column;
   flex-shrink: 0;
   backdrop-filter: blur(20px);
+}
+
+.header-top-row {
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .logo-block {
@@ -105,9 +110,16 @@
   flex-direction: column;
 }
 
+.app-footer {
+  flex-shrink: 0;
+  border-top: 1px solid var(--border-color);
+  background: var(--panel-bg);
+  backdrop-filter: blur(20px);
+}
+
 /* Mobile responsive styles */
 @media (max-width: 768px) {
-  .app-header {
+  .header-top-row {
     flex-direction: column;
     padding: 4px;
     gap: 4px;
@@ -160,7 +172,7 @@
 
 /* Small mobile (portrait) */
 @media (max-width: 480px) {
-  .app-header {
+  .header-top-row {
     padding: 3px;
     gap: 3px;
   }
@@ -212,7 +224,7 @@
 
 /* Landscape mobile */
 @media (max-height: 500px) and (orientation: landscape) {
-  .app-header {
+  .header-top-row {
     flex-direction: row;
     padding: 2px 6px;
     gap: 8px;

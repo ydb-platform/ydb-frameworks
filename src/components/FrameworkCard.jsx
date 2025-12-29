@@ -23,7 +23,7 @@ const isMobileDevice = () => {
   return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 };
 
-const FrameworkCard = ({ framework, width, height, isHighlighted, hasHighlight }) => {
+const FrameworkCard = ({ framework, width, height, isHighlighted, hasHighlight, isNew = false }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobileTooltipVisible, setIsMobileTooltipVisible] = useState(false);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0, above: false });
@@ -133,7 +133,7 @@ const FrameworkCard = ({ framework, width, height, isHighlighted, hasHighlight }
     <>
       <div 
         ref={cardRef}
-        className={`framework-card status-${statusCategory} ${hasHighlight && isHighlighted ? 'card-highlighted' : ''} ${hasRepo ? 'clickable' : ''}`}
+        className={`framework-card status-${statusCategory} ${hasHighlight && isHighlighted ? 'card-highlighted' : ''} ${hasRepo ? 'clickable' : ''} ${isNew ? 'is-new' : ''}`}
         style={{
           width: '100%',
           height: '100%',
