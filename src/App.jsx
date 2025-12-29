@@ -62,6 +62,7 @@ function AppContent() {
   const [currentDate, setCurrentDate] = useState(() => new Date());
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(1);
+  const [loop, setLoop] = useState(true);
   
   // Update URL when highlights change
   useEffect(() => {
@@ -196,6 +197,8 @@ function AppContent() {
             setIsPlaying={setIsPlaying}
             speed={speed}
             setSpeed={setSpeed}
+            loop={loop}
+            setLoop={setLoop}
           />
         </footer>
       )}

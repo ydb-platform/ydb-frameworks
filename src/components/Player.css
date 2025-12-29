@@ -23,7 +23,7 @@
   background: var(--panel-bg);
   color: var(--text-color);
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,6 +51,24 @@
 .player-btn-play:hover {
   filter: brightness(1.1);
   background: var(--accent-color);
+}
+
+.player-btn-loop {
+  font-weight: bolder !important;
+  opacity: 0.4;
+  filter: grayscale(80%);
+  transition: all 0.15s ease;
+}
+
+.player-btn-loop::after {
+  content: 'ᦠ';
+  display: block;
+  transform: translateY(-2px);
+}
+
+.player-btn-loop.active {
+  opacity: 1;
+  filter: grayscale(0%);
 }
 
 .player-date {
@@ -191,7 +209,8 @@
   }
 
   .player-btn-reset,
-  .player-btn-end {
+  .player-btn-end,
+  .player-btn-loop {
     display: none;
   }
 

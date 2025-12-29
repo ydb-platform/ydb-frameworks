@@ -51,17 +51,22 @@ function Player({
   isPlaying: isPlayingProp, 
   setIsPlaying: setIsPlayingProp,
   speed: speedProp,
-  setSpeed: setSpeedProp
+  setSpeed: setSpeedProp,
+  loop: loopProp,
+  setLoop: setLoopProp
 }) {
   // Use local state only if props are not provided
   const [localIsPlaying, setLocalIsPlaying] = useState(false);
   const [localSpeed, setLocalSpeed] = useState(1);
+  const [localLoop, setLocalLoop] = useState(true);
   
   // Use props if provided, otherwise use local state
   const isPlaying = isPlayingProp !== undefined ? isPlayingProp : localIsPlaying;
   const setIsPlaying = setIsPlayingProp !== undefined ? setIsPlayingProp : setLocalIsPlaying;
   const speed = speedProp !== undefined ? speedProp : localSpeed;
   const setSpeed = setSpeedProp !== undefined ? setSpeedProp : setLocalSpeed;
+  const loop = loopProp !== undefined ? loopProp : localLoop;
+  const setLoop = setLoopProp !== undefined ? setLoopProp : setLocalLoop;
   
   const { minDate, maxDate } = useMemo(() => getDateRange(), []);
   const totalMonths = useMemo(() => getMonthsDiff(minDate, maxDate), [minDate, maxDate]);
@@ -81,15 +86,21 @@ function Player({
       setCurrentDate(prevDate => {
         const newDate = addMonths(prevDate, 1);
         if (newDate >= maxDate) {
-          setIsPlaying(false);
-          return maxDate;
+          if (loop) {
+            // Loop back to the beginning
+            return minDate;
+          } else {
+            // Stop at the end
+            setIsPlaying(false);
+            return maxDate;
+          }
         }
         return newDate;
       });
     }, 1000 / speed);
 
     return () => clearInterval(interval);
-  }, [isPlaying, speed, maxDate, setCurrentDate, isEnabled, setIsPlaying]);
+  }, [isPlaying, speed, maxDate, minDate, loop, setCurrentDate, isEnabled, setIsPlaying]);
 
   const handlePlayPause = useCallback(() => {
     if (currentDate >= maxDate) {
@@ -122,6 +133,10 @@ function Player({
     setCurrentDate(maxDate);
     setIsPlaying(false);
   }, [maxDate, setCurrentDate, setIsPlaying]);
+
+  const handleToggleLoop = useCallback(() => {
+    setLoop(!loop);
+  }, [loop, setLoop]);
 
   if (!isEnabled) return null;
 
@@ -169,6 +184,12 @@ function Player({
         <div className="player-speed">
           ×{speed}
         </div>
+        <button 
+          className={`player-btn player-btn-loop ${loop ? 'active' : ''}`}
+          onClick={handleToggleLoop}
+          title={loop ? "Зациклить (включено)" : "Проиграть однократно"}
+          aria-label={loop ? "Зациклить (включено)" : "Проиграть однократно"}
+        />
       </div>
       <div className="player-timeline">
         <input
