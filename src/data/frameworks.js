@@ -488,16 +488,16 @@ export const frameworks = [
     "repository": "https://github.com/ydb-platform/ydb-sqlalchemy",
     "timeline": [
       {
-        "date": "2017-02-15",
-        "description": "YQL dialect support in SQLAlchemy",
-        "status": "Production ready",
+        "date": "2019-05-20",
+        "description": "Initial YDB support in SQLAlchemy",
+        "status": "В разработке",
         "authors": ["blinkov"],
         "quality": 25,
         "attention": 3,
       },
       {
         "date": "2023-09-01",
-        "description": "Initial YDB support in SQLAlchemy",
+        "description": "Production ready YDB support in SQLAlchemy",
         "status": "Production ready",
         "authors": ["ovcharuk"],
         "quality": 50,
