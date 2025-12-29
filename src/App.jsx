@@ -172,6 +172,7 @@ function AppContent() {
             setHighlightCategory={setHighlightCategory}
             highlightStatus={highlightStatus}
             setHighlightStatus={setHighlightStatus}
+            frameworks={filteredFrameworks}
           />
         </div>
       </header>

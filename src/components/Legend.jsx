@@ -1,5 +1,5 @@
 import { useMemo, useState, useEffect } from 'react';
-import { languageColors, categoryColors, getCategories, getFilteredFrameworks, isAppTeamMember } from '../data/frameworks';
+import { languageColors, categoryColors, isAppTeamMember } from '../data/frameworks';
 import './Legend.css';
 
 // Get display name for sorting
@@ -45,10 +45,13 @@ const Legend = ({
   highlightLanguage, setHighlightLanguage, 
   highlightPerson, setHighlightPerson,
   highlightCategory, setHighlightCategory,
-  highlightStatus, setHighlightStatus
+  highlightStatus, setHighlightStatus,
+  frameworks: frameworksProp
 }) => {
-  const categories = getCategories();
   const isMobilePortrait = useIsMobilePortrait();
+  
+  // Ensure frameworks is always an array
+  const frameworks = frameworksProp || [];
   
   // Check if persons parameter is enabled (persons=1 or persons=true)
   const showPersons = (() => {
@@ -57,21 +60,48 @@ const Legend = ({
     return value === '1' || value === 'true';
   })();
   
-  // Get all frameworks
-  const filteredFrameworks = useMemo(() => getFilteredFrameworks(), []);
+  // Get visible categories from provided frameworks
+  const visibleCategories = useMemo(() => {
+    const cats = new Set();
+    frameworks.forEach(f => {
+      if (f && f.categories) {
+        f.categories.forEach(c => cats.add(c));
+      }
+    });
+    return [...cats].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  }, [frameworks]);
   
-  // Get unique persons from filtered frameworks (both responsible and helpers)
+  // Get visible languages from provided frameworks
+  const visibleLanguages = useMemo(() => {
+    const langs = new Set();
+    frameworks.forEach(f => {
+      if (f) {
+        // Handle both string and array formats for language
+        const lang = f["Язык программирования"];
+        if (Array.isArray(lang)) {
+          lang.forEach(l => langs.add(l));
+        } else if (lang) {
+          langs.add(lang);
+        }
+      }
+    });
+    return [...langs];
+  }, [frameworks]);
+  
+  // Get unique persons from provided frameworks (both responsible and helpers)
   const allPersons = useMemo(() => {
     const persons = new Set();
-    filteredFrameworks.forEach(f => {
-      if (f["Ответственный"]) {
-        persons.add(f["Ответственный"]);
+    frameworks.forEach(f => {
+      if (f) {
+        if (f["Ответственный"]) {
+          persons.add(f["Ответственный"]);
+        }
+        const helpers = f["Кто еще может помочь"] || [];
+        helpers.forEach(h => persons.add(h));
       }
-      const helpers = f["Кто еще может помочь"] || [];
-      helpers.forEach(h => persons.add(h));
     });
     return [...persons].sort();
-  }, [filteredFrameworks]);
+  }, [frameworks]);
   
 
   const clearAll = () => {
@@ -105,13 +135,15 @@ const Legend = ({
   const allItems = useMemo(() => {
     const items = [];
     
-    // Add languages
-    Object.entries(languageColors).forEach(([lang, colors]) => {
-      items.push({ type: 'language', key: `lang-${lang}`, lang, colors });
+    // Add visible languages only
+    visibleLanguages.forEach(lang => {
+      if (languageColors[lang]) {
+        items.push({ type: 'language', key: `lang-${lang}`, lang, colors: languageColors[lang] });
+      }
     });
     
-    // Add categories
-    categories.forEach(category => {
+    // Add visible categories only
+    visibleCategories.forEach(category => {
       items.push({ type: 'category', key: `cat-${category}`, category });
     });
     
@@ -123,7 +155,7 @@ const Legend = ({
     }
     
     return sortItems(items);
-  }, [categories, showPersons, allPersons]);
+  }, [visibleLanguages, visibleCategories, showPersons, allPersons]);
 
   // Get current selected value for mobile select
   const currentSelectValue = useMemo(() => {
