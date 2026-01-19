@@ -35,7 +35,7 @@ export const frameworks = [
   },
   {
     "Продукт": "SQLGlot",
-    "Статус": ["В разработке"],
+    "Статус": ["В разработке", "Принимаем PR", "Фиксим баги"],
     "Ответственный": "ovcharuk",
     "Кто еще может помочь": [],
     "Язык программирования": "Python",
@@ -43,8 +43,8 @@ export const frameworks = [
     "description": "SQLGlot is a no-dependency SQL parser, transpiler, optimizer, and engine. It can be used to format SQL or translate between 31 different dialects.",
     "attention": 2,
     "impact": 4,
-    "quality": 25,
-    "repository": "https://github.com/ydb-platform/sqlglot/tree/ydb_dialect",
+    "quality": 50,
+    "repository": "https://github.com/ydb-platform/ydb-sqlglot-plugin",
     "timeline": [
       { "date": "2024-09-01", "status": "В разработке", "description": "YDB dialect development started", "quality": 25 }
     ]
