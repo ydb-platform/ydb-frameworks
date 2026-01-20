@@ -7,7 +7,7 @@ Interactive visualization of YDB ecosystem: SDKs, drivers, ORMs, and integration
 
 ## 🌐 Live Demo
 
-**[https://ydb-platform.github.io/ydb-frameworks/](https://ydb-platform.github.io/ydb-frameworks/)**
+**[https://ydb-platform.github.io/ydb-frameworks/](https://ydb-platform.github.io/ydb-frameworks/?player=1)**
 
 ## Features
 
