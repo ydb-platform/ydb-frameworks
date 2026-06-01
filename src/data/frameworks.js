@@ -442,6 +442,22 @@ export const frameworks = [
     ]
   },
   {
+    "Продукт": "@ydbjs/langchain",
+    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "polrk",
+    "Кто еще может помочь": ["ovcharuk"],
+    "Язык программирования": "Js/Ts",
+    "categories": ["Vector Store", "AI/ML", "Library", "AppTeam"],
+    "description": "LangChain Js/Ts integration with YDB as vector store for AI/ML applications",
+    "attention": 2,
+    "impact": 7,
+    "quality": 85,
+    "repository": "https://github.com/ydb-platform/ydb-js-sdk",
+    "timeline": [
+      { "date": "2024-06-01", "status": "Production ready", "description": "Vector store support released", "quality": 85 }
+    ]
+  },
+    {
     "Продукт": "langchain-ydb",
     "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
     "Ответственный": "ovcharuk",
