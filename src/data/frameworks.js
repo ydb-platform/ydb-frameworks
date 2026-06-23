@@ -17,6 +17,22 @@ export const frameworks = [
     ]
   },
   {
+    "Продукт": "ydb-ai-skills",
+    "Статус": ["В разработке", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "polrk",
+    "Кто еще может помочь": ["asmyasnikov"],
+    "Язык программирования": "Python",
+    "categories": ["AI/ML", "Application", "AppTeam"],
+    "description": "AI coding agent skills for YDB — for writing YQL, designing schemas, and reviewing application code against YDB SDK best practices. Skills auto-trigger based on context and install into Claude Code, Cursor, Copilot, Gemini and other agents.",
+    "attention": 2,
+    "impact": 5,
+    "quality": 40,
+    "repository": "https://github.com/ydb-platform/ydb-ai-skills",
+    "timeline": [
+      { "date": "2026-05-18", "status": "В разработке", "description": "First skills landed (ydb-core, ydb-table) with Go/Java audit rules", "quality": 40 }
+    ]
+  },
+  {
     "Продукт": "django-ydb-backend",
     "Статус": ["В разработке"],
     "Ответственный": "ovcharuk",
@@ -455,6 +471,22 @@ export const frameworks = [
     "repository": "https://github.com/ydb-platform/ydb-js-sdk",
     "timeline": [
       { "date": "2024-06-01", "status": "Production ready", "description": "Vector store support released", "quality": 85 }
+    ]
+  },
+  {
+    "Продукт": "@ydbjs/drizzle-adapter",
+    "Статус": ["В разработке", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Ответственный": "polrk",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Js/Ts",
+    "categories": ["ORM", "Migration", "Library", "AppTeam"],
+    "description": "Drizzle ORM adapter for YDB: Drizzle-compatible database API, schema DSL with YDB-specific options (partitioning, TTL, column families, indexes), YDB/YQL query extensions, DDL builders and migrations. Supports CRUD, relational queries with automatic joins, transactions and vector search.",
+    "attention": 2,
+    "impact": 7,
+    "quality": 85,
+    "repository": "https://github.com/ydb-platform/ydb-js-sdk",
+    "timeline": [
+      { "date": "2026-05-20", "status": "В разработке", "description": "First npm release of @ydbjs/drizzle-adapter (v0.1.x)", "quality": 50 }
     ]
   },
     {
