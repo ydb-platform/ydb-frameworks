@@ -996,9 +996,9 @@ export const frameworks = [
     "Язык программирования": "Rust",
     "categories": ["Native SDK", "Library", "AppTeam"],
     "description": "Native Rust SDK for YDB with async runtime support",
-    "attention": 2,
-    "impact": 2,
-    "quality": 50,
+    "attention": 8,
+    "impact": 3,
+    "quality": 75,
     "repository": "https://github.com/ydb-platform/ydb-rs-sdk",
     "timeline": [
       { "date": "2022-05-22", "status": "В разработке", "description": "Initial Rust SDK development", "quality": 30 },
