@@ -33,17 +33,48 @@ export const frameworks = [
     ]
   },
   {
+    "id": "django-ydb-backend",
+    "name": "django-ydb-backend",
     "Продукт": "django-ydb-backend",
     "Статус": ["В разработке"],
+    "maturity": "preview",
+    "maintenance": [],
+    "integrationType": "driver",
     "Ответственный": "ovcharuk",
     "Кто еще может помочь": [],
     "Язык программирования": "Python",
-    "categories": ["ORM", "Library", "Студенческий проект", "AppTeam"],
+    "categories": ["ORM", "Library", "AppTeam"],
     "description": "Django YDB Backend Overview This is a Django database backend for YDB, a distributed SQL database system. The backend allows Django applications to use YDB as their primary database while maintaining compatibility with Django's ORM layer.",
     "attention": 2,
     "impact": 4,
     "quality": 25,
     "repository": "https://github.com/ydb-platform/django-ydb-backend",
+    "documentation": [
+      { "label": "README", "url": "https://github.com/ydb-platform/django-ydb-backend" },
+      { "label": "PyPI", "url": "https://pypi.org/project/django-ydb-backend/" }
+    ],
+    "releases": "https://pypi.org/project/django-ydb-backend/#history",
+    "compatibility": {
+      "minimumYdbVersion": null,
+      "evidence": [
+        { "claim": "The README documents Django >= 3.2 and ydb-dbapi >= 0.1.8, but no minimum YDB server version.", "url": "https://github.com/ydb-platform/django-ydb-backend" }
+      ]
+    },
+    "evidence": [
+      { "claim": "The only published package is the beta prerelease 0.0.1b1.", "url": "https://pypi.org/project/django-ydb-backend/#history" },
+      { "claim": "The repository documents installation, supported operations, limitations and an integration-test command.", "url": "https://github.com/ydb-platform/django-ydb-backend" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["application_compatibility", "schema_migration"],
+      "sourceSystems": ["Django"],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": null,
+      "checkpointResume": null,
+      "limitations": ["The README limits the claim to basic CRUD, most common fields and query operations, and notes limitations for secondary indexes."],
+      "evidence": ["https://github.com/ydb-platform/django-ydb-backend"]
+    },
     "timeline": [
       { "date": "2024-06-01", "status": "В разработке", "description": "Initial development started", "quality": 10 },
       { "date": "2024-12-01", "status": "В разработке", "description": "Student project development", "quality": 25 }
@@ -269,8 +300,13 @@ export const frameworks = [
     ]
   },
   {
+    "id": "sqlc-ydb",
+    "name": "sqlc-ydb",
     "Продукт": "SQLC",
     "Статус": ["В разработке"],
+    "maturity": "experimental",
+    "maintenance": [],
+    "integrationType": "code_generator",
     "Ответственный": "zkpo",
     "Кто еще может помочь": ["asmyasnikov", "nepunep"],
     "Язык программирования": "Go",
@@ -279,7 +315,30 @@ export const frameworks = [
     "attention": 5,
     "impact": 2,
     "quality": 40,
-    "repository": "",
+    "repository": "https://github.com/ydb-platform/sqlc-ydb",
+    "documentation": [
+      { "label": "README", "url": "https://github.com/ydb-platform/sqlc-ydb" }
+    ],
+    "releases": "https://github.com/ydb-platform/sqlc-ydb/releases",
+    "compatibility": {
+      "minimumYdbVersion": null,
+      "evidence": []
+    },
+    "evidence": [
+      { "claim": "The project explicitly calls YDB support experimental because sqlc external engine plugins are not supported upstream.", "url": "https://github.com/ydb-platform/sqlc-ydb" },
+      { "claim": "The repository provides configuration and examples but has no published GitHub releases.", "url": "https://github.com/ydb-platform/sqlc-ydb/releases" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["application_compatibility", "developer_tool"],
+      "sourceSystems": ["sqlc"],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": null,
+      "checkpointResume": null,
+      "limitations": ["Requires an sqlc engine-plugin checkout or compatible fork because the engine plugin system is not available in upstream sqlc."],
+      "evidence": ["https://github.com/ydb-platform/sqlc-ydb"]
+    },
     "timeline": [
       { "date": "2024-06-01", "status": "В разработке", "description": "YDB support development started", "quality": 40 }
     ]
@@ -318,8 +377,13 @@ export const frameworks = [
     ]
   },
   {
+    "id": "serverless-ydb-proxy",
+    "name": "serverless ydb proxy",
     "Продукт": "serverless ydb proxy",
-    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги"],
+    "Статус": ["Evidence required"],
+    "maturity": "unknown",
+    "maintenance": [],
+    "integrationType": "service",
     "Ответственный": "prkkofev",
     "Кто еще может помочь": ["asmyasnikov", "rekby", "zkpo"],
     "Язык программирования": "Go",
@@ -329,6 +393,22 @@ export const frameworks = [
     "impact": 5,
     "quality": 95,
     "repository": "",
+    "documentation": [],
+    "releases": null,
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [],
+    "evidenceRequired": true,
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": [],
+      "sourceSystems": [],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": null,
+      "checkpointResume": null,
+      "limitations": [],
+      "evidence": []
+    },
     "timeline": [
       { "date": "2020-06-01", "status": "В разработке", "description": "Initial development", "quality": 50 },
       { "date": "2021-01-01", "status": "Production ready", "description": "Production deployment", "quality": 80 },
@@ -336,8 +416,13 @@ export const frameworks = [
     ]
   },
   {
+    "id": "serverless-docapi-proxy",
+    "name": "serverless docapi proxy",
     "Продукт": "serverless docapi proxy",
-    "Статус": ["Production ready", "Фиксим баги", "Заносим свежие фичи"],
+    "Статус": ["Evidence required"],
+    "maturity": "unknown",
+    "maintenance": [],
+    "integrationType": "service",
     "Ответственный": "prkkofev",
     "Кто еще может помочь": ["asmyasnikov", "rekby", "zkpo"],
     "Язык программирования": "Go",
@@ -347,6 +432,22 @@ export const frameworks = [
     "impact": 5,
     "quality": 85,
     "repository": "",
+    "documentation": [],
+    "releases": null,
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [],
+    "evidenceRequired": true,
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": [],
+      "sourceSystems": [],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": null,
+      "checkpointResume": null,
+      "limitations": [],
+      "evidence": []
+    },
     "timeline": [
       { "date": "2020-06-01", "status": "В разработке", "description": "Initial development", "quality": 40 },
       { "date": "2021-01-01", "status": "Production ready", "description": "Production deployment", "quality": 70 },
@@ -373,8 +474,13 @@ export const frameworks = [
     ]
   },
   {
+    "id": "odbc",
+    "name": "ODBC",
     "Продукт": "ODBC",
-    "Статус": ["В разработке"],
+    "Статус": ["Evidence required"],
+    "maturity": "unknown",
+    "maintenance": [],
+    "integrationType": "driver",
     "Ответственный": "brgayazov",
     "Кто еще может помочь": [],
     "Язык программирования": "C/C++",
@@ -384,6 +490,22 @@ export const frameworks = [
     "impact": 7,
     "quality": 25,
     "repository": "",
+    "documentation": [],
+    "releases": null,
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [],
+    "evidenceRequired": true,
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": [],
+      "sourceSystems": [],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": null,
+      "checkpointResume": null,
+      "limitations": [],
+      "evidence": []
+    },
     "timeline": [
       { "date": "2024-09-01", "status": "В разработке", "description": "ODBC driver development started", "quality": 25 }
     ]
@@ -442,8 +564,13 @@ export const frameworks = [
     ]
   },
   {
+    "id": "logbroker-cli",
+    "name": "logbroker cli",
     "Продукт": "logbroker cli",
-    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Статус": ["Evidence required"],
+    "maturity": "unknown",
+    "maintenance": [],
+    "integrationType": "cli",
     "Ответственный": "",
     "Кто еще может помочь": ["ovcharuk"],
     "Язык программирования": "Python",
@@ -453,6 +580,22 @@ export const frameworks = [
     "impact": 4,
     "quality": 25,
     "repository": "",
+    "documentation": [],
+    "releases": null,
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [],
+    "evidenceRequired": true,
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": [],
+      "sourceSystems": [],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": null,
+      "checkpointResume": null,
+      "limitations": [],
+      "evidence": []
+    },
     "timeline": [
       { "date": "2023-01-01", "status": "Production ready", "description": "CLI tool for topics management", "quality": 25 }
     ]
@@ -489,9 +632,14 @@ export const frameworks = [
       { "date": "2026-05-20", "status": "В разработке", "description": "First npm release of @ydbjs/drizzle-adapter (v0.1.x)", "quality": 50 }
     ]
   },
-    {
+  {
+    "id": "langchain-ydb",
+    "name": "langchain-ydb",
     "Продукт": "langchain-ydb",
-    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Статус": ["В разработке", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "maturity": "preview",
+    "maintenance": ["adding_features", "accepting_prs", "fixing_bugs"],
+    "integrationType": "library",
     "Ответственный": "ovcharuk",
     "Кто еще может помочь": [],
     "Язык программирования": "Python",
@@ -500,15 +648,41 @@ export const frameworks = [
     "attention": 2,
     "impact": 7,
     "quality": 85,
-    "repository": "https://github.com/ydb-platform/ydb-langchain",
+    "repository": "https://github.com/ydb-platform/langchain-ydb",
+    "documentation": [
+      { "label": "README", "url": "https://github.com/ydb-platform/langchain-ydb" },
+      { "label": "PyPI", "url": "https://pypi.org/project/langchain-ydb/" }
+    ],
+    "releases": "https://github.com/ydb-platform/langchain-ydb/releases",
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [
+      { "claim": "The README documents installation, synchronous and asynchronous usage, credentials and vector-store operations, and the repository runs functional and lint checks.", "url": "https://github.com/ydb-platform/langchain-ydb" },
+      { "claim": "Versioned releases are published, but no explicit YDB compatibility or support policy is documented.", "url": "https://github.com/ydb-platform/langchain-ydb/releases" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["application_compatibility"],
+      "sourceSystems": ["LangChain"],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": false,
+      "checkpointResume": null,
+      "limitations": ["This is a LangChain vector-store library, not a general-purpose application or data migration path."],
+      "evidence": ["https://github.com/ydb-platform/langchain-ydb"]
+    },
     "timeline": [
       { "date": "2024-08-01", "status": "В разработке", "description": "LangChain integration development", "quality": 50 },
       { "date": "2024-12-01", "status": "Production ready", "description": "Vector store support released", "quality": 85 }
     ]
   },
   {
+    "id": "apache-airflow-providers-ydb",
+    "name": "apache-airflow-providers-ydb",
     "Продукт": "apache airflow",
     "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "maturity": "production",
+    "maintenance": ["adding_features", "accepting_prs", "fixing_bugs"],
+    "integrationType": "provider",
     "Ответственный": "ovcharuk",
     "Кто еще может помочь": [],
     "Язык программирования": "Python",
@@ -517,7 +691,31 @@ export const frameworks = [
     "attention": 2,
     "impact": 4,
     "quality": 90,
-    "repository": "https://github.com/ydb-platform/ydb-airflow-provider",
+    "repository": "https://github.com/apache/airflow/tree/main/providers/ydb",
+    "documentation": [
+      { "label": "Apache Airflow provider documentation", "url": "https://airflow.apache.org/docs/apache-airflow-providers-ydb/stable/" },
+      { "label": "Official YDB guide", "url": "https://ydb.tech/docs/en/integrations/orchestration/airflow" }
+    ],
+    "releases": "https://pypi.org/project/apache-airflow-providers-ydb/#history",
+    "compatibility": {
+      "minimumYdbVersion": null,
+      "evidence": [{ "claim": "Upstream documents minimum Airflow and Python-package versions but not a minimum YDB server version.", "url": "https://airflow.apache.org/docs/apache-airflow-providers-ydb/stable/" }]
+    },
+    "evidence": [
+      { "claim": "The provider is maintained and released in Apache Airflow with source, tests, versioned packages, API reference and stable installation documentation.", "url": "https://github.com/apache/airflow/tree/main/providers/ydb" },
+      { "claim": "Official YDB documentation describes provider installation and use for queries, uploads and transaction orchestration.", "url": "https://ydb.tech/docs/en/integrations/orchestration/airflow" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["application_compatibility", "developer_tool"],
+      "sourceSystems": ["Apache Airflow"],
+      "target": "YDB",
+      "mode": "orchestration",
+      "supportsSchemaConversion": false,
+      "checkpointResume": null,
+      "limitations": ["The provider orchestrates YDB hooks and operators; it does not by itself convert schemas or provide a complete source-to-YDB migration engine."],
+      "evidence": ["https://airflow.apache.org/docs/apache-airflow-providers-ydb/stable/", "https://ydb.tech/docs/en/integrations/orchestration/airflow"]
+    },
     "timeline": [
       { "date": "2024-06-27", "status": "Production ready", "description": "YDB Airflow provider released", "quality": 90 }
     ]
@@ -602,23 +800,6 @@ export const frameworks = [
     ]
   },
   {
-    "Продукт": "django orm",
-    "Статус": ["Production ready", "Принимаем PR", "Фиксим баги"],
-    "Ответственный": "ovcharuk",
-    "Кто еще может помочь": [],
-    "Язык программирования": "Python",
-    "categories": ["ORM", "Library", "AppTeam"],
-    "description": "Django database backend for YDB",
-    "attention": 1,
-    "impact": 2,
-    "quality": 60,
-    "repository": "https://github.com/ydb-platform/ydb-django",
-    "timeline": [
-      { "date": "2024-01-01", "status": "В разработке", "description": "Django backend development", "quality": 30 },
-      { "date": "2024-09-01", "status": "Production ready", "description": "Basic Django support", "quality": 60 }
-    ]
-  },
-  {
     "Продукт": "ydb-java-sdk",
     "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
     "Ответственный": "alexandr268",
@@ -690,8 +871,13 @@ export const frameworks = [
     ]
   },
   {
+    "id": "ydb-js-sdk",
+    "name": "ydb-js-sdk",
     "Продукт": "ydb-js-sdk",
     "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "maturity": "production",
+    "maintenance": ["accepting_prs", "fixing_bugs", "adding_features"],
+    "integrationType": "sdk",
     "Ответственный": "polrk",
     "Кто еще может помочь": [],
     "Язык программирования": "Js/Ts",
@@ -700,7 +886,33 @@ export const frameworks = [
     "attention": 4,
     "impact": 4,
     "quality": 65,
-    "repository": "https://github.com/ydb-platform/ydb-nodejs-sdk",
+    "repository": "https://github.com/ydb-platform/ydb-js-sdk",
+    "documentation": [
+      { "label": "README", "url": "https://github.com/ydb-platform/ydb-js-sdk" },
+      { "label": "Examples", "url": "https://github.com/ydb-platform/ydb-js-examples" },
+      { "label": "npm @ydbjs/core", "url": "https://www.npmjs.com/package/@ydbjs/core" }
+    ],
+    "releases": "https://github.com/ydb-platform/ydb-js-sdk/releases",
+    "compatibility": {
+      "minimumYdbVersion": null,
+      "evidence": []
+    },
+    "evidence": [
+      { "claim": "The SDK documents installation, package-level documentation, examples, testing, versioning and release procedures.", "url": "https://github.com/ydb-platform/ydb-js-sdk" },
+      { "claim": "The current SDK is distributed as scoped @ydbjs packages through npm.", "url": "https://www.npmjs.com/package/@ydbjs/core" },
+      { "claim": "Versioned releases are published from the current repository.", "url": "https://github.com/ydb-platform/ydb-js-sdk/releases" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["application_compatibility"],
+      "sourceSystems": ["JavaScript", "TypeScript"],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": null,
+      "checkpointResume": null,
+      "limitations": [],
+      "evidence": ["https://github.com/ydb-platform/ydb-js-sdk"]
+    },
     "timeline": [
       { "date": "2019-10-03", "status": "В разработке", "description": "Initial Node.js SDK development", "quality": 30 },
       { "date": "2020-06-01", "status": "Production ready", "description": "First stable release", "quality": 50 },
@@ -727,8 +939,13 @@ export const frameworks = [
     ]
   },
   {
-    "Продукт": "YDB FDW extention for PostgreSQL",
-    "Статус": ["В разработке"],
+    "id": "ydb-postgres-fdw",
+    "name": "YDB FDW extension for PostgreSQL",
+    "Продукт": "YDB FDW extension for PostgreSQL",
+    "Статус": ["Evidence required"],
+    "maturity": "unknown",
+    "maintenance": [],
+    "integrationType": "driver",
     "Ответственный": "rekby",
     "Кто еще может помочь": ["spotivan", "brgayazov"],
     "Язык программирования": "C/C++",
@@ -737,7 +954,23 @@ export const frameworks = [
     "attention": 10,
     "impact": 10,
     "quality": 25,
-    "repository": "https://github.com/ydb-platform/ydb-postgres-fdw",
+    "repository": "",
+    "documentation": [],
+    "releases": null,
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [],
+    "evidenceRequired": true,
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": [],
+      "sourceSystems": [],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": null,
+      "checkpointResume": null,
+      "limitations": [],
+      "evidence": []
+    },
     "timeline": [
       { "date": "2024-09-01", "status": "В разработке", "description": "FDW development started", "quality": 25 }
     ]
@@ -794,8 +1027,13 @@ export const frameworks = [
     ]
   },
   {
+    "id": "linq2db",
+    "name": "linq2db",
     "Продукт": "linq2db",
-    "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
+    "Статус": ["В разработке"],
+    "maturity": "preview",
+    "maintenance": [],
+    "integrationType": "orm",
     "Ответственный": "kurdyukov-kir",
     "Кто еще может помочь": [],
     "Язык программирования": "C#",
@@ -804,7 +1042,29 @@ export const frameworks = [
     "attention": 3,
     "impact": 6,
     "quality": 80,
-    "repository": "",
+    "repository": "https://github.com/ydb-platform/ydb-dotnet-sdk",
+    "documentation": [
+      { "label": "Official YDB guide", "url": "https://ydb.tech/docs/en/integrations/orm/linq2db" },
+      { "label": "Example", "url": "https://github.com/ydb-platform/ydb-dotnet-sdk/tree/main/examples/Linq2db.QuickStart" },
+      { "label": "NuGet package", "url": "https://www.nuget.org/packages/Community.Ydb.Linq2db" }
+    ],
+    "releases": "https://www.nuget.org/packages/Community.Ydb.Linq2db#versions-body-tab",
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [
+      { "claim": "Official YDB documentation covers installation, type mapping, schema generation, relations and bulk operations.", "url": "https://ydb.tech/docs/en/integrations/orm/linq2db" },
+      { "claim": "The provider is published as the pre-1.0 Community.Ydb.Linq2db package.", "url": "https://www.nuget.org/packages/Community.Ydb.Linq2db" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["application_compatibility"],
+      "sourceSystems": ["LinqToDB"],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": false,
+      "checkpointResume": null,
+      "limitations": ["The official guide states that LinqToDB does not manage migrations; Liquibase or Flyway is recommended for schema changes."],
+      "evidence": ["https://ydb.tech/docs/en/integrations/orm/linq2db"]
+    },
     "timeline": [
       { "date": "2024-06-01", "status": "В разработке", "description": "LINQ2DB provider development", "quality": 50 },
       { "date": "2024-12-01", "status": "Production ready", "description": "LINQ2DB provider released", "quality": 80 }
@@ -875,8 +1135,13 @@ export const frameworks = [
     ]
   },
   {
+    "id": "ydb-materializer",
+    "name": "ydb-materializer",
     "Продукт": "ydb materializer",
     "Статус": ["Production ready", "Фиксим баги", "Принимаем PR"],
+    "maturity": "production",
+    "maintenance": ["accepting_prs", "fixing_bugs"],
+    "integrationType": "application",
     "Ответственный": "kurdyukov-kir",
     "Кто еще может помочь": ["alexandr268", "mzinal"],
     "Язык программирования": "Java",
@@ -885,7 +1150,33 @@ export const frameworks = [
     "attention": 4,
     "impact": 6,
     "quality": 85,
-    "repository": "",
+    "repository": "https://github.com/ydb-platform/ydb-materializer",
+    "documentation": [
+      { "label": "README", "url": "https://github.com/ydb-platform/ydb-materializer" },
+      { "label": "Development notes", "url": "https://github.com/ydb-platform/ydb-materializer/blob/main/DEVELOP.md" }
+    ],
+    "releases": "https://github.com/ydb-platform/ydb-materializer/releases",
+    "compatibility": {
+      "minimumYdbVersion": "24.4",
+      "evidence": [
+        { "claim": "The README requires YDB cluster 24.4 or newer.", "url": "https://github.com/ydb-platform/ydb-materializer" }
+      ]
+    },
+    "evidence": [
+      { "claim": "The project publishes versioned releases and documents standalone and embedded installation paths.", "url": "https://github.com/ydb-platform/ydb-materializer/releases" },
+      { "claim": "The README documents validation, CDC synchronization, configuration, requirements and operational behavior.", "url": "https://github.com/ydb-platform/ydb-materializer" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["cdc", "validation"],
+      "sourceSystems": ["YDB"],
+      "target": "YDB",
+      "mode": "cdc",
+      "supportsSchemaConversion": false,
+      "checkpointResume": null,
+      "limitations": ["Source and destination tables, required indexes and CDC streams must be created before synchronization; the tool can only generate selected DDL fragments."],
+      "evidence": ["https://github.com/ydb-platform/ydb-materializer"]
+    },
     "timeline": [
       { "date": "2023-06-01", "status": "В разработке", "description": "Materializer development", "quality": 50 },
       { "date": "2024-06-01", "status": "Production ready", "description": "Stable release", "quality": 85 }
@@ -908,8 +1199,13 @@ export const frameworks = [
     ]
   },
   {
+    "id": "golang-migrate-ydb",
+    "name": "golang-migrate YDB fork",
     "Продукт": "golang-migrate",
     "Статус": ["В разработке"],
+    "maturity": "experimental",
+    "maintenance": [],
+    "integrationType": "schema_migration_tool",
     "Ответственный": "asmyasnikov",
     "Кто еще может помочь": [],
     "Язык программирования": "Go",
@@ -918,7 +1214,28 @@ export const frameworks = [
     "attention": 3,
     "impact": 5,
     "quality": 50,
-    "repository": "",
+    "repository": "https://github.com/ydb-platform/golang-migrate",
+    "documentation": [
+      { "label": "README", "url": "https://github.com/ydb-platform/golang-migrate" },
+      { "label": "YDB driver source", "url": "https://github.com/ydb-platform/golang-migrate/tree/master/database/ydb" }
+    ],
+    "releases": "https://github.com/ydb-platform/golang-migrate/releases",
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [
+      { "claim": "The YDB organization repository is a fork and lists a YDB database driver.", "url": "https://github.com/ydb-platform/golang-migrate" },
+      { "claim": "The fork has no dedicated published releases, so stable delivery of the YDB fork is not established.", "url": "https://github.com/ydb-platform/golang-migrate/releases" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["schema_migration"],
+      "sourceSystems": ["golang-migrate"],
+      "target": "YDB",
+      "mode": "batch",
+      "supportsSchemaConversion": false,
+      "checkpointResume": null,
+      "limitations": ["Stable delivery and a support policy for the YDB fork are not documented."],
+      "evidence": ["https://github.com/ydb-platform/golang-migrate", "https://github.com/ydb-platform/golang-migrate/releases"]
+    },
     "timeline": [
       { "date": "2024-01-01", "status": "В разработке", "description": "YDB driver for golang-migrate in review", "quality": 50 }
     ]
@@ -956,8 +1273,13 @@ export const frameworks = [
     ]
   },
   {
+    "id": "apache-superset",
+    "name": "Apache Superset",
     "Продукт": "Apache SuperSet",
     "Статус": ["Production ready", "Фиксим баги", "Принимаем PR"],
+    "maturity": "production",
+    "maintenance": [],
+    "integrationType": "application_integration",
     "Ответственный": "ovcharuk",
     "Кто еще может помочь": [],
     "Язык программирования": "Python",
@@ -966,15 +1288,46 @@ export const frameworks = [
     "attention": 2,
     "impact": 4,
     "quality": 90,
-    "repository": "",
+    "repository": "https://github.com/apache/superset",
+    "documentation": [
+      { "label": "Official YDB guide", "url": "https://ydb.tech/docs/en/integrations/visualization/superset" },
+      { "label": "Apache Superset repository", "url": "https://github.com/apache/superset" }
+    ],
+    "releases": "https://github.com/apache/superset/releases",
+    "compatibility": {
+      "minimumYdbVersion": null,
+      "evidence": [
+        { "claim": "The official guide documents native YDB connections for Apache Superset 5.0.0 and newer; it does not establish a minimum YDB server version.", "url": "https://ydb.tech/docs/en/integrations/visualization/superset" }
+      ]
+    },
+    "evidence": [
+      { "claim": "Official YDB documentation provides a supported native connection workflow through ydb-sqlalchemy.", "url": "https://ydb.tech/docs/en/integrations/visualization/superset" },
+      { "claim": "YDB integration is represented in the upstream Apache Superset project.", "url": "https://github.com/apache/superset" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["developer_tool"],
+      "sourceSystems": ["Apache Superset"],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": false,
+      "checkpointResume": null,
+      "limitations": ["This is a visualization integration, not a data or schema migration path."],
+      "evidence": ["https://ydb.tech/docs/en/integrations/visualization/superset"]
+    },
     "timeline": [
       { "date": "2024-06-01", "status": "В разработке", "description": "SuperSet YDB integration", "quality": 50 },
       { "date": "2025-02-05", "status": "Production ready", "description": "SuperSet YDB support released", "quality": 90 }
     ]
   },
   {
+    "id": "ydb-logstash-plugins",
+    "name": "ydb-logstash-plugins",
     "Продукт": "logstash",
-    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR"],
+    "Статус": ["В разработке"],
+    "maturity": "preview",
+    "maintenance": [],
+    "integrationType": "plugin",
     "Ответственный": "alexandr268",
     "Кто еще может помочь": ["kurdyukov-kir"],
     "Язык программирования": "Java",
@@ -983,7 +1336,28 @@ export const frameworks = [
     "attention": 2,
     "impact": 4,
     "quality": 90,
-    "repository": "",
+    "repository": "https://github.com/ydb-platform/ydb-logstash-plugins",
+    "documentation": [
+      { "label": "README", "url": "https://github.com/ydb-platform/ydb-logstash-plugins" },
+      { "label": "Official YDB guide", "url": "https://ydb.tech/docs/en/integrations/ingestion/logstash" }
+    ],
+    "releases": "https://github.com/ydb-platform/ydb-logstash-plugins/releases",
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [
+      { "claim": "The repository contains storage, topic input and topic output plugins with build documentation.", "url": "https://github.com/ydb-platform/ydb-logstash-plugins" },
+      { "claim": "The latest published line remains pre-1.0, so production support is not established by versioning alone.", "url": "https://github.com/ydb-platform/ydb-logstash-plugins/releases" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["data_migration"],
+      "sourceSystems": ["Logstash"],
+      "target": "YDB",
+      "mode": "streaming",
+      "supportsSchemaConversion": null,
+      "checkpointResume": null,
+      "limitations": ["The repository contains several plugins; data direction and guarantees depend on the selected input, output or storage plugin."],
+      "evidence": ["https://github.com/ydb-platform/ydb-logstash-plugins"]
+    },
     "timeline": [
       { "date": "2024-03-26", "status": "Production ready", "description": "Logstash YDB output plugin released", "quality": 90 }
     ]
@@ -1054,8 +1428,13 @@ export const frameworks = [
     ]
   },
   {
+    "id": "ydb-go-sdk-otel",
+    "name": "ydb-go-sdk-otel",
     "Продукт": "ydb-go-sdk-otel",
-    "Статус": ["В разработке", "Фиксим баги", "Production ready", "Принимаем PR"],
+    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR", "Заносим свежие фичи"],
+    "maturity": "production",
+    "maintenance": ["accepting_prs", "fixing_bugs", "adding_features"],
+    "integrationType": "observability_adapter",
     "Ответственный": "zkpo",
     "Кто еще может помочь": ["asmyasnikov"],
     "Язык программирования": "Go",
@@ -1065,14 +1444,45 @@ export const frameworks = [
     "impact": 1,
     "quality": 99,
     "repository": "https://github.com/ydb-platform/ydb-go-sdk-otel",
+    "documentation": [
+      { "label": "README", "url": "https://github.com/ydb-platform/ydb-go-sdk-otel" },
+      { "label": "Go package documentation", "url": "https://pkg.go.dev/github.com/ydb-platform/ydb-go-sdk-otel" }
+    ],
+    "releases": "https://github.com/ydb-platform/ydb-go-sdk-otel/tags",
+    "compatibility": {
+      "minimumYdbVersion": null,
+      "evidence": [
+        { "claim": "The adapter documents the ydb-go-sdk API it integrates with, but does not state a minimum YDB server version.", "url": "https://github.com/ydb-platform/ydb-go-sdk-otel" }
+      ]
+    },
+    "evidence": [
+      { "claim": "Tagged Go module versions are published and indexed by pkg.go.dev.", "url": "https://pkg.go.dev/github.com/ydb-platform/ydb-go-sdk-otel" },
+      { "claim": "The repository documents traces, metrics, logs, quick start, examples, local development and contains focused tests.", "url": "https://github.com/ydb-platform/ydb-go-sdk-otel" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["observability"],
+      "sourceSystems": ["ydb-go-sdk"],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": false,
+      "checkpointResume": null,
+      "limitations": ["The adapter does not configure OpenTelemetry exporters; applications must configure providers and exporters separately."],
+      "evidence": ["https://github.com/ydb-platform/ydb-go-sdk-otel"]
+    },
     "timeline": [
       { "date": "2023-01-01", "status": "В разработке", "description": "OpenTelemetry integration development", "quality": 70 },
       { "date": "2024-01-01", "status": "Production ready", "description": "Stable OTEL integration", "quality": 99 }
     ]
   },
   {
+    "id": "ydb-go-sdk-opentracing",
+    "name": "ydb-go-sdk-opentracing",
     "Продукт": "ydb-go-sdk-opentracing",
-    "Статус": ["Production ready", "Фиксим баги", "Принимаем PR"],
+    "Статус": ["Deprecated"],
+    "maturity": "deprecated",
+    "maintenance": [],
+    "integrationType": "observability_adapter",
     "Ответственный": "zkpo",
     "Кто еще может помочь": ["asmyasnikov"],
     "Язык программирования": "Go",
@@ -1082,6 +1492,31 @@ export const frameworks = [
     "impact": 1,
     "quality": 99,
     "repository": "https://github.com/ydb-platform/ydb-go-sdk-opentracing",
+    "documentation": [
+      { "label": "Archived repository", "url": "https://github.com/ydb-platform/ydb-go-sdk-opentracing" },
+      { "label": "Recommended replacement", "url": "https://github.com/ydb-platform/ydb-go-sdk-otel" }
+    ],
+    "releases": "https://github.com/ydb-platform/ydb-go-sdk-opentracing/tags",
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "replacement": {
+      "id": "ydb-go-sdk-otel",
+      "repository": "https://github.com/ydb-platform/ydb-go-sdk-otel"
+    },
+    "evidence": [
+      { "claim": "The owner archived the repository on 2025-05-20; it is read-only.", "url": "https://github.com/ydb-platform/ydb-go-sdk-opentracing" },
+      { "claim": "ydb-go-sdk-otel is the maintained OpenTelemetry replacement.", "url": "https://github.com/ydb-platform/ydb-go-sdk-otel" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["observability"],
+      "sourceSystems": ["ydb-go-sdk"],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": false,
+      "checkpointResume": null,
+      "limitations": ["Archived and read-only; use ydb-go-sdk-otel for new integrations."],
+      "evidence": ["https://github.com/ydb-platform/ydb-go-sdk-opentracing", "https://github.com/ydb-platform/ydb-go-sdk-otel"]
+    },
     "timeline": [
       { "date": "2022-06-01", "status": "Production ready", "description": "OpenTracing integration released", "quality": 99 }
     ]
@@ -1522,6 +1957,448 @@ export const frameworks = [
     "timeline": [
       { "date": "2024-07-31", "status": "Production ready", "description": "YDB Kafka API compatibility (YDB 24.1)", "quality": 100 }
     ]
+  },
+  {
+    "id": "ydb-kafka-sink-connector",
+    "name": "ydb-kafka-sink-connector",
+    "Продукт": "ydb-kafka-sink-connector",
+    "Статус": ["В разработке"],
+    "maturity": "experimental",
+    "maintenance": [],
+    "integrationType": "connector",
+    "Ответственный": "",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Java",
+    "categories": ["Data Ingestion", "ETL", "Application"],
+    "description": "Kafka Connect sink that writes Kafka records to YDB tables.",
+    "repository": "https://github.com/ydb-platform/ydb-kafka-sink-connector",
+    "documentation": [{ "label": "README", "url": "https://github.com/ydb-platform/ydb-kafka-sink-connector" }],
+    "releases": "https://github.com/ydb-platform/ydb-kafka-sink-connector/releases",
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [
+      { "claim": "The README provides only a local standalone Kafka Connect demonstration and links to a student-project specification.", "url": "https://github.com/ydb-platform/ydb-kafka-sink-connector" },
+      { "claim": "No versioned releases are published.", "url": "https://github.com/ydb-platform/ydb-kafka-sink-connector/releases" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["data_migration"],
+      "sourceSystems": ["Apache Kafka"],
+      "target": "YDB",
+      "mode": "streaming",
+      "supportsSchemaConversion": null,
+      "checkpointResume": null,
+      "limitations": ["The public documentation demonstrates key/value writes to a table named after the topic but does not document release packaging, compatibility or operational guarantees."],
+      "evidence": ["https://github.com/ydb-platform/ydb-kafka-sink-connector"]
+    }
+  },
+  {
+    "id": "mysql-ydb-importer",
+    "name": "mysql-ydb-importer",
+    "Продукт": "mysql-ydb-importer",
+    "Статус": ["В разработке"],
+    "maturity": "experimental",
+    "maintenance": [],
+    "integrationType": "migration_application",
+    "Ответственный": "",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Go",
+    "categories": ["Migration", "ETL", "Data Ingestion", "Application"],
+    "description": "Batch utility for migrating MySQL schemas and data to YDB.",
+    "repository": "https://github.com/ydb-platform/mysql-ydb-importer",
+    "documentation": [{ "label": "README", "url": "https://github.com/ydb-platform/mysql-ydb-importer" }],
+    "releases": "https://github.com/ydb-platform/mysql-ydb-importer/releases",
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [
+      { "claim": "The README documents schema creation, chunked batch reads, idempotent BulkUpsert writes and tests.", "url": "https://github.com/ydb-platform/mysql-ydb-importer" },
+      { "claim": "No versioned release or packaged distribution is published.", "url": "https://github.com/ydb-platform/mysql-ydb-importer/releases" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["schema_migration", "data_migration"],
+      "sourceSystems": ["MySQL"],
+      "target": "YDB",
+      "mode": "batch",
+      "supportsSchemaConversion": true,
+      "checkpointResume": null,
+      "limitations": ["Tables without a suitable key use OFFSET pagination, which the README warns may degrade for large offsets; no durable checkpoint mechanism is documented."],
+      "evidence": ["https://github.com/ydb-platform/mysql-ydb-importer"]
+    }
+  },
+  {
+    "id": "aardappel",
+    "name": "aardappel",
+    "Продукт": "aardappel",
+    "Статус": ["В разработке"],
+    "maturity": "preview",
+    "maintenance": [],
+    "integrationType": "cdc_application",
+    "Ответственный": "",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Go",
+    "categories": ["Migration", "ETL", "Data Ingestion", "Application"],
+    "description": "Asynchronous YDB-to-YDB CDC replication service with transactional checkpoints.",
+    "repository": "https://github.com/ydb-platform/aardappel",
+    "documentation": [{ "label": "README", "url": "https://github.com/ydb-platform/aardappel" }],
+    "releases": "https://github.com/ydb-platform/aardappel/tags",
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [
+      { "claim": "The repository documents architecture, recovery, monitoring, tests, failure handling and operational limitations.", "url": "https://github.com/ydb-platform/aardappel" },
+      { "claim": "Versioned tags are published, but no explicit support policy or minimum YDB version is documented.", "url": "https://github.com/ydb-platform/aardappel/tags" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["cdc", "data_migration"],
+      "sourceSystems": ["YDB"],
+      "target": "YDB",
+      "mode": "cdc",
+      "supportsSchemaConversion": false,
+      "checkpointResume": true,
+      "limitations": ["Destination tables must be created in advance with compatible keys and columns; schemas are read only at startup, so the process must restart after destination schema changes."],
+      "evidence": ["https://github.com/ydb-platform/aardappel"]
+    }
+  },
+  {
+    "id": "fq-connector-go",
+    "name": "fq-connector-go",
+    "Продукт": "fq-connector-go",
+    "Статус": ["В разработке"],
+    "maturity": "experimental",
+    "maintenance": [],
+    "integrationType": "connector",
+    "Ответственный": "",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Go",
+    "categories": ["Federation", "Data Ingestion", "Application"],
+    "description": "External data source connector for YDB Federated Query.",
+    "repository": "https://github.com/ydb-platform/fq-connector-go",
+    "documentation": [
+      { "label": "README", "url": "https://github.com/ydb-platform/fq-connector-go" },
+      { "label": "Official deployment guide", "url": "https://ydb.tech/docs/en/devops/deployment-options/manual/federated-queries/connector-deployment" }
+    ],
+    "releases": "https://github.com/ydb-platform/fq-connector-go/releases",
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [
+      { "claim": "Official YDB deployment documentation explicitly labels connector functionality experimental.", "url": "https://ydb.tech/docs/en/devops/deployment-options/manual/federated-queries/connector-deployment" },
+      { "claim": "The project publishes binary and container release artifacts and documents supported external sources.", "url": "https://github.com/ydb-platform/fq-connector-go" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["application_compatibility"],
+      "sourceSystems": ["ClickHouse", "PostgreSQL", "Greenplum", "YDB", "Microsoft SQL Server", "MySQL", "MariaDB", "Oracle", "MongoDB", "Redis", "OpenSearch", "Yandex Cloud Logging", "Prometheus"],
+      "target": "YDB",
+      "mode": "federated_query",
+      "supportsSchemaConversion": false,
+      "checkpointResume": null,
+      "limitations": ["Official YDB documentation marks the connector functionality experimental; it provides federated access and is not by itself a complete migration workflow."],
+      "evidence": ["https://github.com/ydb-platform/fq-connector-go", "https://ydb.tech/docs/en/devops/deployment-options/manual/federated-queries/connector-deployment"]
+    }
+  },
+  {
+    "id": "ydb-cdc-processor",
+    "name": "ydb-cdc-processor",
+    "Продукт": "ydb-cdc-processor",
+    "Статус": ["В разработке"],
+    "maturity": "experimental",
+    "maintenance": [],
+    "integrationType": "example",
+    "Ответственный": "",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Java",
+    "categories": ["Examples", "Migration", "Data Ingestion", "Application"],
+    "description": "Example application that consumes a YDB changefeed and updates dependent YDB tables.",
+    "repository": "https://github.com/ydb-platform/ydb-cdc-processor",
+    "documentation": [{ "label": "README", "url": "https://github.com/ydb-platform/ydb-cdc-processor" }],
+    "releases": "https://github.com/ydb-platform/ydb-cdc-processor/releases",
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [
+      { "claim": "The repository describes itself as a Change Data Capture application example and documents a narrow sample configuration.", "url": "https://github.com/ydb-platform/ydb-cdc-processor" },
+      { "claim": "A 0.9.x release exists, but the README build still uses a SNAPSHOT artifact and does not document a support policy.", "url": "https://github.com/ydb-platform/ydb-cdc-processor/releases" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["cdc", "data_migration"],
+      "sourceSystems": ["YDB"],
+      "target": "YDB",
+      "mode": "cdc",
+      "supportsSchemaConversion": false,
+      "checkpointResume": null,
+      "limitations": ["The project is documented as an example rather than a supported general-purpose replication product; checkpoint and recovery guarantees are not documented."],
+      "evidence": ["https://github.com/ydb-platform/ydb-cdc-processor"]
+    }
+  },
+  {
+    "id": "ydb-dbeaver-plugin",
+    "name": "ydb-dbeaver-plugin",
+    "Продукт": "ydb-dbeaver-plugin",
+    "Статус": ["В разработке"],
+    "maturity": "preview",
+    "maintenance": ["accepting_prs"],
+    "integrationType": "plugin",
+    "Ответственный": "",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Java",
+    "categories": ["Developer Tool", "Admin", "Application"],
+    "description": "DBeaver extension with native YDB navigation, YQL and administration support.",
+    "repository": "https://github.com/ydb-platform/ydb-dbeaver-plugin",
+    "documentation": [{ "label": "README", "url": "https://github.com/ydb-platform/ydb-dbeaver-plugin" }],
+    "releases": "https://github.com/ydb-platform/ydb-dbeaver-plugin/releases",
+    "compatibility": {
+      "minimumYdbVersion": null,
+      "evidence": [{ "claim": "The README requires DBeaver CE 24.x or later and Java 21+, but does not state a minimum YDB server version.", "url": "https://github.com/ydb-platform/ydb-dbeaver-plugin" }]
+    },
+    "evidence": [
+      { "claim": "The README documents installation, upgrades, authentication, features and test execution.", "url": "https://github.com/ydb-platform/ydb-dbeaver-plugin" },
+      { "claim": "Installable 0.1.x releases are published with offline and update-site artifacts.", "url": "https://github.com/ydb-platform/ydb-dbeaver-plugin/releases" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["developer_tool"],
+      "sourceSystems": ["DBeaver"],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": false,
+      "checkpointResume": null,
+      "limitations": ["This is a database administration plugin, not a data or schema migration path."],
+      "evidence": ["https://github.com/ydb-platform/ydb-dbeaver-plugin"]
+    }
+  },
+  {
+    "id": "db-scheduler-ydb",
+    "name": "db-scheduler-ydb",
+    "Продукт": "db-scheduler-ydb",
+    "Статус": ["В разработке"],
+    "maturity": "preview",
+    "maintenance": [],
+    "integrationType": "library",
+    "Ответственный": "",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Java",
+    "categories": ["Workflow", "Library"],
+    "description": "YDB task repository and builder integration for db-scheduler.",
+    "repository": "https://github.com/ydb-platform/db-scheduler-ydb",
+    "documentation": [{ "label": "README", "url": "https://github.com/ydb-platform/db-scheduler-ydb" }],
+    "releases": "https://github.com/ydb-platform/db-scheduler-ydb/releases",
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [
+      { "claim": "The README documents dependency coordinates, schema setup and usage.", "url": "https://github.com/ydb-platform/db-scheduler-ydb" },
+      { "claim": "A versioned 9.4.1 release exists, but compatibility and support policy are not documented.", "url": "https://github.com/ydb-platform/db-scheduler-ydb/releases" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["application_compatibility"],
+      "sourceSystems": ["db-scheduler"],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": false,
+      "checkpointResume": null,
+      "limitations": ["The integration does not migrate existing scheduler state or schemas automatically."],
+      "evidence": ["https://github.com/ydb-platform/db-scheduler-ydb"]
+    }
+  },
+  {
+    "id": "ydb-jmeter",
+    "name": "ydb-jmeter",
+    "Продукт": "ydb-jmeter",
+    "Статус": ["В разработке"],
+    "maturity": "preview",
+    "maintenance": [],
+    "integrationType": "plugin",
+    "Ответственный": "",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Java",
+    "categories": ["Developer Tool", "Validation", "Application"],
+    "description": "Apache JMeter plugin for load testing YDB workloads.",
+    "repository": "https://github.com/ydb-platform/ydb-jmeter",
+    "documentation": [{ "label": "README", "url": "https://github.com/ydb-platform/ydb-jmeter" }],
+    "releases": "https://github.com/ydb-platform/ydb-jmeter/releases",
+    "compatibility": {
+      "minimumYdbVersion": null,
+      "evidence": [{ "claim": "Release 1.2 bundles YDB Java SDK 2.4.0, but the project does not state a minimum compatible YDB server version.", "url": "https://github.com/ydb-platform/ydb-jmeter/releases" }]
+    },
+    "evidence": [
+      { "claim": "The README documents installation and test-plan configuration for YDB load testing.", "url": "https://github.com/ydb-platform/ydb-jmeter" },
+      { "claim": "Versioned plugin archives are published, but no compatibility or support policy is documented.", "url": "https://github.com/ydb-platform/ydb-jmeter/releases" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["validation", "developer_tool"],
+      "sourceSystems": ["Apache JMeter"],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": false,
+      "checkpointResume": null,
+      "limitations": ["This is a load-testing plugin, not a data or schema migration path."],
+      "evidence": ["https://github.com/ydb-platform/ydb-jmeter"]
+    }
+  },
+  {
+    "id": "ydb-js-examples",
+    "name": "ydb-js-examples",
+    "Продукт": "ydb-js-examples",
+    "Статус": ["Reference"],
+    "maturity": "unknown",
+    "maturityApplies": false,
+    "maintenance": [],
+    "integrationType": "examples",
+    "Ответственный": "",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Js/Ts",
+    "categories": ["Examples", "Developer Tool"],
+    "description": "Runnable JavaScript and TypeScript examples for using YDB from common runtimes and frameworks.",
+    "repository": "https://github.com/ydb-platform/ydb-js-examples",
+    "documentation": [{ "label": "README", "url": "https://github.com/ydb-platform/ydb-js-examples" }],
+    "releases": "https://github.com/ydb-platform/ydb-js-examples/releases",
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [
+      { "claim": "The repository is explicitly a collection of examples for Node.js, Next.js, NestJS and other JavaScript environments.", "url": "https://github.com/ydb-platform/ydb-js-examples" },
+      { "claim": "No versioned releases are published; maturity is not applied because this is reference material rather than a distributable integration.", "url": "https://github.com/ydb-platform/ydb-js-examples/releases" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["developer_tool", "application_compatibility"],
+      "sourceSystems": ["JavaScript and TypeScript frameworks"],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": false,
+      "checkpointResume": null,
+      "limitations": ["The repository contains examples only and does not provide a migration product or compatibility guarantee."],
+      "evidence": ["https://github.com/ydb-platform/ydb-js-examples"]
+    }
+  },
+  {
+    "id": "ydb-parallel-processor",
+    "name": "ydb-parallel-processor",
+    "Продукт": "ydb-parallel-processor",
+    "Статус": ["В разработке"],
+    "maturity": "preview",
+    "maintenance": [],
+    "integrationType": "batch_processor",
+    "Ответственный": "",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Java",
+    "categories": ["Migration", "ETL", "Application", "Library"],
+    "description": "Parallel Java processor for reading, transforming and writing large YDB table ranges.",
+    "repository": "https://github.com/ydb-platform/ydb-parallel-processor",
+    "documentation": [{ "label": "README", "url": "https://github.com/ydb-platform/ydb-parallel-processor" }],
+    "releases": "https://github.com/ydb-platform/ydb-parallel-processor/releases",
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [
+      { "claim": "The README documents range partitioning, configuration, retries, metrics, testing and operational limitations.", "url": "https://github.com/ydb-platform/ydb-parallel-processor" },
+      { "claim": "A versioned 1.3 release exists, while the README warns that artifacts are not available from Maven Central.", "url": "https://github.com/ydb-platform/ydb-parallel-processor/releases" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["data_migration"],
+      "sourceSystems": ["YDB"],
+      "target": "YDB",
+      "mode": "batch",
+      "supportsSchemaConversion": false,
+      "checkpointResume": null,
+      "limitations": ["Output order is not guaranteed; consumers must provide processing logic, and the documented artifact must currently be built or sourced outside Maven Central."],
+      "evidence": ["https://github.com/ydb-platform/ydb-parallel-processor"]
+    }
+  },
+  {
+    "id": "ydb-r2dbc-driver",
+    "name": "ydb-r2dbc-driver",
+    "Продукт": "ydb-r2dbc-driver",
+    "Статус": ["В разработке"],
+    "maturity": "experimental",
+    "maintenance": [],
+    "integrationType": "driver",
+    "Ответственный": "",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Java",
+    "categories": ["Standard API", "Library"],
+    "description": "Experimental Reactive Relational Database Connectivity driver for YDB.",
+    "repository": "https://github.com/ydb-platform/ydb-r2dbc-driver",
+    "documentation": [{ "label": "README", "url": "https://github.com/ydb-platform/ydb-r2dbc-driver" }],
+    "releases": "https://github.com/ydb-platform/ydb-r2dbc-driver/releases",
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [
+      { "claim": "The public README contains only basic build instructions and does not document installation, supported features, compatibility or limitations.", "url": "https://github.com/ydb-platform/ydb-r2dbc-driver" },
+      { "claim": "No versioned releases are published.", "url": "https://github.com/ydb-platform/ydb-r2dbc-driver/releases" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["application_compatibility"],
+      "sourceSystems": ["R2DBC applications"],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": false,
+      "checkpointResume": null,
+      "limitations": ["Supported R2DBC operations, compatibility boundaries and production guarantees are not documented."],
+      "evidence": ["https://github.com/ydb-platform/ydb-r2dbc-driver"]
+    }
+  },
+  {
+    "id": "ydb-vscode-plugin",
+    "name": "ydb-vscode-plugin",
+    "Продукт": "ydb-vscode-plugin",
+    "Статус": ["В разработке"],
+    "maturity": "preview",
+    "maintenance": [],
+    "integrationType": "plugin",
+    "Ответственный": "",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Js/Ts",
+    "categories": ["Developer Tool", "Admin", "Application"],
+    "description": "Visual Studio Code extension for exploring YDB databases and running YQL queries.",
+    "repository": "https://github.com/ydb-platform/ydb-vscode-plugin",
+    "documentation": [{ "label": "README", "url": "https://github.com/ydb-platform/ydb-vscode-plugin" }],
+    "releases": "https://github.com/ydb-platform/ydb-vscode-plugin/releases",
+    "compatibility": { "minimumYdbVersion": null, "evidence": [] },
+    "evidence": [
+      { "claim": "The README documents installation, connection setup, query execution, schema browsing and tests.", "url": "https://github.com/ydb-platform/ydb-vscode-plugin" },
+      { "claim": "Installable 0.1.x releases are published, but no YDB compatibility or support policy is stated.", "url": "https://github.com/ydb-platform/ydb-vscode-plugin/releases" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["developer_tool"],
+      "sourceSystems": ["Visual Studio Code"],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": false,
+      "checkpointResume": null,
+      "limitations": ["This is a database development extension, not a data or schema migration path."],
+      "evidence": ["https://github.com/ydb-platform/ydb-vscode-plugin"]
+    }
+  },
+  {
+    "id": "ydb-janusgraph-storage-backend",
+    "name": "ydb-janusgraph-storage-backend",
+    "Продукт": "ydb-janusgraph-storage-backend",
+    "Статус": ["В разработке"],
+    "maturity": "experimental",
+    "maintenance": [],
+    "integrationType": "storage_backend",
+    "Ответственный": "",
+    "Кто еще может помочь": [],
+    "Язык программирования": "Java",
+    "categories": ["Application", "Library"],
+    "description": "Experimental JanusGraph storage backend implemented on YDB.",
+    "repository": "https://github.com/ydb-platform/ydb-janusgraph-storage-backend",
+    "documentation": [{ "label": "README", "url": "https://github.com/ydb-platform/ydb-janusgraph-storage-backend" }],
+    "releases": "https://github.com/ydb-platform/ydb-janusgraph-storage-backend/releases",
+    "compatibility": {
+      "minimumYdbVersion": null,
+      "evidence": [{ "claim": "The README records tests against a local YDB 26.x build, JanusGraph 1.1.0 and YDB Java SDK 2.4.7; this does not establish a minimum server version.", "url": "https://github.com/ydb-platform/ydb-janusgraph-storage-backend" }]
+    },
+    "evidence": [
+      { "claim": "The README documents configuration, test setup, component versions and feature limitations.", "url": "https://github.com/ydb-platform/ydb-janusgraph-storage-backend" },
+      { "claim": "No versioned releases are published and significant JanusGraph semantics remain unsupported.", "url": "https://github.com/ydb-platform/ydb-janusgraph-storage-backend/releases" }
+    ],
+    "evidenceReviewedAt": "2026-08-22",
+    "migration": {
+      "roles": ["application_compatibility"],
+      "sourceSystems": ["JanusGraph"],
+      "target": "YDB",
+      "mode": null,
+      "supportsSchemaConversion": false,
+      "checkpointResume": null,
+      "limitations": ["TTL is not supported; read-only locking modes do not enforce uniqueness; transaction size is constrained by YDB limits."],
+      "evidence": ["https://github.com/ydb-platform/ydb-janusgraph-storage-backend"]
+    }
   }
 ];
 
@@ -1563,6 +2440,9 @@ export const categoryColors = {
   "PostgreSQL": "#3B82F6",
   "Code Generation": "#FACC15",
   "Workflow": "#FB923C",
+  "Examples": "#0D9488",
+  "Developer Tool": "#2563EB",
+  "Validation": "#DC2626",
   "AppTeam": "#E11D48",
   "Kafka API": "#231F20"
 };
@@ -1587,11 +2467,30 @@ export const isAppTeamMember = (person) => {
   return appTeamMembers.includes(person);
 };
 
-// Status categories
-export const getStatusCategory = (status) => {
-  const statusArray = Array.isArray(status) ? status : [status];
-  if (statusArray.some(s => s.includes("Production ready"))) return "production";
-  return "development";
+export const maturityValues = ["experimental", "preview", "production", "deprecated", "unknown"];
+export const maintenanceValues = ["adding_features", "accepting_prs", "fixing_bugs", "security_fixes_only", "unmaintained"];
+
+// Backward-compatible mapping for records and historical timeline events that
+// still expose only the legacy Russian `Статус` field.
+export const getMaturityFromLegacyStatus = (status) => {
+  const statusArray = (Array.isArray(status) ? status : [status]).filter(Boolean);
+  if (statusArray.some(s => String(s).includes("Deprecated"))) return "deprecated";
+  if (statusArray.some(s => String(s).includes("Production ready"))) return "production";
+  if (statusArray.some(s => String(s).includes("Evidence required"))) return "unknown";
+  return "experimental";
+};
+
+export const getFrameworkMaturity = (frameworkOrStatus) => {
+  if (frameworkOrStatus && !Array.isArray(frameworkOrStatus) && typeof frameworkOrStatus === "object") {
+    return frameworkOrStatus.maturity || getMaturityFromLegacyStatus(frameworkOrStatus["Статус"]);
+  }
+  return getMaturityFromLegacyStatus(frameworkOrStatus);
+};
+
+// The two visual buckets are retained for URL and CSS compatibility. The
+// production bucket is now based on maturity; every other value is non-prod.
+export const getStatusCategory = (frameworkOrStatus) => {
+  return getFrameworkMaturity(frameworkOrStatus) === "production" ? "production" : "development";
 };
 
 // Get unique owners (including helpers)

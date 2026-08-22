@@ -1,8 +1,6 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
 const ThemeContext = createContext();
-
-export const useTheme = () => useContext(ThemeContext);
 
 // Get theme from URL query parameter
 const getThemeFromUrl = () => {
@@ -14,20 +12,19 @@ const getThemeFromUrl = () => {
   return null;
 };
 
+const getInitialTheme = () => {
+  return getThemeFromUrl() || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+};
+
 export const ThemeProvider = ({ children }) => {
-  const [resolvedTheme, setResolvedTheme] = useState('dark');
+  const [resolvedTheme, setResolvedTheme] = useState(getInitialTheme);
   
   useEffect(() => {
     const urlTheme = getThemeFromUrl();
     
-    if (urlTheme) {
-      // Explicit theme from URL query parameter
-      setResolvedTheme(urlTheme);
-    } else {
+    if (!urlTheme) {
       // Always use system theme
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      setResolvedTheme(mediaQuery.matches ? 'dark' : 'light');
-      
       const handler = (e) => setResolvedTheme(e.matches ? 'dark' : 'light');
       mediaQuery.addEventListener('change', handler);
       return () => mediaQuery.removeEventListener('change', handler);
@@ -44,4 +41,3 @@ export const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
-

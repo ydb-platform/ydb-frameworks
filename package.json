@@ -8,6 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "check:data": "node scripts/validate-frameworks.mjs",
+    "check:links": "node scripts/check-links.mjs",
+    "test": "npm run check:data",
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist"
   },

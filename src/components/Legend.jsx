@@ -51,7 +51,7 @@ const Legend = ({
   const isMobilePortrait = useIsMobilePortrait();
   
   // Ensure frameworks is always an array
-  const frameworks = frameworksProp || [];
+  const frameworks = useMemo(() => frameworksProp || [], [frameworksProp]);
   
   // Check if persons parameter is enabled (persons=1 or persons=true)
   const showPersons = (() => {

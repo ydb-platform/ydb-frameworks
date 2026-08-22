@@ -203,7 +203,7 @@ const TreeMapView = ({ frameworks, highlightLanguage, highlightPerson, highlight
       return true;
     }
     
-    if (highlightStatus && getStatusCategory(framework["Статус"]) === highlightStatus) {
+    if (highlightStatus && getStatusCategory(framework) === highlightStatus) {
       return true;
     }
     

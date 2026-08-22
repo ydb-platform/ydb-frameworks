@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { languageColors, categoryColors, getStatusCategory } from '../data/frameworks';
+import { languageColors, categoryColors, getStatusCategory, getFrameworkMaturity } from '../data/frameworks';
 import './FrameworkCard.css';
 
 // Convert hex color to rgba with given alpha
@@ -35,14 +35,16 @@ const FrameworkCard = ({ framework, width, height, isHighlighted, hasHighlight, 
   const language = framework["Язык программирования"];
   const colors = languageColors[language] || { bg: "#666666", text: "#ffffff" };
   const statusArray = Array.isArray(framework["Статус"]) ? framework["Статус"] : [framework["Статус"]];
-  const statusCategory = getStatusCategory(statusArray);
-  const quality = framework.quality ?? 50;
+  const maturity = getFrameworkMaturity(framework);
+  const statusCategory = getStatusCategory(framework);
+  const hasQuality = Number.isFinite(framework.quality);
+  const qualityForOpacity = hasQuality ? framework.quality : 50;
   const helpers = framework["Кто еще может помочь"] || [];
   const categories = framework.categories || [];
   const hasRepo = framework.repository && framework.repository.length > 0;
   
   // Quality affects background opacity (0 = very transparent, 100 = fully opaque)
-  const bgOpacity = 0.3 + (quality / 100) * 0.7;
+  const bgOpacity = 0.3 + (qualityForOpacity / 100) * 0.7;
   const bgColorWithOpacity = hexToRgba(colors.bg, bgOpacity);
   
   const getBorderStyle = () => {
@@ -121,7 +123,8 @@ const FrameworkCard = ({ framework, width, height, isHighlighted, hasHighlight, 
         x = viewportWidth - halfWidth - 8;
       }
       
-      setTooltipPos({ x, y, above });
+      const animationFrame = requestAnimationFrame(() => setTooltipPos({ x, y, above }));
+      return () => cancelAnimationFrame(animationFrame);
     }
   }, [showTooltip]);
   
@@ -156,7 +159,7 @@ const FrameworkCard = ({ framework, width, height, isHighlighted, hasHighlight, 
         </div>
         
         {showStatusIndicator && (
-          <div className={`status-indicator ${statusCategory}`} title={statusArray.join(', ')}>
+          <div className={`status-indicator ${statusCategory}`} title={`Maturity: ${maturity}`}>
             {statusCategory === 'production' && '✓'}
             {statusCategory === 'development' && '⚙'}
           </div>
@@ -175,6 +178,28 @@ const FrameworkCard = ({ framework, width, height, isHighlighted, hasHighlight, 
           <h4>{framework["Продукт"]}</h4>
           {framework.description && (
             <div className="tooltip-description">{framework.description}</div>
+          )}
+          <div className="tooltip-row">
+            <span className="tooltip-label">Maturity:</span>
+            <span className="tooltip-value">{framework.maturityApplies === false ? 'not applicable' : maturity}</span>
+          </div>
+          {framework.integrationType && (
+            <div className="tooltip-row">
+              <span className="tooltip-label">Тип:</span>
+              <span className="tooltip-value">{framework.integrationType}</span>
+            </div>
+          )}
+          {framework.maintenance?.length > 0 && (
+            <div className="tooltip-row">
+              <span className="tooltip-label">Сопровождение:</span>
+              <span className="tooltip-value">{framework.maintenance.join(', ')}</span>
+            </div>
+          )}
+          {framework.compatibility && (
+            <div className="tooltip-row">
+              <span className="tooltip-label">Мин. версия YDB:</span>
+              <span className="tooltip-value">{framework.compatibility.minimumYdbVersion ?? 'не установлена'}</span>
+            </div>
           )}
           <div className="tooltip-row">
             <span className="tooltip-label">Язык:</span>
@@ -200,17 +225,17 @@ const FrameworkCard = ({ framework, width, height, isHighlighted, hasHighlight, 
             <div className="tooltip-metric" title="Востребованность">
               <span className="metric-icon">📈</span>
               <span className="metric-label">Востребованность:</span>
-              <span className="metric-value">{framework.impact ?? 0}/10</span>
+              <span className="metric-value">{Number.isFinite(framework.impact) ? `${framework.impact}/10` : 'не оценено'}</span>
             </div>
             <div className="tooltip-metric" title="Требует внимания">
               <span className="metric-icon">⚠️</span>
               <span className="metric-label">Требует внимания:</span>
-              <span className="metric-value">{framework.attention ?? 0}/10</span>
+              <span className="metric-value">{Number.isFinite(framework.attention) ? `${framework.attention}/10` : 'не оценено'}</span>
             </div>
-            <div className="tooltip-metric" title="Завершенность разработки">
+            <div className="tooltip-metric" title="Legacy visual score; не является maturity или качеством доказательств">
               <span className="metric-icon">✅</span>
-              <span className="metric-label">Завершенность:</span>
-              <span className="metric-value">{quality}%</span>
+              <span className="metric-label">Legacy completeness:</span>
+              <span className="metric-value">{hasQuality ? `${framework.quality}%` : 'не оценено'}</span>
             </div>
           </div>
           {showPersons && (
@@ -226,7 +251,7 @@ const FrameworkCard = ({ framework, width, height, isHighlighted, hasHighlight, 
             </div>
           )}
           <div className="tooltip-row">
-            <span className="tooltip-label">Статус:</span>
+            <span className="tooltip-label">Legacy статус:</span>
             <span className="tooltip-value">{statusArray.join(', ')}</span>
           </div>
           {hasRepo && !isMobile && (

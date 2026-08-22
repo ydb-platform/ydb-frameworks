@@ -1,9 +1,10 @@
 import { useState, useMemo, useEffect } from 'react';
-import { getFilteredFrameworks, getStatusCategory } from './data/frameworks';
+import { getFilteredFrameworks, getStatusCategory, getMaturityFromLegacyStatus } from './data/frameworks';
 import { ThemeProvider } from './context/ThemeContext';
 import TreeMapView from './components/TreeMapView';
 import Legend from './components/Legend';
-import Player, { getFrameworksAtDate, getFrameworkStateAtDate } from './components/Player';
+import Player from './components/Player';
+import { getFrameworksAtDate, getFrameworkStateAtDate } from './utils/playerTimeline';
 import YdbIcon from './components/YdbIcon';
 import './App.css';
 
@@ -93,6 +94,7 @@ function AppContent() {
         quality: state.quality,
         attention: state.attention ?? f.attention,
         "Статус": state.status,
+        maturity: state.maturity ?? getMaturityFromLegacyStatus(state.status),
         _isNew: state.isNew,
         _timelineDescription: state.description
       };
@@ -105,7 +107,7 @@ function AppContent() {
   const statusCounts = useMemo(() => {
     const counts = { production: 0, development: 0 };
     filteredFrameworks.forEach(f => {
-      counts[getStatusCategory(f["Статус"])]++;
+      counts[getStatusCategory(f)]++;
     });
     return counts;
   }, [filteredFrameworks]);
@@ -149,7 +151,7 @@ function AppContent() {
                 className={`legend-status-btn production ${highlightStatus === 'production' ? 'active' : ''}`}
                 style={{ opacity: hasActiveHighlight && highlightStatus !== 'production' ? 0.4 : 1 }}
                 onClick={() => handleStatusClick('production')}
-                title="Production ready"
+                title="Maturity: production"
               >
                 ✓ {statusCounts.production}
               </button>
@@ -157,7 +159,7 @@ function AppContent() {
                 className={`legend-status-btn development ${highlightStatus === 'development' ? 'active' : ''}`}
                 style={{ opacity: hasActiveHighlight && highlightStatus !== 'development' ? 0.4 : 1 }}
                 onClick={() => handleStatusClick('development')}
-                title="В разработке"
+                title="Non-production maturity: experimental, preview, deprecated или unknown"
               >
                 ⚙ {statusCounts.development}
               </button>
