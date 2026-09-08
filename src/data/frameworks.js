@@ -1031,7 +1031,7 @@ export const frameworks = [
     "name": "linq2db",
     "Продукт": "linq2db",
     "Статус": ["Production ready", "Заносим свежие фичи", "Фиксим баги", "Принимаем PR"],
-    "maturity": "preview",
+    "maturity": "production",
     "maintenance": [],
     "integrationType": "orm",
     "Ответственный": "kurdyukov-kir",
