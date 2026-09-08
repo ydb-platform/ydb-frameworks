@@ -1067,7 +1067,10 @@ export const frameworks = [
     },
     "timeline": [
       { "date": "2024-06-01", "status": "В разработке", "description": "LINQ2DB provider development", "quality": 50 },
-      { "date": "2024-12-01", "status": "Production ready", "description": "LINQ2DB provider released", "quality": 80 }
+      { "date": "2024-12-01", "status": "Production ready", "description": "LINQ2DB provider released", "quality": 80 },
+      { "date": "2025-12-06", "status": "Production ready", "description": "v6.0.0: first release YDB provider in upstream LINQ2DB", "quality": 85 },
+      { "date": "2025-12-06", "status": "Production ready", "description": "v6.2.0: improovements YDB provider in upstream LINQ2DB", "quality": 90 },
+      { "date": "2025-12-06", "status": "Production ready", "description": "v6.4.0: now a fully supported provider rather than experimental: schema API, CLI scaffolding, LINQPad driver and broad translation coverage", "quality": 99 }
     ]
   },
   {
